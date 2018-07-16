@@ -1,0 +1,130 @@
+%Préambule du document :
+\documentclass[12pt, a4paper]{book}
+%\usepackage[latin1]{inputenc} 
+\usepackage[utf8]{inputenc} % accents
+\usepackage{gensymb} % degree symbol ° (\degree)
+\usepackage[T1]{fontenc} % | "`pipe"' character
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{amssymb} 
+\usepackage{minitoc} % chapter's tocs
+\usepackage{authblk} % author affiliations
+\usepackage{fancyhdr} % modify the headers
+\usepackage{tabularx} % tables not larger than A4
+\usepackage[table]{xcolor} %colors inside the tables
+\usepackage{float}
+\usepackage{multicol} % multiple columns in some sections
+\usepackage[inner=2cm,outer=2cm]{geometry} %A4 margins
+
+\usepackage[labelfont=bf, margin=0.5cm]{caption} % for figure captions in minipages
+\usepackage{hyperref} %link references (toc, citations) inside document
+\usepackage{natbib} % to cite with parentheses and plain text et only year if you please...
+\usepackage{amsmath}
+ \usepackage{fixltx2e} % allows overrightarrow to be in caption
+ \MakeRobust{\overrightarrow}
+
+
+
+
+\bibliographystyle{plainnat} % reference style
+\renewcommand{\bibname}{References} %Rename "`bibliography"' => "`references"'
+
+\hypersetup{
+    colorlinks,
+    citecolor=brown,
+    filecolor=green,
+    linkcolor=red,
+    urlcolor=blue
+}
+\hypersetup{linktocpage}
+
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\setcounter{tocdepth}{1} % we only want chapters and sections in toc
+\setcounter{minitocdepth}{1} %we only want sections in chapters' minitocs
+
+\pretitle{%
+  \begin{center}
+  \LARGE
+  \includegraphics[width=12cm]{Logo_software.png}\\[\bigskipamount]
+}
+\posttitle{\end{center}}
+
+\title{ISE-MeshTools User's guide\\ISE-MeshTools v1.3.4}
+
+
+
+%\titlepicture[width=13cm]{Logo_software.png}
+\author{Renaud LEBRUN}
+\affil{Institut des Sciences de l'Evolution, University of Montpellier, France}
+\date{\today} 
+
+
+%Corps du document :
+\begin{document}
+
+	\dominitoc
+
+\maketitle
+ 
+
+\tableofcontents
+
+\chapter*{Introduction}
+\addstarredchapter{Introduction}
+
+\markboth{INTRODUCTION}{}
+
+\minitoc 
+
+ ISE-MeshTools is based on the design concepts of the software FoRM-IT (Fossil Reconstruction and Morphometry Interactive Toolkit; \citep{Zollikofer1995,Zollikofer2005}).
+\ ISE-MeshTools\citep{Lebrun2014} was developed as a help to the scientific journal MorphoMuseuM (M3), in order to help scientists to produce enriched surface models. The source code is hosted on Github. Since its first public version in 2014, new features (GPU acceleration and ICP registration) have been implemented by Cécile Peladan. Stefan Schlager and Jean Dumoncel have also contributed to cross-platform compatibility of the code and have brought helpful feedback regarding the software.  
+\section*{Origin of the project}
+\addcontentsline{toc}{section}{Origin of the project}
+Over the last two decades, even though 3D data acquisition and computer-assisted techniques have grown increasingly popular among biologists, paleontologists and paleoanthropologists, so far, no standard biology-oriented 3D mesh manipulation software has emerged; most of the time, researchers either use commercial software which are not primarily designed for biologists, or develop their own in-house software solutions.  ISE-MeshTools builds upon the design concepts of the software FoRM-IT (Fossil Reconstruction and Morphometry Interactive Toolkit; \citep{Zollikofer1995,Zollikofer2005}), and is developed to meet the need to ease the production and the diffusion of 3D models of biological organisms. ISE-MeshTools provides a set of tools for editing, positioning, deforming, labeling, tagging sets of 3D surfaces. As such, ISE-MeshTools can be used to produce enriched models which can in turn be submitted to M3.
+\section*{Main features}
+\addcontentsline{toc}{section}{Main features}
+Features include:
+\begin{itemize}
+\item Retro-deformation for virtual restoration of fossils/deformed specimens;
+\item Point and curve primitives for placing the exact type of landmark points you’re interested in
+\item Easy to use 3D interface for positioning and manipulating sets of surfaces and landmark primitives
+\item Mesh tagging, labeling and coloring (to allow for the creation of anatomy atlases)
+\item Mesh scalar computation and coloring (based upon curvature/thickness etc...)
+\end{itemize}
+
+ ISE-MeshTools allows to import and export 3D meshes in standard formats such as STL, PLY and VTK, and as such, in can be used in conjunction with a variety of other 3D mesh editors such  as MeshLab (http://meshlab.sourceforge.net/) or Blender (https://www.blender.org/) 
+\section*{Implementation}
+\addcontentsline{toc}{section}{Implementation}
+ISE-MeshTools is entirely written in C++, and uses the visualization library VTK \citep{Avila2001}. The GUI has been designed with FLTK (FLTK, 1998). Since the end of 2015, ISE-MeshTools has become open-source and cross platform, and we are looking forward to welcoming new developers in the future in order to implement new functionalities. 
+
+
+		 \input{chapter_01_licence.tex}
+		 \input{chapter_02_faq.tex}
+     \input{chapter_03_interaction_modes.tex}
+	   \input{chapter_04_keyboard_mouse_controls.tex}
+		 \input{chapter_05_camera_gui_controls.tex}
+		 \input{chapter_06_file.tex}
+		 \input{chapter_07_viewing_options.tex}
+		 \input{chapter_08_edit_selected_surfaces.tex}
+		 \input{chapter_09_landmarks.tex}
+		 \input{chapter_10_scalars.tex}
+		 \input{chapter_11_tags.tex}
+		 \input{chapter_12_show.tex}
+		 \input{chapter_13_about.tex}
+		 \input{chapter_14_acknowledgements.tex}
+%\nocite{*}   % All bibliography items appear without citation in the text
+
+\cleardoublepage
+\phantomsection
+
+\addcontentsline{toc}{chapter}{References}
+%\addcontentsline{toc}{section}{References}
+  \bibliography{References/UsersGuide}		
+\end{document} 
+

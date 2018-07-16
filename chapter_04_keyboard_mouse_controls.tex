@@ -1,0 +1,76 @@
+\chapter{Keyboard and mouse controls}
+\minitoc  
+
+ \section{Keyboard and mouse controls}
+\rowcolors{2}{}{gray!25}
+\begin{tabularx}{\linewidth}{ | c | X | }
+ \hline			
+   Ctrl+A & Selects all objects \\ \hline				
+   Ctrl+D & Unselects all objects \\ \hline				
+   L+ left click & Creates a landmark (either ``normal", ``target" or ``flag" landmark). \\ \hline			
+L + right click & If a single landmark is selected, its position is
+moved. Nothing happens if no landmark is selected
+or if more than one landmark are selected \\ \hline			
+
+Left mouse button drag 
+& Camera mode : camera rotation.\newline
+ Object mode : object rotation.\newline
+Landmark mode : camera rotation. \\ \hline			
+
+Ctrl + left mouse button drag 
+& Camera mode : object rotation.\newline
+ Object mode : camera rotation.\newline
+ Landmark mode : object rotation. \\ \hline	
+		
+Right mouse button drag & Draws a yellow rectangle. Once right button is
+released, all objects (surfaces and landmarks)
+falling inside the rectangle get selected/unselected,
+depending on their initial selection status \\ \hline	
+		
+Right mouse button click & All objects (surfaces and landmarks) lying at click
+location get selected/unselected, depending on
+their initial selection status \\ \hline		
+	
+Middle mouse button roll (roll wheel) & Zoom / unzoom \\ \hline		
+	
+Middle mouse button drag 
+& Camera mode : camera translation\newline
+ Object mode : object translation\newline
+ Landmark mode : camera translation \\ \hline	
+		
+Ctrl + middle mouse button drag 
+& Camera mode : object translation\newline
+Object mode : camera translation\newline
+Landmark mode : object translation \\ \hline			
+
+« Del » & All selected objects are deleted \\ \hline			
+
+T + left click & Tag selected surface with active tag value \\ \hline			
+ 
+T + right click & Tag selected surface with ``0" value \\ \hline			
+
+ \end{tabularx}
+
+\section{Additional controls}
+Additional controls are available when using ``lasso cut" or ``lasso tag" (lasso mode should be active):\\
+\begin{tabularx}{\linewidth}{ | c | X | }
+\hline			
+Left click & Adds a segment to polygon (segments are drawn yellow) \\ \hline			
+
+Right click & Connects last segment to first segment. If two segments cross each other, lasso action is canceled. Otherwise, the closed polygon is drawn red.\\ \hline			
+
+Middle click or ``C" + right click. & Once the lasso is closed (lasso polygon drawn red
+after a right click), all the vertices falling within the clicked region (outside or inside the polygon) are either:\newline
+- given the color corresponding the the active tag (lasso tag)\newline
+- inserted into a new objects (lasso cut).\newline 
+See lasso cut (section \ref{lasso_cut_section}) and lasso tag (section \ref{lasso_tag_section}) sections for further information.\\ \hline	
+		
+T + left click (``lasso tag" only) & Depending on which tag tool is active, if the
+lasso is closed (lasso polygon drawn red after a right click) the vertices are painted either :\newline 
+- using the pencil\newline 
+- using the magic wand\newline 
+- using the flood fill\newline 
+Tag propagation is restricted within the area defined by the red polygon.\\ \hline		
+	
+\end{tabularx}
+
