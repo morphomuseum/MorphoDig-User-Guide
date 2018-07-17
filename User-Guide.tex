@@ -55,7 +55,7 @@
 }
 \posttitle{\end{center}}
 
-\title{ISE-MeshTools User's guide\\ISE-MeshTools v1.3.4}
+\title{MorphoDig User's guide\\MorphoDig v1.0}
 
 
 
@@ -82,11 +82,11 @@
 
 \minitoc 
 
- ISE-MeshTools is based on the design concepts of the software FoRM-IT (Fossil Reconstruction and Morphometry Interactive Toolkit; \citep{Zollikofer1995,Zollikofer2005}).
-\ ISE-MeshTools\citep{Lebrun2014} was developed as a help to the scientific journal MorphoMuseuM (M3), in order to help scientists to produce enriched surface models. The source code is hosted on Github. Since its first public version in 2014, new features (GPU acceleration and ICP registration) have been implemented by Cécile Peladan. Stefan Schlager and Jean Dumoncel have also contributed to cross-platform compatibility of the code and have brought helpful feedback regarding the software.  
+ MorphoDig is based on the design concepts of the software FoRM-IT (Fossil Reconstruction and Morphometry Interactive Toolkit; \citep{Zollikofer1995,Zollikofer2005}).
+\ MorphoDig\citep{Lebrun2014} was developed as a help to the scientific journal MorphoMuseuM (M3), in order to help scientists to produce enriched surface models. The source code is hosted on Github.   
 \section*{Origin of the project}
 \addcontentsline{toc}{section}{Origin of the project}
-Over the last two decades, even though 3D data acquisition and computer-assisted techniques have grown increasingly popular among biologists, paleontologists and paleoanthropologists, so far, no standard biology-oriented 3D mesh manipulation software has emerged; most of the time, researchers either use commercial software which are not primarily designed for biologists, or develop their own in-house software solutions.  ISE-MeshTools builds upon the design concepts of the software FoRM-IT (Fossil Reconstruction and Morphometry Interactive Toolkit; \citep{Zollikofer1995,Zollikofer2005}), and is developed to meet the need to ease the production and the diffusion of 3D models of biological organisms. ISE-MeshTools provides a set of tools for editing, positioning, deforming, labeling, tagging sets of 3D surfaces. As such, ISE-MeshTools can be used to produce enriched models which can in turn be submitted to M3.
+Over the last two decades, even though 3D data acquisition and computer-assisted techniques have grown increasingly popular among biologists, paleontologists and paleoanthropologists, so far, no standard biology-oriented 3D mesh manipulation software has emerged; most of the time, researchers either use commercial software which are not primarily designed for biologists, or develop their own in-house software solutions.  MorphoDig builds upon the design concepts of the software FoRM-IT (Fossil Reconstruction and Morphometry Interactive Toolkit; \citep{Zollikofer1995,Zollikofer2005}), and is developed to meet the need to ease the production and the diffusion of 3D models of biological organisms. MorphoDig provides a set of tools for editing, positioning, deforming, labeling, tagging sets of 3D surfaces. As such, MorphoDig can be used to produce enriched models which can in turn be submitted to M3.
 \section*{Main features}
 \addcontentsline{toc}{section}{Main features}
 Features include:
@@ -98,10 +98,10 @@ Features include:
 \item Mesh scalar computation and coloring (based upon curvature/thickness etc...)
 \end{itemize}
 
- ISE-MeshTools allows to import and export 3D meshes in standard formats such as STL, PLY and VTK, and as such, in can be used in conjunction with a variety of other 3D mesh editors such  as MeshLab (http://meshlab.sourceforge.net/) or Blender (https://www.blender.org/) 
+ MorphoDig allows to import and export 3D meshes in standard formats such as STL, PLY and VTK polydata, and as such, in can be used in conjunction with a variety of other 3D mesh editors such  as MeshLab (http://meshlab.sourceforge.net/) or Blender (https://www.blender.org/) 
 \section*{Implementation}
 \addcontentsline{toc}{section}{Implementation}
-ISE-MeshTools is entirely written in C++, and uses the visualization library VTK \citep{Avila2001}. The GUI has been designed with FLTK (FLTK, 1998). Since the end of 2015, ISE-MeshTools has become open-source and cross platform, and we are looking forward to welcoming new developers in the future in order to implement new functionalities. 
+MorphoDig is entirely written in C++, and uses the visualization library VTK \citep{Avila2001}. The GUI has been designed with QT (https://www.qt.io/). MorphoDig is open-source and cross platform, and we are looking forward to welcoming new developers in the future in order to implement new functionalities. 
 
 
 		 \input{chapter_01_licence.tex}
