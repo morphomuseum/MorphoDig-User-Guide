@@ -1,22 +1,14 @@
-\chapter{Interaction modes}
+\chapter{Interactions and color display. }
 \minitoc  
 
- \section{Object selection and what color is currently displayed? }
+
+\section{Interacting with objects}
 One very important aspect of MorphoDig's design is that most interactions or modifications of opened objects can only be done when these objects are selected. 
-Selected objects (3D surfaces and landmarks) are always ``grey". All currently opened objects can be selected by pressing CTRL+A. All currently opened objects can be unselected by pressing CTRL+D. Objects can also be selected/unselected using the right mouse button, depending on the currently active interaction mode (see below). A given unselected surface can be colored: 
-
-\begin{itemize}
-\item using a uniform ``solid" color. Scalar display mode must be deactivated or active array combo box set to ``Solid color" (\includegraphics[scale=0.5]{images/04/scalarcombo_solidcolor.png})
-\item according to the tag values (= integers) associated to the vertices. Array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a Tag array must be selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_tag.png}).
-\item	according to the scalar values (= numbers) associated at the vertices. Array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a Scalar array must be selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_scalar.png})
-\item	according to RGB values associated to the vertices. Array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a RGB array must be selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_rgb.png}) 
-\end{itemize}
+Selected objects (3D surfaces and landmarks) are always drawn in ``grey". All currently opened objects can be selected by pressing CTRL+A. All currently opened objects can be unselected by pressing CTRL+D. Objects can also be selected/unselected using the right mouse button, depending on the currently active interaction mode (see below).
 
 
 
-
-
-\section{Interaction modes}
+\section{Interactions modes}
 
 
 \subsection{Camera mode}
@@ -45,3 +37,13 @@ Press ``\includegraphics[scale=0.7]{images/04/curve_handles.png}"  to activate t
 
 \subsection{Flag landmark mode}	
 Press ``\includegraphics[scale=0.7]{images/04/flag_landmarks.png}" to activate this mode
+
+
+ \section{Unselected surfaces  color display}
+ A given unselected surface can be colored: 
+\begin{itemize}
+\item using a uniform ``solid" color. Scalar display mode must be deactivated or active array combo box set to ``Solid color" (\includegraphics[scale=0.5]{images/04/scalarcombo_solidcolor.png})
+\item according to the tag values (= integers) associated to the vertices. Array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a Tag array must be selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_tag.png}).
+\item	according to the scalar values (= numbers) associated at the vertices. Array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a Scalar array must be selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_scalar.png})
+\item	according to RGB values associated to the vertices. Array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a RGB array must be selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_rgb.png}) 
+\end{itemize}

@@ -7,7 +7,7 @@
  \section{Camera controls}
 Most camera related controls lay on the left part of the main window.
 \subsection{Camera rotation center}
-By default, the camera rotates around the origin of the coordinate system (x=0, y=0, z=0), but by pressing ``\includegraphics[scale=0.7]{images/06/camera/move_cam.png}", the camera will revolve around the center of mass of all opened objects. The latter option is useful when the centre of mass of an object (or of several ones) is far from the origin of the coordinate system. The grid is drawn using different colors depending on the camera rotation centre (see Fig. \ref{grid_color}). %The camera centre can also be set at the location of one of the first 10 ``normal" landmarks (see section \ref{camera_centre_at}).
+By default, the camera rotates around the origin of the coordinate system (x=0, y=0, z=0), but by pressing ``\includegraphics[scale=0.7]{images/06/camera/move_cam.png}"/``\includegraphics[scale=0.7]{images/06/camera/move_cam2.png}", the camera will revolve around the center of mass of all opened objects. The latter option is useful when the centre of mass of an object (or of several ones) is far from the origin of the coordinate system. The grid is drawn using different colors depending on the camera rotation centre (see Fig. \ref{grid_color}). %The camera centre can also be set at the location of one of the first 10 ``normal" landmarks (see section \ref{camera_centre_at}).
 
 \begin{figure}
   \centering
@@ -20,7 +20,7 @@ By default, the camera rotates around the origin of the coordinate system (x=0, 
  
 \subsection{Orthographic or perspective projection}
 You can switch between orthographic and perspective projection mode by pressing the "\includegraphics[scale=0.7]{images/06/camera/camera_ortho.png}" or "\includegraphics[scale=0.7]{images/06/camera/camera_persp}" toggle button.
-Note that in orthographic projection mode \includegraphics[scale=0.7]{images/06/camera/camera_ortho.png}, some display information regarding the grid and pixel size appear on the right bottom corner of the screen : \includegraphics[scale=0.7]{images/06/camera/grid_infos.png}. 
+Note that in orthographic projection mode \includegraphics[scale=0.7]{images/06/camera/camera_ortho.png}, some display information regarding the grid and pixel size appear on the right bottom corner of the screen: \includegraphics[scale=0.7]{images/06/camera/grid_infos.png}. 
 
 
 \subsection{Camera orientation}
@@ -92,9 +92,24 @@ There are three main ways to modify the ``zoom" in MorphoDig :
 \section{Other display controls}
 
 
+
+\subsection{Grid}
+Press \includegraphics[scale=0.7]{images/06/other/grid.png} to show / hide the grid. Default grid size is 1 cm / square. Grid size can be edited manually
+(viewing opt. $\rightarrow$ Grid size).
+Switching between the 6 camera predefined positions defined above (\includegraphics[scale=0.7]{images/06/camera/camera_right.png}, 
+\includegraphics[scale=0.7]{images/06/camera/camera_left.png}, 
+\includegraphics[scale=0.7]{images/06/camera/camera_front.png}, 
+\includegraphics[scale=0.7]{images/06/camera/camera_back.png}, 
+\includegraphics[scale=0.7]{images/06/camera/camera_above.png} and 
+\includegraphics[scale=0.7]{images/06/camera/camera_below.png})
+will affect the plane in which the grid is drawn.
+
+
+
+
 \subsection{Coordinate system orientation helper}
 \begin{minipage}{0.7\textwidth}
-Press \includegraphics[scale=0.7]{images/06/camera/orientation_helper.png} to show / hide the coordinate system orientation helper lying on the bottom left corner of the main 3D window. By default, the labels are defined
+Press \includegraphics[scale=0.7]{images/06/other/orientation_helper.png} to show / hide the coordinate system orientation helper lying on the bottom left corner of the main 3D window. By default, the labels are defined
 the following way:\\
 +z axis : dorsal side\\
 -z axis : ventral side\\
@@ -111,20 +126,18 @@ depending on the structure you are working with, you may need to set ``+y" to ``
  \captionof{figure}{Orientation helper}
  \end{minipage}   
 
-\subsection{Grid}
-Press \includegraphics[scale=0.7]{images/pixmap/grid3.png} to show / hide the grid. Default grid size is 1 cm / square. Grid size can be edited manually
-(viewing opt. $\rightarrow$ Grid size).
-Switching between the 6 camera predefined positions defined above (\includegraphics[scale=0.7]{images/pixmap/right2.png},\includegraphics[scale=0.7]{images/pixmap/left2.png},\includegraphics[scale=0.7]{images/pixmap/right2.png}, \includegraphics[scale=0.7]{images/pixmap/front2.png}, \includegraphics[scale=0.7]{images/pixmap/above2.png} and \includegraphics[scale=0.7]{images/pixmap/back2.png})will
-affect the plane in which the grid is drawn.
+
+\subsection{Anaglyph}
+Press \includegraphics[scale=0.7]{images/06/other/anaglyph.png} to activate/deactivate anaglyph 3D rendering.
 
 \subsection{Lightning}
 6 lightning orientations are predefined :\\
-\includegraphics[scale=0.7]{images/pixmap/s_right_17.png}light from right viewing side\\
-\includegraphics[scale=0.7]{images/pixmap/s_left_17.png}light from left viewing side\\
-\includegraphics[scale=0.7]{images/pixmap/s_face_17.png}light from front viewing side\\
-\includegraphics[scale=0.7]{images/pixmap/s_back_18.png}light from back viewing side\\
-\includegraphics[scale=0.7]{images/pixmap/s_dessus_18.png}light from above\\
-\includegraphics[scale=0.7]{images/pixmap/s_dessous_18.png}light from below\\
+\includegraphics[scale=0.7]{images/06/other/light_right.png}light from right viewing side\\
+\includegraphics[scale=0.7]{images/06/other/light_left.png}light from left viewing side\\
+\includegraphics[scale=0.7]{images/06/other/light_front.png}light from front viewing side\\
+\includegraphics[scale=0.7]{images/06/other/light_back.png}light from back viewing side\\
+\includegraphics[scale=0.7]{images/06/other/light_above.png}light from above\\
+\includegraphics[scale=0.7]{images/06/other/light_below.png}light from below\\
 
   \section{Object controls}
 	As seen earlier, selected objects can be translated and rotated using the mouse left and middle buttons
