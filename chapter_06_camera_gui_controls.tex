@@ -1,11 +1,15 @@
-\chapter{Camera and object GUI main controls}
+\chapter{Main window controls}
 \minitoc  
+
+
+See Fig. \ref{gui} to have an overview of the controls described in this chapter.
 
 %\section{Open and save data }
 %\section{Undo and redo actions }
 
+
  \section{Camera controls}
-Most camera related controls lay on the left part of the main window.
+Most camera related controls lay on the left part of the main window. See Fig. \ref{gui} to find the location of the "Camera" controls in the main Window.
 \subsection{Camera rotation center}
 By default, the camera rotates around the origin of the coordinate system (x=0, y=0, z=0), but by pressing ``\includegraphics[scale=0.7]{images/06/camera/move_cam.png}"/``\includegraphics[scale=0.7]{images/06/camera/move_cam2.png}", the camera will revolve around the center of mass of all opened objects. The latter option is useful when the centre of mass of an object (or of several ones) is far from the origin of the coordinate system. The grid is drawn using different colors depending on the camera rotation centre (see Fig. \ref{grid_color}). %The camera centre can also be set at the location of one of the first 10 ``normal" landmarks (see section \ref{camera_centre_at}).
 
@@ -18,9 +22,17 @@ By default, the camera rotates around the origin of the coordinate system (x=0, 
 \end{figure}
 
  
-\subsection{Orthographic or perspective projection}
-You can switch between orthographic and perspective projection mode by pressing the "\includegraphics[scale=0.7]{images/06/camera/camera_ortho.png}" or "\includegraphics[scale=0.7]{images/06/camera/camera_persp}" toggle button.
-Note that in orthographic projection mode \includegraphics[scale=0.7]{images/06/camera/camera_ortho.png}, some display information regarding the grid and pixel size appear on the right bottom corner of the screen: \includegraphics[scale=0.7]{images/06/camera/grid_infos.png}. 
+\subsection{Orthographic or perspective camera projection}
+You can switch between orthographic and perspective projection mode by pressing the "\includegraphics[scale=0.4]{images/06/camera/camera_ortho.png}" or "\includegraphics[scale=0.7]{images/06/camera/camera_persp}" toggle button (see also see Fig. \ref{camera_ortho_example}).
+Note that in orthographic camera projection mode \includegraphics[scale=0.7]{images/06/camera/camera_ortho.png}, when the grid is displayed, the relationship between pixel size on the screen and real world dimensions appears on the right bottom corner of the screen: \includegraphics[scale=0.7]{images/06/camera/grid_infos.png}. 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.3]{images/06/camera/camera_ortho_example.png} 
+	\caption{Perspective and Orthographic camera projection modes. Skull of \textit{Pan paniscus}. Left: perspective camera projection mode: closer structures appear larger than farther structures. Right: orthographic camera projection mode: a uniform relation exists between pixel size and real world dimensions, making it possible to place a scale bar. }
+\label{camera_ortho_example}
+ 
+\end{figure}
 
 
 \subsection{Camera orientation}
@@ -44,21 +56,12 @@ To do so, you may use the slider lying around the center of the left panel of th
 
 
 
-\subsection{Clipping plane}
+\subsection{Clipping plane slider}
 
 \begin{minipage}{0.7\textwidth}
 In some cases, you may need to displace the viewing clipping plane. To do so, use
-the slider lying centrally in the left panel of the main window.\\
-%You can also modify the clipping plane manually by editing the ``Tz" control in the camera options window (viewing opt. $\rightarrow$ Camera $\rightarrow$ Camera options).
+the slider lying centrally in the left panel of the main window. See \ref{Clipping_plane} for additional clipping plane functionalities.\\
 
-The button \includegraphics[scale=0.7]{images/06/camera/cpon.png} or \includegraphics[scale=0.7]{images/06/camera/cpoff.png}  permits to adjust / readjust the position of the clipping plane at predefined positions :
-\begin{itemize}
-\item  \includegraphics[scale=0.7]{images/06/camera/cpon.png}: the clipping plane is placed at z = 0 (all objects having a z coordinate along
-z viewing axis smaller than 0 are hidden).
-\item	\includegraphics[scale=0.7]{images/06/camera/cpoff.png} : the clipping plane is replaced at its original value : z= - camera.far / 2. This value permits to
-view objects having positive and negative coordinates along z viewing axis.
-
-\end{itemize}
 \end{minipage}    
 \begin{minipage}{0.25\textwidth}\centering
   \includegraphics[scale=0.5]{images/06/camera/cp_slider.png}
@@ -87,14 +90,12 @@ There are three main ways to modify the ``zoom" in MorphoDig :
  \end{minipage}    
 
 
-
-
-\section{Other display controls}
-
+\section{Display controls}
+The display controls mentioned in this section are situated on the top part of the main window (see Fig. \ref{gui}).
 
 
 \subsection{Grid}
-Press \includegraphics[scale=0.7]{images/06/other/grid.png} to show / hide the grid. Default grid size is 1 cm / square. Grid size can be edited manually
+Press \includegraphics[scale=0.7]{images/06/display/grid.png} to show / hide the grid. Default grid size is 1 cm / square. Grid size can be edited manually
 (viewing opt. $\rightarrow$ Grid size).
 Switching between the 6 camera predefined positions defined above (\includegraphics[scale=0.7]{images/06/camera/camera_right.png}, 
 \includegraphics[scale=0.7]{images/06/camera/camera_left.png}, 
@@ -109,7 +110,7 @@ will affect the plane in which the grid is drawn.
 
 \subsection{Coordinate system orientation helper}
 \begin{minipage}{0.7\textwidth}
-Press \includegraphics[scale=0.7]{images/06/other/orientation_helper.png} to show / hide the coordinate system orientation helper lying on the bottom left corner of the main 3D window. By default, the labels are defined
+Press \includegraphics[scale=0.7]{images/06/display/orientation_helper.png} to show / hide the coordinate system orientation helper lying on the bottom left corner of the main 3D window. By default, the labels are defined
 the following way:\\
 +z axis : dorsal side\\
 -z axis : ventral side\\
@@ -128,25 +129,85 @@ depending on the structure you are working with, you may need to set ``+y" to ``
 
 
 \subsection{Anaglyph}
-Press \includegraphics[scale=0.7]{images/06/other/anaglyph.png} to activate/deactivate anaglyph 3D rendering.
+Press \includegraphics[scale=0.7]{images/06/display/anaglyph.png} to activate/deactivate anaglyph 3D rendering.
+See Fig. \ref{anaglyph_example}.
 
-\subsection{Lightning}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.34]{images/06/display/anaglyph_example.png} 
+	\caption{Anaglyph display mode. Left: normal display mode. Right: anaglyph display mode. Cranium of the holotype specimen of \textit{Pan paniscus}.}
+\label{anaglyph_example}
+ 
+\end{figure}
+
+
+
+%You can also modify the clipping plane manually by editing the ``Tz" control in the camera options window (viewing opt. $\rightarrow$ Camera $\rightarrow$ Camera options).
+
+\subsection{Clipping plane} \label{Clipping_plane}
+
+The button \includegraphics[scale=0.7]{images/06/display/cpon.png} or \includegraphics[scale=0.5]{images/06/display/cpoff.png}  permits to adjust / readjust the position of the clipping plane at predefined positions (see for instance Fig. \ref{cp_example}):
+\begin{itemize}
+\item  \includegraphics[scale=0.7]{images/06/display/cpon.png}: the clipping plane is placed at z = 0 (all objects having a z coordinate along
+z viewing axis smaller than 0 are hidden).
+\item	\includegraphics[scale=0.7]{images/06/display/cpoff.png} : the clipping plane is replaced at its original value : z= - camera.far / 2. This value permits to
+view objects having positive and negative coordinates along z viewing axis.
+
+\end{itemize}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.4]{images/06/display/cp_example.png} 
+	\caption{Clipping plane display mode. Cranium of the type specimen of \textit{Pan paniscus}. Left: normal display mode. Right: clipping plane display mode "on" : permits to visualize inner structures. }
+\label{cp_example}
+ 
+\end{figure}
+
+
+
+\subsection{Backface culling} \label{Backface_culling}
+
+Hiding backfaces of a surface is useful in some cases to visualize inner structures of a biological object (see for instance Fig. \ref{backface_example}). The button \includegraphics[scale=0.7]{images/06/display/backface_on.png} / \includegraphics[scale=0.7]{images/06/display/backface_off.png}  permits to visualize/hide backfaces :
+\begin{itemize}
+\item  \includegraphics[scale=0.7]{images/06/display/backface_on.png}: both sides of a given surface object are rendered.
+\item	\includegraphics[scale=0.7]{images/06/display/backface_off.png} : backfaces are hidden (only frontfaces are visible).
+
+\end{itemize}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.4]{images/06/display/backface_example.png} 
+	\caption{Backface culling display mode. Petrosal bone of \textit{Eulemur mongoz}. Left: normal display mode: both frontfaces (lighter) and backfaces (darker) are displayed. Right: backface culling mode activated: only frontfaces are displayed, making it easier to visualize the bony labyrinth. }
+\label{backface_example}
+ 
+\end{figure}
+
+
+\section{Light direction controls}
+See Fig. \ref{gui} to see where the "light controls" are situated within MorphoDig's main window.
+
+
 6 lightning orientations are predefined :\\
-\includegraphics[scale=0.7]{images/06/other/light_right.png}light from right viewing side\\
-\includegraphics[scale=0.7]{images/06/other/light_left.png}light from left viewing side\\
-\includegraphics[scale=0.7]{images/06/other/light_front.png}light from front viewing side\\
-\includegraphics[scale=0.7]{images/06/other/light_back.png}light from back viewing side\\
-\includegraphics[scale=0.7]{images/06/other/light_above.png}light from above\\
-\includegraphics[scale=0.7]{images/06/other/light_below.png}light from below\\
+\includegraphics[scale=0.7]{images/06/light/light_right.png}light from right viewing side\\
+\includegraphics[scale=0.7]{images/06/light/light_left.png}light from left viewing side\\
+\includegraphics[scale=0.7]{images/06/light/light_front.png}light from front viewing side\\
+\includegraphics[scale=0.7]{images/06/light/light_back.png}light from back viewing side\\
+\includegraphics[scale=0.7]{images/06/light/light_above.png}light from above\\
+\includegraphics[scale=0.7]{images/06/light/light_below.png}light from below\\
+
 
   \section{Object controls}
+See Fig. \ref{gui} to see where the "object controls" are situated within MorphoDig's main window. Remind that only selected objects are affected by these controls.
+
+
+\subsection{object rotation and translation}
 	As seen earlier, selected objects can be translated and rotated using the mouse left and middle buttons
 (in landmark and camera selection modes, you also need to maintain ``CTRL" button pressed
 while dragging the mouse to achieve rotation and translation of selected objects). Alternatively, you
 may also use the following controls to accomplish rotation and translation of selected objects. Rotation
 is performed around the global center of mass of all selected objects.
 
-\subsection{Rotation around and translation along ``z" viewing axis}
+\subsubsection{Rotation around and translation along ``z" viewing axis}
 
 \begin{minipage}{0.7\textwidth}
 These controls are extremely useful, as there is no way to achieve rotation
@@ -162,7 +223,7 @@ main window.
  \end{minipage}    
 
 
-\subsection{Rotation around ``x" and translation along ``y" viewing axes}
+\subsubsection{Rotation around ``x" and translation along ``y" viewing axes}
 
 \begin{minipage}{0.7\textwidth}
 To do so, use the slider and roller lying in the lower part of the left panel of the
@@ -173,7 +234,7 @@ main window.
  \captionof{figure}{Object ``x" roller and ``y" slider}
  \end{minipage}   
 
-\subsection{Rotation around ``y" and translation along ``x" viewing axes}
+\subsubsection{Rotation around ``y" and translation along ``x" viewing axes}
 
 
 \begin{minipage}{0.5\textwidth}
