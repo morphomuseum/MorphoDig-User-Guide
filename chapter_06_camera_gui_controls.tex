@@ -130,7 +130,7 @@ depending on the structure you are working with, you may need to set ``+y" to ``
 
 \subsection{Anaglyph}
 Press \includegraphics[scale=0.7]{images/06/display/anaglyph.png} to activate/deactivate anaglyph 3D rendering.
-See Fig. \ref{anaglyph_example}.
+See Fig. \ref{anaglyph_example}. You then need to wear "Red/Blue" \includegraphics[scale=0.7]{images/06/display/anaglyph_glasses.png} glasses to visualize objects in 3D.
 
 \begin{figure}
   \centering
@@ -176,7 +176,7 @@ Hiding backfaces of a surface is useful in some cases to visualize inner structu
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.4]{images/06/display/backface_example.png} 
+  \includegraphics[scale=0.3]{images/06/display/backface_example.png} 
 	\caption{Backface culling display mode. Petrosal bone of \textit{Eulemur mongoz}. Left: normal display mode: both frontfaces (lighter) and backfaces (darker) are displayed. Right: backface culling mode activated: only frontfaces are displayed, making it easier to visualize the bony labyrinth. }
 \label{backface_example}
  
@@ -198,6 +198,95 @@ See Fig. \ref{gui} to see where the "light controls" are situated within MorphoD
 
   \section{Object controls}
 See Fig. \ref{gui} to see where the "object controls" are situated within MorphoDig's main window. Remind that only selected objects are affected by these controls.
+
+\subsection{Delete selected objects}
+Clicking on "\includegraphics[scale=0.7]{images/06/objects/delete2.png}" deletes all selected objects. This action can be undone/redone.
+
+\subsection{Create landmark at X,Y,Z}
+Clicking on "\includegraphics[scale=0.7]{images/06/objects/landmark_xyz.png}" opens the "Create landmark" window  (Fig. \ref{create_landmark}), in which a new landmark can be created a specified coordinates. This action can be undone/redone..
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.55]{images/06/objects/create_landmark.png} 
+	\caption{Create landmark at a given X,Y,Z coordinate.}
+\label{create_landmark}
+ 
+\end{figure}
+\subsection{Decrease / Increase landmark number}
+Clicking on \includegraphics[scale=0.7]{images/06/objects/move_up.png} will increase (if possible) the landmark number of all selected landmarks. Clicking on \includegraphics[scale=0.7]{images/06/objects/move_down.png} will decrease (if possible) the landmark number of all selected landmarks. These button make it possible to reorder landmarks.
+\subsection{Edit first selected surface}
+
+Clicking on "\includegraphics[scale=0.7]{images/06/objects/actor_edit.png}" opens the "Edit first selected surface" window (Fig. \ref{actor_edit}), in which several properties of a given surface object can be edited.
+\\
+- Object name : modifies the name of the object.\\
+- Next object \includegraphics[scale=0.7]{images/06/objects/s_right.png} and preceding object \includegraphics[scale=0.7]{images/06/objects/s_left.png}: saves currently  settings and fetches next/preceding surface.\\
+- Object solid color : modifies the "solid color" property of this object.\\
+- Object translucency : modifies the translucency this object.
+- Object matrix : current position/rotation matrix of the object.\\
+- Reinit matrix: set current matrix to identity.\\
+- Apply matrix to all selected surfaces : set position/rotation matrix to all other selected surfaces.\\
+- Existing arrays : list of all scalar/RGB color/tags arrays associated to the vertices of the surfaces.\\
+- Edit array name : modifies the name of currently selected array\\
+- Duplicate array : duplicates currently selected array\\
+- Delete array : deletes currently selected array\\
+- Ok : save settings and closes window
+
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.55]{images/06/objects/edit_surface.png} 
+	\caption{Edit first selected surface window.}
+\label{actor_edit}
+ 
+\end{figure}
+
+
+
+\subsection{Edit first selected landmark}
+Clicking on "\includegraphics[scale=0.7]{images/06/objects/landmark_edit.png}" opens the "Edit first selected landmark" window (Fig. \ref{landmark_edit}), in which landmark coordinates of landmarks can be manually edited.
+
+
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.55]{images/06/objects/edit_landmark.png} 
+	\caption{Edit first selected landmark window.}
+\label{landmark_edit}
+ 
+\end{figure}
+
+\subsection{Edit first selected flag}
+Clicking on "\includegraphics[scale=0.7]{images/06/objects/flag_edit.png}" opens the "Edit first selected landmark" window (Fig. \ref{flag_edit}), in which several properties of a given flag can be manually edited.
+
+- Flag name : modifies the label of this flag.\\
+- X, Y, Z: 3D coordinates of the flag.\\
+- Next flag \includegraphics[scale=0.7]{images/06/objects/s_right.png} and preceding flag \includegraphics[scale=0.7]{images/06/objects/s_left.png}: saves currently  settings and fetches next/preceding flag\\
+- Flag color : modifies the "color" of the currently selected flag.\\
+- Flag rendering size : modifies the length of the flag.
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.55]{images/06/objects/edit_flag.png} 
+	\caption{Edit first selected flag window.}
+\label{landmark_edit}
+ 
+\end{figure}
+\subsection{Lasso cut selected surfaces} \label{lasso_cut_section}
+
+You may cut through an input selected surface using this option (see Fig. \ref{lasso_cut}). Once "\includegraphics[scale=0.7]{images/06/objects/lasso_keepinside.png}" (lasso cut keep inside) or "\includegraphics[scale=0.7]{images/06/objects/lasso_keepoutside.png}" (lasso cut keep outside) has been pressed, the mouse cursor changes and you can start drawing the lasso section by dragging the mouse while the left button is pressed. When the left button is released, the lasso cut operation starts: a new object is created, which contains all the parts of the selected object laying inside or outside the drawn polygon, respectively.\\
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{images/06/objects/lasso_cut.png} 
+	\caption{A: "Lasso keep outside" button is pressed, then a polygon is drawn over the selected object (grey) by maintaining left mouse button pressed and dragging the mouse. B: Left mouse button has been released : a new surface object is  created. C: "Delete" has been pressed : only the newly created  object remains. C: "Lasso keep inside" is pressed, then a polygon is drawn over the selected object (grey) by maintaining left mouse button pressed and dragging the mouse. E: Left mouse button has been released : a new surface object is  created. F: "Delete" has been pressed : only the newly created  object remains. }
+\label{lasso_cut}
+ 
+\end{figure}
+
+
 
 
 \subsection{object rotation and translation}

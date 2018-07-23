@@ -90,40 +90,6 @@ This option uses vtkPolyDataConnectivityFilter.This filter produces a new surfac
 \end{figure}
 
 
-\subsection{Lasso cut}\label{lasso_cut_section}
-You may cut through an input selected surface using this option (see Fig. \ref{lasso_cut}). Once ``lasso cut" menu is clicked, the mouse cursor changes to a cross in the 3D window. Additional mouse and keyboard controls become available (see Table \ref{lasso_cut_controls}).
-\rowcolors{2}{}{gray!25}
-
-\begin{table}
-\begin{tabularx}{\linewidth}{ | c | X | }
-\hline			
-Left click & Adds a segment to polygon (segments are drawn yellow) \\ \hline			
-
-Right click & Connects last segment to first segment. If two segments cross each other, lasso action is cancelled. Otherwise, the closed polygon is drawn red.\\ \hline			
-
-Middle click or ``C" + right click. & Once the lasso is closed (lasso polygon drawn red
-after a right click):\newline
-when the click falls \textbf{inside}/\textit{outside} the closed red polygon: the region falling \underline{inside} the polygon \textbf{is included}/\textit{is not included} into the filter output surface, respectively. The region falling \underline{outside} the polygon is \textbf{is not included}/\textit{is included} inside the output, respectively.
-
-\\ \hline	
-			
-
-\end{tabularx}
-\caption{Lasso cut controls}	
-\label{lasso_cut_controls}	
-\end{table}
-Once ``Middle click" is pressed or ``C" + right click is pressed, the usual mouse and keyboard controls become available again.\\
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.25]{images/Edit_selected_objects/04_Lasso_cut.pdf} 
-	\caption{Top row. A: Left clicks $\rightarrow$ add new yellow segments. B: Right final click $\rightarrow$ connects last segment to first segment. C: Result of middle click inside red polygon. Bottom row. C: Left clicks $\rightarrow$ add new yellow segments. D: Right final click $\rightarrow$ connects last segment to first segment. E: Result of middle click outside red polygon. }
-\label{lasso_cut}
- 
-\end{figure}
-
-
-
 \subsection{Smooth}
 \noindent
 \begin{minipage}{0.5\textwidth}
