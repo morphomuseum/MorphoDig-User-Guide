@@ -3,7 +3,7 @@
 
 
 \section{Project}
-When working with multiple surface objects, loading surfaces and associated positions one by one becomes fastidious. Besides, after having digitized landmarks, flags or having set tag names and colors, or having defined orientation labels, you may wish to open or save this information along with surface files. You may open and save series of meshes and associated position matrices, landmarks, flags, tag colors and labels and orientation labels using this menu. ``Project" files (.ntw) files are organized the following way (see Fig. \ref{project_file}):\\
+When working with multiple surface objects, loading surfaces and associated positions one by one becomes fastidious. Besides, after having digitized landmarks, flags, after having set tag names and colors, or after having defined orientation labels, you may wish to open or save this information along with surface files. You may open and save series of surface files and associated position matrices, landmarks, flags, tag colors and labels and orientation labels using this menu. ``Project" files (.ntw) files are organized the following way (see Fig. \ref{project_file}):\\
 - Optional: name of orientation label file (.ori)\\
 - Optional: name of tag file (.tag)\\
 - Optional: name of flag file (.flg)\\
@@ -15,8 +15,8 @@ When working with multiple surface objects, loading surfaces and associated posi
 - Name of position 2 file associated to surface 2\\
 - Surface 2 RGB color and transparency (etc...)\\
  
-Surface files can be of the following types : .stl, .vtk, .ply and .obj\\
-``.ntw" files can be constructed manually, providing that the refered surface and position files exist.
+Surface files can be of the following types : .stl, .vtk and .ply\\
+``.ntw" files can be constructed manually, providing that the referred surface and position files exist.
 
 
 
@@ -37,14 +37,14 @@ Loads a .ntw file
  \captionof{figure}{Save project window.}
 \label{save_project_file}
 \end{figure}
-The Save project window (\ref{save_project_file}) opens and asks whether :  
+Behavior: only selected elements (surface objects, landmarks, flags...) are saved within projects. If at least one opened element has been selected, the Save project window (\ref{save_project_file}) opens and asks whether :  
 \begin{itemize}
 \item orientation labels should be saved along with the project (by default, orientation labels are not saved, as orientation labels are quite rarely set by users). 
-\item tag map should by saved (by default, .tag file are not saved along with the project, as tag setting is not a common task). 
-\item save surfaces as. VTK polydata or PLY. We advise you to save your surfaces as VTK polydata. In the contrary cases scalar and tag arrays will be lost.
-\item save position inside .POS file, or apply the position to surfaces. Should you decide to chose the "apply position to surfaces" option, 
+\item tag legends and colors (tag maps) should by saved. By default, .tag file are not saved along with the project, as tag setting is not a common task. 
+\item save surfaces as. VTK polydata or PLY. We advise you to save your surfaces as VTK polydata. In the contrary cases scalar,  tag arrays and all RGB arrays having a name different from "RGB" will be lost.
+\item save position inside .POS file, or apply the position to surfaces. We advise you to save position inside .POS file (otherwise, the initial orientations of your surfaces will be lost). 
 \end{itemize}
-Furthermore, saving a .ntw file implies saving all selected surfaces. Though ISE-MeshTools can open .ntw files implicating .stl, .ply and .obj surfaces, when saving a .ntw project, surface files will be saved in .vtk format in order to keep potential tag / scalars associated to each saved surface. Each surface file will be given the name of the original file. Each position file will be given a name which starts with the name of the associated surface and ends with the name of the project. In the .ntw file example shown in Fig. \ref{project_file}, the surface files are 
+Each surface file will be given the name of the original file. Each position file will be given a name which starts with the name of the associated surface and ends with the name of the project (1 exception: when the project contains only one surface and  the project's name is the same as that of the surface. In that case, .pos file names are not postfixed with the name of the project). In the .ntw file example shown in Fig. \ref{project_file}, the surface files are 
 \begin{itemize}
 \item ``Hippopotamus\_amphibius\_braincase.vtk" 
 \item ``Hippopotamus\_amphibius\_bulla.vtk" 
@@ -60,16 +60,16 @@ some point to rename some of the object surfaces. To do so, select one surface, 
 
 \section{Surface}
 \subsection{Open surface}
-.stl, .ply, .vtk surfaces can be open via this menu. MorphoDig does not manage textures associated with meshes. When opening a .ply file containing RGB colors (for instance a file painted manually or automatically with ``MeshLab") or a .vtk file containing RGB information, these colors are placed inside an (or several) ``RGB" array(s). 
+STL, PLY and VTK polydata surfaces can be open via this menu. MorphoDig does not manage textures associated with surface files. When opening a PLY file containing RGB colors (for instance a file painted manually or automatically with ``MeshLab", or some laser scanner surface files) or a VTK file containing RGB arrays, these colors are placed inside a (or several) "RGB" array(s). 
 %MorphoDig will reinitialize the ``RGB" scalars whenever you change the object's color or whenever you activate tag display mode or scalar display mode : if these colors are important to you, you may convert them to TAG values in the menu Tags$\rightarrow$Convert RGB colors to tags before changing the object color or display mode/before changing tags or any color scale activated.
 
 \subsection{Save surface}
 Selected surfaces can be saved into files. If no surface is selected, the following message appears:\\
-\includegraphics[scale=0.5]{images/File/Save_message.png}
-If more than one mesh are selected, the following message shows up:\\
-\includegraphics[scale=0.5]{images/File/Save_message2.png}
+\includegraphics[scale=0.5]{images/07/surface/no_surface_selected.png}
+If at least 2 surfaces are selected, the following message shows up:\\
+\includegraphics[scale=0.5]{images/07/surface/at_least_2_surfaces_selected.png}
 
-\subsubsection{Save .ply}
+\subsubsection{Save selected surfaces in one .PLY file}
 
 \begin{minipage}{0.5\textwidth}
 Options:
@@ -83,7 +83,7 @@ save the surface in its current position.
 
 \end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.45]{images/File/Save_ply_new.png}
+  \includegraphics[scale=0.45]{images/07/surface/save_ply.png}
  \captionof{figure}{PLY save options window}
  \end{minipage} 
 
@@ -93,7 +93,7 @@ are using) will be saved inside the .ply file. This means that Tag / Scalar / Ob
 
 \subsubsection{Save .vtk}
 \begin{minipage}{0.5\textwidth}
-Vtk mesh file format is by far not as widespread as stl or ply
+VTK polydata surface file format is by far not as widespread as STL or PLY
 format. However, it is extremely useful as it allows to store
 scalar and tag values at each vertex or at each triangle.
 Options:
@@ -138,7 +138,7 @@ ASCII formats.
 
 
 \section{Position}
-In MorphoDig, mesh position consists in two
+In MorphoDig, surface position consists in two
 4*4 square matrices: one matrix is used as the
 aspect matrix (by default the identity matrix),
 and the other one as the position matrix. These
@@ -162,7 +162,7 @@ If no surface is selected, the following message
 appears:\\
 \includegraphics[scale=0.5]{images/File/open_position1.png}
 \\
-If more than one mesh are selected, the following message shows up :\\
+If at least 2 surfaces are selected, the following message shows up :\\
 \includegraphics[scale=0.5]{images/File/open_position2.png}
 
 \subsection{Load transposed position}
@@ -177,11 +177,11 @@ For some reason, you may need to open the surface in its original position. To d
 Note : this option only works if the aspect matrix was not modified.
 
 \subsection{Save position}
-Mesh aspect and position matrices can be saved in ``.pos" format. If no surface is selected, the
+Surface aspect and position matrices can be saved in ``.pos" format. If no surface is selected, the
 following message appears:\\
 \includegraphics[scale=0.5]{images/File/save_pos1.png}
 \\
-If more than one mesh are selected, the following message shows up:\\
+If at least 2 surfaces selected, the following message shows up:\\
 \includegraphics[scale=0.5]{images/File/save_pos2png.png}
 
 \subsection{Edit manually aspect and position matrices}
