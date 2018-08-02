@@ -65,7 +65,7 @@ STL, PLY and VTK polydata surfaces can be open via this menu. MorphoDig does not
 
 \subsection{Save surface}
 Selected surfaces can be saved into files. If no surface is selected, the following message appears:\\
-\includegraphics[scale=0.5]{images/07/surface/no_surface_selected.png}
+\includegraphics[scale=0.5]{images/07/surface/no_surface_selected.png}\\
 If at least 2 surfaces are selected, the following message shows up:\\
 \includegraphics[scale=0.5]{images/07/surface/at_least_2_surfaces_selected.png}
 
@@ -78,7 +78,8 @@ Options:
 or ASCII formats.
 \item Position : you can keep object original coordinate system or
 save the surface in its current position.
-\item Normales : you can chose whether you wish to save normales.
+\item Normals : you can chose whether you wish to save normals.
+\item Colors : RGB information associated to each vertex can be saved. You may decide either to keep current RGB color array (if that array exists). Alternatively, you may decide not to save the current RGB color array (if it exists). Finally, you may prefer to save/replace the current RGB color array as the current display color.
 \end{itemize}
 
 \end{minipage}    
@@ -87,18 +88,18 @@ save the surface in its current position.
  \captionof{figure}{PLY save options window}
  \end{minipage} 
 
-Note that the ``RGB" scalar (object rendering color, depending on which rendering mode you
-are using) will be saved inside the .ply file. This means that Tag / Scalar / Object color can be exported and viewed in other software such as MeshLab.
+Note that a "RGB" array (object rendering color, depending on which rendering mode you
+are using), depending on the chosen options, can be saved inside the .ply file. This means that Tag / Scalar / Object solid color can be exported and viewed in other software such as MeshLab.
 
 
-\subsubsection{Save .vtk}
+\subsubsection{Save selected surfaces in one signel .VTK PolyData (.VTK or .VTP) file}
 \begin{minipage}{0.5\textwidth}
 VTK polydata surface file format is by far not as widespread as STL or PLY
-format. However, it is extremely useful as it allows to store
-scalar and tag values at each vertex or at each triangle.
+formats. However, it is extremely useful as it allows to store several
+scalar, tag and RGB arrays.
 Options:
 \begin{itemize}
-\item File type: you can save .vtk data in binary (little endian) or
+\item File type: you can save .VTK data in binary (little endian) or
 ASCII formats.
 
 \item Position : you can keep object original coordinate system
