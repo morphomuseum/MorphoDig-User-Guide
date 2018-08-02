@@ -43,8 +43,16 @@ Press ``\includegraphics[scale=0.7]{images/04/flag_landmarks.png}" to activate t
 See Fig. \ref{gui} to find the location of the "Array controls", which impact the color display of the surfaces.
  A given unselected surface can be colored: 
 \begin{itemize}
-\item using a uniform ``solid" color. Scalar display mode must be deactivated or active array combo box set to ``Solid color" (\includegraphics[scale=0.5]{images/04/scalarcombo_solidcolor.png})
-\item according to the tag values (= integers) associated to the vertices. Array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a Tag array must be selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_tag.png}).
-\item	according to the scalar values (= numbers) associated at the vertices. Array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a Scalar array must be selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_scalar.png})
-\item	according to RGB values associated to the vertices. Array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a RGB array must be selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_rgb.png}) 
+\item using a uniform ``solid" color (Fig. \ref{4color_modes}-A). Scalar display mode must be deactivated or active array combo box set to ``Solid color" (\includegraphics[scale=0.5]{images/04/scalarcombo_solidcolor.png})
+\item	according to the scalar values (= numbers) associated at the vertices (Fig. \ref{4color_modes}-B). Array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a Scalar array must be selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_scalar.png})
+\item according to the tag values (= integers) associated to the vertices (Fig. \ref{4color_modes}-C). Array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a Tag array must be selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_tag.png}).
+\item	according to RGB values directly associated to the vertices (Fig. \ref{4color_modes}-D). Array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a RGB array must be selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_rgb.png}) 
 \end{itemize}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{images/04/4color_modes.png} 
+	\caption{Color modes for a given surface. Single surface representation of the skeleton of newborn \textit{Lemur catta}. A: "Solid color mode" mode : a uniform color is used to represent the whole surface. B: "Scalar array" representation mode. Numbers (here bone thickness) are associated to each vertex of the surface, and are rendered using a color map. C: "Tag array". Integers are associated to each vertex  (here different integer values are associated to different groups of bones), and a color map is used  to colorize the specimen. D : "RGB array" : red, green, blue and transparency information is directly associated to each vertex : no color map is used in that case. In MorphoDig, RGB arrays can be produced out of solid color information, scalar arrays and tag arrays. PLY file produced via surface scans often contain surch RGB information.}
+\label{4color_modes}
+ 
+\end{figure}
