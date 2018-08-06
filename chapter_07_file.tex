@@ -52,8 +52,8 @@ Each surface file will be given the name of the original file. Each position fil
 \item ``Hippopotamus\_amphibius\_sinus.vtk" 
 \end{itemize}
 \noindent and the project name is ``exploded.ntw". The advantage of naming position files that way is you may construct different .ntw files with different associated surface files using a same set of surfaces. Requirement : all selected surfaces saved via this option
-need to have distinct names. Note : When working with ``project" files, you may need at
-some point to rename some of the object surfaces. To do so, select one surface, click on \includegraphics[scale=0.7]{images/06/objects/actor_edit.png}: the ``Edit first selected surface" window appears (See Fig. \ref{actor_edit} in preceding chapter).
+need to have distinct names. Note : When working with ``project" files, if several surface objects have the same name, you may need at
+some point to rename some of the object surfaces in order to make sure that all surface objects have a distinct name. To do so, select one surface, click on \includegraphics[scale=0.7]{images/06/objects/actor_edit.png}: the ``Edit first selected surface" window appears (See Fig. \ref{actor_edit} in preceding chapter).
 
 
 
@@ -69,7 +69,7 @@ Selected surfaces can be saved into files. If no surface is selected, the follow
 If at least 2 surfaces are selected, the following message shows up:\\
 \includegraphics[scale=0.5]{images/07/surface/at_least_2_surfaces_selected.png}
 
-\subsubsection{Save selected surfaces in one .PLY file}
+\subsubsection{Save selected surfaces in one single .PLY file}
 
 \begin{minipage}{0.5\textwidth}
 Options:
@@ -92,7 +92,7 @@ Note that a "RGB" array (object rendering color, depending on which rendering mo
 are using), depending on the chosen options, can be saved inside the .ply file. This means that Tag / Scalar / Object solid color can be exported and viewed in other software such as MeshLab.
 
 
-\subsubsection{Save selected surfaces in one signel .VTK PolyData (.VTK or .VTP) file}
+\subsubsection{Save selected surfaces in one single .VTK PolyData (.VTK or .VTP) file}
 \begin{minipage}{0.5\textwidth}
 VTK polydata surface file format is by far not as widespread as STL or PLY
 formats. However, it is extremely useful as it allows to store several
@@ -101,21 +101,19 @@ Options:
 \begin{itemize}
 \item File type: you can save .VTK data in binary (little endian) or
 ASCII formats.
-
 \item Position : you can keep object original coordinate system
-or save the surface in its current position
+or save the surface in its current position.
+\item Arrays: you decided which arrays (scalars, tags, RGB colors) should be saved inside the VTK polydata file.
 \end{itemize}
 \end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/File/Save_vtk.png}
+  \includegraphics[scale=0.5]{images/07/surface/save_vtk.png}
  \captionof{figure}{VTK save options window}
  \end{minipage} 
 \noindent
-Note that the ``RGB" scalar (object rendering color, depending on which rendering mode you are
-using) will be saved inside the .vtk file.
 
 
-\subsubsection{Save .stl}
+\subsubsection{Save selected surfaces in one single .STL file}
 
 \begin{minipage}{0.5\textwidth}
 Options:
@@ -128,28 +126,21 @@ ASCII formats.
 
 \end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/File/Save_stl.png}
+  \includegraphics[scale=0.5]{images/07/surface/save_stl.png}
  \captionof{figure}{STL save options window}
  \end{minipage} 
 
 
 
 
-
-
-
 \section{Position}
 In MorphoDig, surface position consists in two
-4*4 square matrices: one matrix is used as the
-aspect matrix (by default the identity matrix),
-and the other one as the position matrix. These
-matrices can be opened and saved in ``.pos"
-format (see Fig. \ref{position_file}).
+4*4 square matrices: the first matrix is currently not read nor used anymore by MorphoDig, but is kept for compatibility issues with older versions of MorphoDig and of ISE-MeshTools (MorphoDig is a major redesign of an older software, ISE-MeshTools). This first matrix will disappear in a near future.  The second matrix is the one that matters: the position matrix. It contains the rotation and translation information of 3D objects (3D surfaces and landmarks). These 2 matrices can be opened and saved in ``.pos" format (see Fig. \ref{position_file}).
 
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{images/File/Position_file.png}
+  \includegraphics[scale=0.5]{images/07/position/position_file.png}
  \caption{Example of .pos position file. The first 4 lines correspond
 to the aspect matrix, and the 4 last lines to the position matrix.}
 \label{position_file}
@@ -158,59 +149,58 @@ to the aspect matrix, and the 4 last lines to the position matrix.}
 
 
 
-\subsection{Load position}
+\subsection{Open position for selected surfaces}
 If no surface is selected, the following message
 appears:\\
-\includegraphics[scale=0.5]{images/File/open_position1.png}
+\includegraphics[scale=0.5]{images/07/position/no_surface_selected.png}
 \\
-If at least 2 surfaces are selected, the following message shows up :\\
-\includegraphics[scale=0.5]{images/File/open_position2.png}
+If at least 2 surfaces objects are selected, the same position will be given to them.
 
-\subsection{Load transposed position}
+\subsection{Open transposed position for selected surfaces}
 This option may be useful in the following case:
 \begin{itemize}
-\item Let us suppose that you did modify the position of a given surface and saved its position
-\item Then you have saved the surface in its current modified position (that is : the original position of the
+\item Let us suppose that you did modify the position of a given surface and saved its position.
+\item Then you have saved the surface in its current modified position (= the original position of the
 surface is lost).
 \end{itemize}
 
-For some reason, you may need to open the surface in its original position. To do so, you may apply this option (apply transposed position matrix to the modified surface).
-Note : this option only works if the aspect matrix was not modified.
+It may happen that you need to open the surface in its original position. To do so, you may apply this option (apply transposed position matrix to the modified surface).
 
-\subsection{Save position}
+\subsection{Open position for selected landmarks/flags}
+If no landmark/flag is selected, the following message
+appears:\\
+\includegraphics[scale=0.5]{images/07/position/no_landmark_selected.png}
+\\
+This options may be useful when you have digitized landmarks/flags on a given surface in its original position and orientation. Let us suppose that in a second step, you need to modify the position/orientation of that surface object and that you save it in a .POS file. You may then apply this .POS file to your set of landmarks/flags.
+
+\subsection{Open transposed position for selected landmarks/flags}
+If you have digitized landmarks/flags on a surface with a modified position (let us assume that the position of this surface is saved within a .POS file), by using this option, you can replace this landmarks/flags dataset on the surface in its original orientation. 
+
+
+\subsection{Save position for selected surfaces}
 Surface aspect and position matrices can be saved in ``.pos" format. If no surface is selected, the
 following message appears:\\
-\includegraphics[scale=0.5]{images/File/save_pos1.png}
+\includegraphics[scale=0.5]{images/07/position/no_surface_selected.png}
 \\
 If at least 2 surfaces selected, the following message shows up:\\
-\includegraphics[scale=0.5]{images/File/save_pos2png.png}
+\includegraphics[scale=0.5]{images/07/position/at_least_2_surfaces_selected.png}
 
-\subsection{Edit manually aspect and position matrices}
-There are two ways to access the object matrix editor :
-\begin{itemize}
-
-\item Either select one surface and click on ``\includegraphics[scale=0.7]{images/pixmap/mat.png}"(edit first selected object position and aspect matrices).
-\item Or select one surface and click on ``edit selected surfaces$\rightarrow$Rendering modifications$\rightarrow$ edit first
-selected object position and aspect matrices".
-\end{itemize}
-
-
-
-This opens the ``Object Matrix" window, in which the aspect and position matrices can be edited. See ``Edit selected surfaces" section \ref{edit_mat_section} (Rendering modifications$\rightarrow$ edit first selected object position and aspect matrices) for further information.
-
+\subsection{Edit manually position matrix}
+Clicking on "\includegraphics[scale=0.7]{images/06/objects/actor_edit.png}" opens the "Edit first selected surface" window (Fig. \ref{actor_edit}), in which the position matrix of a given actor can be modified.
 
 
 
 \section{Landmarks}
-As mentioned earlier, landmarks can be set on surfaces by pressing ``L" + left mouse click.\\
+Landmarks can be set on surfaces by pressing ``L" + left mouse click.\\
 
-Two series ofconventional landmarks can be set : ``normal" and ``target" landmarks. As mentioned earlier, in the ``normal" landmark mode (button \includegraphics[scale=0.7]{images/pixmap/Landmarks4.png} active), pressing ``L" + left mouse click results in
-the creation a ``normal" landmark (a red one). In the ``target" landmark mode (button \includegraphics[scale=0.7]{images/pixmap/Landmarks6.png} active),
-pressing ``L" + left mouse click will create a ``target" landmark (a yellow one). ``Normal" and ``target" landmarks can be loaded and saved.\\
-Selected ``normal"/"target" landmarks can be reordered using the following buttons. Pressing ``\includegraphics[scale=0.7]{images/pixmap/s_dessous_17.png}"
-will place the selected landmarks earlier in the ``normal"/"target" landmark list, while pressing ````\includegraphics[scale=0.7]{images/pixmap/s_dessus_17.png}""
-will place them one step further, respectively.\\\\
-ISE-MeshTools can manage three types of landmark files: ``.LMK", ``.VER" and ``.STV" files.
+Two series of conventional landmarks can be set : ``normal" and ``target" landmarks. In the ``normal" landmark mode (button \includegraphics[scale=0.7]{images/04/normal_landmarks.png} active), pressing ``L" + left mouse click results in the creation a ``normal" landmark (a light green one). In the ``target" landmark mode (button \includegraphics[scale=0.7]{images/04/target_landmarks.png} active),
+pressing ``L" + left mouse click will create a ``target" landmark (a yellow transparent one).
+
+ ``Normal" and ``target" landmarks can be loaded and saved.\\
+Selected landmarks can be reordered using the following buttons. Pressing ``\includegraphics[scale=0.7]{images/06/objects/move_up.png}"
+will (try to) increase the number of all selected landmarks, while pressing ````\includegraphics[scale=0.7]{images/06/objects/move_down.png}""
+will (try to) decrease their number, respectively.\\\\
+MorphoDig can manage three types of landmark files: ``.LMK", ``.VER" and ``.STV" files.
 \begin{itemize}
 \item 
  .LMK files contain a series of lines, each line
@@ -222,58 +212,79 @@ characters.
 of lines, each line being
 constructed the following
 way (see Fig. \ref{VER_file}): landmark name (without space or tab character), landmark coordinates, landmark orientation.
-\item .STV files may contain one or two series of line. The first line contains two integers, the first being the type of landmark (0 for ``normal" or 1 for ``target"), the second being the number of lines of landmarks of this type which are expected to follow, constructed the following way: landmark name (without space or tab character), landmark coordinates, landmark orientation. An example of .STV file containing both ``normal" and ``target" landmarks is given in Fig. \ref{STV_file}. Note that the number of ``normal" and ``target" landmarks saved within a .STV file can differ.
+\item STV files may contain one or two series of line. The first line contains two integers, the first being the type of landmark (0 for ``normal" or 1 for ``target"), the second being the number of lines of landmarks of this type which are expected to follow, constructed the following way: landmark name (without space or tab character), landmark coordinates, landmark orientation. An example of .STV file containing both ``normal" and ``target" landmarks is given in Fig. \ref{STV_file}. Note that the number of ``normal" and ``target" landmarks saved within a .STV file can differ.
 \end{itemize}
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{images/Landmarks/LMK_file.png}
+  \includegraphics[scale=0.5]{images/07/landmarks/LMK_file.png}
  \caption{Example of .LMK file}
 \label{LMK_file}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{images/Landmarks/VER_file.png}
+  \includegraphics[scale=0.5]{images/07/landmarks/VER_file.png}
  \caption{Example of .VER file}
 \label{VER_file}
 \end{figure}
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{images/Landmarks/STV_file.png}
- \caption{Example of .STV file}
+  \includegraphics[scale=0.5]{images/07/landmarks/STV_file.png}
+ \caption{Example of .STV file. We advise you to use this file format.}
 \label{STV_file}
 \end{figure}
 
-\subsection{Load landmarks}
-Landmarks opened using this option will be put in the ``normal" landmark list (red landmarks)
-\subsection{Save landmarks}
-You may decide whether you wish to save only selected ``normal" landmarks or all selected and
-unselected ``normal" landmarks (the red ones).
-\subsection{Save target landmarks}
-You may decide whether you wish to save only selected ``target" landmarks or all selected and
-unselected ``target" landmarks (the red ones).
-The ``Landmarks" chapter (chapter \ref{landmark_chapter}) and the tutorial ``working with landmarks" contain further information regarding landmark digitization with ISE-MeshTools
-\subsection{Load source and target landmarks}
-Landmarks opened using this option will put in the ``normal" and/or ``target" landmark lists depending on how the .STV file is constructed.
+\subsection{Open MorphoDig Landmark/Curve File (STV)}
+STV file contain lists of "normal", "target" landmarks (but may also contain lists of "curve node" and "curve handle" landmarks).
+\subsection{Open Landmarks}
+Landmarks (.VER or .LMK) opened using this option will be put in the ``normal" landmark list (light green landmarks)
+\subsection{Open Target Landmarks}
+Landmarks opened using this option will be put in the ``target" landmark list (yellow transparent landmarks)
+\subsection{Save MorphoDig Landmark/Curve File (STV)}
+You may decide whether you wish to save all (normal, target, curve node, curve handle) landmarks or only selected ones (see Fig. \ref{save_stv}).
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/07/landmarks/save_stv.png}
+ \caption{Save STV window.}
+\label{save_stv}
+\end{figure}
 
-\subsection{Save source and target landmarks}\label{STV_section}
-All ``normal" and``target" landmarks will be saved inside the .STV file.
+\subsection{Save Landmarks}
+You may decide whether you wish to save only selected ``normal" landmarks or all selected and
+unselected ``normal" landmarks (the yellow transparent ones) in .VER or .LMK format (see Fig. \ref{save_ver_lmk}).
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/07/landmarks/save_ver_lmk.png}
+ \caption{Save Landmark Window. Used to save either "Normal", "Target" landmarks (but not both at the same time). This windows is also used to save curve nodes or curve handles in .LMK and .VER format (but also not both at the same time). }
+\label{save_ver_lmk}
+\end{figure}.
+The ``Landmarks" chapter (chapter \ref{landmark_chapter}) and the tutorial ``working with landmarks" contain further information regarding landmark digitization with MorphoDig.
+
+
+\subsection{Save Target Landmarks}
+You may decide whether you wish to save only selected ``target" landmarks or all selected and
+unselected ``target" landmarks (the yellow transparent ones) in .VER or .LMK format (see Fig. \ref{save_ver_lmk}).
+The ``Landmarks" chapter (chapter \ref{landmark_chapter}) and the tutorial ``working with landmarks" contain further information regarding landmark digitization with MorphoDig
+
 
 \section{Curves}\label{file_curve_section}
-3D Curves are constructed in ISE-MeshTools using 2 series of landmarks : a series of ``normal"
-landmarks, and a series of ``target" landmarks of equal sizes. ``Target" landmarks are referred to as
-``curve handles", when they are used to construct curves (``Target" landmarks can also be used to
-achieve TPS deformation, see later in this documentation). By default, curves are not drawn in the
-main 3D window : curves start being drawn when the checkbox ``draw curves" is checked in the menu
-``Viewing opt." (\includegraphics[scale=0.7]{images/Landmarks/Draw_curves.png}). Curves are draw green when no landmark/curve handle belonging to
-the curve is selected. Curves are drawn red when at least one landmark / curve handle involved in the
-curve is selected. Two different cases are considered:
+
+3D Curves (series of 3D cubic Bezier curves) are constructed in MorphoDig using 2 series of landmarks : a series of N ``curve node" landmarks, and a series of N ``curve handle".  Curve nodes and handles can be set on surfaces by pressing ``L" + left mouse click. In the ``curve nodes" landmark mode (button \includegraphics[scale=0.7]{images/04/curve_nodes.png} active), pressing ``L" + left mouse click results in the creation a ``curve node" landmark (a dark green for a curve starting node, and then light red ones). In the ``curve handles" landmark mode (button \includegraphics[scale=0.7]{images/04/curve_handles.png} active), pressing ``L" + left mouse click will create a ``target" landmark (a violet transparent one).
+
+Selected curve nodes/handles can be reordered using the following buttons. Pressing ``\includegraphics[scale=0.7]{images/06/objects/move_up.png}"
+will (try to) increase the number of all selected curve nodes/handles, while pressing ````\includegraphics[scale=0.7]{images/06/objects/move_down.png}""
+will (try to) decrease curve nodes/handles number, respectively.\\
+
+
+3D Bezier curves passing through all curve nodes are draw green when no curve node/handle belonging to
+the curve segment is selected. Curves are drawn red when at least one curve node/handle involved in the
+curve segment is selected. Two different cases are considered:
 \begin{itemize}
 
-\item Case 1: the numbers of ``normal" and ``handle/target" landmarks differ. In that case, a curve is a series of lines passing through ``normal" landmarks.
-\item Case 2: the numbers of ``normal" and ``handle/target" landmarks differ. In that case, a curve is a
-series of cubic Bezier curves passing through ``normal" landmarks. For a given set of 2 ``normal"
-consecutive landmarks (Ln and Ln+1) and their associated curve ``handles" (Hn and Hn+1), a mirror
+\item Case 1: the numbers of ``curve node" and ``curve handle" landmarks differ. In that case, a curve is a series of lines passing through ``curve node" landmarks.
+\item Case 2: the numbers of ``curve node" and ``curve handle" landmarks are equal. In that case, a curve is a
+series of cubic Bezier curves passing through ``normal" landmarks. For a given set of 2 ``curve node"
+consecutive landmarks (Ln and Ln+1) and their associated ``curve handles" (Hn and Hn+1), a mirror
 image of Hn+1 relative to Ln+1 (H'n+1) is constructed. The Bezier curve involving Ln, Ln+1, Hn and
 Hn+1 starts from Ln, going toward Hn, and arrives at Ln+1 coming from the direction of H'n+1.
 
@@ -284,132 +295,169 @@ The explicit form of the curve is :
 \begin{equation}
 B(t) = (1-t)^{3}Ln + 3(1-t)^{3}tHn + 3(1-t)t^{2}H'n+1 +t^{3}Ln+1, t \in[0,1]
 \end{equation}
-In order to be able to digitize several curves using a given set of normal and target landmarks,
-``normal" landmarks curves can be given 4 flags (see section \ref{landmarks_curves_section} ``Landmarks $\rightarrow$ Landmarks
-involved into curves" for further details):\\
-Flag ``0" : landmark is placed inside the curve (drawn ``red").\\
-Flag ``1" : landmark is a curve start (drawn ``green").\\
-Flag ``2" : landmark is placed inside the curve, and is a curve ``milestone" (drawn blue) .\\
-Flag ``3" : landmark is placed inside the curve, and should be connected to the preceding curve
-starting point. When landmark n is flagged that way, landmarkn+1 will be set as a curve starting point.\\
-Flag ``2" is used to decompose a given curve into curve segments (see ``export curves as landmark file"). By default, a curve comprises 1 segment\\
+\\
+In order to be able to digitize several curves using a given set of curve node and curve handle landmarks,
+``curve node" landmarks curves can be given 4 flags (see section \ref{landmarks_curves_section} ``Landmarks $\rightarrow$ selected curve node and handle landmarks" for further details):\\
+Flag ``0" : node is within a given curve segment (drawn ``red").\\
+Flag ``1" : node is the starting point of a curve segment (drawn dark ``green").\\
+Flag ``2" : node is placed inside the curve, and is a curve ``milestone" (drawn blue) .\\
+Flag ``3" : node is placed inside the curve, and should be connected to the preceding curve
+segment starting point. When curve node "N" is flagged that way, curve node "N+1" will be set automatically as a curve segment starting point.\\
+Flag ``2" is used to decompose a given curve segment into curve sub-segments. By default, a curve comprises 1 segment.\\
 Flag ``3" is used to close a curve (by default, curves are open).\\
-3D curves are loaded and saved into .CUR files, which contain a series of lines, each line being
-constructed the following way: name (without space or tab character), curve ``normal" landmark
+3D curves are loaded and saved into either .STV (more generic) or .CUR (more specific) files. CUR files which contain a series of lines, each line being
+constructed the following way: name (without space or tab character), curve ``node" landmark
 coordinates, curve ``handle" coordinates, flag.
 In the example shown below, 4 curves are defined :\\
-- an open curve starting from landmark 1 and ending at landmark 7\\
+- an open curve starting from curve node 1 and ending at landmark 7\\
 - a closed curve involving landmarks 8 to 12\\
-- a closed curve involving landmarks 13 to 20\\
+- an open curve involving landmarks 13 to 20\\
 - a closed curve involving landmarks 21 to 26\\
-These four curves contain only one segment (no curve milestone was set within those 4 curves).
-Note that each name does not need to be of the form ``landmark"+ number. Meanwhile, the name
+These four curves contain only one sub-segment (no curve milestone was set within those 4 curves).
+Note that each name does not need to be of the form ``CurvePart"+ number. Meanwhile, the name
 should not hold space or tab characters.
 \begin{figure}[t] 
   \centering
-  \includegraphics[scale=0.5]{images/Landmarks/CUR_file.png} 
+  \includegraphics[scale=0.5]{images/07/curves/CUR_file.png} 
 	\caption{Example of .CUR file}
  
 \end{figure}
 
-\subsection{Load curves}
+\subsection{Open Curve (.CUR)}
 This menu allows the user to load a .CUR file.
-\subsection{Save curves}
-This menu allows the user to save current landmarks and curve handles as a .CUR file. This action is only allowed if the number of ``normal" landmarks and ``target" landmarks is the same. If not, the following message appears:\\
-\includegraphics[scale=0.5]{images/Landmarks/Not_identical.png}
+\subsection{Open MorphoDig Landmark/Curve file (.STV)}
+This menu allows the user to load a STV file, as STF files can contain lists of curve node and curve handle landmarks (see for instance Fig. \ref{STV_file}).
+\subsection{Open Curve Node Landmarks}
+This menu allows the user place the content of a VER or LMK file inside the list of curve node landmarks.
+\subsection{Open Curve Handle Landmarks}
+This menu allows the user place the content of a VER or LMK file inside the list of curve handle landmarks.
+\subsection{Save .CUR file}
+This menu allows the user to save current landmarks and curve handles as a .CUR file. This action is only allowed if the number of ``curve node" landmarks and ``curve handle" landmarks is the same. If not, the following message appears:\\
+\includegraphics[scale=0.5]{images/07/curves/nnodes_nhandles_differ.png}
 \\
-If you are in the process of digitizing curves (and do not have achieved to digitize the same number of ``normal" and ``target"  landmarks and wish to save the current state of your work, you may decide to save a .STV file (see section \ref{STV_section}).
+If you are in the process of digitizing curves (and do not have achieved to digitize the same number of ``normal" and ``target"  landmarks and wish to save the current state of your work, you may decide to save curve node and target landmarks within a STV file instead (see next section ).
+\subsection{Save MorphoDig Landmark/Curve File (STV)}
+You may decide whether you wish to save all curve node and curve handle landmarks or only selected ones (see Fig. \ref{save_stv}). Using this option will also save "normal" and "target" landmark lists.
+\subsection{Save Curve Node Landmarks}
+Curve node landmarks can be saved inside a LMK or VER file using this option. You may decide whether you wish to save only selected ``curve node" landmarks or all selected and unselected ``curve node" landmarks in .VER or .LMK format (see Fig. \ref{save_ver_lmk}).
+
+\subsection{Save Curve Handle Landmarks}
+Curve handle landmarks can be saved inside a LMK or VER file using this option. You may decide whether you wish to save only selected ``curve handle" landmarks or all selected and unselected ``curve handle" landmarks in .VER or .LMK format (see Fig. \ref{save_ver_lmk}).
 
 
-\subsection{Export curves as landmark file}
+\subsection{Export Curves as Landmark file}
 \begin{minipage}{0.55\textwidth}
 
 Curves can be transformed in a series of equidistant
 landmarks using this option. The curve decimation window
 appears.
-Each curve/curve segment is saved as a number of
-equidistant landmarks. In the present example, each curve/
+Each curve segment is saved as a number of
+equidistant landmarks. You may also decide to save normal and target landmarks information inside the VER or LMK output. This is useful when you need to use both type 1 landmarks (normal and target landmarks) and semi-landmards (3D curves) in Geometric Morphometric analyses. 
+
+In the present example, each curve/
 curve segment is saved as 20 equidistant landmarks.
 
 \end{minipage}  
  \begin{minipage}{0.45\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Landmarks/Export_curves.png}
- \captionof{figure}{Curve decimation window}
+  \includegraphics[scale=0.5]{images/07/curves/export.png}
+ \captionof{figure}{Export curves as landmark file window}
  \end{minipage} 
 
-When pressing ``Ok", if the numbers of ``normal" landmarks and ``target" landmarks differ, the
-following message appears:\\
-\includegraphics[scale=0.5]{images/Landmarks/Can_not_export.png}
 
-\subsection{Save curve infos (length per curve ...)}
+
+\subsection{Save curve infos (length per curve segment)}
 \begin{minipage}{0.55\textwidth}
 
-Each curve /curve segment length can be saved as a .txt file
+Each curve segment length can be saved as a .txt file
 using this option.
 The ``Landmarks" chapter (chapter \ref{landmark_chapter}) and the
 tutorial ``Working with curves" contain further important
-information regarding curve digitization with ISE-MeshTools.
+information regarding curve digitization with MorphoDig.
 
 \end{minipage}  
  \begin{minipage}{0.45\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Landmarks/Curve_infos.png}
+  \includegraphics[scale=0.5]{images/07/curves/Curve_infos.png}
  \captionof{figure}{Example of curve info file}
  \end{minipage} 
 
+\section{Flags}
 
-
-\section{Tags and flags}
-
-\begin{minipage}{0.55\textwidth}
-- Tag colors and names can be edited interactively by
-clicking on \includegraphics[scale=0.7]{images/pixmap/Show_Tag_Window2.png}, which opens the tag window (see the chapter
-``Tags" (chapter \ref{tags_chapter}) and the tutorial ``Working with tags" for
-further information).\\
-- By default, Tags are not visible. To activate/deactivate tag
-display, click on \includegraphics[scale=0.7]{images/pixmap/Show_Tag_Window.png}\\
-- Using ``Tag display mode" (\includegraphics[scale=0.7]{images/pixmap/Tag_select_mode.png}) is useful when editing
-surface tags.\\
-25 Tag names and associated colors can be defined in ISEMeshTools.
-Tag colors files (.TAG) consist of 25 pairs lines,
-each pair being constructed following way :\\
-line 2*n: Tag name\\
-line 2*n+1: Tag color and transparency
-\end{minipage}  
- \begin{minipage}{0.45\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Icons/Tags.png}
- \captionof{figure}{Example of .TAG file}
- \end{minipage} 
-
-\noindent
-\begin{minipage}{0.55\textwidth}
-Regarding flags, as stated earlier, one series of ``flag landmarks" can be set in ISE-MeshTools (button \includegraphics[scale=0.7]{images/pixmap/Flag01.png} should
+Regarding flags, as stated earlier, one series of ``flag landmarks" can be set in MorphoDig (button `\includegraphics[scale=0.7]{images/04/flag_landmarks.png}" should
 be pressed). To edit flag label, length and color, select one
-flag landmark, click on \includegraphics[scale=0.7]{images/pixmap/Flag02.png}. The ``edit flag" window appears.
-Pressing ok will update the label, the color and the
-length associated to the selected flag, which in turn will be
-unselected. If you wish to edit a second flag, select it and press ``Refresh". The current color, length
-and label of the newly selected flag will appear in the edit flag window.
-\end{minipage}  
- \begin{minipage}{0.45\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Flags/Edit1flag.png}
- \captionof{figure}{Edit Flag window}
- \end{minipage} 
+flag landmark, click on "\includegraphics[scale=0.7]{images/06/objects/flag_edit.png}" in order to open the "Edit first selected landmark" window (Fig. \ref{flag_edit}). Pressing ok will update the label, the color and the length associated to the selected flag, which in turn will be unselected. 
+
 \noindent
-Flags are saved using the .FLG file format, which consists of n pairs of lines constructed the following way :\\
+Flags are saved using the .FLG file format, which consists of n pairs of lines constructed the following way (Fig. \ref{FLG_file}):\\
 line 2*n: Flag name\\
 line 2*n+1: Flag coordinates, flag orientation, flag length and color.
 
-\subsection{Load tag colors and labels}
-Select a .TAG file using this menu $\rightarrow$ Then open the tag window (\includegraphics[scale=0.7]{images/pixmap/Show_Tag_Window2.png}) : Tag labels, colors and
-transparencies should have been updated.
-\subsection{Save tag colors and labels}
-This option saves the current state of tag labels, colors and transparencies in a .TAG file.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/07/flags/FLG_file.png}
+ \caption{Example of .FLG file}
+\label{FLG_file}
+\end{figure}
 
 \subsection{Load flags}
 Select a .FLG file using this menu
 
 \subsection{Save flags}
 This option saves the current flag landmarks into a .FLG file, regardless their selection status.
+
+
+\section{Tag maps}
+
+
+- Tag colors and names (=tag maps) can be edited interactively by
+clicking on \includegraphics[scale=0.7]{images/07/tagmaps/tagmaps.png}, which opens the Tags window (see the chapter
+``Tags" (chapter \ref{tags_chapter}) and the tutorial ``Working with tags" for
+further information).\\
+- Tags become visible when the array display mode button is pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a tag array is selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_tag.png}).
+
+Tag maps consist mostly of a series of combination of a tag name and an associated color.  Any number of tag name + color can be defined (25 different names+colors by default, but this number can be interactively increased/decreased).
+Tag map files come in two formats : .TAG and .TGP.
+
+\begin{minipage}{0.55\textwidth}
+TAG format consists of N pairs of lines, can store one single tag map, and is constructed the following way:
+line 2*n: Tag name\\
+line 2*n+1: Tag color and transparency
+\end{minipage}  
+ \begin{minipage}{0.45\textwidth}\centering
+  \includegraphics[scale=0.5]{images/07/tagmaps/TAG_file.png}
+ \captionof{figure}{Example of .TAG file}
+ \end{minipage} 
+
+\noindent
+
+\begin{minipage}{0.55\textwidth}
+TGP format differs from TAG in that it can store several tag maps and gives a name to each tag map. An example of TGP file containing 2 tag maps is shown aside.\\
+line 2*n: Tag name\\
+line 2*n+1: Tag color and transparency
+\end{minipage}  
+ \begin{minipage}{0.45\textwidth}\centering
+  \includegraphics[scale=0.5]{images/07/tagmaps/TGP_file.png}
+ \captionof{figure}{Example of .TGP file containing two tag maps. The first contains 3 entries, the second 4 entries. }
+ \end{minipage} 
+
+\noindent
+
+
+
+\subsection{Import tag maps (.TGP or .TAG)}
+Imports one tag map (.TAG or .TGP file) or several tag maps (.TGP file). Then open the tag window (click on \includegraphics[scale=0.7]{images/07/tagmaps/tagmaps.png}) : Tag labels, colors and transparencies should have been updated. In the "Tags window", you can switch between different tag maps with the combo box "Chose tag map".
+
+\subsection{Export tag maps (.TGP or .TAG)}
+
+\begin{minipage}{0.55\textwidth}
+This option opens the Export tag maps windows, in which the active tag map, all tag maps, or all custom tag maps can be saved inside either a .TAG file (if only one tag map should be saved) or inside a .TGP file (one or several tag maps).
+
+
+\end{minipage}  
+ \begin{minipage}{0.45\textwidth}\centering
+  \includegraphics[scale=0.5]{images/07/tagmaps/export.png}
+ \captionof{figure}{Export tag maps window.}
+ \end{minipage} 
+
 
 \section{Save infos (surface area, volume...)}
 \noindent
