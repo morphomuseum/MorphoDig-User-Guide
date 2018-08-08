@@ -3,7 +3,7 @@
 
 
 \section{Project}
-When working with multiple surface objects, loading surfaces and associated positions one by one becomes fastidious. Besides, after having digitized landmarks, flags, after having set tag names and colors, or after having defined orientation labels, you may wish to open or save this information along with surface files. You may open and save series of surface files and associated position matrices, landmarks, flags, tag colors and labels and orientation labels using this menu. ``Project" files (.ntw) files are organized the following way (see Fig. \ref{project_file}):\\
+When working with multiple surface objects, loading surfaces and associated positions one by one becomes fastidious. Besides, after having digitized landmarks, flags, after having set tag names and colors, or after having defined orientation labels, you may wish to open or save this information along with surface files. You may open and save series of surface files and associated position matrices, landmarks, flags, tag colors and labels and orientation labels using this menu. ``Project" files (.ntw) files are organized the following way (see Fig. \ref{project_file} p.\pageref{project_file}):\\
 - Optional: name of orientation label file (.ori)\\
 - Optional: name of tag file (.tag)\\
 - Optional: name of flag file (.flg)\\
@@ -37,14 +37,14 @@ Loads a .ntw file
  \captionof{figure}{Save project window.}
 \label{save_project_file}
 \end{figure}
-Behavior: only selected elements (surface objects, landmarks, flags...) are saved within projects. If at least one opened element has been selected, the Save project window (\ref{save_project_file}) opens and asks whether :  
+Behavior: only selected elements (surface objects, landmarks, flags...) are saved within projects. If at least one opened element has been selected, the Save project window (\ref{save_project_file} p.\pageref{save_project_file}) opens and asks whether :  
 \begin{itemize}
 \item orientation labels should be saved along with the project (by default, orientation labels are not saved, as orientation labels are quite rarely set by users). 
 \item tag legends and colors (tag maps) should by saved. By default, .tag file are not saved along with the project, as tag setting is not a common task. 
 \item save surfaces as. VTK polydata or PLY. We advise you to save your surfaces as VTK polydata. In the contrary cases scalar,  tag arrays and all RGB arrays having a name different from "RGB" will be lost.
 \item save position inside .POS file, or apply the position to surfaces. We advise you to save position inside .POS file (otherwise, the initial orientations of your surfaces will be lost). 
 \end{itemize}
-Each surface file will be given the name of the original file. Each position file will be given a name which starts with the name of the associated surface and ends with the name of the project (1 exception: when the project contains only one surface and  the project's name is the same as that of the surface. In that case, .pos file names are not postfixed with the name of the project). In the .ntw file example shown in Fig. \ref{project_file}, the surface files are 
+Each surface file will be given the name of the original file. Each position file will be given a name which starts with the name of the associated surface and ends with the name of the project (1 exception: when the project contains only one surface and  the project's name is the same as that of the surface. In that case, .pos file names are not postfixed with the name of the project). In the .ntw file example shown in Fig. \ref{project_file} p.\pageref{project_file}, the surface files are 
 \begin{itemize}
 \item ``Hippopotamus\_amphibius\_braincase.vtk" 
 \item ``Hippopotamus\_amphibius\_bulla.vtk" 
@@ -53,7 +53,7 @@ Each surface file will be given the name of the original file. Each position fil
 \end{itemize}
 \noindent and the project name is ``exploded.ntw". The advantage of naming position files that way is you may construct different .ntw files with different associated surface files using a same set of surfaces. Requirement : all selected surfaces saved via this option
 need to have distinct names. Note : When working with ``project" files, if several surface objects have the same name, you may need at
-some point to rename some of the object surfaces in order to make sure that all surface objects have a distinct name. To do so, select one surface, click on \includegraphics[scale=0.7]{images/06/objects/actor_edit.png}: the ``Edit first selected surface" window appears (See Fig. \ref{actor_edit} in preceding chapter).
+some point to rename some of the object surfaces in order to make sure that all surface objects have a distinct name. To do so, select one surface, click on \includegraphics[scale=0.7]{images/06/objects/actor_edit.png}: the ``Edit first selected surface" window appears (See Fig. \ref{actor_edit} p.\pageref{actor_edit} in preceding chapter).
 
 
 
@@ -135,7 +135,7 @@ ASCII formats.
 
 \section{Position}
 In MorphoDig, surface position consists in two
-4*4 square matrices: the first matrix is currently not read nor used anymore by MorphoDig, but is kept for compatibility issues with older versions of MorphoDig and of ISE-MeshTools (MorphoDig is a major redesign of an older software, ISE-MeshTools). This first matrix will disappear in a near future.  The second matrix is the one that matters: the position matrix. It contains the rotation and translation information of 3D objects (3D surfaces and landmarks). These 2 matrices can be opened and saved in ``.pos" format (see Fig. \ref{position_file}).
+4*4 square matrices: the first matrix is currently not read nor used anymore by MorphoDig, but is kept for compatibility issues with older versions of MorphoDig and of ISE-MeshTools (MorphoDig is a major redesign of an older software, ISE-MeshTools). This first matrix will disappear in a near future.  The second matrix is the one that matters: the position matrix. It contains the rotation and translation information of 3D objects (3D surfaces and landmarks). These 2 matrices can be opened and saved in ``.pos" format (see Fig. \ref{position_file} p.\pageref{position_file}).
 
 
 \begin{figure}
@@ -186,7 +186,7 @@ If at least 2 surfaces selected, the following message shows up:\\
 \includegraphics[scale=0.5]{images/07/position/at_least_2_surfaces_selected.png}
 
 \subsection{Edit manually position matrix}
-Clicking on "\includegraphics[scale=0.7]{images/06/objects/actor_edit.png}" opens the "Edit first selected surface" window (Fig. \ref{actor_edit}), in which the position matrix of a given actor can be modified.
+Clicking on "\includegraphics[scale=0.7]{images/06/objects/actor_edit.png}" opens the "Edit first selected surface" window (Fig. \ref{actor_edit} p.\pageref{actor_edit}), in which the position matrix of a given actor can be modified.
 
 
 
@@ -204,15 +204,15 @@ MorphoDig can manage three types of landmark files: ``.LMK", ``.VER" and ``.STV"
 \begin{itemize}
 \item 
  .LMK files contain a series of lines, each line
-being constructed the following way (see Fig. \ref{LMK_file}): landmark
+being constructed the following way (see Fig. \ref{LMK_file} p.\pageref{LMK_file}): landmark
 name (without space or tab character),
 landmark coordinates. Note that each landmark name does not need to be of the form ``landmark"+landmark number. Meanwhile, the name should not hold space or tab
 characters.
 \item .VER files contain a series
 of lines, each line being
 constructed the following
-way (see Fig. \ref{VER_file}): landmark name (without space or tab character), landmark coordinates, landmark orientation.
-\item STV files may contain one or two series of line. The first line contains two integers, the first being the type of landmark (0 for ``normal" or 1 for ``target"), the second being the number of lines of landmarks of this type which are expected to follow, constructed the following way: landmark name (without space or tab character), landmark coordinates, landmark orientation. An example of .STV file containing both ``normal" and ``target" landmarks is given in Fig. \ref{STV_file}. Note that the number of ``normal" and ``target" landmarks saved within a .STV file can differ.
+way (see Fig. \ref{VER_file} p.\pageref{VER_file}): landmark name (without space or tab character), landmark coordinates, landmark orientation.
+\item STV files may contain one or two series of line. The first line contains two integers, the first being the type of landmark (0 for ``normal" or 1 for ``target"), the second being the number of lines of landmarks of this type which are expected to follow, constructed the following way: landmark name (without space or tab character), landmark coordinates, landmark orientation. An example of .STV file containing both ``normal" and ``target" landmarks is given in Fig. \ref{STV_file} p.\pageref{STV_file}. Note that the number of ``normal" and ``target" landmarks saved within a .STV file can differ.
 \end{itemize}
 \begin{figure}
   \centering
@@ -241,7 +241,7 @@ Landmarks (.VER or .LMK) opened using this option will be put in the ``normal" l
 \subsection{Open Target Landmarks}
 Landmarks opened using this option will be put in the ``target" landmark list (yellow transparent landmarks)
 \subsection{Save MorphoDig Landmark/Curve File (STV)}
-You may decide whether you wish to save all (normal, target, curve node, curve handle) landmarks or only selected ones (see Fig. \ref{save_stv}).
+You may decide whether you wish to save all (normal, target, curve node, curve handle) landmarks or only selected ones (see Fig. \ref{save_stv} p.\pageref{save_stv}).
 \begin{figure}
   \centering
   \includegraphics[scale=0.5]{images/07/landmarks/save_stv.png}
@@ -251,20 +251,20 @@ You may decide whether you wish to save all (normal, target, curve node, curve h
 
 \subsection{Save Landmarks}
 You may decide whether you wish to save only selected ``normal" landmarks or all selected and
-unselected ``normal" landmarks (the yellow transparent ones) in .VER or .LMK format (see Fig. \ref{save_ver_lmk}).
+unselected ``normal" landmarks (the yellow transparent ones) in .VER or .LMK format (see Fig. \ref{save_ver_lmk} p.\pageref{save_ver_lmk}).
 \begin{figure}
   \centering
   \includegraphics[scale=0.5]{images/07/landmarks/save_ver_lmk.png}
  \caption{Save Landmark Window. Used to save either "Normal", "Target" landmarks (but not both at the same time). This windows is also used to save curve nodes or curve handles in .LMK and .VER format (but also not both at the same time). }
 \label{save_ver_lmk}
 \end{figure}.
-The ``Landmarks" chapter (chapter \ref{landmark_chapter}) and the tutorial ``working with landmarks" contain further information regarding landmark digitization with MorphoDig.
+The ``Landmarks" chapter (chapter \ref{landmark_chapter} p.\pageref{landmark_chapter}) and the tutorial ``working with landmarks" contain further information regarding landmark digitization with MorphoDig.
 
 
 \subsection{Save Target Landmarks}
 You may decide whether you wish to save only selected ``target" landmarks or all selected and
-unselected ``target" landmarks (the yellow transparent ones) in .VER or .LMK format (see Fig. \ref{save_ver_lmk}).
-The ``Landmarks" chapter (chapter \ref{landmark_chapter}) and the tutorial ``working with landmarks" contain further information regarding landmark digitization with MorphoDig
+unselected ``target" landmarks (the yellow transparent ones) in .VER or .LMK format (see Fig. \ref{save_ver_lmk} p.\pageref{save_ver_lmk}).
+The ``Landmarks" chapter (chapter \ref{landmark_chapter} p.\pageref{landmark_chapter}) and the tutorial ``working with landmarks" contain further information regarding landmark digitization with MorphoDig
 
 
 \section{Curves}\label{file_curve_section}
@@ -297,7 +297,7 @@ B(t) = (1-t)^{3}Ln + 3(1-t)^{3}tHn + 3(1-t)t^{2}H'n+1 +t^{3}Ln+1, t \in[0,1]
 \end{equation}
 \\
 In order to be able to digitize several curves using a given set of curve node and curve handle landmarks,
-``curve node" landmarks curves can be given 4 flags (see section \ref{landmarks_curves_section} ``Landmarks $\rightarrow$ selected curve node and handle landmarks" for further details):\\
+``curve node" landmarks curves can be given 4 flags (see section \ref{landmarks_curves_section} p.\pageref{landmarks_curves_section} ``Landmarks $\rightarrow$ selected curve node and handle landmarks" for further details):\\
 Flag ``0" : node is within a given curve segment (drawn ``red").\\
 Flag ``1" : node is the starting point of a curve segment (drawn dark ``green").\\
 Flag ``2" : node is placed inside the curve, and is a curve ``milestone" (drawn blue) .\\
@@ -326,7 +326,7 @@ should not hold space or tab characters.
 \subsection{Open Curve (.CUR)}
 This menu allows the user to load a .CUR file.
 \subsection{Open MorphoDig Landmark/Curve file (.STV)}
-This menu allows the user to load a STV file, as STF files can contain lists of curve node and curve handle landmarks (see for instance Fig. \ref{STV_file}).
+This menu allows the user to load a STV file, as STF files can contain lists of curve node and curve handle landmarks (see for instance Fig. \ref{STV_file} p.\pageref{STV_file}).
 \subsection{Open Curve Node Landmarks}
 This menu allows the user place the content of a VER or LMK file inside the list of curve node landmarks.
 \subsection{Open Curve Handle Landmarks}
@@ -337,12 +337,12 @@ This menu allows the user to save current landmarks and curve handles as a .CUR 
 \\
 If you are in the process of digitizing curves (and do not have achieved to digitize the same number of ``normal" and ``target"  landmarks and wish to save the current state of your work, you may decide to save curve node and target landmarks within a STV file instead (see next section ).
 \subsection{Save MorphoDig Landmark/Curve File (STV)}
-You may decide whether you wish to save all curve node and curve handle landmarks or only selected ones (see Fig. \ref{save_stv}). Using this option will also save "normal" and "target" landmark lists.
+You may decide whether you wish to save all curve node and curve handle landmarks or only selected ones (see Fig. \ref{save_stv} p.\pageref{save_stv}). Using this option will also save "normal" and "target" landmark lists.
 \subsection{Save Curve Node Landmarks}
-Curve node landmarks can be saved inside a LMK or VER file using this option. You may decide whether you wish to save only selected ``curve node" landmarks or all selected and unselected ``curve node" landmarks in .VER or .LMK format (see Fig. \ref{save_ver_lmk}).
+Curve node landmarks can be saved inside a LMK or VER file using this option. You may decide whether you wish to save only selected ``curve node" landmarks or all selected and unselected ``curve node" landmarks in .VER or .LMK format (see Fig. \ref{save_ver_lmk} p.\pageref{save_ver_lmk}).
 
 \subsection{Save Curve Handle Landmarks}
-Curve handle landmarks can be saved inside a LMK or VER file using this option. You may decide whether you wish to save only selected ``curve handle" landmarks or all selected and unselected ``curve handle" landmarks in .VER or .LMK format (see Fig. \ref{save_ver_lmk}).
+Curve handle landmarks can be saved inside a LMK or VER file using this option. You may decide whether you wish to save only selected ``curve handle" landmarks or all selected and unselected ``curve handle" landmarks in .VER or .LMK format (see Fig. \ref{save_ver_lmk} p.\pageref{save_ver_lmk}).
 
 
 \subsection{Export Curves as Landmark file}
@@ -370,7 +370,7 @@ curve segment is saved as 20 equidistant landmarks.
 
 Each curve segment length can be saved as a .txt file
 using this option.
-The ``Landmarks" chapter (chapter \ref{landmark_chapter}) and the
+The ``Landmarks" chapter (chapter \ref{landmark_chapter} p.\pageref{landmark_chapter}) and the
 tutorial ``Working with curves" contain further important
 information regarding curve digitization with MorphoDig.
 
@@ -382,12 +382,12 @@ information regarding curve digitization with MorphoDig.
 
 \section{Flags}
 
-Regarding flags, as stated earlier, one series of ``flag landmarks" can be set in MorphoDig (button `\includegraphics[scale=0.7]{images/04/flag_landmarks.png}" should
+Regarding flags, as stated earlier, one series of ``flag landmarks" can be digitized in MorphoDig (button `\includegraphics[scale=0.7]{images/04/flag_landmarks.png}" should
 be pressed). To edit flag label, length and color, select one
-flag landmark, click on "\includegraphics[scale=0.7]{images/06/objects/flag_edit.png}" in order to open the "Edit first selected landmark" window (Fig. \ref{flag_edit}). Pressing ok will update the label, the color and the length associated to the selected flag, which in turn will be unselected. 
+flag landmark, click on "\includegraphics[scale=0.7]{images/06/objects/flag_edit.png}" in order to open the "Edit first selected landmark" window (Fig. \ref{flag_edit} p.\pageref{flag_edit}). Pressing ok will update the label, the color and the length associated to the selected flag, which in turn will be unselected. 
 
 \noindent
-Flags are saved using the .FLG file format, which consists of n pairs of lines constructed the following way (Fig. \ref{FLG_file}):\\
+Flags are saved using the .FLG file format, which consists of n pairs of lines constructed the following way (Fig. \ref{FLG_file} p.\pageref{FLG_file}):\\
 line 2*n: Flag name\\
 line 2*n+1: Flag coordinates, flag orientation, flag length and color.
 
@@ -405,16 +405,56 @@ Select a .FLG file using this menu
 This option saves the current flag landmarks into a .FLG file, regardless their selection status.
 
 
+\section{Color maps}
+
+
+- Color maps are used to visualize scalar arrays (=arrays of numbers associated to each vertex) and can be edited interactively by
+clicking on \includegraphics[scale=0.7]{images/07/colormaps/colormaps.png}, which opens the "Scalar rendering options" window (see chapter
+``Scalars" (chapter \ref{scalars_chapter} p.\pageref{scalars_chapter}) and the tutorial ``Working with scalars" for
+further information).\\
+- Scalars become visible when the array display mode button is pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a scalar array is selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_scalar.png}).\\
+Two default color maps exist in MorphoDig, which can be edited, but not deleted : the "Rainbow" the "Black-Red-White" color maps. Any number of additional color maps can be added to the list of existing color maps, and are referred to as "custom color maps".
+
+
+An example of color map (.MAP) file and how it translates into an actual color/opacity map is shown Fig. \ref{color_map_example} p.\pageref{color_map_example}):\\
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/07/colormaps/example.png}
+ \caption{A. Example of .MAP file containing one single colormap named "Rainbow", and having 5 color and 4 opacity control points. B. Translation of this colormap inside MorphoDig.}
+\label{color_map_example}
+\end{figure}
+
+
+\subsection{Import color maps (.MAP)}
+Imports one or several color maps included inside a .MAP file. 
+
+\subsection{Export color maps (.MAP)}
+
+\begin{minipage}{0.55\textwidth}
+This option opens the Export color maps window, in which the active color map, all color maps (the 2 default color maps + all custom color maps), or all custom color maps can be saved inside a .MAP file.
+
+
+\end{minipage}  
+ \begin{minipage}{0.45\textwidth}\centering
+  \includegraphics[scale=0.5]{images/07/colormaps/export.png}
+ \captionof{figure}{Export color maps window.}
+ \end{minipage} 
+
+
 \section{Tag maps}
 
 
 - Tag colors and names (=tag maps) can be edited interactively by
 clicking on \includegraphics[scale=0.7]{images/07/tagmaps/tagmaps.png}, which opens the Tags window (see the chapter
-``Tags" (chapter \ref{tags_chapter}) and the tutorial ``Working with tags" for
+``Tags" (chapter \ref{tags_chapter} p.\pageref{tags_chapter}) and the tutorial ``Working with tags" for
 further information).\\
 - Tags become visible when the array display mode button is pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a tag array is selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_tag.png}).
 
-Tag maps consist mostly of a series of combination of a tag name and an associated color.  Any number of tag name + color can be defined (25 different names+colors by default, but this number can be interactively increased/decreased).
+Tag maps consist mostly of a series of combination of a tag name and an associated color.  Any number of tag name + color can be defined (25 different names+colors by default, but this number can be interactively increased/decreased).\\
+By default, MorphoDig contains one Tag maps named "TagMap", which can not be deleted, but can be edited as needed. Other tag maps can be added manually to tag map list, and are referred to as "custom tag maps". 
+
+
 Tag map files come in two formats : .TAG and .TGP.
 
 \begin{minipage}{0.55\textwidth}
@@ -449,7 +489,7 @@ Imports one tag map (.TAG or .TGP file) or several tag maps (.TGP file). Then op
 \subsection{Export tag maps (.TGP or .TAG)}
 
 \begin{minipage}{0.55\textwidth}
-This option opens the Export tag maps windows, in which the active tag map, all tag maps, or all custom tag maps can be saved inside either a .TAG file (if only one tag map should be saved) or inside a .TGP file (one or several tag maps).
+This option opens the Export tag maps window, in which the active tag map, all tag maps (= default tag map + all custom tag maps), or all custom tag maps can be saved inside either a .TAG file (if only one tag map should be saved) or inside a .TGP file (one or several tag maps).
 
 
 \end{minipage}  
@@ -458,31 +498,79 @@ This option opens the Export tag maps windows, in which the active tag map, all 
  \captionof{figure}{Export tag maps window.}
  \end{minipage} 
 
-
-\section{Save infos (surface area, volume...)}
-\noindent
-\begin{minipage}{0.55\textwidth}
-
-Surface area, volume, triangle number and
-vertex number of selected surface objects can be
-saved in a .txt file using this option.
-\end{minipage}  
- \begin{minipage}{0.45\textwidth}\centering
-  \includegraphics[scale=0.4]{images/File/Infos.png}
- \captionof{figure}{Example of info file}
- \end{minipage} 
-\noindent
-
-Note: surface objects should be closed in order to provide a correct estimation of object volume.
-\section{Orientation labels}
+\section{Orientation helper labels}
 The coordinate system orientation helper labels can be saved into ``.ORI" files, which are .txt files
 containing 6 lines, 1 for each axis.
 
 
-\subsection{Load orientation labels}
-Select a .ORI file using this menu $\rightarrow$ Then open the orientation labels window window (Viewing opt;
+\subsection{Open Orientation labels}
+Select a .ORI file using this menu.  Then open the orientation labels window window (Edit$\rightarrow$Edit 
 Orientation labels) : the 6 orientation labels should have been updated.
 
-\subsection{Save orientation labels}
+\subsection{Save Orientation labels}
 This option saves the current state of orientation labels in a .ORI file.
 
+\section{Measurements}
+\subsection{Save area, volume, triangle number and vertex number of selected surfaces}
+\noindent
+Surface area, volume, triangle number and vertex number of all selected surface objects can be saved in a .txt file using this option.\\
+\noindent Note: surface objects should be closed in order to provide a correct estimation of object volume.
+
+\subsection{Save normalized shape index, area and volume of selected surfaces}
+\noindent
+Surface normalized shape index (NSI), surface area and surface volume of all selected surface objects can be saved in a .txt file using this option.\\
+For a given surface of area "SA" and of volume "V", "NSI" is a measurement of how much the ratio between surface area and surface volume differs from that of a sphere. It is defined as: 
+
+\begin{equation}
+NSI = F \dfrac{\sqrt[2](SA)}{\sqrt[3](V)}
+\end{equation}
+
+where F is a constant defined so that perfectly spherical 3D surfaces express a NSI index equal to 1, and higher values for non spherical shapes:
+\begin{equation}
+F = \dfrac{\sqrt[3](\dfrac{4}{3}\pi)}{2\sqrt[2](\pi)}
+\end{equation}
+\subsection{Save convex hull area ratio and convex hull normalized shape index of selected surfaces (warning: slow}
+\noindent
+Convex hull area ratio (ChAR), convex hull normalized shape index (ChNSI), surface area, surface volume, convex hull, convex hull volume and surface normalized shape index (NSI: defined in the preceding section) of all selected surface objects can be saved in a .txt file using this option.\\
+
+\subsubsection{ChAR}
+
+\noindent For a given surface of area "SA", ChAR is the ratio between "SA" and the surface area of the convex hull of that same surface (ChSA). Its aim is to compare the surface area of a surface with that of that of a "wrapping bag" that would enclose that surface. It is defined as: 
+
+
+\begin{equation}
+ChAR = \dfrac{SA}{ChSA}
+\end{equation}
+
+\noindent Perfectly spherical 3D surfaces express a ChSA index equal to 1 while, while hihly folded structures (such as turbinates)  usually express values higher than 1. Shapes spread in space and containing a lot of holes may express ChSA values smaller than 1.
+
+\subsubsection{ChNSI}
+\noindent For a given surface of area "SA" and of volume "V", "ChNSI" measures how much surface area "SA" can be enclosed within the volume of the convex hull ("ChV") computed for that same surface It is defined as: 
+
+\begin{equation}
+ChNSI = F \dfrac{\sqrt[2](SA)}{\sqrt[3](ChV)}
+\end{equation}
+
+\noindent where F is a constant defined so that perfectly spherical 3D surfaces express a ChNSI index equal to 1 :
+\begin{equation}
+F = \dfrac{\sqrt[3](\dfrac{4}{3}\pi)}{2\sqrt[2](\pi)}
+\end{equation}
+
+\noindent Perfectly spherical 3D surfaces express a ChNSI index equal to 1. Hihly folded structures (such as turbinates) usually express ChNSI values higher than 1. Shapes spread in space and containing a lot of holes may express ChSA values smaller than 1.
+
+\subsection{Save size measurements (max length in xyz direction etc.) of all selected surfaces.}
+Depending on your biological scientific question, you may need different measurements of the "size" of your structure of interes. This menu provides different "size metrics" for 3D surfaces which can be relevant. \\
+\subsubsection{Bounding box length}
+Bounding box length gives an idea of the maximal length of a 3D surface. However, this metrics depends on the orientation of the surface, so be careful when using it.
+
+\subsubsection{Mean and maximal distances to centroid}
+For a given surface containing N vertices, the centroid is defined as the average x,y,z coordinates of all N vertices. The mean distance of all N vertices to the centroid, and the maximal distance for all N vertices to the centroid give information regarding the expansion in 3D space of your structure.
+\subsubsection{PC1, PC2, PC3 length and average of PC1, PC2, PC3}
+A better alternative to the bounding box length metrics is as follows: for a given surface, MorphoDig computes a Principal Component Analysis (PCA) of all 3D vertex coordinates. Then all vertices are projected on Principal component 1 (PC1), on PC2 and on PC3. The difference between the maximal projection scores and minimal projection scores on a given PC give the length of your structure of interest along that axis. PC1 length is a measurement of the maximal length of your structure. PC2 and PC3 lengths are measurements of the maximal width and height of your structure. PC1, PC2 and PC3 length do not depend on 3D surface orientation and are in that sense much reliable metrics than bounding box length. 
+
+\subsection{Save active scalar infos (mean, median, variance ...) of all selected surfaces.}
+In order to use this option, the array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a scalar array must also be selected selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_scalar.png}).\\
+This option saves within a .txt file, and for all selected surfaces, the mean, the median, and the variance of the selected scalar.
+
+\subsection{Save scalar values of first selected surface.}
+This option saves within a .txt file, and ONLY for the first selected surface containing N vertices, all scalar values for all vertices. Ex: if a given surface contains 3 scalars (ex: thickness, curvature, complexity), the .txt file will contain the values of the 3 scalar arrays for all N vertices. 
