@@ -1,13 +1,35 @@
 
-\chapter{Edit selected surfaces}
+\chapter{Menu surfaces}
 \minitoc 
 
 
-As a prerequisite, you need to select surfaces. Only selected surfaces can be edited. 
+In most cases, these function only apply on selected surfaces, so, as a prerequisite, you almost always need to select surfaces in order to use what is described below.
 
 
 
-\section{Structure modifications}
+\section{Structure modification}
+\subsection{Smooth each selected surface}
+\noindent
+\begin{minipage}{0.5\textwidth}
+This option uses vtkSmoothPolyDataFilter.You may smooth an input
+selected surface using this option (see Fig. \ref{smooth}). A number of iteration and a
+relaxation factor are required.\\
+See vtkSmoothPolyDataFilter documentation for further information regarding this option.
+\end{minipage}    
+\begin{minipage}{0.5\textwidth}\centering
+  \includegraphics[scale=0.5]{images/09/structure/surface_smoothing_dialog.png}
+ \captionof{figure}{Surface smoothing window}
+ \end{minipage} 
+\noindent
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/Edit_selected_objects/05_smooth.png} 
+	\caption{Left: example of original input surface. Right: resulting output surface after 50 iterations using a relaxation factor of 0.1.}
+\label{smooth}
+ 
+\end{figure}
+
 \subsection{Invert}
 
 A given surface's triangles can be
@@ -90,27 +112,7 @@ This option uses vtkPolyDataConnectivityFilter.This filter produces a new surfac
 \end{figure}
 
 
-\subsection{Smooth}
-\noindent
-\begin{minipage}{0.5\textwidth}
-This option uses vtkSmoothPolyDataFilter.You may smooth an input
-selected surface using this option (see Fig. \ref{smooth}). A number of iteration and a
-relaxation factor are required.\\
-See vtkSmoothPolyDataFilter documentation for further information regarding this option.
-\end{minipage}    
-\begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Edit_selected_objects/05_smooth2.png}
- \captionof{figure}{Smoothing window}
- \end{minipage} 
-\noindent
 
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.5]{images/Edit_selected_objects/05_smooth.png} 
-	\caption{Left: example of original input surface. Right: resulting output surface after 50 iterations using a relaxation factor of 0.1.}
-\label{smooth}
- 
-\end{figure}
 
 
 
