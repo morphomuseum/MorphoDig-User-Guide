@@ -1,5 +1,5 @@
 
-\chapter{Menu surfaces}
+\chapter{Menu Surfaces}
 \minitoc 
 
 
@@ -104,15 +104,15 @@ information regarding hole filling.
 
 \end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Edit_selected_objects/09_fill_holes.png}
+  \includegraphics[scale=0.5]{images/09/structure/fill_holes_dialog.png}
  \captionof{figure}{Fill holes window}
  \end{minipage} 
 \noindent
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.25]{images/Edit_selected_objects/09_fill_holes_input_output.png} 
-	\caption{Filling holes. Left: original input surface. Number of triangles: 5535. Right: resulting output (maximal size: 1). Number of triangles: 5689.}
+  \includegraphics[scale=0.35]{images/09/structure/fill_holes_example.png} 
+	\caption{Filling holes. Left: input surface: left inner ear of \textit{Galago moholi} having a hole in the round window. Right: resulting surface output.}
 \label{fill_holes}
  
 \end{figure}
@@ -122,7 +122,7 @@ information regarding hole filling.
 
 
 
-\subsection{TPS deformation}
+\subsection{TPS deformation of each selected surface}
 \noindent
 \begin{minipage}{0.5\textwidth}
 This option uses vtkThinPlateSplineTransform filter.
@@ -135,19 +135,19 @@ space which will drive the TPS deformation (see Fig. \ref{tps}). See vtkThinPlat
 
 \end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Edit_selected_objects/06_tps.png}
- \captionof{figure}{TPS window}
+  \includegraphics[scale=0.5]{images/09/structure/tps_dialog.png}
+ \captionof{figure}{TPS dialog}
  \end{minipage} 
 \noindent
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{images/Edit_selected_objects/06_tps_input_output.png} 
-	\caption{Left: original distorted input surface. 31 ``normal"
-landmarks were placed on the surface and 31
+  \includegraphics[scale=0.31]{images/09/structure/tps_example.png} 
+	\caption{Left: original distorted input surface of the cranium and mandible of \textit{Notharctus tenebrosus} (3D surface obtained from a cast of speciman AMNH 127167 from the American Museum of Natural History, New York City, New York, USA). 46 ``normal"
+landmarks were placed on the surface and 46
 ``target" landmarks were placed in order to
 restore bilateral symmetry. Right: resulting output (deformation : 100\%). Note
-that the 31 ``target" landmarks are located on the output surface.
+that the 46 ``target" landmarks are located on the output surface.
 }
 \label{tps}
  
@@ -156,80 +156,64 @@ that the 31 ``target" landmarks are located on the output surface.
 
 
 
-\subsection{Connectivity: separate all non connected regions}
+\subsection{Connectivity: separate each selected surface into independent regions}
 \noindent
 \begin{minipage}{0.5\textwidth}
-This option uses vtkPolyDataConnectivityFilter. This filter produces a new surface for each non-connected region of the selected input surface. 3D meshes of biological objects sometimes contain a multitude of small and biologically irrelevant independent regions. This ``noise" may have multiple origins: low quality of original 3D data, state of preservation of the specimen, threshold used to be able to visualize all relevant structures, etc... In order to extract relevant independent regions, only regions reaching a minimal size (minimal number of triangles) are transformed into new surfaces (see Fig. \ref{decompose34}). This process may take some time to be completed. All produced surfaces corresponding to independent regions can be manipulated independently (see Fig. \ref{decompose5}).\end{minipage}    
+This option uses vtkPolyDataConnectivityFilter. This filter produces a new surface for each non-connected region of the selected input surface. 3D meshes of biological objects sometimes contain a multitude of small and biologically irrelevant independent regions. This ``noise" may have multiple origins: low quality of original 3D data, state of preservation of the specimen, threshold used to be able to visualize all relevant structures, etc... In order to extract relevant independent regions, only regions reaching a minimal size (minimal number of triangles) are transformed into new surfaces (see Fig. \ref{decompose34}). This process may take some time to be completed. All produced surfaces corresponding to independent regions can be manipulated independently.\end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Edit_selected_objects/03_Decompose.png}
- \captionof{figure}{Connectivity decomposition window}
+  \includegraphics[scale=0.5]{images/09/structure/surface_decomposition_dialog.png}
+ \captionof{figure}{Connectivity decomposition dialog}
  \end{minipage} 
 \noindent
 
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.3]{images/Edit_selected_objects/03_Decompose_34.png} 
-	\caption{Left: Original surface containing a large number of independent regions of size greater than 350 triangles (in grey). Right : Filtered surfaces. All meshes produced using this filter have more than 350 triangles.}
+  \includegraphics[scale=0.35]{images/09/structure/surface_decomposition_example.png} 
+	\caption{Left: original surface of the skeleton of a newborn \textit{Lemur catta} containing a large number of independent regions of size greater than 500 triangles. Right : Output result (independent surface objects) Filtered surfaces. All surfaces produced using this filter have more than 500 triangles and were given a random color. Note that several bones of the most distal part of the tail are absent, because they contain less than 500 triangles. }
 \label{decompose34}
  
 \end{figure}
 
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.4]{images/Edit_selected_objects/03_Decompose5.png} 
-	\caption{Left: original surface (one single mesh). Right: the resulting 298 filter output surfaces (each drawn using a different color) can be manipulated independently.}
-\label{decompose5}
- 
-\end{figure}
 
 
 
 
 
-\subsection{Connectivity: keep largest region}
+\subsection{Connectivity: keep largest region for each selected surface}
 This option uses vtkPolyDataConnectivityFilter.This filter produces a new surface for the largest independent region of the selected input surface (see Fig. \ref{largest_region}).
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.4]{images/Edit_selected_objects/03_Decompose6.png} 
-	\caption{Left: original surface. Right: the resulting largest region in terms of triangle number.}
+  \includegraphics[scale=0.31]{images/09/structure/keep_largest.png} 
+	\caption{Left: original 3D surface representing the skull of a newborn \textit{Tarsius bancanus}. Right: the resulting largest region in terms of triangle number.}
 \label{largest_region}
  
 \end{figure}
 
 
-\subsection{Invert}
+\subsection{Invert each selected surface}
 
-A given surface's triangles can be
-inverted in order to show inner structures (see Fig. \ref{inversion}).\\
-
-Note that the original surface
-is directly affected; this option
-does not involve the use of a
-filter (no output additional
-surface is created).
+A given surface can be inverted in order to show inner structures (see Fig. \ref{inversion}).\\
 
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.4]{images/Edit_selected_objects/01_invert.png} 
-	\caption{Example of surface triangle inversion. Left: original surface.
-Right: the same surface inverted, revealing inner structures such
-as the endocranial cavity. Gouraud shading rendering + backface
-culling option was used.}
+  \includegraphics[scale=0.32]{images/09/structure/inversion_example.png} 
+	\caption{Example of surface inversion. Left: original surface of the skull of the type specimen of \textit{Pan paniscus}.
+Right: backface culling rendering of the same surface after being inverted, revealing inner structures such as the endocranial cavity. }
 \label{inversion}
  
 \end{figure}
 
-\subsection{Mirror}
+\subsection{Mirror each selected surface along Y plane}
 
-This option uses vtkReflectionFilter,which produces a mirror image of the original selected input mesh (see Fig. \ref{mirror}).\\
+This option uses vtkReflectionFilter, which produces a mirror image of the original selected input mesh (see Fig. \ref{mirror}).\\
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.35]{images/Edit_selected_objects/02_Mirror.png} 
-	\caption{Example of fossil restoration implicating the production of mirror images of missing parts.}
+  \includegraphics[scale=0.32]{images/09/structure/image_mirror.png} 
+	\caption{Example of fossil restoration (\textit{Palaeolemur betillei} BOR613 specimen from the Musée d'Histoire Naturelle de Bordeaux, France) implicating the production of mirror images of missing parts.}
  \label{mirror}
 \end{figure}
 
@@ -238,7 +222,8 @@ This option uses vtkReflectionFilter,which produces a mirror image of the origin
 
 
 
-\subsection{Create convex hull for each selected surface}
+\subsection{Create a convex hull for each selected surface}
+\subsection{Group selected surfaces}
 
 \section{Surface alignment}
 \section{Rendering modification}
