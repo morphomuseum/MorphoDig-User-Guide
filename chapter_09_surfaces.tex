@@ -143,7 +143,7 @@ space which will drive the TPS deformation (see Fig. \ref{tps}). See vtkThinPlat
 \begin{figure}
   \centering
   \includegraphics[scale=0.31]{images/09/structure/tps_example.png} 
-	\caption{Left: original distorted input surface of the cranium and mandible of \textit{Notharctus tenebrosus} (3D surface obtained from a cast of speciman AMNH 127167 from the American Museum of Natural History, New York City, New York, USA). 46 ``normal"
+	\caption{Thin plate spline (TPS) transformation. Left: original distorted input surface of the cranium and mandible of \textit{Notharctus tenebrosus} (3D surface obtained from a cast of specimen AMNH 127167 from the American Museum of Natural History, New York City, New York, USA). 46 ``normal"
 landmarks were placed on the surface and 46
 ``target" landmarks were placed in order to
 restore bilateral symmetry. Right: resulting output (deformation : 100\%). Note
@@ -170,7 +170,7 @@ This option uses vtkPolyDataConnectivityFilter. This filter produces a new surfa
 \begin{figure}
   \centering
   \includegraphics[scale=0.35]{images/09/structure/surface_decomposition_example.png} 
-	\caption{Left: original surface of the skeleton of a newborn \textit{Lemur catta} containing a large number of independent regions of size greater than 500 triangles. Right : Output result (independent surface objects) Filtered surfaces. All surfaces produced using this filter have more than 500 triangles and were given a random color. Note that several bones of the most distal part of the tail are absent, because they contain less than 500 triangles. }
+	\caption{Example of surface decomposition into non-connected surfaces. Left: original surface of the skeleton of a newborn \textit{Lemur catta} containing a large number of independent regions of size greater than 500 triangles. Right : Output result (independent surface objects) Filtered surfaces. All surfaces produced using this filter have more than 500 triangles and were given a random color. Note that several bones of the most distal part of the tail are absent, because they contain less than 500 triangles. }
 \label{decompose34}
  
 \end{figure}
@@ -186,7 +186,7 @@ This option uses vtkPolyDataConnectivityFilter.This filter produces a new surfac
 \begin{figure}
   \centering
   \includegraphics[scale=0.31]{images/09/structure/keep_largest.png} 
-	\caption{Left: original 3D surface representing the skull of a newborn \textit{Tarsius bancanus}. Right: the resulting largest region in terms of triangle number.}
+	\caption{Example of surface decomposition in order to keep largest region. Left: original 3D surface representing the skull of a newborn \textit{Tarsius bancanus}. Right: the resulting largest region in terms of triangle number.}
 \label{largest_region}
  
 \end{figure}
@@ -223,11 +223,47 @@ This option uses vtkReflectionFilter, which produces a mirror image of the origi
 
 
 \subsection{Create a convex hull for each selected surface}
-\subsection{Group selected surfaces}
+This option uses vtkDelaunay3D.This filter produces convex hull surfaces for each selected surface. Convex hulls can be useful for instance to compute estimations of the total "volume" occupied in space by complex objects containing lots of holes (see Fig. \ref{convex_hull}). 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.27]{images/09/structure/convex_hull.png} 
+	\caption{Convex hull computation. \textbf{Left:} original 3D surface representing the skull of a newborn \textit{Tarsius bancanus}. Bone volume: \textasciitilde100 mm3. \textbf{Right:} the resulting convex hull. Volume of the convex hull of the skull (=proxy for the volume of the "head"): \textasciitilde3653 mm3.}
+\label{convex_hull}
+ 
+\end{figure}
+
+\subsection{Merge selected surfaces into one single surface}
+This options makes it possible to merge all selected surfaces into one single surface object. 
 
 \section{Surface alignment}
+\noindent
+\begin{minipage}{0.5\textwidth}
+This option uses vtkIterativeClosestPointTransform filter. This filter makes it possible to align two surfaces using the Iterative Closest Point (ICP) algorithm. In order to get good results, it is strongly advised to orient manually roughly the two surfaces in the same direction before running this algorithm 
+(see for instance Fig. \ref{surface_alignment}). See vtkIterativeClosestPointTransform documentation for further information.
+
+
+
+\end{minipage}    
+\begin{minipage}{0.5\textwidth}\centering
+  \includegraphics[scale=0.5]{images/09/alignment/surface_alignment_dialog.png}
+ \captionof{figure}{Surface alignment dialog}
+ \end{minipage} 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.21]{images/09/alignment/surface_alignment.png} 
+	\caption{Example of alignment of two mandibles of \textit{Tarsius bancanus}. A: the two surfaces in their initial orientation. B: the two mandibles were roughly manually oriented in the same direction. C: result of the ICP algorithm. The impacted surface (the one which was actually reoriented) is the blue one. }
+ \label{surface_alignment}
+\end{figure}
+
+
+
 \section{Rendering modification}
-\subsection{Set alpha value}
+
+
+
+\subsection{Change transparency}
 \noindent
 \begin{minipage}{0.5\textwidth}
 
