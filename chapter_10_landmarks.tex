@@ -28,18 +28,36 @@ This option will increase (=move up in list, if possible) the landmark number of
  This option will decrease (=move down in list, if possible) the landmark number of all selected landmarks.
 This option can be also activated by clicking on \includegraphics[scale=0.7]{images/06/objects/move_down.png} in the "object controls" section of the main window.
 
-\section{Selected landmarks: push back on object surface}
+\section{Selected landmarks: push back on closest surface's vertex}
 When set via pressing ``L" + left click, landmarks are always positioned at a surface's vertex coordinates. Selected
 landmarks can be subsequently moved manually to other locations (for instance, if you want to place
 a given landmark in the middle of a canal or of a foramen, or between two unfused bones). However,
 you may sometimes want to push back automatically some selected landmarks to the position of the
-closest surface's vertex available. This can be achieved using this option.
+closest surface's vertex available. This can be achieved using this option (see for instance Fig. \ref{push_back}).
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.27]{images/10/push_back.png} 
+	\caption{Push back selected landmarks on surface's closest vertex. A: two landmarks (4 and 5) laying outside the surface of the left inner of a \textit{Galago moholi} specimen have been selected. B: these 2 landmarks now lay on the surface. This action can be undone/redone.}
+\label{push_back}
+ 
+\end{figure}
+
 
 \section{Selected landmarks: change orientation according to surface's normals}
 When set via pressing ``L" + left surfaces, landmark orientation is that of the vertex on which it is
 placed. Selected landmarks' orientation can be subsequently moved manually. However, you may
 sometimes want to reset one or several landmarks' orientation automatically to that of the normal of the closest
-surface's vertex available. This can be achieved using this option.
+surface's vertex available. This can be achieved using this option (see for instance Fig. \ref{reorient}).
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.27]{images/10/reorient.png} 
+	\caption{Change orientation according to surface's normals. A: two landmarks (4 and 5) the surface of the left inner of a \textit{Galago moholi} specimen have been selected. B: these 2 landmarks' orientation now is the same as that of the closest vertices. This action can be undone/redone.}
+\label{reorient}
+ 
+\end{figure}
+
 
 \section{Selected curve nodes and curve handle landmarks}\label{landmarks_curves_section}
 
