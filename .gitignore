@@ -1,7 +1,9 @@
 User-Guide.mtc7
 User-Guide.mtc5
 User-Guide.mtc3
+User-Guide.mtc18
 User-Guide.mtc2
+User-Guide.mtc17
 User-Guide.mtc16
 User-Guide.mtc15
 User-Guide.mtc14
@@ -22,3 +24,5 @@ User-Guide.aux
 User-Guide.bbl
 User-Guide.mtc
 User-Guide.toc
+*.mtc17
+*.mtc18
