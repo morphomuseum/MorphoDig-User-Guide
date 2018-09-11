@@ -221,7 +221,7 @@ This option uses vtkReflectionFilter, which produces a mirror image of the origi
 
 
 
-
+\section{Convex hulls}
 \subsection{Create a convex hull for each selected surface}
 This option uses vtkDelaunay3D.This filter produces convex hull surfaces for each selected surface. Convex hulls can be useful for instance to compute estimations of the total "volume" occupied in space by complex objects containing lots of holes (see Fig. \ref{convex_hull}). 
 
@@ -285,24 +285,6 @@ Please chose a value between 0 and 100. 100 stands for ``opaque rendering". 0 st
 Selected objects' solid color can be changed using this option. A set of 13 predefined colors is available via this menu. Alternatively, you can edit object color manually using the ``Default solid color of surfaces" control of the ``Edit color options" window (menu ``Edit $\rightarrow$Edit color options").
 
 
-\section{Scalar arrays}
-Numbers can be associated to each vertex of a given surface, and are referred to as "scalar arrays". 
-As stated earlier, a given unselected surface can be colored using the currently active scalar array, if that surface contains that scalar array (see also Fig. \ref{4color_modes}-B p.\pageref{4color_modes}). To do so, the array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a scalar array must be selected as the currently active scalar (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_scalar.png}). The way scalar arrays are translated into colors can be set up using color "Lookup tables" (LUT), also referred to as color transfer functions. The "Scalar rendering options" window can be opened by clicking on "\includegraphics[scale=0.7]{images/04/color_scale_edit.png}" (see also Fig. \ref{scalar_rendering_options_window}).
-
-\subsection{Open scalar rendering option window}
-\subsection{Compute distance from camera for each selected surface}
-\subsection{Compute thickness within each selected surface}
-\subsection{Compute thickness between two surfaces}
-\subsection{Compute curvature for each selected surface}
-\subsection{Compute complexity for each selected surface}
-\subsection{Smooth active scalars for each selected surface}
-
-
-\section{RGB arrays}
-\subsection{Create or replace an RGB array with current display color}
-\section{Tag arrays}
-\subsection{Create new empty tag array}
-\subsection{Create new tag array based on currently displayed colors}
 
 %\section{Delete small objects.}
 
