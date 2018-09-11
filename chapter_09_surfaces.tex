@@ -265,77 +265,44 @@ This option uses vtkIterativeClosestPointTransform filter. This filter makes it 
 
 \subsection{Change transparency}
 \noindent
-\begin{minipage}{0.5\textwidth}
-
-A selected surface is needed.\\
-Please chose a value between 0 and 100. 100 stands for ``opaque
-rendering". 0 stands for ``invisible surface".\\
+\begin{minipage}{0.4\textwidth}
+All selected actors can be given the same transparency using this option (at least one selected surface is needed).\\
+Please chose a value between 0 and 100. 100 stands for ``opaque rendering". 0 stands for ``invisible surface".\\
 
 
 \end{minipage}    
-\begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Edit_selected_objects/10_transparency.png}
- \captionof{figure}{Alpha value setting window}
+\begin{minipage}{0.6\textwidth}\centering
+  \includegraphics[scale=0.5]{images/09/rendering/transparency.png}
+ \captionof{figure}{Edit transparency dialog}
  \end{minipage} 
 \noindent
 
 
 
 
-As stated earlier, vertex display order has consequences on 3D rendering when working with
-transparency. 3D objects are displayed one after the other following an object list. The way object are ordered inside this list thus affects transparency rendering, especially when some objects such as inner structures are positioned inside others. Object display order of selected objects can be changed using the two following controls. Pressing ``\includegraphics[scale=0.7]{images/pixmap/s_dessous_17.png}" will place all selected objects one step earlier in the object display list. Pressing ``\includegraphics[scale=0.7]{images/pixmap/s_dessus_17.png}" will place all selected objects one step further in the object display
-list (see for instance Fig. \ref{transparency}). \\
 
-See also ``Sort vertices from back to front (beware: slow rendering)"  (section \ref{sort_back_front}) and ``Sort vertices from front to back (beware: slow rendering)" (section \ref{sort_front_back}) for further information.\\
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.4]{images/Transparency/Transparency.pdf} 
-	\caption{Transparency rendering. A. 3 objects (cranium, left\_inner\_ear and right\_
-inner\_ear) are opened in this order, and the object ``cranium" is rendered with an alpha value of 40.
-The inner ears remain invisible, because ``cranium" is displayed before the two inner ears are. B: corresponding display object order (Show $\rightarrow$Display
-object order). C: the object ``Cranium" was selected and put downward in the object display list. Now the left inner ear is visible, as it is displayed before the cranium is. D: corresponding display object order. E: the object ``Cranium" was selected again, and put downward in the object display list. Now the two inner ears are
-visible, because they are both rendered before the cranium is. F: corresponding display object order.}
-\label{transparency}
- 
-\end{figure}
+\subsection{Change object solid color}
+Selected objects' solid color can be changed using this option. A set of 13 predefined colors is available via this menu. Alternatively, you can edit object color manually using the ``Default solid color of surfaces" control of the ``Edit color options" window (menu ``Edit $\rightarrow$Edit color options").
 
 
-
-
-\subsection{Change object color}
-Object color can be changed using this option. A set of 13 predefined colors is available via this menu. Alternatively, you can edit object color manually using the ``Object color" control of the ``General options" window (click on menu ``Show $\rightarrow$General options$\rightarrow$").
-
-\subsection{Edit first selected object and aspect matrices}\label{edit_mat_section}
-
-\noindent
-\begin{minipage}{0.6\textwidth}
-
-A selected surface is required . This opens the following window,
-in which the aspect and position matrices can be edited.
-Options :\\
-- Ok : set aspect and position matrices to first selected object.\\
-- Init : set aspect and position matrices to identity.\\
-- Refresh : change matrices to those of first selected object.\\
-- Ok for all selected objects: set aspect and position matrices to
-all selected objects.\\
-You can also access faster the ``Object Matrix" window by clicking
-on ``\includegraphics[scale=0.7]{images/pixmap/mat.png}"(edit first selected object position and aspect matrices).
-
-\end{minipage}    
-\begin{minipage}{0.4\textwidth}\centering
-  \includegraphics[scale=0.5]{images/File/Position2.png}
- \captionof{figure}{Object matrix window}
- \end{minipage} 
-\noindent
-
-
-\section{Rendering modification}
 \section{Scalar arrays}
+Numbers can be associated to each vertex of a given surface, and are referred to as "scalar arrays". 
+As stated earlier, a given unselected surface can be colored using the currently active scalar array, if that surface contains that scalar array (see also Fig. \ref{4color_modes}-B p.\pageref{4color_modes}). To do so, the array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a scalar array must be selected as the currently active scalar (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_scalar.png}). The way scalar arrays are translated into colors can be set up using color "Lookup tables" (LUT), also referred to as color transfer functions. The "Scalar rendering options" window can be opened by clicking on "\includegraphics[scale=0.7]{images/04/color_scale_edit.png}" (see also Fig. \ref{scalar_rendering_options_window}).
+
+\subsection{Open scalar rendering option window}
+\subsection{Compute distance from camera for each selected surface}
+\subsection{Compute thickness within each selected surface}
+\subsection{Compute thickness between two surfaces}
+\subsection{Compute curvature for each selected surface}
+\subsection{Compute complexity for each selected surface}
+\subsection{Smooth active scalars for each selected surface}
+
+
 \section{RGB arrays}
+\subsection{Create or replace an RGB array with current display color}
 \section{Tag arrays}
-
-
+\subsection{Create new empty tag array}
+\subsection{Create new tag array based on currently displayed colors}
 
 %\section{Delete small objects.}
 
