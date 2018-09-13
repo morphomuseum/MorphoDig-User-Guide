@@ -3,52 +3,22 @@
 \minitoc 
 
 Numbers (= scalar values) can be associated to each vertex of a given surface, and are referred to as "scalar arrays". 
-As stated earlier, a given unselected surface can be colored using the currently active scalar array, if that surface contains that scalar array (see also Fig. \ref{4color_modes}-B p.\pageref{4color_modes}). To do so, the array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a scalar array must be selected as the currently active scalar (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_scalar.png}). The way scalar arrays are translated into colors can be set up using color "Lookup tables" (LUT), also referred to as color transfer functions. The "Scalar rendering options" window can be opened by clicking on "\includegraphics[scale=0.7]{images/04/color_scale_edit.png}" (see also Fig. \ref{scalar_rendering_options_window}).
+As stated earlier, a given unselected surface can be colored using the currently active scalar array, if that surface contains that scalar array (see also Fig. \ref{4color_modes}-B p.\pageref{4color_modes}). To do so, the array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a scalar array must be selected as the currently active scalar (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_scalar.png}). The way scalar arrays are translated into colors can be set up using color maps, also referred to as "Lookup tables (LUT) or color transfer functions. 
 
 \section{Open scalars window}
-\section{Compute distance from camera for each selected surface}
-\section{Compute thickness within each selected surface}
-\section{Compute thickness between two surfaces}
-\section{Compute curvature for each selected surface}
-\section{Compute complexity for each selected surface}
-\section{Smooth active scalars for each selected surface}
-
-
-\noindent
-\begin{minipage}{0.5\textwidth}
-Scalar values can be associated to each vertex. Scalar values can be displayed when scalar display mode is active. To activate/deactivate scalar display mode, click on ``\includegraphics[scale=0.7]{images/pixmap/show_color_scale.png}".
-When active, the rainbow color scale (see Fig. \ref{rainbow_color_scale}) shows up in the
-bottom-right part of the 3D rendering window.
-\end{minipage}    
-\begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Scalars_renreding/color_scale.png}
- \captionof{figure}{Rainbow color scale, showing a
-``min" range display value of -1, a
-``max" range display value of 1, and a
-middle range display value of 0.
-}
-\label{rainbow_color_scale}
- \end{minipage} 
-\noindent
-
-
-\section{Show scalar rendering options window.}
-
+The "Scalars" window can be opened by clicking on "\includegraphics[scale=0.7]{images/04/color_scale_edit.png}" (see Fig. \ref{scalar_rendering_options_window}).
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{images/Scalars_renreding/color_scale_rendering_window.png}
-\caption{Scalar rendering options window}	
-\label{Scalar_rendering_options_window}
+  \includegraphics[scale=1]{images/11/scalar_rendering_option_window2.png}
+\caption{Scalar control window. This window is divided in different subsections. \textbf{1)} chose current 3D rendered scalar array.  \textbf{2)} the active scalar array can be deleted from selected/all surface objects in this sections. \textbf{3)} chose current active color map, which transforms numbers into color and opacity on the screen. \textbf{4)} operations on the active colormap. a: reinitialize color map. b: create a new color map based on the active color map. current active map. c: change active color map name. d: delete active color map. \textbf{5)} opacity control points of the active color map. \textbf{6)} color control points of the active color map. \textbf{7)} modification controls of the active color map. a: set range to min and max. b: reverse colors. c: reverse opacities. d: export color map. \textbf{8)} enable/disable opacity mapping. \textbf{9)} discretize color levels, and chose number of levels. \textbf{10)} change min and max of color map. \textbf{11)} set min and max of color map based on suggested values.}	
+\label{scalar_rendering_options_window}
  \end{figure}
 
 
-Displayed scalars and scalar associated
-color scales can aslo be onpened by
-clicking on ``\includegraphics[scale=0.7]{images/pixmap/edit_color_scale.png}" (see Fig. \ref{Scalar_rendering_options_window}).\\
 \noindent
 \textbf{\underline{Available controls:}}\\
-\textit{Chose active scalar}: please chose among
+\textit{Active scalar}: please chose among
 the available scalars (see below for further
 information).\\
 \textit{Chose color scale}: please chose among
@@ -72,7 +42,7 @@ color scale at its best.\\
 \textit{Ok}: applies changes.
 
 
-\section{Scalars: distance from camera (Depth).}
+\section{Compute distance from camera for each selected surface}
 \noindent
 \begin{minipage}{0.5\textwidth}
 Computes distance from camera for all vertices of
@@ -90,39 +60,7 @@ is used.
  \end{minipage} 
 \noindent
 
-
-
-\section{Scalars : compute vertice curvature.}
-
-\noindent
-\begin{minipage}{0.5\textwidth}
-vtkCurvatures filter is implied in this option.\\
-vtkCurvatures filter offers 4 ways to compute surface's
-curvature at each vertex (see Fig. \ref{curvatures}):\\
-- Principal maximal curvature\\
-- Principal minimal curvature\\
-- Gaussian curvature\\
-- Mean curvature.\\
-See vtkCurvatures' documentation for further details.
-
-\end{minipage}    
-\begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Scalars_renreding/Curvature_window.png}
- \captionof{figure}{Curvature window}
-\label{curvature_window}
- \end{minipage} 
-\noindent
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.3]{images/Scalars_renreding/Curvatures.pdf} 
-	\caption{
-Examples of 3D rendering of ``Curvature" scalars. Scalar mode is active, the rainbow color scale is used. Specimen : enamel dentine junction (EDJ) of the second superior molar of a juvenile medieval human from Sains-en-Gohelle (France). Specimen number : SP07. Image credit: Mona Le Luyer (PACEA, Bordeaux).}
-\label{curvatures}
- 
-\end{figure}
-
-\section{Scalars: compute thickness.}
+\section{Compute thickness within each selected surface}
 \noindent
 \begin{minipage}{0.5\textwidth}
 Thickness within an object (see Fig. \ref{thickness}) is defined the following way: for a
@@ -141,9 +79,8 @@ to reduce the amount of vertices investigated at a given location.
 
 
 
+\section{Compute thickness between two surfaces}
 
-
-\section{Scalars: compute thickness between two objects.}
 \noindent
 \begin{minipage}{0.5\textwidth}
 Thickness between tow objects is defined the following way (see Fig. \ref{thickness2}):
@@ -190,9 +127,39 @@ junction's surface (EDJ) of SP07 specimen.}
 
 
 
+\section{Compute curvature for each selected surface}
+\noindent
+\begin{minipage}{0.5\textwidth}
+vtkCurvatures filter is implied in this option.\\
+vtkCurvatures filter offers 4 ways to compute surface's
+curvature at each vertex (see Fig. \ref{curvatures}):\\
+- Principal maximal curvature\\
+- Principal minimal curvature\\
+- Gaussian curvature\\
+- Mean curvature.\\
+See vtkCurvatures' documentation for further details.
+
+\end{minipage}    
+\begin{minipage}{0.5\textwidth}\centering
+  \includegraphics[scale=0.5]{images/Scalars_renreding/Curvature_window.png}
+ \captionof{figure}{Curvature window}
+\label{curvature_window}
+ \end{minipage} 
+\noindent
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.3]{images/Scalars_renreding/Curvatures.pdf} 
+	\caption{
+Examples of 3D rendering of ``Curvature" scalars. Scalar mode is active, the rainbow color scale is used. Specimen : enamel dentine junction (EDJ) of the second superior molar of a juvenile medieval human from Sains-en-Gohelle (France). Specimen number : SP07. Image credit: Mona Le Luyer (PACEA, Bordeaux).}
+\label{curvatures}
+ 
+\end{figure}
+
+\section{Compute complexity for each selected surface}
 
 
-\section{Smooth active scalars (Gaussian blur).}
+\section{Smooth active scalars for each selected surface}
 Active scalars are ``smoothed" the following way : for each vertex, a new scalar value is computed as
 the mean of the scalar values of all neighbouring vertices (see Fig. \ref{smoothing_scalars}).
 \begin{figure}
@@ -204,17 +171,29 @@ the mean of the scalar values of all neighbouring vertices (see Fig. \ref{smooth
 \end{figure}
 
 
-\section{Init RGB.}
-Whenever colors are associated to vertices in .PLY of .VTK files (this can be achieved for instance by painting on meshes with Meshlab or by transferring textures obtained by laser scanning to the vertices), ISE-MeshTools stores this ``initial RGB" color information inside a dedicated scalar (called ``Init\_RGB"). See for instance Fig. \ref{rgb_scalar}.
-\\Note: you have to select a Mesh in order to activate this option.
 
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.3]{images/Scalars_renreding/init_rgb.png} 
-	\caption{Initial RGB Scalar. Left: a mesh is painted using Meshlab. Right: the same mesh opened with ISE-MeshTools using the ``Init RGB" option.}
-\label{rgb_scalar}
- 
-\end{figure}
+
+\section{Show scalar rendering options window.}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Saving and loading scalars.}
 Computed scalars can be saved inside the .vtk surface files. In order to access scalar values into other software (such as a text editor), save the .vtk files in ASCII format. Saved scalars can be reloaded into ISE-MeshTools. Saving surfaces into .vtk format provides an efficient means to store and exchange
