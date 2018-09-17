@@ -11,71 +11,145 @@ The "Scalars" window can be opened by clicking on "\includegraphics[scale=0.7]{i
 \begin{figure}
   \centering
   \includegraphics[scale=1]{images/11/scalar_rendering_option_window2.png}
-\caption{Scalar control window. This window is divided in different subsections. \textbf{1)} chose current 3D rendered scalar array.  \textbf{2)} the active scalar array can be deleted from selected/all surface objects in this sections. \textbf{3)} chose current active color map, which transforms numbers into color and opacity on the screen. \textbf{4)} operations on the active colormap. a: reinitialize color map. b: create a new color map based on the active color map. current active map. c: change active color map name. d: delete active color map. \textbf{5)} opacity control points of the active color map. \textbf{6)} color control points of the active color map. \textbf{7)} modification controls of the active color map. a: set range to min and max. b: reverse colors. c: reverse opacities. d: export color map. \textbf{8)} enable/disable opacity mapping. \textbf{9)} discretize color levels, and chose number of levels. \textbf{10)} change min and max of color map. \textbf{11)} set min and max of color map based on suggested values.}	
+\caption{Scalar control window. This window is divided in different subsections. \textbf{1)} chose current 3D rendered scalar array.  \textbf{2)} the active scalar array can be deleted from selected/all surface objects in this sections. \textbf{3)} chose current active color map, which transforms numbers into color and opacity on the screen. \textbf{4)} operations on the active colormap. a: reinitialize color map. b: export colors map(s) inside a .MAP file. c: change active color map name. d: delete active color map. \textbf{5)} opacity control points of the active color map. \textbf{6)} color control points of the active color map. \textbf{7)} modification controls of the active color map. a: set range to min and max. b: reverse color control points. c: reverse opacity control points. d: Save to preset = duplicate current active color map and create a new custom color map. \textbf{8)} enable/disable opacity mapping. \textbf{9)} discretize color levels, and chose number of levels. \textbf{10)} change min and max of color map. \textbf{11)} set min and max of color map based on suggested values.}	
 \label{scalar_rendering_options_window}
  \end{figure}
 
 
 \noindent
 \textbf{\underline{Available controls:}}\\
-\textit{Active scalar}: please chose among
-the available scalars (see below for further
-information).\\
-\textit{Chose color scale}: please chose among
-the available color scales (see below for
-further information).\\
+\textbf{1: Active scalar array}: chose among the available scalars the one which will be displayed.\\\\
+\noindent
+\textbf{2: Remove selected scalar array}: deletes currently active scalar array from all opened surfaces, or  from selected surfaces only. This option is useful if you plan to save surfaces in the .vtk format and do not want MorphoDig to save associated scalar values (this will save some disk space).\\\\
+\noindent
+\textbf{3: Active color map}: chose among currently available colormaps. See Fig. \ref{change_active_color_map} for a practical example. \\\\
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.38]{images/11/change_active_color_map.png} 
+	\caption{
+Example of active colormap modification.  Left: left inner ear of \textit{Galago moholi}. Active scalars: thickness. Colormap: rainbow. Right: the same inner ear after the active colormap has been set to "Black-red-white".}
+\label{change_active_color_map}
+ \end{figure}
 
 
-\textit{Init scalar}: set current active scalar values to ``0" for all selected objects.
-Remove scalar : removes active scalar for all selected objects. This option is useful if you plan to save surfaces in the .vtk format and do not want ISE-MeshTools to save associated scalar values (this will save some disk space).\\
-\textit{min}: changes the minimal value of the active color scale.\\
-\textit{max}: changes the maximal value of the active color scale.\\
-\textit{Show below min}: if active, all vertices with an associated active scalar value below ``min" will be drawn using the color situated at the leftmost part of the active color scale. If not, these vertices will be transparent.\\
-\textit{Show below max}: if active, all vertices with an associated active scalar value above ``max" will be drawn using the color situated at the rightmost part of the active color scale.\\
-\textit{Suggested min}: suggested ``min" range display value. This value is computed in order to use the
-color scale at its best.\\
-\textit{Suggested max}: suggested ``max" range display value. This value is computed in order to use the
-color scale at its best.\\
-``\includegraphics[scale=0.7]{images/pixmap/s_right_132.png}": Set min/max to suggested min/max, respectively.\\
-\textit{Scale min}: current ``min" range display value.\\
-\textit{Scale max}: current ``max" range display value.
-\textit{Ok}: applies changes.
+\noindent
+\begin{minipage}{0.5\textwidth}
+\textbf{4: Color map controls}: Four buttons are available. a:reinitialize color map (only possible for the 2 first predefined color maps). b: export color maps(s). When clicked, the export color map(s) dialog shows up (see Fig. \ref{export_color_maps}), in which you may define more precisely the color map(s) that should be exported.  c: change active color map name (can be only done on custom color maps). d: delete active color map (only custom color maps can be deleted).\\
+\end{minipage}    
+\begin{minipage}{0.5\textwidth}\centering
+  \includegraphics[scale=0.5]{images/11/export_color_maps.png}
+ \captionof{figure}{Export color maps dialog.}
+\label{export_color_maps}
+ \end{minipage} \\\\
+
+\noindent
+\textbf{5: Opacity control points }: opacity control points of the active color map. Such control points can be added (left click on a line), deleted (select one control point using the left mouse button then press "delete") and edited (drag one control point using the left mouse button) interactively.\\\\
+
+\noindent
+\textbf{6: Color control points }: color control points of the active color map. Such control points can be added (left click on an empty zone), deleted (select one control point using the left mouse button then press "delete") and edited (drag one control point using the left mouse button) interactively.\\\\
+\noindent
+\textbf{7: additional color map controls}. From top to bottom. a: set colormap range to match the global active scalar min and max found for all currently opened surfaces. b: reverse color color control points (see Fig. \ref{invert_colors}). c: reverse opacity control points (see Fig. \ref{invert_opacities}). d:  Save to preset = duplicate current active color map and create a new custom color map.duplicate current active color map and create a new custom color map. \\\\
+
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.38]{images/11/invert_colors.png} 
+	\caption{
+Example of color inversion of a colormap.  Left: left inner ear of \textit{Galago moholi}. Active scalars: thickness. Colormap: rainbow. Right: the same inner ear after the color control points of the rainbow colormap have been reversed.}
+\label{invert_colors}
+ 
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.38]{images/11/invert_transparency.png} 
+	\caption{
+	Example of opcacity inversion of a colormap.  Left: left inner ear of \textit{Galago moholi}. Active scalars: thickness. Colormap: rainbow. Right: the same inner ear after the opacity leveles of the rainbow colormap have been reversed.}
+\label{invert_opacities}
+ 
+\end{figure}
+
+\noindent
+\textbf{8: enable/disable opacity mapping.} When opacity mapping is disabled, all surface objects are rendered using their "global" transparency level.\\\\
+
+\noindent
+\textbf{9: discretize color levels}, and chose number of levels. See Fig. \ref{discretize_example} for a practical example.\\\\
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.38]{images/11/discretize_on.png} 
+	\caption{
+Example of colormap discretization.  Left: left inner ear of \textit{Galago moholi}. Active scalars: thickness. Colormap: custom. Right: the same inner ear after the "discretize" option has been turned on, and the nr of values set to 10.}
+\label{discretize_example}
+ 
+\end{figure}
+
+\noindent
+\textbf{10: change min and max of color map.} You may use these sliders to change the minimal and maximal values of the active color map. By default, all colormaps range between 0 (min) and 1 (max), which may not be the most appropriate range to display a given scalar array. \\\\ 
+
+
+\noindent
+\textbf{11: set min and max of color map based on suggested values.} As stated above, by default, all colormaps range between 0 (min) and 1 (max), which may not be the most appropriate range to display a given scalar array. You may set the minimal and maximal values of the active colormap based on suggested values, which are computed automatically based on the currently opened surface objects, and which are computed in order to use the color scale at its best. See Fig. \ref{accept_suggested_min_max} for a practical example. \\\\
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.38]{images/11/accept_suggested_min_max.png} 
+	\caption{
+Example of suggested min and max usage. Left: Left inner ear of \textit{Galago moholi}. Active scalars: thickness. Colormap: rainbow. Te rainbow colormap is set as by default to range between 0 (min) and 1 (max). Right: the same inner ear after the rainbow colormap range has been modified based on suggested min (0.16) and suggested max (0.91) values.}
+\label{accept_suggested_min_max}
+ 
+\end{figure}
+\noindent
+
+
 
 
 \section{Compute distance from camera for each selected surface}
 \noindent
-\begin{minipage}{0.5\textwidth}
-Computes distance from camera for all vertices of
-all selected objects. This option may offer a better
-perception of the 3D structure of an object on a
-2D screen representation.
-\end{minipage}    
-\begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Scalars_renreding/Depth.png}
- \captionof{figure}{Example of 3D rendering of ``Depth" scalars.
-Scalar mode is active, the rainbow color scale
-is used.
-}
-\label{depth_scalar}
- \end{minipage} 
+Computes distance (=depth) from camera for all vertices of all selected surfaces. This option may offer a better
+perception of the 3D structure of an object on a 2D screen representation. This option also makes it possible to compute an elevation map. See Fig. \ref{camera_distance} for a practical example. 
+ 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.38]{images/11/camera_distance_example.png} 
+	\caption{
+Example of camera distance scalar array. Displayed specimen: upper outer enamel surface of a second upper molar of \textit{Homo sapiens}.}
+\label{camera_distance}
+ 
+\end{figure}
 \noindent
 
-\section{Compute thickness within each selected surface}
+
 \noindent
+
+
+
+\section{Compute thickness within each selected surface}
 \begin{minipage}{0.5\textwidth}
-Thickness within an object (see Fig. \ref{thickness}) is defined the following way: for a
+Thickness within an object (see Fig. \ref{thickness_within_dialog}) is defined the following way: for a
 given vertex, the minimal distance between this vertex and other
-vertices in the direction opposite to that of the surface's normal
-is computed. In order to minimize computation time, a maximal
-distance (Maximal thickness (mm) ) is asked to the user, in order
-to reduce the amount of vertices investigated at a given location.
+vertices in the direction opposite to that of the surface's normal. In order to minimize computation time, a maximal
+distance (Maximal thickness (size unit) ) is asked to the user, in order
+to reduce the amount of vertices investigated at a given location. Also, in order to avoid "bad values" and angular limit between investigated vertex normals (by default: 70\degree) is asked. In order See Fig. \ref{thickness_examples}-A for a practical example. 
+ 
 \end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Scalars_renreding/Thickness_window.png}
- \captionof{figure}{Thickness scalar window}
-\label{thickness_window}
+ \includegraphics[scale=0.5]{images/11/thickness_within_dialog}
+ \captionof{figure}{Thickness within a given surface.}
+\label{thickness_within_dialog}
  \end{minipage} 
-\noindent
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.28]{images/11/thickness_examples.png} 
+	\caption{
+Examples of thickness computation. A: thickness within object. Specimen: left inner ear of \textit{Galago moholi}. B: thickness between the outer enamel surface (OEJ) and the enamel-dentine junction (EDJ) of a second upper molar of \textit{Homo sapiens}.}
+\label{thickness_examples}
+ 
+\end{figure}
+
 
 
 
@@ -101,29 +175,7 @@ and observed object lists.
 \noindent
 
 
-\noindent
-\begin{minipage}{0.5\textwidth}\centering
- \includegraphics[scale=0.3]{images/Scalars_renreding/Thickness2.png}
- \captionof{figure}{Example of 3D rendering of ``Thickness" of the
-3D model ot the type specimen of \textit{Pan paniscus}
-(downloadable on \href{http://www.metafro.be/primates/panpaniscustype}{Metafro.be}). Scalar mode is active,
-the rainbow color scale is used.
-Thickness between 2 surfaces
-window}
-\label{thickness}
 
-\end{minipage}    
-\begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Scalars_renreding/thickness_.png}
- \captionof{figure}{Example of 3D rendering of ``Thickness" between
-two objects' scalars. Scalar mode is active,
-the rainbow color scale is used. Impacted
-object : enamel surface of SP07 specimen (see
-above for details). Observed object : enameldentine
-junction's surface (EDJ) of SP07 specimen.}
-\label{thickness2}
- \end{minipage} 
-\noindent
 
 
 
