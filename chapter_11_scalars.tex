@@ -131,11 +131,11 @@ Thickness within an object (see Fig. \ref{thickness_within_dialog}) is defined t
 given vertex, the minimal distance between this vertex and other
 vertices in the direction opposite to that of the surface's normal. In order to minimize computation time, a maximal
 distance (Maximal thickness (size unit) ) is asked to the user, in order
-to reduce the amount of vertices investigated at a given location. Also, in order to avoid "bad values" and angular limit between investigated vertex normals (by default: 70\degree) is asked. In order See Fig. \ref{thickness_examples}-A for a practical example. 
+to reduce the amount of vertices investigated at a given location. Also, in order to avoid to take into account only relevant vertices in that computation, an angular limit between investigated vertex normals (by default: 70\degree) is asked. Finally, a smoother scalar array output can be produced by setting the "thickness" value as the average of the distance found between a number of closest vertices found. See Fig. \ref{thickness_examples}-A for a practical example. 
  
 \end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
- \includegraphics[scale=0.5]{images/11/thickness_within_dialog}
+ \includegraphics[scale=0.5]{images/11/thickness_within_dialog.png}
  \captionof{figure}{Thickness within a given surface.}
 \label{thickness_within_dialog}
  \end{minipage} 
@@ -157,25 +157,40 @@ Examples of thickness computation. A: thickness within object. Specimen: left in
 
 \noindent
 \begin{minipage}{0.5\textwidth}
-Thickness between tow objects is defined the following way (see Fig. \ref{thickness2}):
+Thickness between two objects is defined the following way (see Fig. \ref{thickness_between_dialog}):
 for a given vertex of the impacted object, the minimal distance
 between this vertex and other vertices of the observed surface in
-the direction opposite to that of the impacted surface's normal
-is computed. Again, in order to minimize computation time, a
-maximal distance (Maximal thickness (mm) ) is asked to the user,
-in order to reduce the amount of vertices investigated at a given
-location. Only selected surfaces appear in the impacted object
-and observed object lists.
+the same direction (if "invert normals of observed object" option is unchecked) or in the opposite direction (if "invert normals of observed object" option is checked) to that of the impacted surface's normal is computed. Again, in order to minimize computation time, a maximal distance (Maximal thickness (size unit) ) is asked to the user, in order to reduce the amount of vertices investigated at a given location. Also, in order to avoid to take into account only relevant vertices in that computation, an angular limit between investigated vertex normals (by default: 70\degree) is asked. Finally, a smoother scalar array output can be produced by setting the "thickness" value as the average of the distance found between a number of closest vertices found. See Fig. \ref{thickness_examples}-B for a practical example.
 \end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Scalars_renreding/Thickness_window2.png}
+  \includegraphics[scale=0.5]{images/11/thickness_between_dialog.png}
  \captionof{figure}{Thickness between 2 surfaces window}
-\label{thickness_window2}
+\label{thickness_between_dialog}
  \end{minipage} 
 \noindent
 
 
+\section{Compute distance between two surfaces}
+\noindent
+\begin{minipage}{0.5\textwidth}
+Vertex closest distance between two objects is computed as the minimal distance between all vertices  vertex and other vertices of the observed surface, regardless of the direction. This option may be relevant if you want to compare the same object twice (for instance the object before and after some alteration) or want to compare two objects of very similar shape (for instance two inner ears belonging to two specimens of the same species). Before computing a distance map, it is strongly advised, in a preliminary step, to align the two compared surfaces (see section \ref{surface_alignment_section} p.\pageref{surface_alignment_section}). The computed distance can be somewhat "smoothed" by being defined as the average value of a given number of closest vertices. Again, in order to minimize computation time, a maximal distance (in size unit) is asked to the user, in order to reduce the amount of vertices investigated at a given location. See Fig. \ref{distance_between_example} for a practical example.
+\end{minipage}    
+\begin{minipage}{0.5\textwidth}\centering
+  \includegraphics[scale=0.5]{images/11/distance_between_dialog.png}
+ \captionof{figure}{Distance between 2 surfaces window}
+\label{distance_between_dialog}
+ \end{minipage} 
+\noindent
 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.28]{images/11/distance_between_example.png} 
+	\caption{
+Example of distance map between two surfaces. An inner ear of \textit{Galago moholi} was virtually distorted in the lateral canal region. The corresponding representation of the deformation is shown here using a distance map: in red can we identify the most distorted regions.}
+\label{distance_between_example}
+ 
+\end{figure}
 
 
 
