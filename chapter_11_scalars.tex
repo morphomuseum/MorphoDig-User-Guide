@@ -197,7 +197,7 @@ Example of distance map between two surfaces. An inner ear of \textit{Galago moh
 \section{Compute curvature for each selected surface}
 \noindent
 \begin{minipage}{0.5\textwidth}
-vtkCurvatures filter is implied in this option.\\
+Curvatures are computed using the vtkCurvatures filter.\\
 vtkCurvatures filter offers 4 ways to compute surface's
 curvature at each vertex (see Fig. \ref{curvatures}):\\
 - Principal maximal curvature\\
@@ -208,7 +208,7 @@ See vtkCurvatures' documentation for further details.
 
 \end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Scalars_renreding/Curvature_window.png}
+  \includegraphics[scale=0.5]{images/11/curvature_dialog.png}
  \captionof{figure}{Curvature window}
 \label{curvature_window}
  \end{minipage} 
@@ -216,9 +216,9 @@ See vtkCurvatures' documentation for further details.
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.3]{images/Scalars_renreding/Curvatures.pdf} 
+  \includegraphics[scale=0.3]{images/11/curvature_example.png} 
 	\caption{
-Examples of 3D rendering of ``Curvature" scalars. Scalar mode is active, the rainbow color scale is used. Specimen : enamel dentine junction (EDJ) of the second superior molar of a juvenile medieval human from Sains-en-Gohelle (France). Specimen number : SP07. Image credit: Mona Le Luyer (PACEA, Bordeaux).}
+Examples of 3D rendering of ``Curvature" scalars. Scalar mode is active, the rainbow color scale is used. Specimen: enamel dentine junction (EDJ) of the second superior molar of a medieval human from Sains-en-Gohelle (France). Image credit: Mona Le Luyer.}
 \label{curvatures}
  
 \end{figure}
@@ -227,41 +227,26 @@ Examples of 3D rendering of ``Curvature" scalars. Scalar mode is active, the rai
 
 
 \section{Smooth active scalars for each selected surface}
-Active scalars are ``smoothed" the following way : for each vertex, a new scalar value is computed as
-the mean of the scalar values of all neighbouring vertices (see Fig. \ref{smoothing_scalars}).
+It often happens that scalar values contain a lot of noise (see for instance the results of the curvature computation). In order to reduce noise and retrieve more biologically relevant information, scalars can be ``smoothed" in different ways (see \ref{smoothing_scalars_dialog}). Be aware that the obtained results depend very much on the size of the investigated local area (based on direct neighbor vertices or on a much larger area), and on whether the new scalar value is computed as the average or as the median of the scalar values found for neighbor vertices (see Fig. \ref{smoothing_scalars_example}).
+
 \begin{figure}
   \centering
-  \includegraphics[scale=0.25]{images/Scalars_renreding/Smooth_012.png} 
-	\caption{Smoothing scalars. Examples of 3D rendering of ``Mean Curvature" scalars. Scalar mode is active, the rainbow color scale is used. Left : ``raw" mean curvature. Middle : mean curvature scalars smoothed once. Right : mean curvature scalars smoothed twice. Specimen: EDJ of SP07 specimen.}
-\label{smoothing_scalars}
- 
+  \includegraphics[scale=0.5]{images/11/scalar_smoothing_dialog.png} 
+	\caption{ 
+Scalar smoothing dialog. Smoothing can be computed using only direct neighbor vertices. A much larger area can also be investigated to produce a "smoothed" output. A percentage of extreme minimal and maximal values found can be excluded from the smoothing process. Also, the "smoothed" output can be computed as the average or as the median of the scalar values found for the neighbor vertices.
+	}
+\label{smoothing_scalars_dialog}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.2]{images/11/scalar_smoothing_example.png} 
+	\caption{ 
+Smoothing scalars. Examples of 3D rendering of ``Min Curvature" scalars. \textbf{Top} : "raw" minimal curvature, which is extremely variable locally, and hard to interpret.  \textbf{Middle line}: averaging direct neighbors  or averaging scalar values on a much larger area give different results. See also how much averaging scalar values is sensitive with extreme min and max values. \textbf{Bottom line} : computing a median based upon direct neighbors  or upon scalar values found within a much larger area also give different results. The median smoothing "method"' is much less sensitive with extreme values (no difference seen when only 1\% of the most extreme min and max values are removed).  Specimen: enamel dentine junction (EDJ) of the second superior molar of a medieval human from Sains-en-Gohelle (France). Image credit: Mona Le Luyer.	
+	}
+\label{smoothing_scalars_example}
 \end{figure}
 
 
 
-
-\section{Show scalar rendering options window.}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Saving and loading scalars.}
-Computed scalars can be saved inside the .vtk surface files. In order to access scalar values into other software (such as a text editor), save the .vtk files in ASCII format. Saved scalars can be reloaded into ISE-MeshTools. Saving surfaces into .vtk format provides an efficient means to store and exchange
-computed scalars.
