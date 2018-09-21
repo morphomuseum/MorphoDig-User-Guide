@@ -523,9 +523,9 @@ This option saves the current state of orientation labels in a .ORI file.
 Surface area, volume, triangle number and vertex number of all selected surface objects can be saved in a .txt file using this option.\\
 \noindent Note: surface objects should be closed in order to provide a correct estimation of object volume.
 
-\subsection{Save normalized shape index, area and volume of selected surfaces}
+\subsection{Complexity: save normalized shape index, area and volume of selected surfaces} \label{global_complexity_1}
 \noindent
-Surface normalized shape index (NSI), surface area and surface volume of all selected surface objects can be saved in a .txt file using this option.\\
+Surface normalized shape index (NSI) can be viewed as a measurement of surface "complexity" (= how much area can be enclosed within a given volume). Surface normalized shape index (NSI), surface area and surface volume of all selected surface objects can be saved in a .txt file using this option.\\
 For a given surface of area "SA" and of volume "V", "NSI" is a measurement of how much the ratio between surface area and surface volume differs from that of a sphere. It is defined as: 
 
 \begin{equation}
@@ -536,9 +536,12 @@ where F is a constant defined so that perfectly spherical 3D surfaces express a 
 \begin{equation}
 F = \dfrac{\sqrt[3](\dfrac{4}{3}\pi)}{2\sqrt[2](\pi)}
 \end{equation}
-\subsection{Save convex hull area ratio and convex hull normalized shape index of selected surfaces (warning: slow}
+
+\subsection{Complexity: save convex hull area ratio and convex hull normalized shape index of selected surfaces (warning: slow).} \label{global_complexity_2}
 \noindent
-Convex hull area ratio (ChAR), convex hull normalized shape index (ChNSI), surface area, surface volume, convex hull, convex hull volume and surface normalized shape index (NSI: defined in the preceding section) of all selected surface objects can be saved in a .txt file using this option.\\
+Surface normalized shape index (NSI, see preceding section) may not offer a good estimate of "global shape complexity" of surfaces, especially when surfaces' shape differ very much from that of a sphere (very flat objects).  
+Other metrics, such as Convex hull area ratio (ChAR), or convex hull normalized shape index (ChNSI), may be better proxies for a global measurements of shape complexity for whole surfaces (= how much area can be enclosed within a given volume). 
+ ChAR, ChNSI and surface area, surface volume, convex hull, convex hull volume and surface normalized shape index (NSI: defined in the preceding section) of all selected surface objects can be saved in a .txt file using this option.\\
 
 \subsubsection{ChAR}
 

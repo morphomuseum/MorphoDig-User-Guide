@@ -199,7 +199,7 @@ Example of distance map between two surfaces. An inner ear of \textit{Galago moh
 \begin{minipage}{0.5\textwidth}
 Curvatures are computed using the vtkCurvatures filter.\\
 vtkCurvatures filter offers 4 ways to compute surface's
-curvature at each vertex (see Fig. \ref{curvatures}):\\
+curvature at each vertex (see Fig. \ref{curvature_example}):\\
 - Principal maximal curvature\\
 - Principal minimal curvature\\
 - Gaussian curvature\\
@@ -209,8 +209,8 @@ See vtkCurvatures' documentation for further details.
 \end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
   \includegraphics[scale=0.5]{images/11/curvature_dialog.png}
- \captionof{figure}{Curvature window}
-\label{curvature_window}
+ \captionof{figure}{Curvature dialog}
+\label{curvature_dialog}
  \end{minipage} 
 \noindent
 
@@ -219,15 +219,44 @@ See vtkCurvatures' documentation for further details.
   \includegraphics[scale=0.3]{images/11/curvature_example.png} 
 	\caption{
 Examples of 3D rendering of ``Curvature" scalars. Scalar mode is active, the rainbow color scale is used. Specimen: enamel dentine junction (EDJ) of the second superior molar of a medieval human from Sains-en-Gohelle (France). Image credit: Mona Le Luyer.}
-\label{curvatures}
+\label{curvature_example}
  
 \end{figure}
 
 \section{Compute complexity for each selected surface}
+In section \ref{global_complexity_1} p.\pageref{global_complexity_1} and section \ref{global_complexity_2} p.\pageref{global_complexity_2}, proxies for shape complexity (= how much area can be enclosed within a given volume) are described. The limit of those approaches is that they produce single values for a whole surface, and do not take into account shape variation within surfaces. However, a single biological object can express a lot of shape variability. In this section, we extend the approach of shape complexity described earlier: we provide surface complexity measurements for all vertices of a surface. To do so, for each vertex, a local surrounding area is extracted and shape complexity is measured for this local area. The consequence of this approach is that these measurements depend on the extent of the local area investigated for each vertex. For a given surface, the "local" area investigated is a sphere of radius "R".  By default, for a given surface, R is computed as follows:
+\begin{equation}
+R = \dfrac{Avg(length(PC1)+length(PC3)+length(PC3)))}{18}
+\end{equation}
+ 
+The numerator of this equation is in our view a sensible estimate of the "average extension" of an object in 3D space. It is computed as is the average of the lengths of a given object along its 3 principal extension axes. This measurement is obtained  by performing a principal component analysis on the vertex coordinates of a given surface. The denominator (18) is set empirically, as it seems to provide a reasonable estimate of "locality" for all vertex locations, regardless the global shape of the investigated surfaces. However, R can be set to a custom value in the Scalars complexity dialog (see Fig. \ref{complexity_dialog}).
 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/11/complexity_dialog.png} 
+	\caption{Complexity dialog.}
+\label{complexity_dialog}
+ 
+\end{figure}
+
+
+Four complexity measurements are provided:
+\subsection{Local sphere normalized shape index}
+For each vertex V, the surrounding surface's local region enclosed within an area defined by a sphere of center V and radius R is extracted. Then the local normalized shape index (NSI) is computed  for this  local region (see section \ref{global_complexity_1} p.\pageref{global_complexity_1} for explanations of NSI index). 
+
+\subsection{Local area / local sphere area}
+For each vertex V, the surrounding surface's local region enclosed within an area defined by a sphere of center V and radius R is extracted. Then complexity is computed as the ratio between the area of the extracted surface and the area of the sphere of radius R.   
+
+\subsection{Local convex hull normalized shape index}
+For each vertex V, the surrounding surface's local region enclosed within an area defined by a sphere of center V and radius R is extracted. Then the local convex hull normalized shape index (ChNSI) is computed  for this  local region (see section \ref{global_complexity_2} p.\pageref{global_complexity_2} for explanations of ChNSI index). 
+
+\subsection{Local convex hull area ratio}
+For each vertex V, the surrounding surface's local region enclosed within an area defined by a sphere of center V and radius R is extracted. Then the local convex hull normalized area ratio (ChAR) is computed  for this  local region. ChAR is defined as the ratio between the extracted local surface area and the surface area of the convex hull computed for the same extracted local surface. 
+
+A practical example of surface complexity is found in Fig. TODO.
 
 \section{Smooth active scalars for each selected surface}
-It often happens that scalar values contain a lot of noise (see for instance the results of the curvature computation). In order to reduce noise and retrieve more biologically relevant information, scalars can be ``smoothed" in different ways (see \ref{smoothing_scalars_dialog}). Be aware that the obtained results depend very much on the size of the investigated local area (based on direct neighbor vertices or on a much larger area), and on whether the new scalar value is computed as the average or as the median of the scalar values found for neighbor vertices (see Fig. \ref{smoothing_scalars_example}).
+It may happen that scalar values contain a lot of noise (see for instance the results of the curvature computation in Fig. \ref{curvatures}). In order to reduce noise and retrieve more biologically relevant information, scalars can be ``smoothed" in different ways (see \ref{smoothing_scalars_dialog}). Be aware that the obtained results depend very much on the size of the investigated local area for each vertex (based on direct neighbor vertices or on a much larger area), and on whether the new scalar value is computed as the average or as the median of the scalar values found for neighbor vertices (see Fig. \ref{smoothing_scalars_example}).
 
 \begin{figure}
   \centering
