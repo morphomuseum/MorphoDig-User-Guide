@@ -226,7 +226,7 @@ Examples of 3D rendering of ``Curvature" scalars. Scalar mode is active, the rai
 \section{Compute complexity for each selected surface}
 In section \ref{global_complexity_1} p.\pageref{global_complexity_1} and section \ref{global_complexity_2} p.\pageref{global_complexity_2}, proxies for shape complexity (= how much area can be enclosed within a given volume) are described. The limit of those approaches is that they produce single values for a whole surface, and do not take into account shape variation within surfaces. However, a single biological object can express a lot of shape variability. In this section, we extend the approach of shape complexity described earlier: we provide surface complexity measurements for all vertices of a surface. To do so, for each vertex, a local surrounding area is extracted and shape complexity is measured for this local area. The consequence of this approach is that these measurements depend on the extent of the local area investigated for each vertex. For a given surface, the "local" area investigated is a sphere of radius "R".  By default, for a given surface, R is computed as follows:
 \begin{equation}
-R = \dfrac{Avg(length(PC1)+length(PC3)+length(PC3)))}{18}
+R = \dfrac{Avg(length(PC1)+length(PC2)+length(PC3)))}{18}
 \end{equation}
  
 The numerator of this equation is in our view a sensible estimate of the "average extension" of an object in 3D space. It is computed as is the average of the lengths of a given object along its 3 principal extension axes. This measurement is obtained  by performing a principal component analysis on the vertex coordinates of a given surface. The denominator (18) is set empirically, as it seems to provide a reasonable estimate of "locality" for all vertex locations, regardless the global shape of the investigated surfaces. However, R can be set to a custom value in the Scalars complexity dialog (see Fig. \ref{complexity_dialog}).
@@ -241,19 +241,38 @@ The numerator of this equation is in our view a sensible estimate of the "averag
 
 
 Four complexity measurements are provided:
-\subsection{Local sphere normalized shape index}
-For each vertex V, the surrounding surface's local region enclosed within an area defined by a sphere of center V and radius R is extracted. Then the local normalized shape index (NSI) is computed  for this  local region (see section \ref{global_complexity_1} p.\pageref{global_complexity_1} for explanations of NSI index). 
 
-\subsection{Local area / local sphere area}
-For each vertex V, the surrounding surface's local region enclosed within an area defined by a sphere of center V and radius R is extracted. Then complexity is computed as the ratio between the area of the extracted surface and the area of the sphere of radius R.   
+\subsection{Local Convex hull Area Ratio (LCh-AR)}
+For each vertex V, the surrounding surface's local region enclosed within an area defined by a local sphere of center V and radius R is extracted. Then the local convex hull normalized area ratio (ChAR) is computed  for this  local region. ChAR is defined as the ratio between the extracted local surface area and the surface area of the convex hull computed for the same extracted local surface. \\
+ This measurement of surface complexity takes more time to compute (computation of a Convex hull for each vertex) than the LS-AR and LS-NSI indices (see below) based on the local sphere, but it has two advantages (see Fig. \ref{complexityexample}-B p.\ref{complexityexample}):\\
+- very low "border" artifacts (complex structures located at the outskirts of surfaces are given high complexity values).\\
+- contrary to the LCh-NSI index (see below), isolated very flat (and non-complex) structures are given, as they should be, low complexity values .
 
-\subsection{Local convex hull normalized shape index}
-For each vertex V, the surrounding surface's local region enclosed within an area defined by a sphere of center V and radius R is extracted. Then the local convex hull normalized shape index (ChNSI) is computed  for this  local region (see section \ref{global_complexity_2} p.\pageref{global_complexity_2} for explanations of ChNSI index). 
+\subsection{Local Sphere Area Ratio (LS-AR)}
+For each vertex V, the surrounding surface's local region enclosed within an area defined by a local sphere of center V and radius R is extracted. Then complexity is computed as the ratio between the area of the extracted surface and the area of the sphere of radius R.   \\
+This measurement of surface complexity takes less time to compute than the LCh-AR index, but it has one main drawback  (see Fig. \ref{complexityexample}-C p.\ref{complexityexample}):\\
+- border artifacts: as the denominator used to construct this index is based on the surface area of the local sphere for a given vertex V, vertices located at the outskirts of a surface are given underestimated complexity values (and as a general rule, LS-AR tend to underestimate complexity in regions containing a small number of vertices) .
 
-\subsection{Local convex hull area ratio}
-For each vertex V, the surrounding surface's local region enclosed within an area defined by a sphere of center V and radius R is extracted. Then the local convex hull normalized area ratio (ChAR) is computed  for this  local region. ChAR is defined as the ratio between the extracted local surface area and the surface area of the convex hull computed for the same extracted local surface. 
+\subsection{Local Convex hull Normalized Shape Index (LCh-NSI)}
+For each vertex V, the surrounding surface's local region enclosed within an area defined by a sphere of center V and radius R is extracted. Then the local convex hull normalized shape index (ChNSI) is computed  for this  local region (see section \ref{global_complexity_2} p.\pageref{global_complexity_2} for explanations of ChNSI index). \\
+This measurement of surface complexity takes more time to compute (computation of a Convex hull for each vertex) than the LS-AR and LS-NSI indices (see above and below) based on the local sphere, but it presents one advantage over the LS-NSI: (see Fig. \ref{complexityexample}-D) p.\ref{complexityexample}:\\
+- very low "border" artifacts (complex structures located at the outskirts of surfaces are given high complexity values).\\
+However, this index has a considerable drawback: it produces overestimated complexity values for all very flat + very isolated areas (which are typically non complex areas). The reason is that the denominator used to construct this index is based on the surface volume of the local convex hull, which tends to be almost null for very flat and isolated areas. So if your structure presents such flat-and-isolated regions, we advise you not to use this index.
 
-A practical example of surface complexity is found in Fig. TODO.
+\subsection{Local Sphere Normalized Shape Index (LS-NSI)}
+For each vertex V, the surrounding surface's local region enclosed within an area defined by a sphere of center V and radius R is extracted. Then the local normalized shape index (NSI) is computed  for this  local region (see section \ref{global_complexity_1} p.\pageref{global_complexity_1} for explanations of NSI index). This measurement of surface complexity takes less time to compute than the LCh-NSI and LCh-AR indices. Furthermore, it does not overestimate complexity in isolated flat regions, as the Ch-NSI index does (see Fig. \ref{complexityexample}-E p.\ref{complexityexample}). However, in a similar way as the LS-AR index, as the denominator used to construct this index is based on the surface area of the local sphere for a given vertex V, vertices located at the outskirts of a surface are given underestimated complexity values (more border artifacts than the LCh-NSI and LCh-AR indices).
+
+
+
+A practical example of surface complexity is found in Fig. \ref{complexityexample} p.\ref{complexityexample}. As a general rule, when possible, please consider to use the LCh-AR index as it is may produce less artifacts than the other 3 indices.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.19]{images/11/complexity_example.png} 
+	\caption{ 
+Local complexity scalar computed in turbinates bones of \textit{Orycteropus afer}. \textbf{A}. Left endo, naso and maxillo turbinate bones viewed from the left side. Left-to-right: antero-posterior direction. Bottom-up: dorso-ventral direction. \textbf{B}: the Local Convex hull Area Ratio (LCh-AR) presents two advantages: no "border" artifacts, and no overestimation of complexity in flat-isolated regions.  \textbf{C}: the Local Sphere Area Ratio (LS-AR) tends to underestimate complexity at the outskirts of complex structures ("border artifacts", see black arrows).  \textbf{D}: the Local Convex hull Normalized Shape Index (LCh-NSI) tends to overestimate complexity is some very flat and isolated areas. See for instance the red areas in the center of the nasoturbinate and in the anterior part of the endoturbinate (black arrows). E: Local Sphere Normalized Shape Index (LS-NSI) presents no overestimation of complexity in flat-isolated regions, but tends to underestimate complexity at the outskirts of complex structures ("border artifacts", see black arrows). Image courtesy: Lionel Hautier and Mark Wright.
+	}
+\label{complexityexample}
+\end{figure}
 
 \section{Smooth active scalars for each selected surface}
 It may happen that scalar values contain a lot of noise (see for instance the results of the curvature computation in Fig. \ref{curvatures}). In order to reduce noise and retrieve more biologically relevant information, scalars can be ``smoothed" in different ways (see \ref{smoothing_scalars_dialog}). Be aware that the obtained results depend very much on the size of the investigated local area for each vertex (based on direct neighbor vertices or on a much larger area), and on whether the new scalar value is computed as the average or as the median of the scalar values found for neighbor vertices (see Fig. \ref{smoothing_scalars_example}).
