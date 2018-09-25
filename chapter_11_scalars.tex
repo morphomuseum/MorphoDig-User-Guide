@@ -298,4 +298,24 @@ Smoothing scalars. Examples of 3D rendering of ``Min Curvature" scalars. \textbf
 
 
 \section{Normalize or rescale active scalars for each selected surface}
-It may be useful to normalize scalar values between 0 and 1, or to rescale them for different purposes. For instance, in order to be able compare bone thickness or enamel thickness variation between specimens of very different size, normalization is a necessary step. Furthermore, scalar normalization makes it also possible to compare scalar arrays of different nature (ranging between and expressing using a unique color scale ranging between 0 and 1. 
+It may be useful to normalize scalar values between 0 and 1, or to rescale them for different purposes. For instance, in order to be able compare bone thickness or enamel thickness variation between specimens of very different size, scalar normalization is a necessary step. Alos, scalar normalization makes it possible to compare scalar arrays of different nature (and having very different min-max ranges) using a unique color scale ranging between 0 and 1. The scalar normalization/rescale dialog is shown in Fig. \ref{normalization_dialog} p.\pageref{normalization_dialog}. An example of normalization of different scalars within a single surface is shown in Fig. \ref{normalization_example} p.\pageref{normalization_example}.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/11/normalization_dialog.png} 
+	\caption{ 
+Scalar normalization/rescale dialog. The "old min" and "old max" value represent by default the minimal and maximal value of the active scalars within \textbf{all} currently opened surfaces. After the scalar normalization/rescale has been performed, "old min" will have been set to "new min", "old max" will have been set to "new max", and scalar values in between "old min" and "old max" will range between "new min" and "new max" using a linear interpolation. "old min" and "old max" can be given other values than the real min and max of the active scalar via two options. \textbf{1)} a given percentage of extreme min and max values can be removed from the current active scalar values (sometimes only a few extreme "strange" values can give a wrong idea of the "real" extant of the range of a given scalar). \textbf{2)} if the "custom old min/max" option is checked, old min and old max values can be set to any value.  When one of these two options is used, the interpolated values produced may fall above "new max" or below "new min". Then you may decide whether you allow such "out of the range" values using the "allow < new min" and "allow > new max" options. If unchecked, interpolated values falling below "new min" will be set to "new min", and interpolated values falling above "new max" will be set to "new max". The "flip output" option will reverse the range of interpolated values between "new min" and "new max".
+	}
+\label{normalization_dialog}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.1]{images/11/normalization_example.png} 
+	\caption{ 
+Normalization of different scalars within the same specimen. All illustrations use the same color table, ranging between 0 and 1.  \textbf{A} : "Minimal curvature".  \textbf{B} : "Maximal curvature". \textbf{C} : "Mean curvature". \textbf{D} : "Gaussian curvature". Top line: "raw" 4 scalars, which all express a lot of noise. Middle line: the 4 same "smoothed"' scalars after a median filter has been used. Bottom line: the 4 same scalars after normalization. The 5\% most extreme minimal values and maximal values have been excluded from this normalization process, because they are clearly aberrant (most values range between -10 and 10 for all 4 raw scalars, but a few outliers have values above 10000 and below -10000). The visual output of the bottom line is easier to interpret. Specimen: enamel dentine junction (EDJ) of the second superior molar of a medieval human from Sains-en-Gohelle (France). Image credit: Mona Le Luyer.	
+	}
+\label{normalization_example}
+\end{figure}
+
+
