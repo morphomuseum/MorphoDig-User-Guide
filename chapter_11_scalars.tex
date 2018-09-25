@@ -267,7 +267,7 @@ For each vertex V, the surrounding surface's local region enclosed within an are
 A practical example of surface complexity is found in Fig. \ref{complexityexample} p.\ref{complexityexample}. As a general rule, when possible, please consider to use the LCh-AR index as it is may produce less artifacts than the other 3 indices.
 \begin{figure}
   \centering
-  \includegraphics[scale=0.19]{images/11/complexity_example.png} 
+  \includegraphics[scale=0.38]{images/11/complexity_example.jpg} 
 	\caption{ 
 Local complexity scalar computed in turbinate bones of \textit{Orycteropus afer}. \textbf{A}. Left endo, naso and maxillo turbinate bones viewed from the left side. Left-to-right: antero-posterior direction. Bottom-up: dorso-ventral direction. \textbf{B}: the Local Convex hull Area Ratio (LCh-AR) presents two advantages: no "border" artifacts, and no overestimation of complexity in flat-isolated regions.  \textbf{C}: the Local Sphere Area Ratio (LS-AR) tends to underestimate complexity at the outskirts of complex structures ("border artifacts", see black arrows).  \textbf{D}: the Local Convex hull Normalized Shape Index (LCh-NSI) tends to overestimate complexity is some very flat and isolated areas. See for instance the red areas in the center of the nasoturbinate and in the anterior part of the endoturbinate (black arrows). E: Local Sphere Normalized Shape Index (LS-NSI) presents no overestimation of complexity in flat-isolated regions, but tends to underestimate complexity at the outskirts of complex structures ("border artifacts", see black arrows). Image courtesy: Lionel Hautier and Mark Wright.
 	}
@@ -275,7 +275,7 @@ Local complexity scalar computed in turbinate bones of \textit{Orycteropus afer}
 \end{figure}
 
 \section{Smooth active scalars for each selected surface}
-It may happen that scalar values contain a lot of noise (see for instance the results of the curvature computation in Fig. \ref{curvatures}). In order to reduce noise and retrieve more biologically relevant information, scalars can be ``smoothed" in different ways (see \ref{smoothing_scalars_dialog}). Be aware that the obtained results depend very much on the size of the investigated local area for each vertex (based on direct neighbor vertices or on a much larger area), and on whether the new scalar value is computed as the average or as the median of the scalar values found for neighbor vertices (see Fig. \ref{smoothing_scalars_example}).
+It may happen that scalar values contain a lot of noise (see for instance the noisy results of the curvature computation in Fig. \ref{curvature_example}). In order to reduce noise and retrieve more biologically relevant information, scalars can be ``smoothed" in different ways (see \ref{smoothing_scalars_dialog}). Be aware that the obtained results depend very much on the size of the investigated local area for each vertex (based on direct neighbor vertices or on a much larger area), and on whether the new scalar value is computed as the average or as the median of the scalar values found for neighbor vertices (see Fig. \ref{smoothing_scalars_example}).
 
 \begin{figure}
   \centering
@@ -289,7 +289,7 @@ Scalar smoothing dialog. Smoothing can be computed using only direct neighbor ve
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.2]{images/11/scalar_smoothing_example.png} 
+  \includegraphics[scale=0.4]{images/11/scalar_smoothing_example.jpg} 
 	\caption{ 
 Smoothing scalars. Examples of 3D rendering of ``Min Curvature" scalars. \textbf{Top} : "raw" minimal curvature, which is extremely variable locally, and hard to interpret.  \textbf{Middle line}: averaging direct neighbors  or averaging scalar values on a much larger area give different results. See also how much averaging scalar values is sensitive with extreme min and max values. \textbf{Bottom line} : computing a median based upon direct neighbors  or upon scalar values found within a much larger area also give different results. The median smoothing "method"' is much less sensitive with extreme values (no difference seen when only 1\% of the most extreme min and max values are removed).  Specimen: enamel dentine junction (EDJ) of the second superior molar of a medieval human from Sains-en-Gohelle (France). Image credit: Mona Le Luyer.	
 	}
@@ -298,7 +298,7 @@ Smoothing scalars. Examples of 3D rendering of ``Min Curvature" scalars. \textbf
 
 
 \section{Normalize or rescale active scalars for each selected surface}
-It may be useful to normalize scalar values between 0 and 1, or to rescale them for different purposes. For instance, in order to be able compare bone thickness or enamel thickness variation between specimens of very different size, scalar normalization is a necessary step. Alos, scalar normalization makes it possible to compare scalar arrays of different nature (and having very different min-max ranges) using a unique color scale ranging between 0 and 1. The scalar normalization/rescale dialog is shown in Fig. \ref{normalization_dialog} p.\pageref{normalization_dialog}. An example of normalization of different scalars within a single surface is shown in Fig. \ref{normalization_example} p.\pageref{normalization_example}.
+It may be useful to normalize scalar values between 0 and 1, or to rescale them for different purposes. For instance, scalar normalization makes it possible to compare scalar arrays of different nature (and having very different min-max ranges) using a unique color scale ranging between 0 and 1. Also, in order to be able compare scalars such as bone thickness or enamel thickness variation between specimens of very different size, scalar normalization is a necessary step. The scalar normalization/rescale dialog is shown in Fig. \ref{normalization_dialog} p.\pageref{normalization_dialog}. An example of normalization of different scalars within a single surface is shown in Fig. \ref{normalization_example} p.\pageref{normalization_example}. An example of normalization of a single scalar in order to compare different specimens is shown in Fig. \ref{normalization_example2} p.\pageref{normalization_example2}.
 
 \begin{figure}
   \centering
@@ -311,11 +311,18 @@ Scalar normalization/rescale dialog. The "old min" and "old max" value represent
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.1]{images/11/normalization_example.png} 
+  \includegraphics[scale=0.26]{images/11/normalization_example.jpg} 
 	\caption{ 
 Normalization of different scalars within the same specimen. All illustrations use the same color table, ranging between 0 and 1.  \textbf{A} : "Minimal curvature".  \textbf{B} : "Maximal curvature". \textbf{C} : "Mean curvature". \textbf{D} : "Gaussian curvature". Top line: "raw" 4 scalars, which all express a lot of noise. Middle line: the 4 same "smoothed"' scalars after a median filter has been used. Bottom line: the 4 same scalars after normalization. The 5\% most extreme minimal values and maximal values have been excluded from this normalization process, because they are clearly aberrant (most values range between -10 and 10 for all 4 raw scalars, but a few outliers have values above 10000 and below -10000). The visual output of the bottom line is easier to interpret. Specimen: enamel dentine junction (EDJ) of the second superior molar of a medieval human from Sains-en-Gohelle (France). Image credit: Mona Le Luyer.	
 	}
 \label{normalization_example}
 \end{figure}
 
-
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.4]{images/11/normalization_example2.png} 
+	\caption{ 
+Normalization of a single scalar array in different specimens. From left to right in A and B: right femurs of \textit{Cercopithecus mona}, \textit{Erythrocebus patas}, \textit{Papio} sp.   \textbf{A}: "raw" bone thickness. See how bone thickness is much higher, generally speaking, for the femur of \textit{Papio sp.}, a relatively much larger primate than in the two others. This makes it hard to identify and compare variation of bone thickness for these three specimens. \textbf{B}: normalized bone thickness. Direct description and comparison between these three specimens is now possible. 	
+	}
+\label{normalization_example2}
+\end{figure}
