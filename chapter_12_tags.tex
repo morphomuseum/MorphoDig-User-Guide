@@ -28,48 +28,53 @@ The "Tags" window can be also opened by clicking on "\includegraphics[scale=0.7]
 
 \section{Create new empty tag array for each selected surface}\label{empty_tag_array}
 
-
 \begin{minipage}{0.5\textwidth}
-This option will create a new "empty" tag array (the name of this new array is given by the user). "Empty", in this context, means that all vertices are assigned to the "Exterior" tag (tag=0). 
-\end{minipage} 
-
+This option will create a new "empty" tag array (the name of this new array is given by the user). "Empty", in this context, means that all vertices are assigned to the "Exterior" tag (tag=0).\end{minipage} 
 \begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/11/empty_tag_array.png}
+  \includegraphics[scale=0.5]{images/12/empty_tag_array.png}
  \captionof{figure}{Creating a new tag array}
  \end{minipage} 
 
 
 
 \section{Create new tag array based on currently displayed colors for each selected surface}
+Advice: \textbf{do not} use this method on surfaces displayed with \textbf{color gradients}. This option usually only makes sense when distinct colors are displayed (typically: less than 30).\\
+This option (see Fig. \ref{rgb_conversion}) may be useful when you just have opened a .ply file already containing RGB colors (for instance, let us suppose that you have painted a surface using MeshLab software, and that you wish to convert those colors into tags). RGB colors contained in .ply files are inserted inside the RGB array when opened with MorphoDig. This option is not restricted to RGB arrays contained inside .ply files though: it is also possible to convert any displayed color (such as scalar color rendering via a discretized color table) into a tag value. 
 
-This option (see Fig. \ref{rgb_conversion}) may be useful when you just have opened a .ply file already containing RGB colors (for instance, let us suppose that you have painted a surface using MeshLab software, and that you wish to convert those colors into tags). RGB colors contained in .ply files are inserted inside the RGB scalar when opened with MeshTools. I you plan to transform those RGB values into tags with MeshTools, be aware of the fact that RGB scalar is reinitialised extremely frequently: for instance as soon as you activate the tag or the scalar display mode, or whenever you change the objects' color rendering. So I advise you to use the present option only immediately after opening the surface.
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{images/Tags/Convert.png} 
-	\caption{Convert RGB scalars to TAGS window}
+  \includegraphics[scale=0.5]{images/12/tags_from_rgb.png} 
+	\caption{Create Tag array from RGB array.}
 \label{rgb_conversion}
 \end{figure}
-You have two options :\\
-\textbf{\underline{1) exact color match}}\\
-$\rightarrow$ In that case, in order to be given a tag value other than Tag 00, a vertex must satisfy the following condition: its RGB scalar value should match one of the 25 colors defined in the ``Tags options" window. If a vertex does not satisfy this condition, it is given the Tag 00 value.\\
-\textbf{\underline{2) Define tags following the first 25 distinct colors found in RGB scalar}}\\
-$\rightarrow$ In that case the following sequence of operations is applied:\\
-a) ISE-MeshTools searches for the first 25 distinct RGB colors inside the object; ISE-MeshTools gives them numbers ranging from 0 to 24. Important : if more than 25 distinct colors exist in the RGB scalar, they are not given a tag value.\\
-b) ISE-MeshTools updates tag colors according to the 25 first colors found in the RGB scalar.\\
-c) All vertices are given a Tag value following the procedure defined above in \#1 (exact color match).\\
-Advantages of \#1 : if you have well prepared your RGB colors so that they matches well those associated with the 25 tags, this procedure will work perfectly.\\
-Advantages of \#2 : if you have up to 25 distinct RGB colors in your .ply file and if you do not want to bother to edit manually the 25 tags and give them a RGB color, you will save time with this procedure. 
-\\Drawbacks of both methods: if your file contains more than 25 distinct RGB colors, you will definitely lose information in the process.
-\\Be also aware that when saving .ply files with ISE-MeshTools, the RGB coulours saved within the file are those currently rendered in the 3D screen. If you spent time to color a 3D surface in .ply format (for instance with MeshLab) and you have opened it subsequently with ISE-MeshTools and have saved it again, there is a high probability that all the initial RGB colors will have been replaced with those rendered in ISE-MeshTools.
+Two main ways to convert currently displayed colors are available :\\
+\textbf{\underline{1) Exact color match using active tag map}}\\
+$\rightarrow$ In that case, in order to be given a tag value other than Tag 00, a vertex must satisfy the following condition: its RGB scalar value should match one of the colors defined in the "Tags options" window for the active tag map. If a vertex does not satisfy this condition, it is given the Tag 00 value (=exterior).\\
+\textbf{\underline{2) Define tags following the first N distinct colors found}}\\
+$\rightarrow$ In that case the following sequence of operations is performed:\\
+a) Important: MorphoDig re-initializes the currently active tag map. If you have spent time to define colors and labels on the currently active tag map, it is strongly advised to save the active tag map inside a .TAG or .TGP file in order to be able to re-load it later. Otherwise, your work will be lost.\\
+b) MorphoDig inspects the RGB display color of all the vertices of opened surfaces. When meeting a new color, if the active tag map contains less than "N" lines, MorphoDig inserts a new line inside the active tag map (of that color), and associates the current vertex id to this new tag id entry. All vertices of that same color will be associated to that id. If the color of the vertex is "new" and the maximum number of allowed entries in the tag map (N) has been reached, the vertex is associated with "tag id=0".\\
+Method \#1 will work perfectly if you are used to work with a well-defined set of colors on 3D surfaces, and have spent time to define a tag map with those colors.\\
+Method \#2 is much faster, but may lead to messy results: tag entries in the tag map will be ordered in a non-biological way.\\
+
+Also remember not to use these methods when surfaces are displayed with color gradients. An example of use of method 2 is shown in Fig. \ref{rgb_conversion_example} p.\pageref{rgb_conversion_example}.
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.2]{images/12/tags_from_rgb_example.png} 
+	\caption{Example of automatic tag array creation based on displayed color of scalars. Note here that the scalar array (minimal curvature) is displayed using a \textbf{discretized color table} set up with a reasonably small number of colors (5 here). Specimen: enamel dentine junction (EDJ) of the second superior molar of a medieval human from Sains-en-Gohelle (France). Image credit: Mona Le Luyer.}
+\label{rgb_conversion_example}
+\end{figure}
 
 
 \section{Create new tag array based on connectivity for each selected surface}
 
-This option involves vtkPolyDataConnectivityFilter. This option will retrieve all non-connected regions of selected surfaces and assign to each of them a unique Tag id (see Fig. \ref{tag_connected}).
+This option involves vtkPolyDataConnectivityFilter. This option will retrieve all non-connected regions of selected surfaces and assign to each of them a unique Tag id (see for instance Fig. \ref{tag_connected} p.\pageref{tag_connected}).
 \begin{figure}
   \centering
-  \includegraphics[scale=0.45]{images/Tags/Lemur_tag_input_output.png} 
-	\caption{Left: original surface. Right: the same mesh automatically tagged into 304 non connected regions.}
+  \includegraphics[scale=0.28]{images/12/connectivity_tags.png} 
+	\caption{Example of tag array based on surface connectivity. Left: original surface representing the skull of the holotype specimen of \textit{Pan paniscus}. Right: a tag array ware created based on the output of the connectivity procedure: a large large number (>1000) of non connected regions was found and each was tagged. The largest region (cranium and mandible) is displayed with an opacity of 10\%, and the >1000 others with an opacity of 100\%. }
 \label{tag_connected}
  
 \end{figure}
@@ -101,7 +106,7 @@ pencil tag size (in number of pixels on the screen can be modified in the Tags w
 
 
 \subsection{Paint bucket tag tool}
-\includegraphics[scale=0.7]{images/pixmap/Flood_fill.png}\\
+\includegraphics[scale=0.7]{images/12/paint_bucket.png}\\
 \textbf{Paint bucket tag tool controls:}\\
 "T" pressed + left mouse click : tags the selected surface using currently active tag.\\
 "T" pressed + right click : tags the selected surface using currently active tag \textbf{without color override}. Tag propagation will start at the picked vertex of a given color, but will stop when meeting another color.\\
@@ -109,21 +114,21 @@ pencil tag size (in number of pixels on the screen can be modified in the Tags w
 When surfaces contain a lot of disconnected regions in space (for instance: the skeleton of a fetus), the paint bucket tool can be usefull to paint each disconnected element one by one in one mouse click. But be careful if your all regions of your surface are connected together: when using "T" + left click ("color override" allowed), as it will paint the whole object uniformly.
 
 \subsection{Lasso tag tool} \label{lasso_tag_section}
-\includegraphics[scale=0.7]{images/pixmap/Lasso_plus.png}\\
+\includegraphics[scale=0.7]{images/12/lasso.png}\\
 Once the "lasso tag tool" button is pressed, draw the region to be tagged by dragging the mouse on the screen while maintaining the left button pressed. Then release the left mouse button. 
 
 \subsection{Merge tags.}
 \noindent
 \begin{minipage}{0.5\textwidth}
-Two tagged regions can be merged into a single one. All source tags will be put into target tags. \end{minipage}    
+Two tagged regions can be merged into a single one. All source tags will be put into target tags. See for instance Fig. \ref{merge_tags} p.\pageref{merge_tags}.\end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
-  \includegraphics[scale=0.5]{images/Tags/Merge_tags.png}
+  \includegraphics[scale=0.5]{images/12/merge_tags.png}
  \captionof{figure}{Merge tags window}
  \end{minipage} 
 \noindent
 \begin{figure}
   \centering
-  \includegraphics[scale=0.25]{images/Tags/Merge.png} 
+  \includegraphics[scale=0.25]{images/12/merge_example.png} 
 	\caption{Example of tag merging. Left : cranium of \textit{Microcebus murinus} presenting the parietal region
 tagged in yellow, the frontal region tagged in orange. Right : frontal tag region was merged into
 the parietal region.}
