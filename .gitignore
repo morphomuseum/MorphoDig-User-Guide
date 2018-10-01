@@ -30,3 +30,15 @@ chapter_03_open_data.log
 chapter_06_camera_gui_controls.log
 chapter_07_file.log
 User-Guide.log
+CREAE1D.tmp
+*.out
+*.mtc2
+*.mtc0
+*.maf
+*.log
+*.blg
+*.mtc1
+*.aux
+*.bbl
+*.mtc
+*.toc
