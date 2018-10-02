@@ -157,7 +157,7 @@ All opened surfaces can be unselected by pressing "CTRL +D", or selected by pres
 The present tutorial contains a project .ntw file, which may be useful to directly open the mouse
 cranium in a convenient position, to make it transparent. First, delete all currently opened objects
 (press “CTRL+A”, then press “Del”). Then open the enclosed .ntw file (File->Open Project, then select
-“Mouse\_cranium.ntw”). Once loaded, the mouse cranium surface file object is opened, is given the position
+"Mouse\_cranium.ntw"). Once loaded, the mouse cranium surface file object is opened, is given the position
 enclosed in the “Mouse\_cranium.pos” file, a color and a transparency. Note that the newly opened
 surface is unselected.
 
@@ -209,6 +209,22 @@ Depending on the "z" position of the camera, you may show/hide object, or object
 
 \subsection{Saving landmarks}
 To save all digitized landmarks, go in "File->Landmarks" and chose the desired option. MorphoDig can manage three types of landmark files: ".LMK", ".VER" and ".STV" files (see MorphoDig user guide for further details).
+
+\subsection{Saving the project}
+Saving a "project" makes it possible to save all opened selected objects (surface of the cranium and its position, landmarks) altogether instead of one by one. 
+To save all opened objects, do the following sequence of actions:\\
+1) press "CTRL + A" to select all objects\\
+2) click on "File->Project->Save Project" or on the button "save project" (\includegraphics[scale=0.03]{../images/03/save_data.png})  inside the main window.\\
+3) chose the desired options in the "Save Project" window (see Fig. \ref{save_project_file} p.\pageref{save_project_file} and the User Guide for further details regarding the available options)
+\begin{figure}
+  \centering  
+ \includegraphics[scale=0.5]{../images/07/project/save_ntw.png}
+ \captionof{figure}{Save project window.}
+\label{save_project_file}
+\end{figure}
+
+The advantage of working with projects is that all involved objects (surfaces, landmarks, positions) can be reloaded later all at once (and not 1 by 1). 
+
 \subsection{Acknowledgements}
 Thanks to the MRI imaging platform for the access to imaging facilities.
 
