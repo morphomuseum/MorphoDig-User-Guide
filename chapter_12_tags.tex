@@ -88,7 +88,7 @@ This option involves vtkPolyDataConnectivityFilter. This option will retrieve al
 \noindent
 \textbf{3: Tag in MorphoDig's main window.} \\ a:when using the pencil "\includegraphics[scale=0.7]{images/12/pencil.png}" or the paint bucket "\includegraphics[scale=0.7]{images/12/paint_bucket.png}", you have two options:\\
  "T" pressed +left click: allows color override\\
- "T" pressed +right click: does not allow color override (see below for explanations of what color overrid is)\\
+ "T" pressed +right click: does not allow color override (see below for explanations of what color override is)\\
 b: when using the lasso, maintain mouse left click pressed and draw a contour of the region which should be tagged.
 
 
@@ -97,11 +97,11 @@ b: when using the lasso, maintain mouse left click pressed and draw a contour of
 \includegraphics[scale=0.7]{images/12/pencil.png}\\
 \textbf{Pencil tag tool controls:}\\
 "T" pressed + left mouse click : tags the selected surface using currently active tag.\\
-"T" pressed + right click : tags the selected surface using currently active tag \textbf{without color override}. Tag propagation will start at the picked vertex of a given color, but will stop when meeting another color.\\
+"T" pressed + right click : tags the selected surface using currently active tag \textbf{without color override}. Tag propagation will start at the picked vertex of a given color, but will stop when meeting another color different from that of Tag 0 (usually assigned to "exterior").\\
 
 \textbf{Pencil tag special option:}\\
 \noindent
-pencil tag size (in number of pixels on the screen can be modified in the Tags window.
+pencil tag size (in number of pixels) on the screen can be modified in the Tags window.
 
 
 
@@ -109,7 +109,7 @@ pencil tag size (in number of pixels on the screen can be modified in the Tags w
 \includegraphics[scale=0.7]{images/12/paint_bucket.png}\\
 \textbf{Paint bucket tag tool controls:}\\
 "T" pressed + left mouse click : tags the selected surface using currently active tag.\\
-"T" pressed + right click : tags the selected surface using currently active tag \textbf{without color override}. Tag propagation will start at the picked vertex of a given color, but will stop when meeting another color.\\
+"T" pressed + right click : tags the selected surface using currently active tag \textbf{without color override}. Tag propagation will start at the picked vertex of a given color, but will stop when meeting another color different from that of Tag 0 (usually assigned to "exterior").\\
  
 When surfaces contain a lot of disconnected regions in space (for instance: the skeleton of a fetus), the paint bucket tool can be usefull to paint each disconnected element one by one in one mouse click. But be careful if your all regions of your surface are connected together: when using "T" + left click ("color override" allowed), as it will paint the whole object uniformly.
 
