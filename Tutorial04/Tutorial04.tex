@@ -55,14 +55,14 @@
 }
 \posttitle{
 \\
-  \includegraphics[width=8cm]{tutorial04.png}\\[\bigskipamount]
+  \includegraphics[width=6.5cm]{tutorial05.png}\\[\bigskipamount]
 \end{center}}
 
 %\postdate{
 %\includegraphics[width=15cm]{logo_affiliations.png}
 %}
 
-\title{Tutorial 04: working with flags}
+\title{Tutorial 04: working with tags}
 
 
 
@@ -76,25 +76,24 @@
 %Corps du document :
 \begin{document}
 
-	\dominitoc
+\dominitoc	
 
 \maketitle
 
-
 \faketableofcontents
 
-%\chapter{Working with landmarks}
-\addstarredchapter{Working with flags}
+\addstarredchapter{Working with tags}
 
-\markboth{Tutorial 04: Working with flags}{}
+\markboth{Tutorial 04: Working with tags}{}
 
 \minitoc 
 Tutorial 04 includes:
 \begin{itemize}
 \item One .ntw (MorphoDig project) file
-\item One .vtk surface file representing a right inner ear of \textit{Mus musculus}
+\item One .vtk surface file representing a right inner ear of \textit{Galago moholi}
 \item One .pos (position) file 
 \item One .ori (orientation helper labels) file 
+\item One .tgp (tag map) file
 \item The present .pdf document
 \end{itemize}
 
@@ -105,14 +104,14 @@ Tutorial 04 includes:
 \section{About the specimen}
 
 %\addcontentsline{toc}{section}{About the specimen}
-The surface file enclosed in this tutorial represent three-dimensional reconstruction of the right inner ear of a house mouse (\textit{Mus musculus}) obtained by computerized microtomography at the MRI \si{\micro} CT platform housed at the ISEM.\\
+The surface file enclosed in this tutorial represent three-dimensional reconstruction of the right inner ear of a strepsirrhine primate (\textit{Galago moholi}) obtained by computerized microtomography at the MRI \si{\micro} CT.\\
 Before using this tutorial, please download and read MorphoDig User Guide.
 
 
 \section{A brief overview of enclosed files}
 		Download and unzip the files associated to this tutorial. Open MorphoDig.
 \subsection{Mouse inner ear surface and position files}
-	You may open the enclosed .vtk surface file (File -> Surface -> Open Surface, then select "Mouse\_right\_ear.vtk", or drag and drop this file in the 3D main window). When opened
+	You may open the enclosed .vtk surface file (File -> Surface -> Open Surface, then select "Galago\_moholi\_right\_ear.vtk", or drag and drop this file in the 3D main window). When opened
 this way, the corresponding opened surface object is drawn grey, which indicates that this surface
 is selected. You may interact with selected objects in different ways (see MorphoDig user guide for
 further explanations).\\
@@ -146,8 +145,7 @@ A convenient way to orient a right inner ear in a biologically relevant way is d
 4) rotate the inner around the z axis ("rz" yellow slider) until the later semicircular points towards the top left-hand part of the screen, and the cochlea points towards the bottom right-hand of the screen.\\
 That way, when viewing the inner ear from the front side (\includegraphics[scale=0.7]{../images/06/camera/camera_front.png}), it is approximately oriented in the same way as it would be within the cranium viewed from the front side as well.\\
 
-The present tutorial contains a .pos (position) file, which you may open in order to place correctly the right ear of the house
-mouse (File -> Position-> Open Position for selected surfaces, then choose "Mouse\_right\_ear.pos", see Fig. \ref{orientation} p.\pageref{orientation}). As we plan to place curve node landmarks and curve handle landmarks inside the cochlea and the semicircular canals, please select the right inner ear surface (CTRL+A, or drag right mouse button to draw a selection rectangle) and change its transparency (Edit Selected Surface->rendering modifications->Change transparency -> then give a value smaller than 100).\\
+The present tutorial contains a .pos (position) file, which you may open in order to place correctly the right ear of the \textit{Galago moholi} (File -> Position-> Open Position for selected surfaces, then choose "Galago\_moholi\_right\_ear.pos", see Fig. \ref{orientation} p.\pageref{orientation}). As we plan to place curve node landmarks and curve handle landmarks inside the cochlea and the semicircular canals, please select the right inner ear surface (CTRL+A, or drag right mouse button to draw a selection rectangle) and change its transparency (Edit Selected Surface->rendering modifications->Change transparency -> then give a value smaller than 100).\\
 All opened surfaces can be unselected by pressing "CTRL +D", or selected by pressing "CTRL +A". All selected objects can be deleted by pressing "Del".
 
 \begin{figure}
@@ -158,24 +156,25 @@ All opened surfaces can be unselected by pressing "CTRL +D", or selected by pres
  
 \end{figure}
 
-\subsection{Mouse inner ear project file}
+
+\subsection{Galago moholi inner ear project file}
 The present tutorial contains a project .ntw file, which may be useful to directly open the right inner ear
  in a convenient position, to make it transparent and to give it a color. First, delete all currently opened objects
 (press "CTRL+A", then press "Del"). Then open the enclosed .ntw file (File -> Open Project, then select
-"Mouse\_right\_ear.ntw"). Once loaded, the right inner ear surface is opened, is given the position
-enclosed in the "Mouse\_right\_ear.pos" file, a color and a transparency. Note that the newly opened
+"Galago\_moholi\_right\_ear.ntw"). Once loaded, the right inner ear surface is opened, is given the position
+enclosed in the "Galago\_moholi\_right\_ear.pos" file, a color and a transparency. Note that the newly opened
 surface is unselected.\\
 
+\subsection{Galago moholi tag map file}
+3D Curves are constructed in MorphoDig using 2 series of landmarks : a series of "curve node" landmarks (\includegraphics[scale=0.7]{../images/04/curve_nodes.png}),
+and a series of "curve handle" landmarks (\includegraphics[scale=0.7]{../images/04/curve_handles.png}). The numbers of curve nodes and curve handles should be equal. The Galago\_moholi\_right\_ear.stv contains the 3D coordinate of a series of  33 "curve node" and 33 "curve handle" landmarks. You can load it (File->Curves->Load MorphoDig Landmark/Curve file(.STV), or drag and drop this file directly in the 3D main window).\\
 
-\subsection{Mouse inner ear flag file}
-Prerequisite : make sure that the mouse right inner ear surface is loaded, and that it is correctly positioned. 
-You can load the enclosed .flg file (File->Flags->Open Flags-> Mouse\_right\_ear.flg or drag and drop this file directly in the 3D main window), which contains 13 flags.   
+You may consider to change the way landmarks and curve handles are rendered in the "Landmark and flag options" window (Edit->Edit landmark and flag rendering options ). In this tutorial, you may display landmarks as spheres and to set their rendering size to 0.05 mm.\\
 
-
-\subsection{Mouse inner ear .ori file}
+\subsection{Galago moholi inner ear .ori file}
 The present tutorial contains a .ori file, which contains orientation labels for the coordinate system
 orientation helper. You can load this file the enclosed .ori file ("File->Orientation helper labels -> Open Orientation labels", then select
-"Mouse\_cranium.ori"). Once loaded, the system coordinate orientation helper will show the following
+"Galago\_moholi\_right\_ear.ori"). Once loaded, the system coordinate orientation helper will show the following
 labels :\\
 +z axis : superior\\
 -z axis : inferior\\
@@ -185,60 +184,68 @@ labels :\\
 -x axis : distal\\
 You may set your own orientation axis labels with the “Edit orientation labels” window (Edit-> Edit orientation labels)
 
-\section{Flag digitization with MorphoDig}
+\section{Curve digitization with MorphoDig}
 
 
-\subsection{Flag rendering options}
-Flags are rendered in MorphoDig the following way: a sphere is placed at the location of interest and rendered; additionally, a thin cylinder of a defined length is drawn between this location and the place where the label is rendered. 
-conventional landmark location (do not try to select / unselect the label or the line directly, this will
-have no effect).
-You can change the way flags are rendered in the "Landmark and flag options" window
-(Edit->Edit landmark and flag rendering options, Fig. \ref{flag_rendering_options} p.\pageref{flag_rendering_options}). You can choose the default flag length and the default flag color. As the structure we investigate in this tutorial is quite small (around 4 mm long), I recommend you to set the flag length to about 0.5mm.
+When digitizing curve node and curve handle landmarks, I recommend to press "\includegraphics[scale=0.7]{../images/04/Landmarks2.png}" to activate the "Landmark mode". When active, only landmarks can be selected/unselected via right mouse button drag/click. \\
+
+As stated earlier, two series of landmarks involved into the construction of 3D curves can be set with MorphoDig: "curve node" and "curve handle" landmarks.
+Press "\includegraphics[scale=0.7]{../images/04/curve_nodes.png}" to activate curve node landmark setting mode, “\includegraphics[scale=0.7]{../images/04/curve_handles.png}” to activate curve handle landmark setting mode mode.\\
 
 
+Landmarks can be set on surfaces by pressing "L" + left mouse click. If a single landmark is selected, its position can be moved
+on another part of the surface by pressing "L" + right mouse click (nothing happens if no landmark
+is selected or if more than one landmark are selected). Also, you may need to move landmarks away
+from the object's surface (for instance when you want to place a landmark at the centere of a semicircular canal):
+once selected, a landmark position can be moved by using the usual mouse (CTRL + middle click + mouse drag) and GUI controls.\\
+
+You may sometimes need to reorder landmark objects. 
+Selected curve node/handle landmarks can be reordered
+using the following buttons. Clicking on \includegraphics[scale=0.7]{../images/06/objects/move_up.png} will increase (= move down in list, if possible) the landmark number of all selected landmarks. Clicking on \includegraphics[scale=0.7]{../images/06/objects/move_down.png} will decrease (=move up in list, if possible) the landmark number of all selected landmarks. 
+
+\subsection{Digitization strategy}
 \begin{figure}
   \centering
-  \includegraphics[scale=0.55]{../images/08/landmark_flag_options.png} 
-	\caption{Landmark and flag options window.}
-\label{flag_rendering_options}
-\end{figure}
+  \includegraphics[scale=0.2]{curve_digitization.png} 
+	\caption{Curve digitization strategy with MorphoDig. \textbf{A:} digitization of curve node landmarks. \textbf{B:} Nodes 9, 16 and 25 are now starting nodes (dark green). \textbf{C:} Nodes nodes 15, 24 and 33 are connected to their preceding starting node to close the three semicircular canals. \textbf{D:} Curve node coordinates were saved  as a .ver file, and are loaded in a second step as handle landmarks (violet). \textbf{E:} Curve handles were displaced automatically. \textbf{F:} several curve nodes and curve handles were displaced manually (last and most time consuming step)}
+\label{curve_digitization}
+ \end{figure}
+To digitize curves on an inner ear, I recommend to use the following 3 steps strategy:
+\subsubsection{1) Digitize a series of "curve node" landmarks, and define curve starting points}
+As curves pass through curve node landmarks, these curve nodes will endorse the role of the "skeleton" of all curve segments. In the present tutorial, a series of 33 "curve node" landmarks was set inside the cochlea, the lateral semicircular canal, on the anterior and posterior semi-circular canals (Fig. \ref{curve_digitization}-A p.\pageref{curve_digitization}). You may load the enclosed .ver file (File->Curves->Open Curve Node Landmarks-> Mouse\_right\_ear.ver).\\
 
-\subsection{Creating new flags}
+Then select landmarks 9, 16 and 25, and define them as curve starting points (Landmarks->Selected curve node and curve handle landmarks-> Normal nodes (red): define as starting nodes (dark green)). The consequence of this action is that the series of 33 landmarks will contain four
+curves : one defining the cochlea, and one for each of the 3 semi-circular canals (Fig. \ref{curve_digitization}-B p.\pageref{curve_digitization}).\\
 
-Press “\includegraphics[scale=0.7]{../images/04/flag_landmarks.png}” to activate flag digitization mode (this mode is \textbf{NOT} active by default)
+As an option, you may select curve nodes 15, 24 and 33 and connect them to their preceding starting
+nodes (Landmarks->Selected curve node and curve handle landmarks-> Normal nodes (red): connect
+to preceding starting nodes (cyan)). The consequence of this action is that the curves representing
+the 3 semi-circular canals will be closed (Fig. \ref{curve_digitization}-C p.\pageref{curve_digitization}).\\
+Save the current series of landmarks (File->Curves->Save Curve Node Landmarks).
 
-\subsection{Interacting with flags}
-When digitizing flag landmarks, I recommend to press "\includegraphics[scale=0.7]{../images/04/Landmarks2.png}" to activate the "Landmark mode". When active,
-only landmarks (among which flag landmarks) can be selected/unselected via right mouse button drag/click. Flag landmarks can be set
-on surfaces by pressing "L" + left mouse click.
- If a single flag landmark is selected, its position can be moved
-on another part of the surface by pressing "L" + right mouse click (nothing happens if no flag
-is selected or if more than one flag are selected). Also, you may need to move flags away
-from the object’s surface (for instance when you want to place a flag at the center of a foramen):
-once selected, the position of a given flag can be moved by using the usual mouse (CTRL + middle click + mouse drag) and GUI controls.\\
+\subsubsection{2) Load curve handles and modify their position semi-automatically}
+- Load curve handles (File->Curve->Open Curve Handle Landmarks-> then select the file you just created
+in the preceding step, here choose the "Mouse\_right\_ear.ver" file, Fig. \ref{curve_digitization}-D p.\pageref{curve_digitization}).\\
+- Select all the curve handles (the easiest way to achieve this is to press “CTRL +A”, to select all currently
+opened objects).\\
+- Move curve handles semi-automatically (Landmarks->Selected curve node and curve handle landmarks-> Move curve handles semi-automatically). Choose a value of 25\%, press "Ok" (Fig. \ref{curve_digitization}-E p.\pageref{curve_digitization}), and then unselect all objects (CTRL+D).\\
 
+\subsubsection{3) Modify curve handles and normal landmarks manually}
+The last step (and probably the hardest one) is to move manually the curve nodes and curve handles in order to make the curves follow the geometry of the studied structures (Fig. \ref{curve_digitization}-F p.\pageref{curve_digitization}).
 
+\subsection{Saving and exporting curves}
 \begin{figure}
   \centering
-  \includegraphics[scale=0.55]{../images/06/objects/edit_flag.png} 
-	\caption{Edit first selected flag window.}
-\label{first_flag_edit}
+  \includegraphics[scale=0.3]{export.png} 
+	\caption{Exporting curves. \textbf{A:} curve digitization involving with 33 curve node and 33 curve handle landmarks. \textbf{B:} each curve segment was exported as 20 equidistant semi-landmarks inside a .ver file. These equidistant semi-landmarks are those used in geometric morphometric analyses.}
+	\label{export}
+ 
 \end{figure}
-
-
-Flag landmark selection / unselection is performed as for other 3D objects:\\
-- \textbf{Selecting flags 1 by 1}: press "CTRL +D" to unselect all 3D objects and click on "\includegraphics[scale=0.7]{../images/06/objects/flag_edit.png}": this button opens the "Edit first selected flag" window (see Fig. \ref{first_flag_edit} p.\pageref{first_flag_edit}). Then click on \includegraphics[scale=0.7]{../images/06/objects/s_right.png} and \includegraphics[scale=0.7]{../images/06/objects/s_left.png} to navigate through all existing flags and to select them 1 by 1. That way, you can edit the properties of each of them individually.\\
-- \textbf{Selecting flags with the mouse}: maintaining the right mouse button pressed while dragging the mouse will draw a selection rectangle. Once the right mouse button has been released, all unselected flags laying underneath the selection rectangle will be selected (and all selected surfaces will be unselected).\\
-- \textbf{Selecting all flags (and all other 3D objects)}:\\all opened flags (+ all other objects) can by selected by pressing "CTRL +A" (conversely, all flags (+ all other objects) can be unselected by pressing "CTRL +D")\\
-
-
-
-
-\subsection{Saving flags}
-To save all digitized landmarks, go in "File->Flags->Save Flags".
+To save all digitized curves, go in “File->Curves” and either save curve nodes and curve handles inside a .STV (recommended) or .CUR file.\\ 
+To export all digitized curve segments into series of equidistant semi-landmarks (these latter ones will be used in geometric morphometric analyses), go in “File->Curves->Export curves segments as landmark file” (See Fig. \ref{export} p.\pageref{export}).
 
 \subsection{Saving the project}
-Saving a "project" makes it possible to save all opened selected objects (surface of the inner ear and its position+color, flags) altogether instead of one by one. 
+Saving a "project" makes it possible to save all opened selected objects and their properties (surface of the inner ear, its transparency, color and position, curve nodes, curve handles) altogether instead of one by one. 
 To save all opened objects, do the following sequence of actions:\\
 1) press "CTRL + A" to select all objects\\
 2) click on "File->Project->Save Project" or on the button "save project" (\includegraphics[scale=0.03]{../images/03/save_data.png})  inside the main window.\\
@@ -250,9 +257,9 @@ To save all opened objects, do the following sequence of actions:\\
 \label{save_project_file}
 \end{figure}
 
-The advantage of working with projects is that all involved objects (surfaces, flags, positions and colors) can be reloaded later all at once (and not 1 by 1). 
+The advantage of working with projects is that all involved objects and their properties (surfaces, landmarks, positions etc.) can be reloaded later all at once (and not 1 by 1). 
 
-\section{Acknowledgements}
+\subsection{Acknowledgements}
 Thanks to the MRI imaging platform for the access to imaging facilities.
 
 %\nocite{*}   % All bibliography items appear without citation in the text
