@@ -196,7 +196,7 @@ You may set your own orientation axis labels with the “Edit orientation labels
 \begin{figure}
   \centering
   \includegraphics[scale=0.2]{tag_tutorial.png}
-\caption{Tags tutorial. \textbf{A:} \textbf{B:} \textbf{C:}}	
+\caption{Tags tutorial. \textbf{A:} The lasso tag tool was used to draw an outline comprising the cochlea. Active tag: 1=cochlea (cyann)  \textbf{B:} The pencil tag tool was used (T + left click pressed = color override). Note that a part of the cochlea that was tagged in cyan (left) is now tagged in light green (right).  Active tag: 5=vestibule (light green) \textbf{C:} The pencil tag tool was used (T + right click pressed = \textbf{No override}). Note that all vertices that were tagged in cyan (=cochlea) remain tagged the same way when "color override" option is deactivated.}	
 \label{tag_tutorial}
  \end{figure}
 
@@ -218,11 +218,15 @@ Select the newly created tag array as the currently active array, and unselect t
 \subsection{Open the Tags window}
 Click on "File->Tags->Open Tags window", or click on "\includegraphics[scale=0.7]{../images/04/tag_edit.png}". The Tag window should open (see Fig. \ref{tags_window} p.\pageref{tags_window}). In this tutorial, you will use the pencil tag tool ("\includegraphics[scale=0.7]{../images/12/pencil.png}") and the lasso tag tool ("\includegraphics[scale=0.7]{../images/12/lasso.png}"). 
 
+\subsection{Lasso tag tool} \label{lasso_tag_section}
+In the Tags window, click on "\includegraphics[scale=0.7]{../images/12/lasso.png}".\\
+Once the "lasso tag tool" button is pressed, draw the region to be tagged by dragging the mouse on the screen while maintaining the left button pressed. Then release the left mouse button (Fig. \ref{tag_tutorial}-A p.\pageref{tag_tutorial}). 
+
 \subsection{Pencil tag tool.}
-In the Tags window, click on "\includegraphics[scale=0.7]{../images/12/pencil.png}".
+In the Tags window, click on "\includegraphics[scale=0.7]{../images/12/pencil.png}".\\
 You have two options:\\
- "T" pressed + left mouse click : tags the selected surface using currently active tag.\\
-"T" pressed + right click : tags the selected surface using currently active tag \textbf{without color override}. Tag propagation will start at the picked vertex of a given color, but will stop when meeting another color different from that of "tag 0" (usually assigned to "Exterior").
+ "T" pressed + left mouse click : tags the selected surface using currently active tag (Fig. \ref{tag_tutorial}-B p.\pageref{tag_tutorial}).\\
+"T" pressed + right click : tags the selected surface using currently active tag \textbf{without color override}. Tag propagation will start at the picked vertex of a given color, but will stop when meeting another color different from that of "tag 0" (usually assigned to "Exterior"). See Fig. \ref{tag_tutorial}-C p.\pageref{tag_tutorial}.
 \\Pencil tag size (in number of pixels) on the screen can be modified in the Tags window.
 
 
@@ -230,7 +234,7 @@ You have two options:\\
 
 
 \subsection{Saving the project}
-Saving a "project" makes it possible to save all opened selected objects and their properties (surface of the inner ear, its transparency, color and position, curve nodes, curve handles) altogether instead of one by one. 
+Saving a "project" makes it possible to save all opened selected objects and their properties (surface of the inner ear, its transparency, color and position, Tag arrays) altogether instead of one by one. 
 To save all opened objects, do the following sequence of actions:\\
 1) press "CTRL + A" to select all objects\\
 2) click on "File->Project->Save Project" or on the button "save project" (\includegraphics[scale=0.03]{../images/03/save_data.png})  inside the main window.\\
@@ -242,7 +246,7 @@ To save all opened objects, do the following sequence of actions:\\
 \label{save_project_file}
 \end{figure}
 
-The advantage of working with projects is that all involved objects and their properties (surfaces, landmarks, positions etc.) can be reloaded later all at once (and not 1 by 1). 
+The advantage of working with projects is that all involved objects and their properties (surfaces, associated arrays, positions etc.) can be reloaded later all at once (and not 1 by 1). 
 
 \section{Acknowledgements}
 Thanks to the MRI imaging platform for the access to imaging facilities.
