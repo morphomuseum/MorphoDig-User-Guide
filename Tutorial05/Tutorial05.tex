@@ -92,7 +92,7 @@
 Tutorial 04 includes:
 \begin{itemize}
 \item One .ntw (MorphoDig project) file
-\item One .vtk surface file representing a right inner ear of \textit{Mus musculus}
+\item One .vtk surface file representing a right inner ear of \textit{Galago} sp.
 \item One .pos (position) file 
 \item One .ori (orientation helper labels) file 
 \item The present .pdf document
@@ -105,14 +105,14 @@ Tutorial 04 includes:
 \section{About the specimen}
 
 %\addcontentsline{toc}{section}{About the specimen}
-The surface file enclosed in this tutorial represent three-dimensional reconstruction of the right inner ear of a house mouse (\textit{Mus musculus}) obtained by computerized microtomography at the MRI \si{\micro} CT platform housed at the ISEM.\\
+The surface file enclosed in this tutorial represent three-dimensional reconstruction of the right inner ear of a Galago (\textit{Galago} sp.) obtained by computerized microtomography at the MRI \si{\micro} CT platform housed at the ISEM.\\
 Before using this tutorial, please download and read MorphoDig User Guide.
 
 
 \section{A brief overview of enclosed files}
 		Download and unzip the files associated to this tutorial. Open MorphoDig.
-\subsection{Mouse inner ear surface and position files}
-	You may open the enclosed .vtk surface file (File -> Surface -> Open Surface, then select "Mouse\_right\_ear.vtk", or drag and drop this file in the 3D main window). When opened
+\subsection{Galago inner ear surface and position files}
+	You may open the enclosed .vtk surface file (File -> Surface -> Open Surface, then select "Galagp\_sp\_right\_ear.vtk", or drag and drop this file in the 3D main window). When opened
 this way, the corresponding opened surface object is drawn grey, which indicates that this surface
 is selected. You may interact with selected objects in different ways (see MorphoDig user guide for
 further explanations).\\
@@ -146,8 +146,7 @@ A convenient way to orient a right inner ear in a biologically relevant way is d
 4) rotate the inner around the z axis ("rz" yellow slider) until the later semicircular points towards the top left-hand part of the screen, and the cochlea points towards the bottom right-hand of the screen.\\
 That way, when viewing the inner ear from the front side (\includegraphics[scale=0.7]{../images/06/camera/camera_front.png}), it is approximately oriented in the same way as it would be within the cranium viewed from the front side as well.\\
 
-The present tutorial contains a .pos (position) file, which you may open in order to place correctly the right ear of the house
-mouse (File -> Position-> Open Position for selected surfaces, then choose "Mouse\_right\_ear.pos", see Fig. \ref{orientation} p.\pageref{orientation}). As we plan to place curve node landmarks and curve handle landmarks inside the cochlea and the semicircular canals, please select the right inner ear surface (CTRL+A, or drag right mouse button to draw a selection rectangle) and change its transparency (Edit Selected Surface->rendering modifications->Change transparency -> then give a value smaller than 100).\\
+The present tutorial contains a .pos (position) file, which you may open in order to place correctly the right ear of the Galago (File -> Position-> Open Position for selected surfaces, then choose "Galago\_sp\_right\_ear.pos", see Fig. \ref{orientation} p.\pageref{orientation}). As we plan to place curve node landmarks and curve handle landmarks inside the cochlea and the semicircular canals, please select the right inner ear surface (CTRL+A, or drag right mouse button to draw a selection rectangle) and change its transparency (Edit Selected Surface->rendering modifications->Change transparency -> then give a value smaller than 100).\\
 All opened surfaces can be unselected by pressing "CTRL +D", or selected by pressing "CTRL +A". All selected objects can be deleted by pressing "Del".
 
 \begin{figure}
@@ -158,24 +157,24 @@ All opened surfaces can be unselected by pressing "CTRL +D", or selected by pres
  
 \end{figure}
 
-\subsection{Mouse inner ear project file}
+\subsection{Galago inner ear project file}
 The present tutorial contains a project .ntw file, which may be useful to directly open the right inner ear
  in a convenient position, to make it transparent and to give it a color. First, delete all currently opened objects
 (press "CTRL+A", then press "Del"). Then open the enclosed .ntw file (File -> Open Project, then select
-"Mouse\_right\_ear.ntw"). Once loaded, the right inner ear surface is opened, is given the position
-enclosed in the "Mouse\_right\_ear.pos" file, a color and a transparency. Note that the newly opened
+"Galago\_sp\_right\_ear.ntw"). Once loaded, the right inner ear surface is opened, is given the position
+enclosed in the "Galago\_sp\_right\_ear.pos" file, a color and a transparency. Note that the newly opened
 surface is unselected.\\
 
 
-\subsection{Mouse inner ear flag file}
-Prerequisite : make sure that the mouse right inner ear surface is loaded, and that it is correctly positioned. 
-You can load the enclosed .flg file (File->Flags->Open Flags-> Mouse\_right\_ear.flg or drag and drop this file directly in the 3D main window), which contains 13 flags.   
+\subsection{Galago inner ear flag file}
+Prerequisite : make sure that the Galago right inner ear surface is loaded, and that it is correctly positioned. 
+You can load the enclosed .flg file (File->Flags->Open Flags-> Galago\_sp\_right\_ear.flg or drag and drop this file directly in the 3D main window), which contains 13 flags.   
 
 
-\subsection{Mouse inner ear .ori file}
+\subsection{Galago inner ear .ori file}
 The present tutorial contains a .ori file, which contains orientation labels for the coordinate system
 orientation helper. You can load this file the enclosed .ori file ("File->Orientation helper labels -> Open Orientation labels", then select
-"Mouse\_cranium.ori"). Once loaded, the system coordinate orientation helper will show the following
+"Galago\_sp\_right\_ear.ori"). Once loaded, the system coordinate orientation helper will show the following
 labels :\\
 +z axis : superior\\
 -z axis : inferior\\
@@ -232,7 +231,18 @@ Flag landmark selection / unselection is performed as for other 3D objects:\\
 - \textbf{Selecting all flags (and all other 3D objects)}:\\all opened flags (+ all other objects) can by selected by pressing "CTRL +A" (conversely, all flags (+ all other objects) can be unselected by pressing "CTRL +D")\\
 
 
+\subsection{Changing the colors of flags}
+When digitizing a series of flags, all of them have initially the same color. You may edit the color of each flag one by one, as seen in the preceding section. An alternative is to give automatically to each flag the color of the nearest vertex. The "Galago\_sp\_right\_ear.vtk" contains a RGB array which you may activate (select \includegraphics[scale=0.5]{../images/04/scalarcombo_rgb.png} in the array combo box). This RGB array was produced by tagging the inner ear in the preceding tutorial (Tutorial 04: working with tags). \\
+1) Then select all flags (ex: "CTRL+A").\\
+2) Click on "Landmarks->Update all selected flag landmarks' color to that of the closest vertex".
+This option will set the color of all selected flag landmarks to that of the closest vertex found in all opened surface objects. A practical example is shown in Fig. \ref{flag_color_closest_vertex} p. \pageref{flag_color_closest_vertex}.
 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.22]{edit_flag_color_closest_vertex.png} 
+	\caption{Setting the color for all flags according to the closest vertices' color. \textbf{Left}: inner ear display color: solid color (uniform). All flags have the same color. \textbf{Middle}: the RGB array is now the active array. \textbf{Right}: all flags are now given colors that correspond to that of the closest vertices found for each flag.}
+\label{flag_color_closest_vertex}
+\end{figure}
 
 \subsection{Saving flags}
 To save all digitized landmarks, go in "File->Flags->Save Flags".
