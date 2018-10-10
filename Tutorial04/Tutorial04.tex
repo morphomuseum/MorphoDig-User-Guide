@@ -201,12 +201,12 @@ You may set your own orientation axis labels with the “Edit orientation labels
  \end{figure}
 
 
-Contrary to "scalar arrays" (see preceding section), tags are usually drawn manually with "painting tools". \\
+Contrary to "scalar arrays", tags are usually drawn manually with "painting tools". \\
 For convenience purposes, as selected surfaces are drawn "grey" in MorphoDig, unselected surfaces objects can be tagged (tagging uniform "grey" objects without visual feedback would be uneasy). Tagging is the only way to modify an unselected surface in MorphoDig. \\
 \subsection{Create a new empty tag array}\label{empty_tag_array}
 
 \begin{minipage}{0.5\textwidth}
-First, selecte the inner ear of \textit{Galago sp.} and click on "Tags->Create new empty tag array for each selected surface". Here, you may choose a name different from "Tags", as this array already exists. This option will create a new "empty" tag array. "Empty", in this context, means that all vertices are assigned to the "Exterior" tag (tag=0).\end{minipage} 
+First, select the inner ear of \textit{Galago sp.} and click on "Tags->Create new empty tag array for each selected surface". Here, you may choose a name different from "Tags", as this array already exists. This option will create a new "empty" tag array. "Empty", in this context, means that all vertices are assigned to the "Exterior" tag (tag=0).\end{minipage} 
 \begin{minipage}{0.5\textwidth}\centering
   \includegraphics[scale=0.5]{../images/12/empty_tag_array.png}
  \captionof{figure}{Creating a new tag array}
@@ -226,7 +226,7 @@ Once the "lasso tag tool" button is pressed, draw the region to be tagged by dra
 In the Tags window, click on "\includegraphics[scale=0.7]{../images/12/pencil.png}".\\
 You have two options:\\
  "T" pressed + left mouse click : tags the selected surface using currently active tag (Fig. \ref{tag_tutorial}-B p.\pageref{tag_tutorial}).\\
-"T" pressed + right click : tags the selected surface using currently active tag \textbf{without color override}. Tag propagation will start at the picked vertex of a given color, but will stop when meeting another color different from that of "tag 0" (usually assigned to "Exterior"). See Fig. \ref{tag_tutorial}-C p.\pageref{tag_tutorial}.
+"T" pressed + right click : tags the selected surface using currently active tag \textbf{without color override}. Only vertices having the same color as that of the picked vertex will be affected. See Fig. \ref{tag_tutorial}-C p.\pageref{tag_tutorial}.
 \\Pencil tag size (in number of pixels) on the screen can be modified in the Tags window.
 
 

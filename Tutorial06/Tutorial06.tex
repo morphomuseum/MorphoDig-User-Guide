@@ -1,0 +1,256 @@
+%Préambule du document :
+\documentclass[12pt, a4paper]{book}
+%\usepackage[latin1]{inputenc} 
+\usepackage[utf8]{inputenc} % accents
+\usepackage{gensymb} % degree symbol ° (\degree)
+\usepackage[T1]{fontenc} % | "`pipe"' character
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{amssymb} 
+\usepackage{minitoc} % chapter's tocs
+\usepackage{authblk} % author affiliations
+\usepackage{fancyhdr} % modify the headers
+\usepackage{tabularx} % tables not larger than A4
+\usepackage[table]{xcolor} %colors inside the tables
+\usepackage{float}
+\usepackage{multicol} % multiple columns in some sections
+\usepackage[inner=2cm,outer=2cm]{geometry} %A4 margins
+\usepackage{siunitx}
+\usepackage[labelfont=bf, margin=0.5cm]{caption} % for figure captions in minipages
+\usepackage{hyperref} %link references (toc, citations) inside document
+\usepackage{natbib} % to cite with parentheses and plain text et only year if you please...
+\usepackage{amsmath}
+ \usepackage{fixltx2e} % allows overrightarrow to be in caption
+ \MakeRobust{\overrightarrow}
+
+
+
+
+\bibliographystyle{plainnat} % reference style
+\renewcommand{\bibname}{References} %Rename "`bibliography"' => "`references"'
+
+\hypersetup{
+    colorlinks,
+    citecolor=brown,
+    filecolor=green,
+    linkcolor=red,
+    urlcolor=blue
+}
+\hypersetup{linktocpage}
+
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\setcounter{tocdepth}{1} % we only want chapters and sections in toc
+\setcounter{minitocdepth}{2} %we want sections and subsections in chapters' minitocs
+
+\pretitle{%
+  \begin{center}
+  
+  \includegraphics[width=17cm]{../Logo_software.png}\\[\bigskipamount]
+}
+\posttitle{
+\\
+  \includegraphics[width=10cm]{tutorial06.png}\\[\bigskipamount]
+\end{center}}
+
+%\postdate{
+%\includegraphics[width=15cm]{logo_affiliations.png}
+%}
+
+\title{Tutorial 06: tagging objects containing unconnected regions}
+
+
+
+%\titlepicture[width=13cm]{Logo_software.png}
+\author{Renaud LEBRUN}
+\affil{Institut des Sciences de l'Evolution, Université de Montpellier, France}
+\date{\today} 
+
+\def\chaptername{Tutorial}
+\setcounter{chapter}{6}
+%Corps du document :
+\begin{document}
+
+	\dominitoc
+
+\maketitle
+
+
+\faketableofcontents
+
+%\chapter{Working with landmarks}
+\addstarredchapter{Tagging objects containing unconnected regions}
+
+\markboth{Tutorial 06: tagging objects containing unconnected regions}{}
+
+\minitoc 
+Tutorial 06 includes:
+\begin{itemize}
+\item One .ntw (MorphoDig project) file
+\item One .vtk surface file representing a cranium of \textit{Mus musculus}
+\item One .pos (position) file 
+\item One .tgp (tag map) file 
+\item One .ori (orientation helper labels) file 
+\item The present .pdf document
+\end{itemize}
+
+
+
+
+\section{"Unconnected regions"}
+By "objects containing unconnected regions", this tutorial refers to surface files containing sub-regions separated in space.
+
+\section{About the specimen}
+
+%\addcontentsline{toc}{section}{About the specimen}
+The surface file enclosed in this tutorial represent three-dimensional reconstruction of the cranium of the fetus of a house mouse (\textit{Mus musculus}) from the collections of the ENS-Lyon. The 3D data were obtained by computerized microtomography at the MRI \si{\micro} CT platform housed at the ISEM.
+Before using this tutorial, please download and read MorphoDig User Guide. The specimen (E17) was pubilshed in \citet{Hautier2014}.
+
+
+\section{A brief overview of enclosed files}
+		Download and unzip the files associated to this tutorial. Open MorphoDig.
+\subsection{Mouse fetus cranium surface and position files}
+	You may open the enclosed .vtk surface file (File -> Surface -> Open Surface, then select "Mouse\_cranium.vtk", or drag and drop this file in the 3D main window). When opened
+this way, the corresponding opened surface object is drawn grey, which indicates that this surface
+is selected. You may interact with selected objects in different ways (see MorphoDig user guide for
+further explanations).\\
+
+By default (\includegraphics[scale=0.7]{../images/06/camera/move_cam2.png}), the camera rotates around the center of mass of all opened objects. This behavior is useful when the center of mass of an object (or of several ones) is far from the origin of the coordinate system. But by pressing the camera button (\includegraphics[scale=0.7]{../images/06/camera/move_cam2.png} -> \includegraphics[scale=0.7]{../images/06/camera/move_cam.png}), the camera will revolve around the center of the coordinate system (x=0, y=0, z=0).  The display grid is drawn using different colors depending on the camera rotation center (see Fig. \ref{grid_color} p.\pageref{grid_color}).
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.3]{grid.png} 
+	\caption{Grid display color.  Left: when the camera revolves around the center of mass of all opened objects, the grid has a blue outline. Right: when the camera revolves around the origin of the coordinate system (x=0, y=0, z=0), the grid outline is displayed in orange.}
+\label{grid_color}
+ 
+\end{figure}
+
+ As a general rule, when opening a new object, it is strongly advised to change
+its position in order that it matches the 6 predefined camera positions :\\
+\includegraphics[scale=0.7]{../images/06/camera/camera_right.png} view object from right side \\
+\includegraphics[scale=0.7]{../images/06/camera/camera_left.png} view object from left side\\
+\includegraphics[scale=0.7]{../images/06/camera/camera_front.png} view object from front side (default camera position)\\
+\includegraphics[scale=0.7]{../images/06/camera/camera_back.png} view object from back side\\
+\includegraphics[scale=0.7]{../images/06/camera/camera_above.png} view object from above\\
+\includegraphics[scale=0.7]{../images/06/camera/camera_below.png} view object from below\\
+
+In "object interaction mode(\includegraphics[scale=0.7]{../images/04/move_mode.png})", selected objects can be translated and rotated using the mouse left and middle buttons (in landmark \includegraphics[scale=0.7]{../images/04/Landmarks2.png} and camera  \includegraphics[scale=0.7]{../images/04/camera_mode.png} selection modes, you also need to maintain ``CTRL" button pressed while dragging the left mouse button to achieve rotation and translation of selected objects). Alternatively, you may also use the "yellow sliders" located on the right side of the 3D main window to accomplish rotation and translation of selected objects. Rotation is achieved around the global center of mass of all currently selected objects.\\
+\\
+The present tutorial contains a .pos (position) file, which you may open in order to place correctly the house
+mouse cranium (File -> Position-> Open Position for selected surfaces, then choose "Mouse\_cranium.pos", see Fig. \ref{orientation} p.\pageref{orientation}). 
+All opened surfaces can be unselected by pressing "CTRL +D", or selected by pressing "CTRL +A". All selected objects can be deleted by pressing "Del".
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.35]{pos.png} 
+	\caption{Surface orientation and .POS files.  Left: the mouse cranium positioned in 3D space in the same orientation as it was CT-Scanned. Right: the same cranium in "biologically-relevant" orientation.}
+\label{orientation}
+ 
+\end{figure}
+
+
+\subsection{Mouse cranium project file}
+The present tutorial contains a project .ntw file, which may be useful to directly open the mouse
+cranium in a convenient position, to make it transparent. First, delete all currently opened objects
+(press “CTRL+A”, then press “Del”). Then open the enclosed .ntw file (File->Open Project, then select
+"Mouse\_cranium.ntw"). Once loaded, the mouse cranium surface file object is opened, is given the position
+enclosed in the “Mouse\_cranium.pos” file, a color and a transparency. Note that the newly opened
+surface is unselected.
+
+
+
+\subsection{Mouse tag map file}
+
+All vertices of different biological structures can be given a specific integer values (0, 1, 2, 3 ...), in order to identify them. Such integer arrays are referred to as "tag arrays". A given unselected surface can be colored using the currently active tag array (identified by its "name"), if that surface contains a tag array of that name. To do so, the array display mode button must be pressed (\includegraphics[scale=0.7]{../images/04/show_color_scale.png}), and a \textbf{tag} array must be selected as the currently active array (ex:\includegraphics[scale=0.5]{../images/04/scalarcombo_tag.png}). The way tag arrays are translated into colors can be set up using tag maps, also referred to as "Lookup tables" (LUT) or color transfer functions. Such a LUT is enclosed within the tag map file ( "Mouse\_fetus.tgp"). Open this file ("File->Tag maps->Import tag map", or drag and drop this file directly in the 3D main window). Then open the tags window ("File->Tags->Open Tags window", or click on "\includegraphics[scale=0.7]{../images/04/tag_edit.png}". The Tag window should open (see Fig. \ref{tags_window} p.\pageref{tags_window}), and should contain the tag names and associated colors defined in "Mouse\_fetus.tgp". See MorphoDig user guide for further explanation regarding the Tags window.\\
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{tags_window.png}
+\caption{Tags window.}	
+\label{tags_window}
+ \end{figure}
+
+
+\subsection{Mouse cranium .ori file}
+The present tutorial contains a .ori file, which contains orientation labels for the coordinate system
+orientation helper. You can load this file the enclosed .ori file ("File->Orientation helper labels -> Open Orientation labels", then select
+"Mouse\_fetus.ori"). Once loaded, the system coordinate orientation helper will show the following
+labels :\\
++z axis : dorsal\\
+-z axis : ventral\\
++y axis : left\\
+-y axis : right\\
++x axis : proximal\\
+-x axis : distal\\
+You may set your own orientation axis labels with the “Edit orientation labels” window (Edit-> Edit orientation labels)
+
+\section{Tagging unconnected surface regions with MorphoDig}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.2]{tag_tutorial.png}
+\caption{Tags tutorial. \textbf{A:} The paint bucket tag tool was used (T + left click pressed = color override). Note that a part of the frontal bone that was tagged in yellow (left) is now tagged in orange (right).   \textbf{B:} The paint bucket tag tool was used (T + right click pressed = \textbf{No override}). Note that all vertices that were tagged in yellow  (=a part of the frontal bone) remain tagged the same way when "color override" option is deactivated.}	
+\label{tag_tutorial}
+ \end{figure}
+
+
+Contrary to "scalar arrays", tags are usually drawn manually with "painting tools". \\
+For convenience purposes, as selected surfaces are drawn "grey" in MorphoDig, unselected surfaces objects can be tagged (tagging uniform "grey" objects without visual feedback would be uneasy). Tagging is the only way to modify an unselected surface in MorphoDig. \\
+\subsection{Create a new empty tag array}\label{empty_tag_array}
+
+\begin{minipage}{0.5\textwidth}
+First, select the cranium \textit{Mus musculus} and click on "Tags->Create new empty tag array for each selected surface". Here, you may choose a name different from "Tags", as this array already exists. This option will create a new "empty" tag array. "Empty", in this context, means that all vertices are assigned to the "Exterior" tag (tag=0).\end{minipage} 
+\begin{minipage}{0.5\textwidth}\centering
+  \includegraphics[scale=0.5]{../images/12/empty_tag_array.png}
+ \captionof{figure}{Creating a new tag array}
+ \end{minipage} 
+
+Select the newly created tag array as the currently active array, and unselect the surface representing the inner ear of \textit{Mus musculus}
+
+
+\subsection{Open the Tags window}
+Click on "File->Tags->Open Tags window", or click on "\includegraphics[scale=0.7]{../images/04/tag_edit.png}". The Tag window should open (see Fig. \ref{tags_window} p.\pageref{tags_window}). In this tutorial, you will use the paint bucket tag tool ("\includegraphics[scale=0.7]{../images/12/paint_bucket.png}"). 
+
+\subsection{Paint bucket tag tool.}
+In the Tags window, click on "\includegraphics[scale=0.7]{../images/12/paint_bucket.png}".\\
+You have two options:\\
+ "T" pressed + left mouse click : tags the selected surface using currently active tag (Fig. \ref{tag_tutorial}-A p.\pageref{tag_tutorial}).\\
+"T" pressed + right click : tags the selected surface using currently active tag \textbf{without color override}. The only affected vertices are those having the same color picked vertex of a given color, but will stop when meeting another color. See Fig. \ref{tag_tutorial}-B p.\pageref{tag_tutorial}.
+
+
+
+
+\subsection{Saving the project}
+Saving a "project" makes it possible to save all opened selected objects (surface of the cranium and its position, tag arrays etc.) altogether instead of one by one. 
+To save all opened objects, do the following sequence of actions:\\
+1) press "CTRL + A" to select all objects\\
+2) click on "File->Project->Save Project" or on the button "save project" (\includegraphics[scale=0.03]{../images/03/save_data.png})  inside the main window.\\
+3) choose the desired options in the "Save Project" window (see Fig. \ref{save_project_file} p.\pageref{save_project_file} and the User Guide for further details regarding the available options)
+\begin{figure}
+  \centering  
+ \includegraphics[scale=0.5]{../images/07/project/save_ntw.png}
+ \captionof{figure}{Save project window.}
+\label{save_project_file}
+\end{figure}
+
+The advantage of working with projects is that all involved objects (surfaces and their properties) can be reloaded later all at once (and not 1 by 1). 
+
+\section{Acknowledgements}
+Thanks to the MRI imaging platform for the access to imaging facilities.
+
+%\nocite{*}   % All bibliography items appear without citation in the text
+
+%\cleardoublepage
+%\phantomsection
+
+
+\addcontentsline{toc}{section}{References}
+%\section{References}
+ \bibliography{References}		
+\end{document} 
+
