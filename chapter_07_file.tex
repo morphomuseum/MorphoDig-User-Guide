@@ -580,7 +580,15 @@ A better alternative to the bounding box length metrics is as follows: for a giv
 
 \subsection{Save active scalar infos (mean, median, variance ...) of all selected surfaces.}
 In order to use this option, the array display mode button must be pressed (\includegraphics[scale=0.7]{images/04/show_color_scale.png}), and a scalar array must also be selected selected (ex:\includegraphics[scale=0.5]{images/04/scalarcombo_scalar.png}).\\
-This option saves within a .txt file, and for all selected surfaces, the mean, the median, and the variance of the selected scalar.
+This option opens the "Scalars: save infos" dialog (see Fig. \ref{active_scalar_infos} \pageref{active_scalar_infos}), and saves within a .txt file, and for all selected surfaces, the mean, the median, and the variance of the selected scalar. If the "Include scalar infos for each Tagged region" option is checked and if a the selected tag array exists for the involved surfaces, then for each tagged region, the mean, the median and the variance of the currently active scalar is also computed. 
+
+\begin{figure}
+  \centering  
+ \includegraphics[scale=0.5]{images/07/measurements/active_scalar_infos.png}
+ \captionof{figure}{"Scalars: save infos" dialog.}
+\label{active_scalar_infos}
+\end{figure}
+
 
 \subsection{Save scalar values of first selected surface.}
 This option saves within a .txt file, and ONLY for the first selected surface containing N vertices, all scalar values for all vertices. Ex: if a given surface contains 3 scalars (ex: thickness, curvature, complexity), the .txt file will contain the values of the 3 scalar arrays for all N vertices. 
