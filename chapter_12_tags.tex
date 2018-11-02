@@ -11,13 +11,13 @@ In order to be able to edit tags on a surface, the most common way is to create 
 
 
 \section{Open Tags window}
-The "Tags" window can be also opened by clicking on "\includegraphics[scale=0.7]{images/04/tag_edit.png}" (see Fig. \ref{tags_window}). The Tags window contains most options related to tags. The active tag array can be chosen here, as well as the active tag map. Tag maps (name, color, opacity of different biological structures) can be defined and modified here as well. The currently used tag tool is also chosen in this window (pencil "\includegraphics[scale=0.7]{images/12/pencil.png}", paint bucket "\includegraphics[scale=0.7]{images/12/paint_bucket.png}" or lasso "\includegraphics[scale=0.7]{images/12/lasso.png}"). 
+The "Tags" window can be also opened by clicking on "\includegraphics[scale=0.7]{images/04/tag_edit.png}" (see Fig. \ref{tags_window}). The Tags window contains most options related to tags. The active tag array can be chosen here, as well as the active tag map. Tag maps (name, color, opacity of different biological structures) can be defined and modified here as well. The currently used tag tool is also chosen in this window (pencil "\includegraphics[scale=0.7]{images/12/pencil.png}", paint bucket "\includegraphics[scale=0.7]{images/12/paint_bucket.png}", lasso "\includegraphics[scale=0.7]{images/12/lasso.png}" or rubber band "\includegraphics[scale=0.7]{images/12/rubber_band.png}"). 
 
 
 \begin{figure}
   \centering
   \includegraphics[scale=1]{images/12/tags_window2.png}
-\caption{Tags window. This window is divided in different subsections. \textbf{1)} choose current active tag array.  \textbf{2)} the active tag array can be deleted from selected/all surface objects in this sections. \textbf{3)} choose current active tag map, which transforms integer values into color and opacity on the screen. \textbf{4)} operations on the active tag map (from left to right). a: reinitialize tag map. b: Add tag map to presets = duplicate current active tag map and create a new custom tag map. c: export tag map(s) inside a .TAG or .TGP file. d: change active color map name (only possible for custom tag maps). d: delete active color map (only possible for custom tag maps). \textbf{5)} active tag tools (from left to right): a: pencil. b: paint bucket. c: lasso tag. d: pencil radius size (in pixels rendered on the screen).  \textbf{6)} The tag map table: each line of this table is associated with an integer (exterior: 0; Tag1: 1 etc.), a color and an opacity. The active tag tools will paint a surface using the active tag. \textbf{7)} modification controls of the active tag map (from left to right). a: add a line to tag map table. b: remove last line from tag map table. c: reset active tag (merge with Tag 0 = Exterior). d: merge two tags.}	
+\caption{Tags window. This window is divided in different subsections. \textbf{1)} choose current active tag array.  \textbf{2)} the active tag array can be deleted from selected/all surface objects in this sections. \textbf{3)} choose current active tag map, which transforms integer values into color and opacity on the screen. \textbf{4)} operations on the active tag map (from left to right). a: reinitialize tag map. b: Add tag map to presets = duplicate current active tag map and create a new custom tag map. c: export tag map(s) inside a .TAG or .TGP file. d: change active color map name (only possible for custom tag maps). d: delete active color map (only possible for custom tag maps). \textbf{5)} active tag tools (from left to right): a: pencil. b: paint bucket. c: lasso tag. d: rubber band tag. e: pencil radius size (in pixels rendered on the screen).  \textbf{6)} The tag map table: each line of this table is associated with an integer (exterior: 0; Tag1: 1 etc.), a color and an opacity. The active tag tools will paint a surface using the active tag. \textbf{7)} modification controls of the active tag map (from left to right). a: add a line to tag map table. b: remove last line from tag map table. c: reset active tag (merge with Tag 0 = Exterior). d: merge two tags.}	
 \label{tags_window}
  \end{figure}
 
@@ -84,12 +84,12 @@ This option involves vtkPolyDataConnectivityFilter. This option will retrieve al
 \textbf{\underline{}}\\
 \textbf{1: Make sure that your surface contains a Tag array}: for instance, you may create a new empty tag array for this surface (see section \ref{empty_tag_array} p. \ref{empty_tag_array} for further details). Select this tag array as the currently active array.\\\\
 \noindent
-\textbf{2: Open the Tags window}: a: if not already active, select desired active Tag. b: choose a tag tool (pencil "\includegraphics[scale=0.7]{images/12/pencil.png}", paint bucket "\includegraphics[scale=0.7]{images/12/paint_bucket.png}" or lasso "\includegraphics[scale=0.7]{images/12/lasso.png}").  \\\\
+\textbf{2: Open the Tags window}: a: if not already active, select desired active Tag. b: choose a tag tool (pencil "\includegraphics[scale=0.7]{images/12/pencil.png}", paint bucket "\includegraphics[scale=0.7]{images/12/paint_bucket.png}", lasso "\includegraphics[scale=0.7]{images/12/lasso.png}" or  rubber band "\includegraphics[scale=0.7]{images/12/rubber_band.png}").  \\\\
 \noindent
 \textbf{3: Tag in MorphoDig's main window.} \\ a:when using the pencil "\includegraphics[scale=0.7]{images/12/pencil.png}" or the paint bucket "\includegraphics[scale=0.7]{images/12/paint_bucket.png}", you have two options:\\
  "T" pressed +left click: allows color override\\
  "T" pressed +right click: does not allow color override (see below for explanations of what color override is)\\
-b: when using the lasso, maintain mouse left click pressed and draw a contour of the region which should be tagged.
+b: when using the lasso or the rubber band, maintain mouse left click pressed and draw a contour of the region which should be tagged.
 
 
 
@@ -111,13 +111,17 @@ pencil tag size (in number of pixels) on the screen can be modified in the Tags 
 "T" pressed + left mouse click : tags the selected surface using currently active tag.\\
 "T" pressed + right click : tags the selected surface using currently active tag \textbf{without color override}. Tag propagation will start at the picked vertex of a given color, but will stop when meeting another color different from that of Tag 0 (usually assigned to "exterior").\\
  
-When surfaces contain a lot of disconnected regions in space (for instance: the skeleton of a fetus), the paint bucket tool can be usefull to paint each disconnected element one by one in one mouse click. But be careful if your all regions of your surface are connected together: when using "T" + left click ("color override" allowed), as it will paint the whole object uniformly.
+When surfaces contain a lot of disconnected regions in space (for instance: the skeleton of a fetus), the paint bucket tool can be useful to paint each disconnected element one by one in one mouse click. But be careful if your all regions of your surface are connected together: when using "T" + left click ("color override" allowed), as it will paint the whole object uniformly.
 
 \subsection{Lasso tag tool} \label{lasso_tag_section}
 \includegraphics[scale=0.7]{images/12/lasso.png}\\
 Once the "lasso tag tool" button is pressed, draw the region to be tagged by dragging the mouse on the screen while maintaining the left button pressed. Then release the left mouse button. 
 
-\subsection{Merge tags.}
+\subsection{Rubber band tag tool} \label{rubber_band_tag_section}
+\includegraphics[scale=0.7]{images/12/rubber_band.png}\\
+Once the "rubber band tag tool" button is pressed, draw the rectangular region to be tagged by dragging the mouse on the screen while maintaining the left button pressed. Then release the left mouse button. 
+
+\subsection{Merge tags}
 \noindent
 \begin{minipage}{0.5\textwidth}
 Two tagged regions can be merged into a single one. All source tags will be put into target tags. See for instance Fig. \ref{merge_tags} p.\pageref{merge_tags}.\end{minipage}    
