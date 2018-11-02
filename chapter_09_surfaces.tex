@@ -12,7 +12,7 @@ In most cases, these function only apply on selected surfaces, so, as a prerequi
 \noindent
 \begin{minipage}{0.5\textwidth}
 This option uses vtkSmoothPolyDataFilter.You may smooth an input
-selected surface using this option (see Fig. \ref{smooth}). A number of iteration and a
+selected surface using this option (see Fig. \ref{smooth} p.\pageref{smooth}). A number of iteration and a
 relaxation factor are required.\\
 See vtkSmoothPolyDataFilter documentation for further information regarding this option.
 \end{minipage}    
@@ -40,7 +40,7 @@ See vtkSmoothPolyDataFilter documentation for further information regarding this
 
 
 This option uses vtkDecimatePro and vtkQuadricDecimation filters. Requirements : to use mesh decimation, a selected
-surface is required (see for instance Fig. \ref{decimate}). See vtkDecimatePro and vtkQuadricDecimation documentations for further information regarding
+surface is required (see for instance Fig. \ref{decimate} p.\pageref{decimate}). See vtkDecimatePro and vtkQuadricDecimation documentations for further information regarding
 mesh decimation.
 
 \end{minipage}    
@@ -67,7 +67,7 @@ decimation factor: 95\%).
 
 This option uses vtkDensifyPolyData filter.
 Requirements : to use mesh densification, a selected
-surface is required (see for instance Fig. \ref{densify}).
+surface is required (see for instance Fig. \ref{densify} p.\pageref{densify}).
 Note that mesh decimation can become extremely slow
 when using number of subdivisions larger than 1.
 See vtkDensifyPolyData documentation for further information regarding mesh densification.
@@ -98,7 +98,7 @@ See vtkDensifyPolyData documentation for further information regarding mesh dens
 
 This option uses vtkFillHolesFilter.
 Requirements : to use mesh hole filling, a selected surface is
-required (see for instance Fig. \ref{fill_holes}). See vtkFillHolesFilter documentation for further
+required (see for instance Fig. \ref{fill_holes} p.\pageref{fill_holes}). See vtkFillHolesFilter documentation for further
 information regarding hole filling.
 
 
@@ -131,7 +131,7 @@ a series of ``n" normal landmarks and a series of ``n"
 target landmarks (n>3) are needed. ``Normal" landmarks
 are usually placed on the original selected input surface,
 whereas ``target" landmarks are placed at a location in 3D
-space which will drive the TPS deformation (see Fig. \ref{tps}). See vtkThinPlateSplineTransform documentation for further information regarding TPS deformation.
+space which will drive the TPS deformation (see Fig. \ref{tps} p.\pageref{tps}). See vtkThinPlateSplineTransform documentation for further information regarding TPS deformation.
 
 \end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
@@ -159,7 +159,7 @@ that the 46 ``target" landmarks are located on the output surface.
 \subsection{Connectivity: separate each selected surface into independent regions}
 \noindent
 \begin{minipage}{0.5\textwidth}
-This option uses vtkPolyDataConnectivityFilter. This filter produces a new surface for each non-connected region of the selected input surface. 3D meshes of biological objects sometimes contain a multitude of small and biologically irrelevant independent regions. This ``noise" may have multiple origins: low quality of original 3D data, state of preservation of the specimen, threshold used to be able to visualize all relevant structures, etc... In order to extract relevant independent regions, only regions reaching a minimal size (minimal number of triangles) are transformed into new surfaces (see Fig. \ref{decompose34}). This process may take some time to be completed. All produced surfaces corresponding to independent regions can be manipulated independently.\end{minipage}    
+This option uses vtkPolyDataConnectivityFilter. This filter produces a new surface for each non-connected region of the selected input surface. 3D meshes of biological objects sometimes contain a multitude of small and biologically irrelevant independent regions. This ``noise" may have multiple origins: low quality of original 3D data, state of preservation of the specimen, threshold used to be able to visualize all relevant structures, etc... In order to extract relevant independent regions, only regions reaching a minimal size (minimal number of triangles) are transformed into new surfaces (see Fig. \ref{decompose34} p.\pageref{decompose34}). This process may take some time to be completed. All produced surfaces corresponding to independent regions can be manipulated independently.\end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
   \includegraphics[scale=0.5]{images/09/structure/surface_decomposition_dialog.png}
  \captionof{figure}{Connectivity decomposition dialog}
@@ -181,7 +181,7 @@ This option uses vtkPolyDataConnectivityFilter. This filter produces a new surfa
 
 
 \subsection{Connectivity: keep largest region for each selected surface}
-This option uses vtkPolyDataConnectivityFilter.This filter produces a new surface for the largest independent region of the selected input surface (see Fig. \ref{largest_region}).
+This option uses vtkPolyDataConnectivityFilter.This filter produces a new surface for the largest independent region of the selected input surface (see Fig. \ref{largest_region} p.\pageref{largest_region}).
 
 \begin{figure}
   \centering
@@ -194,7 +194,7 @@ This option uses vtkPolyDataConnectivityFilter.This filter produces a new surfac
 
 \subsection{Invert each selected surface}
 
-A given surface can be inverted in order to show inner structures (see Fig. \ref{inversion}).\\
+A given surface can be inverted in order to show inner structures (see Fig. \ref{inversion} p.\pageref{inversion}).\\
 
 
 \begin{figure}
@@ -208,7 +208,7 @@ Right: backface culling rendering of the same surface after being inverted, reve
 
 \subsection{Mirror each selected surface along Y plane}
 
-This option uses vtkReflectionFilter, which produces a mirror image of the original selected input mesh (see Fig. \ref{mirror}).\\
+This option uses vtkReflectionFilter, which produces a mirror image of the original selected input mesh (see Fig. \ref{mirror} p.\pageref{mirror}).\\
 
 \begin{figure}
   \centering
@@ -223,7 +223,7 @@ This option uses vtkReflectionFilter, which produces a mirror image of the origi
 
 \section{Convex hulls}
 \subsection{Create a convex hull for each selected surface}
-This option uses vtkDelaunay3D.This filter produces convex hull surfaces for each selected surface. Convex hulls can be useful for instance to compute estimations of the total "volume" occupied in space by complex objects containing lots of holes (see Fig. \ref{convex_hull}). 
+This option uses vtkDelaunay3D.This filter produces convex hull surfaces for each selected surface. Convex hulls can be useful for instance to compute estimations of the total "volume" occupied in space by complex objects containing lots of holes (see Fig. \ref{convex_hull} p.\pageref{convex_hull}). 
 
 \begin{figure}
   \centering
@@ -240,7 +240,7 @@ This options makes it possible to merge all selected surfaces into one single su
 \noindent
 \begin{minipage}{0.5\textwidth}
 This option uses vtkIterativeClosestPointTransform filter. This filter makes it possible to align two surfaces using the Iterative Closest Point (ICP) algorithm. In order to get good results, it is strongly advised to orient manually roughly the two surfaces in the same direction before running this algorithm 
-(see for instance Fig. \ref{surface_alignment}). See vtkIterativeClosestPointTransform documentation for further information.
+(see for instance Fig. \ref{surface_alignment} p.\pageref{surface_alignment}). See vtkIterativeClosestPointTransform documentation for further information.
 
 
 
@@ -284,8 +284,28 @@ Please choose a value between 0 and 100. 100 stands for ``opaque rendering". 0 s
 \subsection{Change object solid color}
 Selected objects' solid color can be changed using this option. A set of 13 predefined colors is available via this menu. Alternatively, you can edit object color manually using the ``Default solid color of surfaces" control of the ``Edit color options" window (menu ``Edit $\rightarrow$Edit color options").
 
+\section{Create 3D printing support surfaces}
+When planning to 3D print a 3D models composed of non connex elements (for instance : the cranium and the mandible of a single individual, or the skeleton of the fetus of a vertebrate specimen), you may need to manually place in 3D space surface elements linking those different parts. Such elements are referred to as "3D printing support" elements, and can ba created via the "Create 3D printing support material (cylinders)" dialog (Fig. \ref{cylinders_dialog} p.\pageref{cylinders_dialog}). Different options are available, and in particular, the cylinders can be given either conic of flat ends (Fig. \ref{conic_non_conic} p.\pageref{conic_non_conic}). A practical examples is shown in Fig. \ref{support_example} p.\pageref{support_example}.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/09/create_3D_printing_support_surfaces/cylinders_dialog.png} 
+	\caption{Create cylinders dialog. Different options are available. Several cylinders sharing the same properties can be created at once. The shaft lenght and radius can be defined, as well as the resolution (number of sides). The bottom and top sides of the cylinders can be either flat, or conic.}
+ \label{cylinders_dialog}
+\end{figure}
 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/09/create_3D_printing_support_surfaces/conic_non_conic.png} 
+	\caption{Different cylinder shapes. \textbf{Left}: cylinders can be given conic bottom and top ends. \textbf{Right:} cylinders can have flat ends.}
+ \label{conic_non_conic}
+\end{figure}
 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.40]{images/09/create_3D_printing_support_surfaces/support_example.png} 
+	\caption{Creating cylinders to prepare the 3D printing of the skeleton of a newborn textit{Lemur catta}. \textbf{Left:} The skeleton of this neonate specimen contains many non connex elements: many bones are not fully mineralized (skull bones, vertebrae) and most bones are separated in space, which makes it difficult to 3D print. \textbf{Right:} many cylinders (more than one hundred) of different lengths and diameters were created in order to connect the different elements of this model: such a model is easier to print in 3D. }
+ \label{support_example}
+\end{figure}
 %\section{Delete small objects.}
 
 
