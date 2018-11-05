@@ -41,7 +41,7 @@ Behavior: only selected elements (surface objects, landmarks, flags...) are save
 \begin{itemize}
 \item orientation labels should be saved along with the project (by default, orientation labels are not saved, as orientation labels are quite rarely set by users). 
 \item tag legends and colors (tag maps) should by saved. By default, .tag file are not saved along with the project, as tag setting is not a common task. 
-\item save surfaces as. VTK polydata or PLY. We advise you to save your surfaces as VTK polydata. In the contrary cases scalar,  tag arrays and all RGB arrays having a name different from "RGB" will be lost.
+\item save surfaces as. VTK polydata, PLY or STL. We advise you to save your surfaces as VTK polydata. In the contrary case, all scalars, tag arrays and RGB arrays  will be lost. Once exception: one RGB array named exactly "RGB" can be saved within PLY files.
 \item save position inside .POS file, or apply the position to surfaces. We advise you to save position inside .POS file (otherwise, the initial orientations of your surfaces will be lost). 
 \end{itemize}
 Each surface file will be given the name of the original file. Each position file will be given a name which starts with the name of the associated surface and ends with the name of the project (1 exception: when the project contains only one surface and  the project's name is the same as that of the surface. In that case, .pos file names are not postfixed with the name of the project). In the .ntw file example shown in Fig. \ref{project_file} p.\pageref{project_file}, the surface files are 
