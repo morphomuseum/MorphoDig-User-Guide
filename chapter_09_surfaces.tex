@@ -285,7 +285,7 @@ Please choose a value between 0 and 100. 100 stands for ``opaque rendering". 0 s
 Selected objects' solid color can be changed using this option. A set of 13 predefined colors is available via this menu. Alternatively, you can edit object color manually using the ``Default solid color of surfaces" control of the ``Edit color options" window (menu ``Edit $\rightarrow$Edit color options").
 
 \section{Create 3D printing support surfaces}
-When planning to 3D print a 3D models composed of non connex elements (for instance : the cranium and the mandible of a single individual, or the skeleton of the fetus of a vertebrate specimen), you may need to manually place in 3D space surface elements linking those different parts. Such elements are referred to as "3D printing support" elements, and can ba created via the "Create 3D printing support material (cylinders)" dialog (Fig. \ref{cylinders_dialog} p.\pageref{cylinders_dialog}). Different options are available, and in particular, the cylinders can be given either conic of flat ends (Fig. \ref{conic_non_conic} p.\pageref{conic_non_conic}). A practical examples is shown in Fig. \ref{support_example} p.\pageref{support_example}.
+When planning to 3D print a 3D models composed of non connex elements (for instance : the cranium and the mandible of a single individual, or the skeleton of the fetus of a vertebrate specimen), you may need to manually place in 3D space surface elements linking those different parts. Such elements are referred to as "3D printing support" elements, and can ba created via the "Create 3D printing support material (cylinders)" dialog (Fig. \ref{cylinders_dialog} p.\pageref{cylinders_dialog}). Different options are available, and in particular, the cylinders can be given either conic of flat ends (Fig. \ref{conic_non_conic} p.\pageref{conic_non_conic}). Two practical examples are shown in Fig. \ref{support_example} p.\pageref{support_example}.
 \begin{figure}
   \centering
   \includegraphics[scale=0.5]{images/09/create_3D_printing_support_surfaces/cylinders_dialog.png} 
@@ -302,8 +302,8 @@ When planning to 3D print a 3D models composed of non connex elements (for insta
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.40]{images/09/create_3D_printing_support_surfaces/support_example.png} 
-	\caption{Creating cylinders to prepare the 3D printing of the skeleton of a newborn textit{Lemur catta}. \textbf{Left:} The skeleton of this neonate specimen contains many non connex elements: many bones are not fully mineralized (skull bones, vertebrae) and most bones are separated in space, which makes it difficult to 3D print. \textbf{Right:} many cylinders (more than one hundred) of different lengths and diameters were created in order to connect the different elements of this model: such a model is easier to print in 3D. }
+  \includegraphics[scale=1.40]{images/09/create_3D_printing_support_surfaces/support_example.png} 
+	\caption{Examples of 3D support material usage. \textbf{A:} Cranium and mandible of \textit{Gorilla gorilla} (adult, male). Left: the 3D model of the skull is transparent, showing where the 3D support cylinders have been placed in order to connect the mandible and the cranium. Middle: the same 3D model is rendered opaque. Right: 3D printed object. \textbf{B:} 3D model of the skeleton of a newborn \textit{Lemur catta}. The skeleton of this neonate specimen contains many non connected elements: many bones are not fully mineralized (skull bones, vertebrae) and most bones are separated in space. Left: the 3D model of the skeleton is transparent, showing the position of the many cylinders (two hundreds) of different lengths and diameters connecting the different bones. Right: 3D printed object. }
  \label{support_example}
 \end{figure}
 %\section{Delete small objects.}
