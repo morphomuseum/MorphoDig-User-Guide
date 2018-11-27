@@ -284,27 +284,47 @@ Please choose a value between 0 and 100. 100 stands for ``opaque rendering". 0 s
 \subsection{Change object solid color}
 Selected objects' solid color can be changed using this option. A set of 13 predefined colors is available via this menu. Alternatively, you can edit object color manually using the ``Default solid color of surfaces" control of the ``Edit color options" window (menu ``Edit $\rightarrow$Edit color options").
 
-\section{Create 3D printing support surfaces}
-When planning to 3D print a 3D models composed of non connex elements (for instance : the cranium and the mandible of a single individual, or the skeleton of the fetus of a vertebrate specimen), you may need to manually place in 3D space surface elements linking those different parts. Such elements are referred to as "3D printing support" elements, and can ba created via the "Create 3D printing support material (cylinders)" dialog (Fig. \ref{cylinders_dialog} p.\pageref{cylinders_dialog}). Different options are available, and in particular, the cylinders can be given either conic of flat ends (Fig. \ref{conic_non_conic} p.\pageref{conic_non_conic}). Two practical examples are shown in Fig. \ref{support_example} p.\pageref{support_example}.
+\section{Create 3D printing connective material}
+When planning to print a 3D model composed of non connex elements (for instance : the cranium and the mandible of a single individual, or the skeleton of the fetus of a vertebrate specimen), you may need to manually place in 3D space connective surface elements linking those different parts. Such elements are referred to as "3D printing connective struts", and can be created via the "Cylindric connective struts" dialog (Fig. \ref{cylinders_dialog} p.\pageref{cylinders_dialog}) or via the "Cubic connective struts" dialog (Fig. \ref{cubes_dialog} p.\pageref{cubes_dialog}). 
+\subsection{Create cylindric connective struts}
+Different options are available, and in particular, the cylinders can be given either conic of flat ends, and the cross-section of the cylinders can either be circular or elliptic (Fig. \ref{conic_non_conic} p.\pageref{conic_non_conic}). 
+Two practical examples of 3D printed objects using cylindric connective struts are shown in Fig. \ref{support_example} p.\pageref{support_example}.
 \begin{figure}
   \centering
   \includegraphics[scale=0.5]{images/09/create_3D_printing_support_surfaces/cylinders_dialog.png} 
-	\caption{Create cylinders dialog. Different options are available. Several cylinders sharing the same properties can be created at once. The shaft lenght and radius can be defined, as well as the resolution (number of sides). The bottom and top sides of the cylinders can be either flat, or conic.}
+	\caption{Create cylinders dialog. Different options are available. Several cylinders sharing the same properties can be created at once. Shaft length and radius can be defined, as well as the resolution (number of sides). Also, shaft section shape can either be circular or elliptical. The bottom and top sides of the cylinders can be either flat, or conic.}
  \label{cylinders_dialog}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[scale=0.5]{images/09/create_3D_printing_support_surfaces/conic_non_conic.png} 
-	\caption{Different cylinder shapes. \textbf{Left}: cylinders can be given conic bottom and top ends. \textbf{Right:} cylinders can have flat ends.}
+	\caption{Different cylinder shapes. \textbf{Top left}: flat ends + circular shaft section. \textbf{Top right:} conic ends + circular shaft section. \textbf{Bottom left}: flat ends + elliptical shaft section. \textbf{Top right:} conic ends + elliptical shaft section.}
  \label{conic_non_conic}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[scale=1.40]{images/09/create_3D_printing_support_surfaces/support_example.png} 
-	\caption{Examples of 3D support material usage. \textbf{A:} Cranium and mandible of \textit{Gorilla gorilla} (adult, male). Left: the 3D model of the skull is transparent, showing where the 3D support cylinders have been placed in order to connect the mandible and the cranium. Middle: the same 3D model is rendered opaque. Right: 3D printed object. \textbf{B:} 3D model of the skeleton of a newborn \textit{Lemur catta}. The skeleton of this neonate specimen contains many non connected elements: many bones are not fully mineralized (skull bones, vertebrae) and most bones are separated in space. Left: the 3D model of the skeleton is transparent, showing the position of the many cylinders (two hundreds) of different lengths and diameters connecting the different bones. Right: 3D printed object. }
+	\caption{Examples of 3D connective material usage. \textbf{A:} Cranium and mandible of \textit{Gorilla gorilla} (adult, male). Left: the 3D model of the skull is transparent, showing where the 3D connective cylinders have been placed in order to connect the mandible and the cranium. Middle: the same 3D model is rendered opaque. Right: 3D printed object. \textbf{B:} 3D model of the skeleton of a newborn \textit{Lemur catta}. The skeleton of this neonate specimen contains many non connected elements: many bones are not fully mineralized (skull bones, vertebrae) and most bones are separated in space. Left: the 3D model of the skeleton is transparent, showing the position of the many cylinders (two hundreds) of different lengths and diameters connecting the different bones. Right: 3D printed object. }
  \label{support_example}
+\end{figure}
+
+\subsection{Create cubic connective struts}
+Different options are available, and in particular, the cubes / box-shaped struts can be given any desired width, height and depth (see Fig.  \ref{cubes_dialog} p.\pageref{cubes_dialog} and Fig. \ref{cubic} p.\pageref{cubic}). 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/09/create_3D_printing_support_surfaces/cubes_dialog.png} 
+	\caption{Create cube dialog. The X,Y and Z lengths of the cubic / box-shaped connective struts can be defined here.}
+ \label{cubes_dialog}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/09/create_3D_printing_support_surfaces/cubic.png} 
+	\caption{Example of cubic connective strut.}
+ \label{cubic}
 \end{figure}
 %\section{Delete small objects.}
 
