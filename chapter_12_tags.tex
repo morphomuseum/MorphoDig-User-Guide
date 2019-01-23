@@ -17,7 +17,7 @@ The "Tags" window can be also opened by clicking on "\includegraphics[scale=0.7]
 \begin{figure}
   \centering
   \includegraphics[scale=1]{images/12/tags_window2.png}
-\caption{Tags window. This window is divided in different subsections. \textbf{1)} choose current active tag array.  \textbf{2)} the active tag array can be deleted from selected/all surface objects in this sections. \textbf{3)} choose current active tag map, which transforms integer values into color and opacity on the screen. \textbf{4)} operations on the active tag map (from left to right). a: reinitialize tag map. b: Add tag map to presets = duplicate current active tag map and create a new custom tag map. c: export tag map(s) inside a .TAG or .TGP file. d: change active color map name (only possible for custom tag maps). d: delete active color map (only possible for custom tag maps). \textbf{5)} active tag tools (from left to right): a: pencil. b: paint bucket. c: lasso tag. d: rubber band tag. e: pencil radius size (in pixels rendered on the screen).  \textbf{6)} The tag map table: each line of this table is associated with an integer (exterior: 0; Tag1: 1 etc.), a color and an opacity. The active tag tools will paint a surface using the active tag. \textbf{7)} modification controls of the active tag map (from left to right). a: add a line to tag map table. b: remove last line from tag map table. c: reset active tag (merge with Tag 0 = Exterior). d: merge two tags.}	
+\caption{Tags window. This window is divided in different subsections. \textbf{1)} choose current active tag array.  \textbf{2)} the active tag array can be deleted from selected/all surface objects in this sections. \textbf{3)} choose current active tag map, which transforms integer values into color and opacity on the screen. \textbf{4)} operations on the active tag map (from left to right). a: reinitialize tag map. b: Add tag map to presets = duplicate current active tag map and create a new custom tag map. c: export tag map(s) inside a .TAG or .TGP file. d: change active color map name (only possible for custom tag maps). d: delete active color map (only possible for custom tag maps). \textbf{5)} active tag tools (from left to right): a: pencil. b: paint bucket. c: lasso tag. d: rubber band tag. Different options are available for the pencil tool. Pencil radius size (in pixels rendered on the screen). Pencil limit angle (in degrees). Tag all vertices within radius or propagate from picked location (relevant to stop tag propagation at topological boundaries; can be used in conjunction with a limit angle below 180 degrees).  \textbf{6)} The tag map table: each line of this table (= each tag region) is associated with an integer (exterior: 0; Tag1: 1 etc.), a color and an opacity. The active tag tools will paint a surface using the active tag region. \textbf{7)} modification controls of the active tag map (from left to right). a: add a line to tag map table. b: remove last line from tag map table. c: reset active tag region (merge with Tag 0 = Exterior). d: merge two tag regions.}	
 \label{tags_window}
  \end{figure}
 
@@ -107,28 +107,37 @@ This option opens the "Extract tag range" dialog (Fig. \ref{extract_tag_range_di
 
 \end{figure}
 
+\section{Extract each tag region as a new object, for all tag regions of all selected surfaces}\label{extract_tag_range_section}
+This option makes it possible to extract all existing tag regions out of selected surfaces.
+
 \section{Tagging with MorphoDig: a quick starting guide}\label{tag_starting_guide}
 \textbf{\underline{}}\\
 \textbf{1: Make sure that your surface contains a Tag array}: for instance, you may create a new empty tag array for this surface (see section \ref{empty_tag_array} p. \ref{empty_tag_array} for further details). Select this tag array as the currently active array.\\\\
 \noindent
-\textbf{2: Open the Tags window}: a: if not already active, select desired active Tag. b: choose a tag tool (pencil "\includegraphics[scale=0.7]{images/12/pencil.png}", paint bucket "\includegraphics[scale=0.7]{images/12/paint_bucket.png}", lasso "\includegraphics[scale=0.7]{images/12/lasso.png}" or  rubber band "\includegraphics[scale=0.7]{images/12/rubber_band.png}").  \\\\
+\textbf{2: Open the Tags window}: a: if not already active, select desired active Tag. b: choose a tag tool (pencil "\includegraphics[scale=0.7]{images/12/pencil.png}", paint bucket "\includegraphics[scale=0.7]{images/12/paint_bucket.png}", lasso "\includegraphics[scale=0.7]{images/12/lasso.png}" or rubber band "\includegraphics[scale=0.7]{images/12/rubber_band.png}").  \\
+When using the pencil "\includegraphics[scale=0.7]{images/12/pencil.png}" you may increase or decrease pencil radius by keeping "T" pressed while rolling the middle mouse button.\\\\
 \noindent
 \textbf{3: Tag in MorphoDig's main window.} \\ a:when using the pencil "\includegraphics[scale=0.7]{images/12/pencil.png}" or the paint bucket "\includegraphics[scale=0.7]{images/12/paint_bucket.png}", you have two options:\\
  "T" pressed +left click: allows color override\\
  "T" pressed +right click: does not allow color override (see below for explanations of what color override is)\\
-b: when using the lasso or the rubber band, maintain mouse left click pressed and draw a contour of the region which should be tagged.
+b: when using the lasso "\includegraphics[scale=0.7]{images/12/lasso.png}" or the rubber band "\includegraphics[scale=0.7]{images/12/rubber_band.png}", maintain mouse left click pressed and draw a contour of the region which should be tagged.
 
 
 
 \subsection{Pencil tag tool}
 \includegraphics[scale=0.7]{images/12/pencil.png}\\
 \textbf{Pencil tag tool controls:}\\
+"T" pressed + middle mouse roll : increases or decreases pencil radius.\\
 "T" pressed + left mouse click : tags the selected surface using currently active tag.\\
 "T" pressed + right click : tags the selected surface using currently active tag \textbf{without color override}. Tag propagation will start at the picked vertex of a given color, but will stop when meeting another color different from that of Tag 0 (usually assigned to "exterior").\\
 
 \textbf{Pencil tag special option:}\\
 \noindent
-pencil tag size (in number of pixels) on the screen can be modified in the Tags window.
+\textbf{- Pencil tag radius} (in number of pixels) on the screen can be modified in the Tags window.\\
+\textbf{- Pencil limit angle} (in degrees): when this value is below 180, the angle between normal of the picked vertex and that of all the vertices contained in the surrounding sphere is computed, and only those for which this is lower than "pencil limit angle" are allowed to be tagged.\\
+\textbf{- Tag all vertices}: all the vertices respecting an angle lower than pencil limit angle are tagged.
+\textbf{- Tag propagation from picked location}: tag progagates from the picked location (and will tend to stop at topological boundaries such as holes, disconnected regions,  or regions with very different vertex orientation in comparison to that of the picked vertex). This option may be very useful to tag different bone structures.
+
 
 
 
@@ -148,7 +157,8 @@ Once the "lasso tag tool" button is pressed, draw the region to be tagged by dra
 \includegraphics[scale=0.7]{images/12/rubber_band.png}\\
 Once the "rubber band tag tool" button is pressed, draw the rectangular region to be tagged by dragging the mouse on the screen while maintaining the left button pressed. Then release the left mouse button. 
 
-\subsection{Merge tags}
+\subsection{Merge tag regions}
+\includegraphics[scale=0.7]{images/12/merge.png}\\
 \noindent
 \begin{minipage}{0.5\textwidth}
 Two tagged regions can be merged into a single one. All source tags will be put into target tags. See for instance Fig. \ref{merge_tags} p.\pageref{merge_tags}.\end{minipage}    
@@ -160,7 +170,7 @@ Two tagged regions can be merged into a single one. All source tags will be put 
 \begin{figure}
   \centering
   \includegraphics[scale=0.25]{images/12/merge_example.png} 
-	\caption{Example of tag merging. Left : cranium of \textit{Microcebus murinus} presenting the parietal region
+	\caption{Example of tag region merging. Left : cranium of \textit{Microcebus murinus} presenting the parietal region
 tagged in yellow, the frontal region tagged in orange. Right : frontal tag region was merged into
 the parietal region.}
 \label{merge_tags}
