@@ -65,24 +65,23 @@ decimation factor: 95\%).
 \noindent
 \begin{minipage}{0.5\textwidth}
 
-This option uses vtkDensifyPolyData filter.
+This option makes it possible to densify surfaces using either the vtkDensifyPolyData filter (1 new vertex created at the center of each triangle), the vtkLinearSubdivisionFilter (linear subdivision scheme), the vtkLoopSubdivisionFilter (loop subdivision sheme) or the vtkButterflySubdivisionFilter (butterfly subdivision scheme).
 Requirements : to use mesh densification, a selected
-surface is required (see for instance Fig. \ref{densify} p.\pageref{densify}).
-Note that mesh decimation can become extremely slow
+surface is required. An example of surface densification is presented in Fig. \ref{densify} p.\pageref{densify}.
+Note that mesh densification can become extremely slow
 when using number of subdivisions larger than 1.
-See vtkDensifyPolyData documentation for further information regarding mesh densification.
 
 \end{minipage}    
 \begin{minipage}{0.5\textwidth}\centering
   \includegraphics[scale=0.5]{images/09/structure/densification_dialog.png}
- \captionof{figure}{Densify dialog}
+ \captionof{figure}{Densification dialog}
  \end{minipage} 
 \noindent
 
 \begin{figure}
   \centering
   \includegraphics[scale=0.35]{images/09/structure/densification_example.png} 
-	\caption{Surface densification. Left: wireframe rendering of input surface (left inner ear of \textit{Galago moholi}). Right: wireframe rendering of resulting output (number of subdivisions: 1).
+	\caption{Surface densification. Left: wireframe rendering of input surface (left inner ear of \textit{Galago moholi}). Right: wireframe rendering of resulting output (method: 1 new vertex at the center of each triangle; number of subdivisions: 1).
 }
 \label{densify}
  
@@ -302,28 +301,30 @@ Please choose a value between 0 and 100. 100 stands for ``opaque rendering". 0 s
 \subsection{Change object solid color}
 Selected objects' solid color can be changed using this option. A set of 13 predefined colors is available via this menu. Alternatively, you can edit object color manually using the ``Default solid color of surfaces" control of the ``Edit color options" window (menu ``Edit $\rightarrow$Edit color options").
 
-\section{Create 3D printing connective material}
+\section{Create 3D primitives}
+
 When planning to print a 3D model composed of non connex elements (for instance : the cranium and the mandible of a single individual, or the skeleton of the fetus of a vertebrate specimen), you may need to manually place in 3D space connective surface elements linking those different parts. Such elements are referred to as "3D printing connective struts", and can be created via the "Cylindric connective struts" dialog (Fig. \ref{cylinders_dialog} p.\pageref{cylinders_dialog}) or via the "Cubic connective struts" dialog (Fig. \ref{cubes_dialog} p.\pageref{cubes_dialog}). 
+
 \subsection{Create cylindric connective struts}
 Different options are available, and in particular, the cylinders can be given either conic of flat ends, and the cross-section of the cylinders can either be circular or elliptic (Fig. \ref{conic_non_conic} p.\pageref{conic_non_conic}). 
 Two practical examples of 3D printed objects using cylindric connective struts are shown in Fig. \ref{support_example} p.\pageref{support_example}.
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{images/09/create_3D_printing_support_surfaces/cylinders_dialog.png} 
+  \includegraphics[scale=0.5]{images/09/create_3D_primitives/cylinders_dialog.png} 
 	\caption{Create cylinders dialog. Different options are available. Several cylinders sharing the same properties can be created at once. Shaft length and radius can be defined, as well as the resolution (number of sides). Also, shaft section shape can either be circular or elliptical. The bottom and top sides of the cylinders can be either flat, or conic.}
  \label{cylinders_dialog}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{images/09/create_3D_printing_support_surfaces/conic_non_conic.png} 
+  \includegraphics[scale=0.5]{images/09/create_3D_primitives/conic_non_conic.png} 
 	\caption{Different cylinder shapes. \textbf{Top left}: flat ends + circular shaft section. \textbf{Top right:} conic ends + circular shaft section. \textbf{Bottom left}: flat ends + elliptical shaft section. \textbf{Top right:} conic ends + elliptical shaft section.}
  \label{conic_non_conic}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[scale=1.40]{images/09/create_3D_printing_support_surfaces/support_example.png} 
+  \includegraphics[scale=1.40]{images/09/create_3D_primitives/support_example.png} 
 	\caption{Examples of 3D connective material usage. \textbf{A:} Cranium and mandible of \textit{Gorilla gorilla} (adult, male). Left: the 3D model of the skull is transparent, showing where the 3D connective cylinders have been placed in order to connect the mandible and the cranium. Middle: the same 3D model is rendered opaque. Right: 3D printed object. \textbf{B:} 3D model of the skeleton of a newborn \textit{Lemur catta}. The skeleton of this neonate specimen contains many non connected elements: many bones are not fully mineralized (skull bones, vertebrae) and most bones are separated in space. Left: the 3D model of the skeleton is transparent, showing the position of the many cylinders (two hundreds) of different lengths and diameters connecting the different bones. Right: 3D printed object. }
  \label{support_example}
 \end{figure}
@@ -333,17 +334,36 @@ Different options are available, and in particular, the cubes / box-shaped strut
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{images/09/create_3D_printing_support_surfaces/cubes_dialog.png} 
+  \includegraphics[scale=0.5]{images/09/create_3D_primitives/cubes_dialog.png} 
 	\caption{Create cube dialog. The X,Y and Z lengths of the cubic / box-shaped connective struts can be defined here.}
  \label{cubes_dialog}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{images/09/create_3D_printing_support_surfaces/cubic.png} 
+  \includegraphics[scale=0.5]{images/09/create_3D_primitives/cubic.png} 
 	\caption{Example of cubic connective strut.}
  \label{cubic}
 \end{figure}
+
+\subsection{Create icosahedrons / spheres}
+Different options are available, and in particular, the icosahedrons / spheres can be subdivised a number of times, and their radius can be set as well(see Fig.  \ref{icosahedrons_dialog} p.\pageref{icosahedrons_dialog} and Fig. \ref{spheric} p.\pageref{spheric}). 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/09/create_3D_primitives/icosahedrons_dialog.png} 
+	\caption{Create icosahedrons / spheres dialog. The number of subdivison, the radius and the type of 3D primitive (icosahedron or sphere) are defined here.}
+ \label{icosahedrons_dialog}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.35]{images/09/create_3D_primitives/spheric.png} 
+	\caption{\textbf{Top line:} from left to right: icosahedrons with subdivision 0, 1, 2 and 3 . \textbf{Bottom line:} from left to right: spheres with subdivision 0, 1, 2 and 3 .
+	}
+ \label{spheric}
+\end{figure}
+
 %\section{Delete small objects.}
 
 
