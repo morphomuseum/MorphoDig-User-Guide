@@ -217,24 +217,42 @@ This option uses vtkReflectionFilter, which produces a mirror image of the origi
  \label{mirror}
 \end{figure}
 
+\subsection{Merge selected surfaces into one single surface}
+This options makes it possible to merge all selected surfaces into one single surface object. 
 
 
-
-
-\section{Convex hulls}
+\section{Wrapping methods}
 \subsection{Create a convex hull for each selected surface}
-This option uses vtkDelaunay3D.This filter produces convex hull surfaces for each selected surface. Convex hulls can be useful for instance to compute estimations of the total "volume" occupied in space by complex objects containing lots of holes (see Fig. \ref{convex_hull} p.\pageref{convex_hull}). 
+This option uses vtkDelaunay3D. This filter produces convex hull surfaces for each selected surface. Convex hulls can be useful for instance to compute estimations of the total "volume" occupied in space by complex objects containing lots of holes (see Fig. \ref{convex_hull} p.\pageref{convex_hull}). 
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.27]{images/09/structure/convex_hull.png} 
+  \includegraphics[scale=0.27]{images/09/wrapping_methods/convex_hull.png} 
 	\caption{Convex hull computation. \textbf{Left:} original 3D surface representing the skull of a newborn \textit{Tarsius bancanus}. Bone volume: \textasciitilde100 mm3. \textbf{Right:} the resulting convex hull. Volume of the convex hull of the skull (=proxy for the volume of the "head"): \textasciitilde3653 mm3.}
 \label{convex_hull}
  
 \end{figure}
 
-\subsection{Merge selected surfaces into one single surface}
-This options makes it possible to merge all selected surfaces into one single surface object. 
+\subsection{Shrink and wrap 1 surface over a 2nd surface}
+This option uses vtkSmoothPolyDataFilter to shrink a surface over the points of a second surface. \textbf{Warning:} the first (=impacted) surface should enclose the second (=observed) surface. This will approximately produce a convex hull of the observed object (see Fig. \ref{shrink_wrap_dialog} p.\pageref{shrink_wrap_dialog} and Fig. \ref{shrink_wrap_example} p.\pageref{shrink_wrap_example}). 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/09/wrapping_methods/shrink_wrap_dialog.png} 
+	\caption{Shrink wrap dialog .}
+\label{shrink_wrap_dialog}
+ 
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.45]{images/09/wrapping_methods/shrink_wrap_example.png} 
+	\caption{Convex hull computation. \textbf{Left:} A transparent sphere encloses the 3D surface representing the inner ear of a \textit{Galago moholi} and (level . \textbf{Right:} the sphere was skink-wrapped over the inner ear, resulting approximately in a convex hull.}
+\label{shrink_wrap_example}
+ 
+\end{figure}
+
+
 
 \section{Surface alignment}\label{surface_alignment_section}
 \noindent

@@ -74,11 +74,38 @@ This option involves vtkPolyDataConnectivityFilter. This option will retrieve al
 \begin{figure}
   \centering
   \includegraphics[scale=0.28]{images/12/connectivity_tags.png} 
-	\caption{Example of tag array based on surface connectivity. Left: original surface representing the skull of the holotype specimen of \textit{Pan paniscus}. Right: a tag array ware created based on the output of the connectivity procedure: a large large number (>1000) of non connected regions was found and each was tagged. The largest region (cranium and mandible) is displayed with an opacity of 10\%, and the >1000 others with an opacity of 100\%. }
+	\caption{Example of tag array based on surface connectivity. \textbf{Left:} original surface representing the skull of the holotype specimen of \textit{Pan paniscus}. \textbf{Right:} a tag array ware created based on the output of the connectivity procedure: a large large number (>1000) of non connected regions was found and each was tagged. The largest region (cranium and mandible) is displayed with an opacity of 10\%, and the >1000 others with an opacity of 100\%. }
 \label{tag_connected}
  
 \end{figure}
 
+\section{Extract active tag region for each selected surface}\label{extract_active_tag_section}
+This option makes it possible to extract the currently active tag region (defined in the Tag window) out of selected surfaces (see for instance Fig. \ref{extract_active_tag} p.\pageref{extract_active_tag}).
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/12/extract_active_tag.png} 
+	\caption{Example of active tag region extraction. \textbf{Left:} surface representing the cribriform plate of a \textit{Tamandua tetradactyla} specimen. Two regions are tagged. Grey: ventral surface (Exterior). Orange: dorsal surface (Tag1).  \textbf{Right:} the ventral surface (top) and the dorsal surface (bottom) were extracted. }
+\label{extract_active_tag}
+ 
+\end{figure}
+
+\section{Extract tag region range for each selected surface}\label{extract_tag_range_section}
+This option opens the "Extract tag range" dialog (Fig. \ref{extract_tag_range_dialog} p.\pageref{extract_tag_range_dialog}), and makes it possible to extract at once a range of tag regions out of selected surfaces (see for instance Fig. \ref{extract_tag_range_example} p.\pageref{extract_tag_range_example}).
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/12/extract_tag_range_dialog.png} 
+	\caption{Extract tag range dialog. }
+\label{extract_tag_range_dialog}
+
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.4]{images/12/extract_tag_range_example.png} 
+	\caption{Example of tag region range extraction. \textbf{Left:} surface representing the cranium of the foetus of a house mouse (\textit{Mus musculus}). Different regions of the cranium were tagged.  \textbf{Right:} Tag regions ranging between 1 and 4 were extracted at once. }
+\label{extract_tag_range_example}
+
+\end{figure}
 
 \section{Tagging with MorphoDig: a quick starting guide}\label{tag_starting_guide}
 \textbf{\underline{}}\\

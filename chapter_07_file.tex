@@ -520,7 +520,16 @@ This option saves the current state of orientation labels in a .ORI file.
 \section{Measurements}
 \subsection{Save area, volume, triangle number and vertex number of selected surfaces}
 \noindent
-Surface area, volume, triangle number and vertex number of all selected surface objects can be saved in a .txt file using this option.\\
+This option opens the "Surfaces: save infos" dialog (see Fig. \ref{surface_infos} \pageref{surface_infos}), and saves within a .txt file, and for all selected surfaces, surface area, volume, triangle number and vertex number. If the "Save Area/Volume for each Tagged region?" option is checked and if the selected tag array exists for the involved surfaces, then for each tagged region, surace area, the volume , triangle numer and vertex number is also computed. Note that as tags are currently performed on vertices and not on triangles, there are different possibilities to consider whether a given triangle belongs to a given tagged region (as soon as 1 vertex belongs to that region, if at least 2 vertices belong to that region, or when all 3 vertices belong to that region). 
+
+\begin{figure}
+  \centering  
+ \includegraphics[scale=0.5]{images/07/measurements/area_volume.png}
+ \captionof{figure}{"Surfaces: save infos" dialog.}
+\label{surface_infos}
+\end{figure}
+
+ 
 \noindent Note: surface objects should be closed in order to provide a correct estimation of object volume.
 
 \subsection{Complexity: save normalized shape index, area and volume of selected surfaces} \label{global_complexity_1}
