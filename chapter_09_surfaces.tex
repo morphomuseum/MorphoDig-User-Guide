@@ -251,14 +251,33 @@ This option uses vtkSmoothPolyDataFilter to shrink a surface over the points of 
  
 \end{figure}
 
+\section{Boolean operations}\label{boolean_operations}
+\noindent
+\begin{minipage}{0.5\textwidth}
+This option uses the vtkBooleanOperationPolyDataFilter filter. This filter makes it possible to perform boolean operations (subtraction, union and intersection) involving two surfaces (see for instance Fig. \ref{boolean_example} p.\pageref{boolean_example}). \textbf{Warning:} this option works smoothly only when relatively "light surfaces" (less than a few thousand faces) are involved. Boolean operations on \textbf{large} free form surface object \textbf{will probably fail}. See vtkBooleanOperationPolyDataFilter documentation for further information.
+
+
+
+\end{minipage}    
+\begin{minipage}{0.5\textwidth}\centering
+  \includegraphics[scale=0.5]{images/09/boolean_operations/boolean_dialog.png}
+ \captionof{figure}{Boolean operation dialog}
+ \end{minipage} 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.21]{images/09/boolean_operations/boolean_example.png} 
+	\caption{Example of possible boolean operations involving a sphere (surface A) and a cylinder of hexagonal section (surface B). }
+ \label{boolean_example}
+\end{figure}
+
 
 
 \section{Surface alignment}\label{surface_alignment_section}
 \noindent
 \begin{minipage}{0.5\textwidth}
-This option uses vtkIterativeClosestPointTransform filter. This filter makes it possible to align two surfaces using the Iterative Closest Point (ICP) algorithm. In order to get good results, it is strongly advised to orient manually roughly the two surfaces in the same direction before running this algorithm 
+This option uses the vtkIterativeClosestPointTransform filter. This filter makes it possible to align two surfaces using the Iterative Closest Point (ICP) algorithm. In order to get good results, it is strongly advised to orient manually roughly the two surfaces in the same direction before running this algorithm 
 (see for instance Fig. \ref{surface_alignment} p.\pageref{surface_alignment}). See vtkIterativeClosestPointTransform documentation for further information.
-
 
 
 \end{minipage}    
