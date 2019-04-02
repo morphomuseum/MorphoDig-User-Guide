@@ -60,7 +60,7 @@ some point to rename some of the object surfaces in order to make sure that all 
 
 \section{Surface}
 \subsection{Open surface}
-STL, PLY and VTK polydata surfaces can be open via this menu. MorphoDig does not manage textures associated with surface files. When opening a PLY file containing RGB colors (for instance a file painted manually or automatically with ``MeshLab", or some laser scanner surface files) or a VTK file containing RGB arrays, these colors are placed inside a (or several) "RGB" array(s). 
+STL, PLY,  VTK polydata and OBJ surfaces can be opened via this menu. MorphoDig does not manage textures associated with surface files. When opening a PLY file containing RGB colors (for instance a file painted manually or automatically with ``MeshLab", or some laser scanner surface files) or a VTK file containing RGB arrays, these colors are placed inside a (or several) "RGB" array(s). 
 %MorphoDig will reinitialize the ``RGB" scalars whenever you change the object's color or whenever you activate tag display mode or scalar display mode : if these colors are important to you, you may convert them to TAG values in the menu Tags$\rightarrow$Convert RGB colors to tags before changing the object color or display mode/before changing tags or any color scale activated.
 
 \subsection{Save surface}
@@ -130,6 +130,21 @@ ASCII formats.
  \captionof{figure}{STL save options window}
  \end{minipage} 
 
+\subsubsection{Save selected surfaces in one single .OBJ file}
+
+\begin{minipage}{0.5\textwidth}
+Options:
+\begin{itemize}
+
+
+\item Position : you can keep object original coordinate system or save the surface in its current position
+\end{itemize}
+
+\end{minipage}    
+\begin{minipage}{0.5\textwidth}\centering
+  \includegraphics[scale=0.5]{images/07/surface/save_obj.png}
+ \captionof{figure}{OBJ save options window}
+ \end{minipage} 
 
 
 
