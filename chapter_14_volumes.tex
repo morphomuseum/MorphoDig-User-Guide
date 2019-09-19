@@ -4,7 +4,7 @@
 
 \section{Edit first selected volume}
 This option opens the "Edit first selected volume" window.
-The "Edit first selected" window can also be opened by clicking on "\includegraphics[scale=0.7]{images/06/objects/volume_edit.png}" (see Fig. \ref{edit_volume_window}).
+The "Edit first selected" window can also be opened by clicking on "\includegraphics[scale=0.7]{images/06/objects/volume_edit.png}" (see Fig. \ref{edit_volume_window} p.\pageref{edit_volume_window}).
 
 
 
@@ -15,9 +15,45 @@ The "Edit first selected" window can also be opened by clicking on "\includegrap
 \label{edit_volume_window}
  \end{figure}
 
-\subsection{Volume name}
+\subsection{Volume: name, selection and visibility}
+Switching between all currently opened volume, editing their names can be performed in this section (see Fig.\ref{volume_name} p.\pageref{volume_name}).
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{images/14/volume_name2.png}
+\caption{Volume: name, selection and visibility. \textbf{1)} View and/or change the name of the currently selected volume.  \textbf{2)} Select preceding volume.  \textbf{3)} Select next volume. \textbf{4)} make visible or hide all representations in the 3D window for the currently selected volume (volume rendering and/or 2D slices representations). }	
+\label{volume_name}
+ \end{figure}
+
+\subsection{Information and crop editor}
+Volume dimensions, resolution, data type and position in 3D space of the first voxel of the volume (origin) are available in this section (see Fig. \ref{volume_information} p.\pageref{volume_information}). The crop editor is also situated in this section. 
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{images/14/volume_information2.png}
+\caption{Volume information and crop editor. \textbf{1)} Number of voxels in X, Y and Z dimensions of currently selected volume.   \textbf{2)} Voxel resolution in X, Y and Z (scale: size unit most often expressed in mm). \textbf{3)} Data type (8 bits, 16 bits, 32 bits or 64 bits voxels).  \textbf{4)} Display / hide crop box. \textbf{5)} Apply crop box: restrict the dimensions of the currently opened volume to those of the crop box. \textbf{5)} Origin of the first voxel of currently selected volume in X,Y and Z. }	
+\label{volume_information}
+ \end{figure}
+
+
 \subsection{Position}
+Volume position matrix can be manually edited, reinitialized and refreshed inside this section (see Fig. \ref{volume_position} p. \pageref{volume_position}).
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{images/14/volume_position2.png}
+\caption{Volume position section. \textbf{1)} Position matrix.   \textbf{2)} Reset position matrix to identity. \textbf{3)} Refresh position matrix.  \textbf{4)} Apply position matrix to all selected volumes. }	
+\label{volume_position}
+ \end{figure}
+
+
+
 \subsection{Volume rendering}
+Volume rendering options are located in this section (see Fig. \ref{volume_rendering} p. \pageref{volume_rendering}).
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{images/14/volume_rendering2.png}
+\caption{Volume rendering section. \textbf{1)} Chose mapper (note that "Smart Volume mapper" does not currently allow masks).   \textbf{2)} Display / hide volume rendering representation of currently selected volume. \textbf{3)} Change color map.  \textbf{4)} Reinitialize current colormap (only possible for default colormaps). \textbf{5)} edit current colormap name (only possible for user-defined colormaps.) \textbf{6)}delete current colormap (only possible for user-defined colormaps.) \textbf{7)} Activate/ deactivate linear interpolation rendering. \textbf{8)} Enable/ disable ROI clipping box, and display / hide clipping box boundaries and edition handles.  \textbf{9)} Change scalar opacity unit distance. \textbf{10)} Render a down-sampled version of the currently selected volume rather than the full volume (large volumes, e.g. > 1Gb datasets are often hard to render on standard graphics cards and may make your computer crash).  }	
+\label{volume_rendering}
+ \end{figure}
+
 \subsection{2D slices}
 \subsection{Volume rendering mask}
 \subsection{Color map edition}
@@ -25,4 +61,11 @@ The "Edit first selected" window can also be opened by clicking on "\includegrap
 
 \section{Extract isosurface from first selected volume}
 
-\section{Filp or swap first selected volume}
+\section{Flip or swap first selected volume}
+
+\section{Change voxel size of first selected volume (keep dimensions, no resampling}
+
+\section{Resample first selected volume (dimensions will be changed, and voxel size as well)}
+
+\section{Reslice first selected volume}
+
