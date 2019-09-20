@@ -3,10 +3,18 @@
 
 
 \section{Interacting with objects}
-One very important aspect of MorphoDig's design is that most interactions or modifications of opened objects can only be done when these objects are selected. 
-Selected objects (3D surfaces and landmarks) are always drawn in ``grey". All currently opened objects can be selected by pressing CTRL+A. All currently opened objects can be unselected by pressing CTRL+D. Objects can also be selected/unselected using the right mouse button, depending on the currently active interaction mode (see below).
+One very important aspect of MorphoDig's design is that most interactions or modifications of opened objects can only be done when these objects are \textbf{selected}. 
+Selected surfaces (free-form surfaces, landmarks and flags) are always drawn in ``grey". Regarding volumetric objects, selected ones appear with a bounding box, while unselected ones to not exhibit such bounding boxes. See Fig. \ref{selected_unselected} p.\pageref{selected_unselected}.
+All currently opened objects can be selected by pressing CTRL+A. All currently opened objects can be unselected by pressing CTRL+D. Objects can also be selected/unselected using the right mouse button, depending on the currently active interaction mode (see below).
 
 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.39]{images/04/selected_unselected2.png} 
+	\caption{\textbf{A} unselected volumes have no bounding box. \textbf{B} unselected surfaces are usually not drawn grey. \textbf{C} selected volumes exhibit a bounding box. \textbf{D} selected surfaces are drawn grey.}
+\label{selected_unselected}
+ 
+\end{figure}
 
 \section{Interactions modes}
 

@@ -55,9 +55,45 @@ Volume rendering options are located in this section (see Fig. \ref{volume_rende
  \end{figure}
 
 \subsection{2D slices}
-\subsection{Volume rendering mask}
+Display of 2D slices inside the 3D main window is located in this section (see Fig. \ref{volume_2Dslices} p. \pageref{volume_2Dslices}).
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{images/14/volume_2Dslices2.png}
+\caption{2D slices  \textbf{1)} Display / hide 2D slices in xy, xz and yz planes. \textbf{2)} Change slice number in xy, xz and yz planes.  }	
+\label{volume_2Dslices}
+
+ \end{figure}
+
+
+\subsection{Volume rendering mask}\label{volume_rendering_masking}
+Volume rendering masking tools are located in this section (see Fig. \ref{volume_masking} p. \pageref{volume_masking}). Note that when the Smart Volume Mapper is selected, masking tools become unavailable.
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{images/14/volume_masking2.png}
+\caption{Volume rendering mask.  \textbf{1)} Enable/disable mask tools. \textbf{2)} When using the pencil tool, choose between spherical shape and cylindric shape.  \textbf{3)} Define pencil radius in terms of screen pixels. Pencil radius can be interactively changed by keeping "T" pressed while rolling the middle mouse button.  \textbf{4)} Define whether voxels laying inside the selection should be masked or unmasked. \textbf{5)} Define whether selected voxels to mask/unmask laying inside or outside the selected region. \textbf{6)} Pencil selection tool. \textbf{7)} Lasso selection tool. \textbf{8)} Rectangular region selection tool.  \textbf{9)} 3D surface selection tool: use a 3D surface to define which region should be masked. \textbf{10)} Reinitialize mask. \textbf{11)} Invert mask. \textbf{12)} Harden transform mask.}	
+\label{volume_masking}
+
+ \end{figure}
+
+
 \subsection{Color map edition}
+Volume rendering color map edition controls tools are located in this section (see Fig. \ref{volume_colormap} p. \pageref{volume_colormap}). 
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{images/14/volume_colormap2.png}
+\caption{Volume rendering colormap control section. \textbf{1)} Opacity control points of the active color map (move these points to change opacity). \textbf{2)} Color control points of the active color map (double click on each point to edit the color). \textbf{3)} Histogram of currently selected volume. Orange: conventional histogram. Blue: logarithmic-scaled histogram. The 2 vertical bars indicate the min and max display range of the colormap.  \textbf{4)} Shift color map display range, or change min and max display range.\textbf{5)} Edit manually mapped min or max value. Edit manually histogram plotted min or max. \textbf{6)} From top to down. a: set range to min and max. b: reverse color control points. c: reverse opacity control points. d: Export colormap to file. e: Save colormap to presets = duplicate current active color map and create a new custom color map.}	
+\label{volume_colormap}
+ \end{figure}
+
 \subsection{Suggested mapped values}
+You may decide to reset min and max of the color map based on suggested values. These suggested min and max values are computed in order to remove a percentage of most extreme minimal and maximal values found in the voxels of the currently opened volume (see Fig. \ref{volume_suggested_values} p. \pageref{volume_suggested_values}).
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{images/14/volume_suggested_values2.png}
+\caption{Volume rendering suggested mapped values. \textbf{1)} Suggested minimal value. \textbf{2)} Suggested maximal value. \textbf{3)} Apply suggested min value.  \textbf{4)} Apply suggested max value.\textbf{5)} Change the percentage of extreme minimal values to compute a new suggested minimal value. \textbf{6)} Change the percentage of extreme maximal values to compute a new suggested maximal value.}	
+\label{volume_suggested_values}
+ \end{figure}
+
 
 \section{Extract isosurface from first selected volume}
 

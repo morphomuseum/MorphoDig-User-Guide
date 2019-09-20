@@ -46,26 +46,31 @@ Landmark mode : object translation \\ \hline
 
 « Del » & All selected objects are deleted \\ \hline			
 
-T + left click & Picks a vertex and tags corresponding surface with active tag value (a tag array must be active, and tag mode must be activated). Warning: this option does not work with touchpads, you need a "real" mouse to be able to combine "T" and a left click (no alternative yet).  \\ \hline			
- 
-T + right click & Picks a vertex and tags corresponding surface with active tag value (a tag array must be active, and tag mode must be activated). The only potentially affected vertices are those having initially the same color as that of the picked vertex. Warning: this option does not work with touchpads, you need a "real" mouse to be able to combine "T" and a right click (no alternative yet).  \\ \hline			
 
-T + middle mouse roll & Increases or decreases pencil radius (only when the active tag tool is the pencil tag).  \\ \hline			
 
  \end{tabularx}
 
+\begin{tabularx}{\linewidth}{ | c | X | }
+T + left click (surfaces) & Picks a vertex and tags corresponding surface with active tag value (a tag array must be active, and tag mode must be activated). Warning: this option does not work with touchpads, you need a "real" mouse to be able to combine "T" and a left click (no alternative yet).  \\ \hline			
+T + left click (volumes) & Only works when masking is enabled. Picks a voxel and masks corresponding volume region (using either a sphere or a cylindric shape) Warning: this option does not work with touchpads, you need a "real" mouse to be able to combine "T" and a left click (no alternative yet).  \\ \hline			 
+
+T + right click & Picks a vertex and tags corresponding surface with active tag value (a tag array must be active, and tag mode must be activated). The only potentially affected vertices are those having initially the same color as that of the picked vertex. Warning: this option does not work with touchpads, you need a "real" mouse to be able to combine "T" and a right click (no alternative yet).  \\ \hline			
+
+T + middle mouse roll & Increases or decreases pencil radius (tags and masks).  \\ \hline			
+\end{tabularx}
+
 \section{Additional controls}
-Additional controls are available when using ``lasso cut" or ``lasso tag" (lasso mode should be active) or "rubber band cut" or "rubber band tag" (rubber band mode should be active):\\
+Additional controls are available when using ``lasso cut",  ``lasso tag",  ``lasso mask"  (lasso mode should be active) or "rubber band cut", "rubber band tag", "rubber band mask" (rubber band mode should be active):\\
 \begin{tabularx}{\linewidth}{ | c | X | }
 \hline			
 Left mouse click and drag & Draws the lasso polygon/rectangular contour\\ \hline			
 
-Left mouse release &  all the vertices falling within the polygonal/rectangular region (outside or inside the polygon/rectangle) are either:\newline
+Left mouse release (surfaces)&  all the vertices falling within the polygonal/rectangular region (outside or inside the polygon/rectangle) are either:\newline
 - given the color corresponding the active tag (lasso/rubber band tag)\newline
 - inserted into a new object (lasso/rubber band cut inside).\newline 
 - deleted from the new object (lasso/rubber band cut outside).\newline 
 See lasso or rubber band cut (sections \ref{lasso_cut_section} p.\pageref{lasso_cut_section} and \ref{rubber_band_cut_section} p.\pageref{rubber_band_cut_section}) and lasso tag or rubber band tag (sections \ref{lasso_tag_section} p.\pageref{lasso_tag_section} and \ref{rubber_band_tag_section} p.\pageref{rubber_band_tag_section}) sections for further information.\\ \hline	
 		
-
+Left mouse release (volumes)&  all the voxels falling within the polygonal/rectangular region (outside or inside the polygon/rectangle) are either masked or unmasked, depending on the options used. See section "volume rendering masking"' of chapter \ref{volumes_chapter}  p.\pageref{volume_rendering_masking}  for further information.\\ \hline	
 \end{tabularx}
 
