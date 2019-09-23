@@ -1,10 +1,33 @@
 
-\chapter{Menu Surfaces}
+\chapter{Menu Surfaces}\label{Menu_surfaces}
 \minitoc 
 
 
 In most cases, these function only apply on selected surfaces, so, as a prerequisite, you almost always need to select surfaces in order to use what is described below.
 
+\section{Edit first selected surface}
+This menu opens the "Edit first selected surface" window (see Fig. \ref{actor_edit} p.\pageref{actor_edit}), in which several properties of a given surface object can be edited. This window can also be opened by clicking on "\includegraphics[scale=0.7]{images/06/objects/actor_edit.png}". An example of ROI usage can be found Fig. \ref{example_surface_roi} p.\pageref{example_surface_roi}.
+
+
+
+
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{images/09/edit_surface/edit_surface2.png} 
+	\caption{Edit first selected surface window. \textbf{1-} Object name : edit the name of the surface.Next and preceding object buttons: saves current settings and fetches next/preceding surface. View/hide object button.	\textbf{2-} Object solid color : modifies the "solid color" property of this object. Object translucency : modifies the translucency this object. The number of points and triangles are available in this section. \textbf{3-} Object matrix : current position/rotation matrix of the object. Reinit matrix: set current matrix to identity. Refresh matrix: if edited outside this window, object's matrix is refreshed. Harden transform : apply current position matrix to all the vertices, and reset position matrix to identity. Apply matrix to all selected surfaces : set position/rotation matrix to all other selected surfaces.\textbf{4-} Enable ROI: must be activated to enable custom clipping planes. Show/Hide ROI: show ROI to define interactively clipping planes. \textbf{5-} Existing arrays : list of all scalar/RGB color/tags arrays associated to the vertices of the surfaces. Edit array name : modifies the name of currently selected array. Duplicate array : duplicates currently selected array. Delete array : deletes currently selected array. Ok : save settings and closes window}
+\label{actor_edit}
+ 
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.25]{images/09/edit_surface/example_surface_roi.png} 
+	\caption{Example of ROI box usage to digitize landmarks inside surfaces. \textbf{A-} Surface ROI is enabled, and ROI box is visible. \textbf{B-} Left drag click on the 6 spheres to edit ROI box bounds.  \textbf{C-} Hide ROI box / or unselect surface. \textbf{D-} Now landmarks can be digitized inside surface.}
+\label{example_surface_roi}
+ 
+\end{figure}
 
 
 \section{Structure modification}

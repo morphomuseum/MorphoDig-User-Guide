@@ -45,7 +45,16 @@ Note that in orthographic camera projection mode \includegraphics[scale=0.7]{ima
 \includegraphics[scale=0.7]{images/06/camera/camera_below.png} view object from below\\
 
 \subsection{Screenshot}
-Press "\includegraphics[scale=0.7]{images/06/camera/screenshot.png}" to take a screenshot (.png format). Once you have defined This opens the following
+Press "\includegraphics[scale=0.7]{images/06/camera/screenshot.png}" to take a screenshot (.png format). This opens the screenshot dialog (see Fig. \ref{screenshot_dialog} p.\pageref{screenshot_dialog}). 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.4]{images/06/camera/screenshot_dialog.png} 
+	\caption{Screenshot dialog. You can define here the multiplication factor in x and y, and decide whether the background should be transparent or opaque. }
+\label{screenshot_dialog}
+ 
+\end{figure}
+
 
 \subsection{Camera rotation around ``z" viewing axis}
 
@@ -191,31 +200,20 @@ Hiding backfaces of a surface is useful in some cases to visualize inner structu
 
 
 4 different options exist to draw 3D surfaces :\\
-\includegraphics[scale=0.7]{images/06/display/point_normals.png} : point normals display mode (Gouraud shading), see Fig. \ref{4display_modes}-A.\\
-\includegraphics[scale=0.7]{images/06/display/cell_normals.png} : triangle normals display mode, see Fig. \ref{4display_modes}-B. \\
-\includegraphics[scale=0.7]{images/06/display/wireframe.png} : wireframe representation  display mode, see Fig. \ref{4display_modes}-C.\\
-\includegraphics[scale=0.7]{images/06/display/points.png} point cloud display mode, see Fig. \ref{4display_modes}-D\\
+\includegraphics[scale=0.7]{images/06/display/point_normals.png} : point normals display mode (Gouraud shading), see Fig. \ref{5display_modes}-A.\\
+\includegraphics[scale=0.7]{images/06/display/cell_normals.png} : triangle normals display mode, see Fig. \ref{5display_modes}-B. \\
+\includegraphics[scale=0.7]{images/06/display/wireframe.png} : wireframe representation  display mode, see Fig. \ref{5display_modes}-C.\\
+\includegraphics[scale=0.7]{images/06/display/points.png} point cloud display mode, see Fig. \ref{5display_modes}-D\\
+\includegraphics[scale=0.7]{images/06/display/cell_normals2.png} triangle normales + wireframe display mode, see Fig. \ref{5display_modes}-E\\
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.4]{images/06/display/4display_modes.png} 
-	\caption{Display modes available for a given surface. Single surface representation of the left bony labyrinth of a  \textit{Lepilemur dorsalis}. A: "Point normales" mode (Gouraud shading). B: "Triangle normales" mode. C: "Wireframe" mode. D: "Point cloud" mode.}
-\label{4display_modes}
+  \includegraphics[scale=0.25]{images/06/display/5display_modes.png} 
+	\caption{Display modes available for a given surface. Single surface representation of the left bony labyrinth of a  \textit{Lepilemur dorsalis}. A: "Point normales" mode (Gouraud shading). B: "Triangle normales" mode. C: "Wireframe" mode. D: "Point cloud" mode. D: "Triangle normales + wireframe" mode.}
+\label{5display_modes}
  
 \end{figure}
 
-
-\section{Light direction controls}
-See Fig. \ref{gui} p.\pageref{gui} to see where the "light controls" are situated within MorphoDig's main window.
-
-
-6 lightning orientations are predefined :\\
-\includegraphics[scale=0.7]{images/06/light/light_right.png}light from right viewing side\\
-\includegraphics[scale=0.7]{images/06/light/light_left.png}light from left viewing side\\
-\includegraphics[scale=0.7]{images/06/light/light_front.png}light from front viewing side\\
-\includegraphics[scale=0.7]{images/06/light/light_back.png}light from back viewing side\\
-\includegraphics[scale=0.7]{images/06/light/light_above.png}light from above\\
-\includegraphics[scale=0.7]{images/06/light/light_below.png}light from below\\
 
 
 
@@ -238,67 +236,29 @@ Clicking on "\includegraphics[scale=0.7]{images/06/objects/landmark_xyz.png}" op
 \end{figure}
 \subsection{Decrease / Increase landmark number}
 Clicking on \includegraphics[scale=0.7]{images/06/objects/move_up.png} will increase (= move down in list, if possible) the landmark number of all selected landmarks. Clicking on \includegraphics[scale=0.7]{images/06/objects/move_down.png} will decrease (=move up in list, if possible) the landmark number of all selected landmarks. These buttons make it possible to reorder landmarks.
+
+
 \subsection{Edit first selected surface}
 
-Clicking on "\includegraphics[scale=0.7]{images/06/objects/actor_edit.png}" opens the "Edit first selected surface" window (Fig. \ref{actor_edit} p.\pageref{actor_edit}), in which several properties of a given surface object can be edited.
-\\
-- Object name : modifies the name of the object.\\
-- Next object \includegraphics[scale=0.7]{images/06/objects/s_right.png} and preceding object \includegraphics[scale=0.7]{images/06/objects/s_left.png}: saves currently  settings and fetches next/preceding surface.\\
-- Object solid color : modifies the "solid color" property of this object.\\
-- Object translucency : modifies the translucency this object.
-- Object matrix : current position/rotation matrix of the object.\\
-- Reinit matrix: set current matrix to identity.\\
-- Apply matrix to all selected surfaces : set position/rotation matrix to all other selected surfaces.\\
-- Existing arrays : list of all scalar/RGB color/tags arrays associated to the vertices of the surfaces.\\
-- Edit array name : modifies the name of currently selected array\\
-- Duplicate array : duplicates currently selected array\\
-- Delete array : deletes currently selected array\\
-- Ok : save settings and closes window
+Clicking on "\includegraphics[scale=0.7]{images/06/objects/actor_edit.png}" opens the "Edit first selected surface" window (see chapter \ref{Menu_surfaces}, Fig. \ref{actor} p.\pageref{actor_edit} for further details), in which several properties of a given surface object can be edited.
 
 
+\subsection{Edit first selected volume}
 
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.55]{images/06/objects/edit_surface.png} 
-	\caption{Edit first selected surface window.}
-\label{actor_edit}
- 
-\end{figure}
+Clicking on "\includegraphics[scale=0.7]{images/06/objects/volume_edit.png}" opens the "Edit first volume" window (see chapter \label{volumes_chapter}, Fig. \ref{edit_volume_window} p.\pageref{edit_volume_window} for further details), in which several properties of a given volume.
 
 
 
 \subsection{Edit first selected landmark}
-Clicking on "\includegraphics[scale=0.7]{images/06/objects/landmark_edit.png}" opens the "Edit first selected landmark" window (Fig. \ref{landmark_edit} p.\pageref{landmark_edit}), in which landmark coordinates of landmarks can be manually edited. The center of rotation of the camera can be set to the x,y,z coordinates of a given landmark by pressing on "\includegraphics[scale=0.7]{images/06/objects/move_cam3.png}".
+Clicking on "\includegraphics[scale=0.7]{images/06/objects/landmark_edit.png}" opens the "Edit first selected landmark" window (see Fig. \ref{landmark_edit} p.\pageref{landmark_edit} for further details). 
 
 
 
 
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.55]{images/06/objects/edit_landmark.png} 
-	\caption{Edit first selected landmark window.}
-\label{landmark_edit}
- 
-\end{figure}
 
 \subsection{Edit first selected flag}
-Clicking on "\includegraphics[scale=0.7]{images/06/objects/flag_edit.png}" opens the "Edit first selected flag" window (Fig. \ref{flag_edit} p.\pageref{flag_edit}), in which several properties of a given flag can be manually edited.
+Clicking on "\includegraphics[scale=0.7]{images/06/objects/flag_edit.png}" opens the "Edit first selected flag" window (see Fig. \ref{flag_edit} p.\pageref{flag_edit} for further details), in which several properties of a given flag can be manually edited.
 
-- Flag name : modifies the label of this flag.\\
-- X, Y, Z: 3D coordinates of the flag.\\
-- Next flag \includegraphics[scale=0.7]{images/06/objects/s_right.png} and preceding flag \includegraphics[scale=0.7]{images/06/objects/s_left.png}: saves currently  settings and fetches next/preceding flag\\
-- Flag color : modifies the "color" of the currently selected flag.\\
-- Flag rendering size : modifies the length of the flag.\\
-The center of rotation of the camera can be set to the x,y,z coordinates of a given flag by pressing on "\includegraphics[scale=0.7]{images/06/objects/move_cam3.png}".
-
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.55]{images/06/objects/edit_flag.png} 
-	\caption{Edit first selected flag window.}
-\label{flag_edit}
- 
-\end{figure}
 
 \subsection{Lasso cut selected surfaces} \label{lasso_cut_section}
 

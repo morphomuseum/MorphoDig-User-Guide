@@ -14,9 +14,18 @@ When working with multiple surface objects, loading surfaces and associated posi
 - Name of surface 2 file\\
 - Name of position 2 file associated to surface 2\\
 - Surface 2 RGB color and transparency (etc...)\\
+- Name of volume 1 file\\
+- Name of position 1 file associated to volume 1\\
+- Name of map 1 file associated to volume 1\\
+- Scalar opacity unit distance, min and max values to plot for volume 1\\
+- Name of volume 2 file\\
+- Name of position 2 file associated to volume 2\\
+- Name of map 2 file associated to volume 2\\
+- Scalar opacity unit distance, min and max values to plot for volume 2 (etc.)\\
+
  
 Surface files can be of the following types : .stl, .vtk and .ply\\
-``.ntw" files can be constructed manually, providing that the referred surface and position files exist.
+``.ntw" files can be constructed manually, providing that the referred surface, volume, map and position files exist.
 
 
 
@@ -37,12 +46,13 @@ Loads a .ntw file
  \captionof{figure}{Save project window.}
 \label{save_project_file}
 \end{figure}
-Behavior: only selected elements (surface objects, landmarks, flags...) are saved within projects. If at least one opened element has been selected, the Save project window (Fig. \ref{save_project_file} p.\pageref{save_project_file}) opens and asks whether :  
+Behavior: only selected elements (surface objects, landmarks, flags, volumes...) are saved within projects. If at least one opened element has been selected, the Save project window (Fig. \ref{save_project_file} p.\pageref{save_project_file}) opens and asks whether :  
 \begin{itemize}
 \item orientation labels should be saved along with the project (by default, orientation labels are not saved, as orientation labels are quite rarely set by users). 
 \item tag legends and colors (tag maps) should by saved. By default, .tag file are not saved along with the project, as tag setting is not a common task. 
-\item save surfaces as. VTK polydata, PLY or STL. We advise you to save your surfaces as VTK polydata. In the contrary case, all scalars, tag arrays and RGB arrays  will be lost. Once exception: one RGB array named exactly "RGB" can be saved within PLY files.
-\item save position inside .POS file, or apply the position to surfaces. We advise you to save position inside .POS file (otherwise, the initial orientations of your surfaces will be lost). 
+\item save surfaces as VTP (VTK XML polydata), VTK polydata, PLY or STL. We advise you to save your surfaces as VTK polydata (.vtp or .vtk). In the contrary case, all scalars, tag arrays and RGB arrays  will be lost. Once exception: one RGB array named exactly "RGB" can be saved within PLY files.
+\item save volumes as MetaImage Header and Raw volume files (.mhd and .raw or .zraw), Metaimage volumes (.mha) files, VTK Images (.vti). Allow compression on/off (only for MHD and MHA files).
+\item save position inside .POS file, or harden the position. We advise you to save position inside .POS file (when harden transformed, the information regarding the original orientations of your surfaces will be lost). 
 \end{itemize}
 Each surface file will be given the name of the original file. Each position file will be given a name which starts with the name of the associated surface and ends with the name of the project (1 exception: when the project contains only one surface and  the project's name is the same as that of the surface. In that case, .pos file names are not postfixed with the name of the project). In the .ntw file example shown in Fig. \ref{project_file} p.\pageref{project_file}, the surface files are 
 \begin{itemize}
@@ -53,14 +63,14 @@ Each surface file will be given the name of the original file. Each position fil
 \end{itemize}
 \noindent and the project name is ``exploded.ntw". The advantage of naming position files that way is you may construct different .ntw files with different associated surface files using a same set of surfaces. Requirement : all selected surfaces saved via this option
 need to have distinct names. Note : When working with ``project" files, if several surface objects have the same name, you may need at
-some point to rename some of the object surfaces in order to make sure that all surface objects have a distinct name. To do so, select one surface, click on \includegraphics[scale=0.7]{images/06/objects/actor_edit.png}: the ``Edit first selected surface" window appears (See Fig. \ref{actor_edit} p.\pageref{actor_edit} in preceding chapter).
+some point to rename some of the object surfaces in order to make sure that all surface objects have a distinct name. To do so, select one surface, click on \includegraphics[scale=0.7]{images/06/objects/actor_edit.png}: the ``Edit first selected surface" window appears (See Fig. \ref{actor_edit} p.\pageref{actor_edit}).
 
 
 
 
 \section{Surface}
 \subsection{Open surface}
-STL, PLY,  VTK polydata and OBJ surfaces can be opened via this menu. MorphoDig does not manage textures associated with surface files. When opening a PLY file containing RGB colors (for instance a file painted manually or automatically with ``MeshLab", or some laser scanner surface files) or a VTK file containing RGB arrays, these colors are placed inside a (or several) "RGB" array(s). 
+STL, PLY,  VTK/VTP polydata and OBJ surfaces can be opened via this menu. MorphoDig does not manage textures associated with surface files. When opening a PLY file containing RGB colors (for instance a file painted manually or automatically with ``MeshLab", or some laser scanner surface files) or a VTK file containing RGB arrays, these colors are placed inside a (or several) "RGB" array(s). 
 %MorphoDig will reinitialize the ``RGB" scalars whenever you change the object's color or whenever you activate tag display mode or scalar display mode : if these colors are important to you, you may convert them to TAG values in the menu Tags$\rightarrow$Convert RGB colors to tags before changing the object color or display mode/before changing tags or any color scale activated.
 
 \subsection{Save surface}
@@ -616,3 +626,60 @@ This option opens the "Scalars: save infos" dialog (see Fig. \ref{active_scalar_
 
 \subsection{Save scalar values of first selected surface.}
 This option saves within a .txt file, and ONLY for the first selected surface containing N vertices, all scalar values for all vertices. Ex: if a given surface contains 3 scalars (ex: thickness, curvature, complexity), the .txt file will contain the values of the 3 scalar arrays for all N vertices. 
+
+
+\section{Volume}
+
+
+
+\subsection{Open MHD/MHA/VTI volume}
+Meta-image volume files (.mhd and .mha) files as well as vtk volume files (.vti) can be opened using this format. Meta-image volume files are very convenient as they can be easily produced with Fiji software. Voxel size is embedded within this format. 
+
+\noindent
+
+\subsection{Open Raw Volume}
+This option opens the "Open raw volume" Dialog (see Fig. \ref{open_raw} \pageref{open_raw}).
+
+\begin{figure}
+  \centering  
+ \includegraphics[scale=1]{images/07/volume/open_raw2.png}
+ \captionof{figure}{Open raw volume dialog. In order to open a raw volume, information is required. \textbf{1)} Data type (8 bits, 16 bits signed or unsigned, 32 bits or 64 bits). \textbf{2)} Data dimensions in X, Y and Z. \textbf{3)} Header Size. \textbf{4)} Given data type, data dimensions and header size, requested size in bytes must be equal to filesize. \textbf{5)} Data endianess: little or big endian. \textbf{6)} Index order: slices either are back-to-front or front-to-back ordered.  Most CT datasets are back-to-front ordered: the first image image is furthest from the viewer, and subsequent images move towards the viewer. If you do not choose the right option, a mirror image of your volume will appear on the screen (which can be corrected later on). \textbf{7)} voxel size in x, y and z dimensions (most ofen expressed in mm)}
+\label{open_raw}
+\end{figure}
+
+\subsection{Open 3D tiff file}
+This option opens the "Open 3D Tiff file or 2D Tiff stack " dialog (see Fig. \ref{open_tiff} \pageref{open_tiff}). Data type and dimensions are automatically detected, but you have to fill index order and voxel size.
+
+\begin{figure}
+  \centering  
+ \includegraphics[scale=1]{images/07/volume/open_tiff2.png}
+ \captionof{figure}{Open 3D Tiff file or 2D Tiff stack dialog \textbf{1)} Index order: slices either are back-to-front or front-to-back ordered.  Most CT datasets are back-to-front ordered: the first image image is furthest from the viewer, and subsequent images move towards the viewer. If you do not choose the right option, a mirror image of your volume will appear on the screen (which can be corrected later on). \textbf{2)} voxel size in x, y and z dimensions (most ofen expressed in mm)}
+\label{open_tiff}
+\end{figure}
+
+
+\subsection{Open stack of 2D tiff files}
+
+Once a number of .tiff files has been selected, the "Open 3D Tiff file or 2D Tiff stack " dialog (see Fig. \ref{open_tiff} \pageref{open_tiff}) will also be opened. Data type and dimensions are automatically detected, but you have to fill index order and voxel size.
+
+
+\subsection{Open DICOM 2D stack}
+Once a number of .dcm or .ima files has been selected, the "Open 3D Tiff file or 2D Tiff stack " dialog (see Fig. \ref{open_dcm} \pageref{open_dcm}) will also be opened. Data type, data dimensions and voxel size are automatically detected, but you have to fill index order.
+
+\begin{figure}
+  \centering  
+ \includegraphics[scale=0.5]{images/07/volume/open_dcm.png}
+ \captionof{figure}{Open dicom stack. Index order: slices either are back-to-front or front-to-back ordered.  Most CT datasets are back-to-front ordered: the first image image is furthest from the viewer, and subsequent images move towards the viewer. If you do not choose the right option, a mirror image of your volume will appear on the screen (which can be corrected later on).}
+\label{open_dcm}
+\end{figure}
+
+\subsection{Import MHD/MHA/VTI Mask and apply it to first selected volume}
+A volume must be selected in order to use this option. This option allows to load a mask file and will use it to mask voxels if the dimensions of the mask file match those of the selected volume and if the mask file is of unsigned char (8 bits) type.
+
+\subsection{Save first selected volume as .MHD or .MHA file}
+
+
+\subsection{Save first selected volume as .VTI}
+
+\subsection{Export mask of first selected volume as .MHD or .MHA file}
+A volume must be selected in order to use this option. This option allows to export a mask file (in unsigned char 8bit MHD or MHA format).
