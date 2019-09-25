@@ -110,3 +110,31 @@ As stated earlier, you can press \includegraphics[scale=0.7]{images/06/display/o
 
 The orientation and the position of the camera can be edited, saved, and imported in this section (Fig. \ref{camera_options} p.\pageref{camera_options}).
 This can be useful when constructing a figure for a scientific publication, when you want to retrieve the exact position a screenshot was taken.
+
+\section{Volume options}
+\begin{figure}
+  \centering  
+ \includegraphics[scale=0.5]{images/08/volume_options.png}
+ \captionof{figure}{Volume options window.}
+\label{volume_options}
+\end{figure}
+
+The default behavior when opening 3D volume data can be set in this section. You may choose to display directly a volume rendering representation of any opened volume (default behavior), or an XY, XZ or YZ slice instead (Fig. \ref{volume_options} p.\pageref{volume_options}). Also, depending on their size, volume rendering representation of 3D data may cause your graphics card to crash. MorphoDig uses the following strategy : when volumetric dataset volumes contain more than a given number of voxels, referred to as " out of core threshold" value, MorphoDig automatically computes a downsized representation that will displayed on the screen using volume rendering. You may decide to adjust the "out of core threshold" depending on your graphics card. 
+
+\section{Renderer options}
+\begin{figure}
+  \centering  
+ \includegraphics[scale=0.5]{images/08/renderer_options.png}
+ \captionof{figure}{Renderer options window.}
+\label{renderer_options}
+\end{figure}
+
+Transparency rendering of large surface and volumetric dataset is not something straightforward. VTK uses a method called "depth peeling", which uses 2 parameters which allows to adjust the trade-off between rendering quality and rendering fluidity. 
+In this window, (Fig. \ref{renderer_options} p.\pageref{renderer_options}), you may decide to adjust the maximum number of passes allowed by the depth peeling method algorithm and the occlusion ratio parameter. An example of the importance of these parameters is given Fig. \ref{occlusion_example} p.\pageref{occlusion_example}
+
+\begin{figure}
+  \centering  
+ \includegraphics[scale=0.35]{images/08/occlusion_ratio.png}
+ \captionof{figure}{Transparent rendering of a cranium of \textit{Choeropsis liberiensis} and internal structures using different occlusion ratio parameters (image credit: Maëva Orliac). \textbf{Top-} occlusion ratio was set to 0.2 \textbf{Bottom- } occlusion ratio was set to 0.}
+\label{occlusion_example}
+\end{figure}

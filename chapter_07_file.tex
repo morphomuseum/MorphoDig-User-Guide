@@ -638,7 +638,7 @@ Meta-image volume files (.mhd and .mha) files as well as vtk volume files (.vti)
 \noindent
 
 \subsection{Open Raw Volume}
-This option opens the "Open raw volume" Dialog (see Fig. \ref{open_raw} \pageref{open_raw}).
+This option opens the "Open raw volume" Dialog (see Fig. \ref{open_raw} p.\pageref{open_raw}).
 
 \begin{figure}
   \centering  
@@ -648,7 +648,7 @@ This option opens the "Open raw volume" Dialog (see Fig. \ref{open_raw} \pageref
 \end{figure}
 
 \subsection{Open 3D tiff file}
-This option opens the "Open 3D Tiff file or 2D Tiff stack " dialog (see Fig. \ref{open_tiff} \pageref{open_tiff}). Data type and dimensions are automatically detected, but you have to fill index order and voxel size.
+This option opens the "Open 3D Tiff file or 2D Tiff stack " dialog (see Fig. \ref{open_tiff} p.\pageref{open_tiff}). Data type and dimensions are automatically detected, but you have to fill index order and voxel size.
 
 \begin{figure}
   \centering  
@@ -660,11 +660,11 @@ This option opens the "Open 3D Tiff file or 2D Tiff stack " dialog (see Fig. \re
 
 \subsection{Open stack of 2D tiff files}
 
-Once a number of .tiff files has been selected, the "Open 3D Tiff file or 2D Tiff stack " dialog (see Fig. \ref{open_tiff} \pageref{open_tiff}) will also be opened. Data type and dimensions are automatically detected, but you have to fill index order and voxel size.
+Once a number of .tiff files has been selected, the "Open 3D Tiff file or 2D Tiff stack " dialog (see Fig. \ref{open_tiff} p.\pageref{open_tiff}) will also be opened. Data type and dimensions are automatically detected, but you have to fill index order and voxel size.
 
 
 \subsection{Open DICOM 2D stack}
-Once a number of .dcm or .ima files has been selected, the "Open 3D Tiff file or 2D Tiff stack " dialog (see Fig. \ref{open_dcm} \pageref{open_dcm}) will also be opened. Data type, data dimensions and voxel size are automatically detected, but you have to fill index order.
+Once a number of .dcm or .ima files has been selected, the "Open 3D Tiff file or 2D Tiff stack " dialog (see Fig. \ref{open_dcm} p.\pageref{open_dcm}) will also be opened. Data type, data dimensions and voxel size are automatically detected, but you have to fill index order.
 
 \begin{figure}
   \centering  
@@ -677,9 +677,26 @@ Once a number of .dcm or .ima files has been selected, the "Open 3D Tiff file or
 A volume must be selected in order to use this option. This option allows to load a mask file and will use it to mask voxels if the dimensions of the mask file match those of the selected volume and if the mask file is of unsigned char (8 bits) type.
 
 \subsection{Save first selected volume as .MHD or .MHA file}
+A volume must be selected in order to use this option. This menu opens the "Save MHD/MHA" dialog (see Fig. \ref{save_mhd_mha} p.\pageref{save_mhd_mha}). MHD/MHA files can be compressed. 
+\begin{figure}
+  \centering  
+ \includegraphics[scale=0.5]{images/07/volume/save_mhd_mha.png}
+ \captionof{figure}{Save volume as MHD/MHA.}
+\label{save_mhd_mha}
+\end{figure}
+
 
 
 \subsection{Save first selected volume as .VTI}
+A volume must be selected in order to use this option. This menu opens the "Save VTI" dialog (see Fig. \ref{save_vti} p.\pageref{save_vti}). VTI files can be compressed using different methods, and can be saved either using a little endian or big endian byte order. 
+\begin{figure}
+  \centering  
+ \includegraphics[scale=0.5]{images/07/volume/save_vti.png}
+ \captionof{figure}{Save volume as VTI.}
+\label{save_vti}
+\end{figure}
+
+
 
 \subsection{Export mask of first selected volume as .MHD or .MHA file}
 A volume must be selected in order to use this option. This option allows to export a mask file (in unsigned char 8bit MHD or MHA format).

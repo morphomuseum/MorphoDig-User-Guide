@@ -88,10 +88,10 @@
 \minitoc 
 
  MorphoDig is based on the design concepts of the software FoRM-IT (Fossil Reconstruction and Morphometry Interactive Toolkit; \citep{Zollikofer1995,Zollikofer2005}).
-\ MorphoDig\citep{Lebrun2018} was developed as a help to the scientific journal MorphoMuseuM (M3), in order to help scientists to produce enriched surface models. The source code is hosted on Github.   
+\ MorphoDig\citep{Lebrun2018} was developed as a help to the scientific journal MorphoMuseuM (M3), in order to help scientists to produce enriched surface models.  MorphoDig also opens 3D volume data such as CT datasets. The source code is hosted on Github.   
 \section*{Origin of the project}
 \addcontentsline{toc}{section}{Origin of the project}
-Over the last two decades, even though 3D data acquisition and computer-assisted techniques have grown increasingly popular among biologists, paleontologists and paleoanthropologists, so far, no standard biology-oriented 3D mesh manipulation software has emerged; most of the time, researchers either use commercial software which are not primarily designed for biologists, or develop their own in-house software solutions.  MorphoDig builds upon the design concepts of the software FoRM-IT (Fossil Reconstruction and Morphometry Interactive Toolkit; \citep{Zollikofer1995,Zollikofer2005}), and is developed to meet the need to ease the production and the diffusion of 3D models of biological organisms. MorphoDig provides a set of tools for editing, positioning, deforming, labeling, tagging sets of 3D surfaces. As such, MorphoDig can be used to produce enriched models which can in turn be submitted to M3.
+Over the last two decades, even though 3D data acquisition and computer-assisted techniques have grown increasingly popular among biologists, paleontologists and paleoanthropologists, so far, no standard biology-oriented 3D mesh manipulation software has emerged; most of the time, researchers either use commercial software which are not primarily designed for biologists, or develop their own in-house software solutions.  MorphoDig builds upon the design concepts of the software FoRM-IT (Fossil Reconstruction and Morphometry Interactive Toolkit; \citep{Zollikofer1995,Zollikofer2005}), and is developed to meet the need to ease the production and the diffusion of 3D models of biological organisms. MorphoDig provides a set of tools for editing, positioning, deforming, labeling, tagging sets of 3D surfaces.  As such, MorphoDig can be used to produce enriched models which can in turn be submitted to M3. Since version 1.5, MorphoDig also provides tool for opening, editing and visualizing 3D volumes, and to extract 3D surfaces out of 3D volumes. 
 \section*{Main features}
 \addcontentsline{toc}{section}{Main features}
 Features include:
@@ -99,11 +99,14 @@ Features include:
 \item Retro-deformation for virtual restoration of fossils/deformed specimens;
 \item Point and curve primitives for placing the exact type of landmark points you’re interested in
 \item Easy to use 3D interface for positioning and manipulating sets of surfaces and landmark primitives
-\item Mesh tagging, labeling and coloring (to allow for the creation of anatomy atlases)
-\item Mesh scalar computation and coloring (based upon curvature/thickness etc...)
+\item Surface tagging, labeling and coloring (to allow for the creation of anatomy atlases)
+\item Surface scalar computation and coloring (based upon curvature/thickness etc...)
+\item Volume rendering of CT data (3D Volumes).
+\item Isosurface extraction from  CT data.
+\item 3D Mask edition.
 \end{itemize}
 
-MorphoDig allows to import and export 3D meshes in standard formats such as STL, PLY and VTK polydata, and as such, in can be used in conjunction with a variety of other 3D mesh editors such  as MeshLab (http://meshlab.sourceforge.net/) or Blender (https://www.blender.org/) 
+MorphoDig allows to import and export 3D meshes in standard formats such as STL, PLY and VTK polydata, and as such, in can be used in conjunction with a variety of other 3D mesh editors such  as MeshLab (http://meshlab.sourceforge.net/) or Blender (https://www.blender.org/). MorphoDig also allows to import 3D volume in standard formats such as DICOM, TIFF, Meta-Image and RAW.
 \section*{Implementation}
 \addcontentsline{toc}{section}{Implementation}
 MorphoDig is entirely written in C++, and uses the visualization library VTK \citep{Avila2001}. The GUI has been designed with QT (https://www.qt.io/). MorphoDig is open-source and cross platform, and we are looking forward to welcoming new developers in the future in order to implement new functionalities. 
