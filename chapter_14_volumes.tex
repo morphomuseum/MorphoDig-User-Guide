@@ -199,7 +199,7 @@ This option opens the "Isosurface" dialog (see Fig. \ref{isosurface_dialog} p.\p
 An example of isosurface extraction out of 3D volume data is provided Fig. \ref{isosurface_example} p.\pageref{isosurface_example}.
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{images/14/isosurface/isosurface_lemur_catta_t12000.png}
+  \includegraphics[scale=0.35]{images/14/isosurface/isosurface_lemur_catta_t12000.png}
 \caption{Isosurface extraction example. \textbf{Left:} volume rendering representation of the cranium of a newborn \textsl{Lemur catta}. \textbf{Right:} 3D isosurface (threshold: 12000).}	
 \label{isosurface_example}
  \end{figure}
@@ -220,8 +220,8 @@ This option opens the "Flip or Swap exes" dialog (see Fig. \ref{flip_swap_dialog
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{images/14/flip_swap/flip_y_example.png}
-\caption{ Example of axis Y flipping. Left: volume rendering representation of the cranium of a newborn Lemur catta. Right: the same volume rendering representation after axis Y was flipped.}	
+  \includegraphics[scale=0.35]{images/14/flip_swap/flip_y_example.png}
+\caption{ Example of axis Y flipping. \textit{Left:} volume rendering representation of the cranium of a newborn \textit{Lemur catta}.\textbf{ Right:} the same volume rendering representation after axis Y was flipped.}	
 \label{flip_y_example}
  \end{figure}
 
@@ -229,13 +229,115 @@ This option opens the "Flip or Swap exes" dialog (see Fig. \ref{flip_swap_dialog
 
 \section{Change voxel size of first selected volume (keep dimensions, no resampling}
 
+This option opens the "Spacing" dialog (see Fig. \ref{spacing_dialog} p.\pageref{spacing_dialog}). Changing voxel size will result in changes in the displayed dimensions of the volume (see for instance Fig. \ref{spacing_example} p.\pageref{spacing_example}).
+ 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/14/spacing/spacing_dialog.png}
+\caption{Edit spacing (voxel size). You may decide to change voxel size in x, y or z dimension.}	
+\label{spacing_dialog}
+ \end{figure}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.35]{images/14/spacing/spacing_example.png}
+\caption{ Example of voxel size modification. \textbf{Left:} volume rendering representation of the cranium of a newborn \textit{Lemur catta}. \textbf{Right:} the same volume rendering representation after axis voxel sized was multiplied by a factor of 2.}	
+\label{spacing_example}
+ \end{figure}
+Note that adjusting voxel size will not affect the dimensions (number of voxels in x,y and z directions) of the volume.
+
 \section{Resample first selected volume (dimensions will be changed, and voxel size as well)}
+
+This option opens the "Resample" dialog (see Fig. \ref{resample_dialog} p.\pageref{resample_dialog}). Both voxel size and dimensions will be changed, in order that displayed size will be maintained (see for instance Fig. \ref{resample_example} p.\pageref{resample_example}). The resample dialog is useful when a given dataset is heavy (for instance more than 1000*1000*1000 voxels), and you want to downsize it to a "reasonable" size (eg. around 500*500*500 voxels).
+ 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/14/resample/resample_dialog.png}
+\caption{Resample dialog. Change either voxel size or desired dimensiosn of the output volume. Note that voxel size and dimensions are connected.}	
+\label{resample_dialog}
+ \end{figure}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.25]{images/14/resample/resample_example.png}
+\caption{ Example of volume resampling. \textbf{Left:} volume rendering representation of the cranium of a newborn \textit{Lemur catta}. \textbf{Right:} the same volume rendering representation after axis voxel sized was multiplied by a factor of 2.}	
+\label{resample_example}
+ \end{figure}
+Note that adjusting voxel size will not affect the display size in 3D space of the volume.
+
+
+
 
 \section{Reslice first selected volume}
 
+
+This option opens the "Reslice" dialog (see Fig. \ref{reslice_dialog} p.\pageref{reslice_dialog}). Rotated volumes will be resliced along the desired direction. Note that voxel size will remained untouched, and that the volume rendering representation will stay still as well (see for instance Fig. \ref{reslice_example} p.\pageref{reslice_example}). The reslice dialog is useful when a given specimen was scanned in random orientation, and that you want to reorient the whole volume.
+ 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/14/reslice/reslice_dialog.png}
+\caption{Reslice dialog. You can choose among different interpolation methods to reslice the volume. You may also decide to produce a cropped output or an extended output. The latter option requires more memory, but makes sure that no region of the original volume is lost.}	
+\label{reslice_dialog}
+ \end{figure}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.35]{images/14/reslice/reslice_example.png}
+\caption{ Example of volume reslicing. \textbf{Left:} volume rendering representation + 2D slices of the cranium of a newborn \textit{Lemur catta}, which was positioned in a "bilogically relevant" orientation. \textbf{Right:} the same volume rendering representation + 2D slices after the whole volume was resliced. Note that the orientaiton the volume rendering representation is maintained.}	
+\label{resample_example}
+ \end{figure}
+
+
+
+
 \section{Median filter of first selected volume}
 
+
+This option opens the "Median Filter" dialog (see Fig. \ref{median_dialog} p.\pageref{median_dialog}). Using a median filter may be useful to reduce image noise (see for instance Fig. \ref{median_example} p.\pageref{median_example}). However using a median filter will decrease image's sharpness.
+ 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/14/median/median_dialog.png}
+\caption{Median filter dialog. You can choose kernel size along x, y and z axes.}	
+\label{median_dialog}
+ \end{figure}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.35]{images/14/median/median_example_5_5_5.png}
+\caption{ Example of median filter use. \textbf{Left:} 2D original virtual slice inside the cranium of a newborn \textit{Lemur catta}. \textbf{Right:} The same virtual slice after a median filter using a kernel size of 5*5*5 pixels was used.}	
+\label{median_example}
+ \end{figure}
+
+
 \section{Gaussian filter of first selected volume}
+This option opens the "Gaussian Filter" dialog (see Fig. \ref{gaussian_dialog} p.\pageref{gaussian_dialog}). Using a gaussian filter is an alternative ot the median filter to reduce image noise (see for instance Fig. \ref{gaussian_example} p.\pageref{median_example}). However using a gaussian filter will tend decrease image's sharpness very much.
+ 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{images/14/gaussian/gaussian_dialog.png}
+\caption{Gaussian filter dialog. You can define standard deviations and radius factors along x, y and z axes.}	
+\label{gaussian_dialog}
+ \end{figure}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.30]{images/14/gaussian/gaussian_example_default.png}
+\caption{ Example of gaussian filter use. \textbf{Left:} 2D original virtual slice inside the cranium of a newborn \textit{Lemur catta}. \textbf{Right:} The same virtual slice after a gaussian filter was used (default parameters).}	
+\label{gaussian_example}
+ \end{figure}
 
 \section{Invert first selected volume}
 
+This option inverts the voxel values of the volume (see for instance Fig. \ref{invert_example} p.\pageref{invert_example}). In some cases, you may need this option.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.3]{images/14/invert/invert_example.png}
+\caption{ Example of voxel values inversion. \textbf{Left:} 2D original virtual slice inside the cranium of a newborn \textit{Lemur catta}. \textbf{Right:} The same virtual slice after all voxel values were inverted.}	
+\label{invert_example}
+ \end{figure}
