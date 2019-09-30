@@ -648,12 +648,12 @@ This option opens the "Open raw volume" Dialog (see Fig. \ref{open_raw} p.\pager
 \end{figure}
 
 \subsection{Open 3D tiff file}
-This option opens the "Open 3D Tiff file or 2D Tiff stack " dialog (see Fig. \ref{open_tiff} p.\pageref{open_tiff}). Data type and dimensions are automatically detected, but you have to fill index order and voxel size.
+This option opens the "Open 3D Tiff file or 2D Tiff /BMP/PNG stack " dialog (see Fig. \ref{open_tiff} p.\pageref{open_tiff}). Data type and dimensions are automatically detected, but you have to fill index order and voxel size.
 
 \begin{figure}
   \centering  
  \includegraphics[scale=1]{images/07/volume/open_tiff2.png}
- \captionof{figure}{Open 3D Tiff file or 2D Tiff stack dialog \textbf{1)} Index order: slices either are back-to-front or front-to-back ordered.  Most CT datasets are back-to-front ordered: the first image image is furthest from the viewer, and subsequent images move towards the viewer. If you do not choose the right option, a mirror image of your volume will appear on the screen (which can be corrected later on). \textbf{2)} voxel size in x, y and z dimensions (most ofen expressed in mm)}
+ \captionof{figure}{Open 3D Tiff file or 2D Tiff/BMP/PNG stack dialog \textbf{1)} Index order: slices either are back-to-front or front-to-back ordered.  Most CT datasets are back-to-front ordered: the first image image is furthest from the viewer, and subsequent images move towards the viewer. If you do not choose the right option, a mirror image of your volume will appear on the screen (which can be corrected later on). \textbf{2)} voxel size in x, y and z dimensions (most ofen expressed in mm)}
 \label{open_tiff}
 \end{figure}
 
@@ -666,12 +666,22 @@ Once a number of .tiff files has been selected, the "Open 3D Tiff file or 2D Tif
 \subsection{Open DICOM 2D stack}
 Once a number of .dcm or .ima files has been selected, the "Open 3D Tiff file or 2D Tiff stack " dialog (see Fig. \ref{open_dcm} p.\pageref{open_dcm}) will also be opened. Data type, data dimensions and voxel size are automatically detected, but you have to fill index order.
 
+
 \begin{figure}
   \centering  
  \includegraphics[scale=0.5]{images/07/volume/open_dcm.png}
  \captionof{figure}{Open dicom stack. Index order: slices either are back-to-front or front-to-back ordered.  Most CT datasets are back-to-front ordered: the first image image is furthest from the viewer, and subsequent images move towards the viewer. If you do not choose the right option, a mirror image of your volume will appear on the screen (which can be corrected later on).}
 \label{open_dcm}
 \end{figure}
+
+\subsection{Open BMP image stack}
+
+Once a number of 8bit .bmp files has been selected, the "Open 3D Tiff file or 2D Tiff/BMP/PNG stack " dialog (see Fig. \ref{open_tiff} p.\pageref{open_tiff}) will also be opened. Data type and dimensions are automatically detected, but you have to fill index order and voxel size. Warning: RGB (24 bits) bmp files can not currently be read.
+
+\subsection{Open PNG image stack}
+
+Once a number of 8bit .png files has been selected, the "Open 3D Tiff file or 2D Tiff/BMP/PNG stack " dialog (see Fig. \ref{open_tiff} p.\pageref{open_tiff}) will also be opened. Data type and dimensions are automatically detected, but you have to fill index order and voxel size. Warning: RGB (24 bits) png files can not currently be read.
+
 
 \subsection{Import MHD/MHA/VTI Mask and apply it to first selected volume}
 A volume must be selected in order to use this option. This option allows to load a mask file and will use it to mask voxels if the dimensions of the mask file match those of the selected volume and if the mask file is of unsigned char (8 bits) type.
