@@ -62,7 +62,7 @@
 %\includegraphics[width=15cm]{logo_affiliations.png}
 %}
 
-\title{Tutorial 01: working with landmarks}
+\title{Tutorial 01: working with landmarks on 3D surfaces}
 
 
 
@@ -84,18 +84,14 @@
 \faketableofcontents
 
 %\chapter{Working with landmarks}
-\addstarredchapter{Working with landmarks}
+\addstarredchapter{Working with landmarks on 3D surfaces}
 
-\markboth{Tutorial 01: Working with landmarks}{}
+\markboth{Tutorial 01: Working with landmarks on 3D surfaces}{}
 
 \minitoc 
 Tutorial 01 includes:
 \begin{itemize}
-\item One .ntw (MorphoDig project) file
-\item One .vtk surface file representing a cranium of \textit{Mus musculus}
-\item One .pos (position) file 
-\item One .ori (orientation helper labels) file 
-\item One .stv (landmark coordinates and orientation) file
+\item One .vtp surface file representing a cranium of \textit{Mus musculus}
 \item The present .pdf document
 \end{itemize}
 
@@ -106,14 +102,14 @@ Tutorial 01 includes:
 \section{About the specimen}
 
 %\addcontentsline{toc}{section}{About the specimen}
-The surface file enclosed in this tutorial represent three-dimensional reconstruction of the cranium of a house mouse (\textit{Mus musculus}) obtained by computerized microtomography at the MRI \si{\micro} CT platform housed at the ISEM.
+The surface file enclosed in this tutorial represent three-dimensional reconstruction of the cranium of a house mouse (\textit{Mus musculus}) obtained by computerized microtomography at the MRI \si{\micro}CT platform housed at the ISEM.
 Before using this tutorial, please download and read MorphoDig User Guide.
 
 
 \section{A brief overview of enclosed files}
 		Download and unzip the files associated to this tutorial. Open MorphoDig.
 \subsection{Mouse cranium surface and position files}
-	You may open the enclosed .vtk surface file (File -> Surface -> Open Surface, then select "Mouse\_cranium.vtk", or drag and drop this file in the 3D main window). When opened
+	You may open the enclosed .vtp surface file (File -> Surface -> Open Surface, then select "Mus\_musculus.vtp", or drag and drop this file in the 3D main window). When opened
 this way, the corresponding opened surface object is drawn grey, which indicates that this surface
 is selected. You may interact with selected objects in different ways (see MorphoDig user guide for
 further explanations).\\
