@@ -1,0 +1,115 @@
+﻿1
+00:00:02,451 --> 00:00:06,584
+Drag and drop inner ear surface file inside the main 3D window
+
+2
+00:00:09,633 --> 00:00:12,100
+Activate "move selected objects" mode
+
+3
+00:00:12,278 --> 00:00:19,378
+In this mode, objects can be translated (middle click + drag) or rotated (left click + drag).
+
+4
+00:00:22,128 --> 00:00:29,062
+Positionning inner ears in a "biologically relevant" orientation will make it easier to digitize curves.
+
+5
+00:00:31,698 --> 00:00:39,698
+Tutorial data contain a position file ".POS" which you can directly drag and drop in the main 3D window to position the selected inner ear surface
+
+6
+00:00:46,609 --> 00:00:48,676
+You may decide to hide the grid
+
+7
+00:00:50,806 --> 00:00:56,339
+Curve digitization inside inner ear canals is much easier on "transparent" surfaces
+
+8
+00:00:57,562 --> 00:01:01,662
+VERY IMPORTANT: activate "Digitize curve node landmarks" button
+
+9
+00:01:02,590 --> 00:01:23,523
+Press "L" + left click to digitize new curve node landmarks
+
+10
+00:01:30,377 --> 00:01:51,110
+Let's draw rough outlines along the three semi-circular canals as well.
+
+11
+00:02:01,960 --> 00:02:12,360
+You may change the background color to increase the visibility of the inner structures and of the curve node outlines
+
+12
+00:02:23,748 --> 00:02:34,948
+Let's finish to digitize a rough outline for the posterior semi-circular canal
+
+13
+00:02:35,822 --> 00:02:43,822
+As  we will have to move A LOT the position of curve nodes and curve handles, so it's better to activate "Landmark Digitization mode",
+which will prevent to select/unselect the 3D surface while doing these adjustments
+
+14
+00:02:44,400 --> 00:03:04,400
+Here, we select the 3 node landmarks placed at the beginning of the lateral, anterior and posterior canals, 
+(11, 17 and 23) and define them as "Curve starting nodes"
+
+15
+00:03:05,459 --> 00:03:11,659
+Now the rough cochlear outline and those of the 3 semi-circular canals are separated in space
+
+16
+00:03:20,220 --> 00:03:26,487
+Now let's position each curve node landmark inside the cochlea/canals
+
+17
+00:03:27,113 --> 00:03:33,313
+To do that select 1 single node landmark, and (in landmark digitization mode) press CTRL + middle click drag
+
+18
+00:03:34,245 --> 00:03:38,845
+Select 2nd curve node, then press CTRL + middle click drag to move it
+
+19
+00:03:41,841 --> 00:03:46,441
+Select 3rd curve node, then press CTRL + middle click drag to move it
+
+20
+00:03:47,023 --> 00:04:17,023
+Select next curve node, then press CTRL + middle click drag to move it etc.
+
+21
+00:04:21,454 --> 00:04:59,454
+Proceed (select next curve node, then press CTRL + middle click drag to move it)
+until all curve node landmarks are located at the center of the cochlea / semi-circular canals
+
+22
+00:07:28,614 --> 00:08:09,514
+Oncel all curve node landmarks are located at the center of the cochlea / semi-circular canals, save 
+them inside a .VER file (File => Curves => Save curve node landmarks)
+
+23
+00:08:31,436 --> 00:08:37,569
+Now go in File=>Curves=>Load Curve Handle landmarks and choose the file you just have saved.
+
+24
+00:08:41,812 --> 00:08:47,812
+A expected, a series of curve handle landmarks have been created, and each curve handle has
+the same position as its node counterpart
+
+25
+00:08:48,561 --> 00:08:56,561
+Now select all handle landmarsk (it does not matter if node landmarks are selected as well) and open the 
+"Move curve handles semi-automatically" menu
+
+26
+00:09:04,151 --> 00:09:09,551
+All curve handles have been moved , but have not yet reached an optimal position.
+
+27
+00:09:14,996 --> 00:11:02,996
+The last (and most time consuming) step is to adjust manually the position of each curve node and each curve handle to 
+follow the center of each semi-circular canal and of the cochlea (Select one single landmark, then press CTRL + middle click drag)
+

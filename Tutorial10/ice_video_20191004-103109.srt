@@ -1,0 +1,81 @@
+﻿1
+00:00:00,000 --> 00:00:03,467
+Drag and drop the RAW file inside the main 3D window
+
+2
+00:00:04,470 --> 00:00:06,870
+The Open RAW Volume windows shows up
+
+3
+00:00:07,328 --> 00:00:15,328
+Fill  data type (8 bits, 16bits, 32 bits...), data dimensions (number of voxels in x, y and z dimensions),
+ header size (if greater than 0)
+
+4
+00:00:16,047 --> 00:00:18,914
+Requested size should be equal to file size
+
+5
+00:00:22,651 --> 00:00:26,651
+Fill data endianess (when Data Type is 16bits or 32 bits). For 8 bits dataset, endianess does not matter.
+
+6
+00:00:27,128 --> 00:00:33,661
+µCT Images  are most often "Back to Front" ordered, but here we have a "Front to back" RAW volume.
+Then fill voxel size : in this example,  36µm = 0.036mm
+
+7
+00:00:41,536 --> 00:00:47,269
+This RAW volume contains more than 500*500*500 voxels, and a warning message shows up.
+
+8
+00:00:48,392 --> 00:00:56,392
+Large dataset are difficult to render on the graphics card (the computer may crash). 
+By default, MorphoDig will render a subsampled version of  a given dataset when the number 
+of voxels exceeds 500*500*500 voxels.
+
+9
+00:01:05,558 --> 00:01:10,891
+Open the "Edit first selected volume window" 
+(selected volumes have a bounding box outline... WARNING: only selected volumes can be interacted with)
+
+10
+00:01:11,527 --> 00:01:17,660
+Here we can test whether our graphics card can render the full dataset (594*294*1038 voxels)
+
+11
+00:01:19,673 --> 00:01:22,006
+Apparently it can without trouble.
+
+12
+00:01:28,098 --> 00:01:34,298
+Then we can increase manually this "out of core" threshold value (Edit=> Edit volume options)
+
+13
+00:01:35,115 --> 00:01:43,115
+Let's set this value to 200 million voxels. Next time we will open this RAW volume, the warning message will not show up.
+
+14
+00:01:44,941 --> 00:01:47,274
+Now let's change the display values
+
+15
+00:01:47,690 --> 00:01:51,890
+The shift slider moves the display min and max values together.
+
+16
+00:01:54,979 --> 00:01:58,979
+You may also adjust the max value alone with the max slider.
+
+17
+00:01:59,516 --> 00:02:02,849
+Same thing for the min value
+
+18
+00:02:04,087 --> 00:02:07,420
+Transparency levels can be adjusted interactively.
+
+19
+00:02:15,987 --> 00:02:20,320
+The colormap can be also changed using the "colormaps" combo box.
+

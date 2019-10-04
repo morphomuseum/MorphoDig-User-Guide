@@ -1,0 +1,45 @@
+﻿1
+00:00:03,195 --> 00:00:05,862
+Drag and drop the inner ear surface file
+
+2
+00:00:09,177 --> 00:00:17,177
+In "move selected objects" mode, selected objects can be: 1) translated (middle click + drag)
+2) rotated (left click + drag)
+
+3
+00:00:29,500 --> 00:00:34,500
+This surface already contains a "RGB" array. Let's render those RGB colors.
+
+4
+00:00:43,252 --> 00:00:45,452
+Activate "Flag digitization" mode
+
+5
+00:00:51,908 --> 00:00:54,508
+"L" + left click to digitize a new flag
+
+6
+00:01:02,289 --> 00:01:06,022
+All newly digitized flags have the same color and length
+
+7
+00:01:10,841 --> 00:01:17,041
+Let's select one flag (that placed on the common crus) and rotate it (CTRL + left click drag)
+
+8
+00:01:20,223 --> 00:01:23,823
+To "redigitize" a given flag, press "L" + right click.
+
+9
+00:01:39,339 --> 00:01:43,206
+Here, we have selected all the flags and change their size
+
+10
+00:01:54,196 --> 00:02:01,929
+Here, we have selected all the flags and are about to change their color to that of the structure they are placed on
+
+11
+00:02:02,901 --> 00:02:07,634
+Now let's change flag captions : open the edit first select flag window
+

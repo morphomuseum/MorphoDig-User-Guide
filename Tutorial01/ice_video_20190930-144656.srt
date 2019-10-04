@@ -1,0 +1,142 @@
+﻿1
+00:00:01,000 --> 00:00:09,000
+Open surface file. 3 possibilities. 1) Click on open data
+2) File=>Surface => open surface  3) drag and drop surface file inside 3D window
+
+2
+00:00:13,100 --> 00:00:16,300
+The 3D surface appears in grey : it is selected and can be rotated / translated
+
+3
+00:00:16,400 --> 00:00:19,100
+Click on the "yellow arrow" button to activate "Move selected objects" mode
+
+4
+00:00:19,100 --> 00:00:22,100
+Left click + drag mouse to rotate the surface
+
+5
+00:00:23,397 --> 00:00:26,397
+Middle click + drag mouse to translate the surface
+
+6
+00:00:29,305 --> 00:00:32,172
+By default, 1 square = 1cm * 1cm.
+
+7
+00:00:32,298 --> 00:00:35,965
+Grid size can be changed. Here 1 square will be 1mm*1mm
+
+8
+00:00:36,808 --> 00:00:39,808
+Mouse roll to zoom-in or zoom out
+
+9
+00:00:41,986 --> 00:00:46,019
+3D surfaces can be rotated / translated using the yellow sliders on the side of the screen
+
+10
+00:00:54,922 --> 00:00:59,322
+The surface is now positionned in a "biologically relevant" orientation
+
+11
+00:00:59,779 --> 00:01:06,679
+Use the 6 camera predefined orientations to view your model from all sides (which is useful when digitizing landmarks)
+
+12
+00:01:11,744 --> 00:01:16,344
+Activate "camera mode" to rotate the camera (left click + drag mouse)
+
+13
+00:01:16,364 --> 00:01:18,364
+Hide/display grid
+
+14
+00:01:19,480 --> 00:01:25,213
+Right click + drag mouse draws a rectangle ( select/unselect objects ). When drawn "yellow", the surface is unselected.
+
+15
+00:01:25,348 --> 00:01:28,281
+Open the "edit first selected object window"
+
+16
+00:01:30,630 --> 00:01:36,430
+The position matrix differs from the identity matrix. You can save this position matrix
+
+17
+00:01:38,020 --> 00:01:41,220
+Surface positions can be saved inside .POS files
+
+18
+00:01:51,310 --> 00:01:58,810
+In order to avoid to select/unselect surfaces with right click + drag mouse, it is advisable to activate "landmark mode" when digitizing landmarks
+
+19
+00:01:58,953 --> 00:02:02,953
+Maintain "L" key pressed + left mouse click to create new landmarks
+
+20
+00:02:05,941 --> 00:02:10,941
+Landmark rendering size can be adjusted
+
+21
+00:02:25,652 --> 00:02:31,052
+When landmark mode is activated, only landmark objects can be selected/unselected
+
+22
+00:02:32,627 --> 00:02:36,627
+Most actions can be undone (such as "landmark digitization")
+
+23
+00:02:37,197 --> 00:02:42,597
+"L" + right click: if a single landmark is selected, its position will be updated
+
+24
+00:02:48,077 --> 00:02:53,211
+Selected landmarks can be reordered (increased or decreased in landmark list)
+
+25
+00:03:03,792 --> 00:03:09,792
+To access internal structures, enable ROI (region of interest), and click on "Display ROI"
+
+26
+00:03:10,020 --> 00:03:16,420
+Now use the "control points" (spheres) to adjust the dimensions of the ROI (region of interests)
+
+27
+00:03:29,244 --> 00:03:32,244
+Regions outside the ROI box become invisible.
+
+28
+00:03:33,373 --> 00:03:37,506
+Hide ROI box in order to digitize landmarks inside the cranium
+
+29
+00:03:38,658 --> 00:03:42,058
+Press CTRL+D to unselect all opened objects at once
+
+30
+00:03:45,742 --> 00:03:52,209
+To digitize  landmarsk at the center of foramina, first place them at the border of the structure
+
+31
+00:03:54,049 --> 00:03:56,716
+In a second step, move them one by one.
+
+32
+00:03:57,155 --> 00:04:05,155
+1) Select landmark (right mouse click & drag)
+2) CTRL + mouse middle click & drag (landmark digitization mode activated)
+
+33
+00:04:24,221 --> 00:04:30,821
+To save a project, press CTRL+A (select all opened objects) then click on the "save project" button
+
+34
+00:04:44,115 --> 00:04:47,915
+Press "Delete" if you want to delete all selected objects
+
+35
+00:04:48,135 --> 00:04:50,335
+You may reopen the project
+

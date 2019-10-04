@@ -1,0 +1,118 @@
+﻿1
+00:00:01,920 --> 00:00:06,053
+Drag and drop Inner ear surface file inside the main 3D window
+
+2
+00:00:08,510 --> 00:00:16,510
+"Move selected objects mode": Left click drag to rotate the selected surface
+Middle click drag to translate the selected surface
+
+3
+00:00:24,018 --> 00:00:28,885
+Yellow sliders can be used as well to translate / rotate selected objects
+
+4
+00:00:42,649 --> 00:00:44,116
+Create a new tag array
+
+5
+00:00:46,105 --> 00:00:47,638
+Now open the tag window
+
+6
+00:00:52,212 --> 00:00:54,745
+Tag region name and color can be edited
+
+7
+00:01:05,114 --> 00:01:06,514
+Select lasso tag tool
+
+8
+00:01:06,998 --> 00:01:09,198
+Draw a contour around the cochlea
+
+9
+00:01:16,260 --> 00:01:19,060
+Let's edit corresponding tag region color
+
+10
+00:01:38,654 --> 00:01:41,988
+Let's use again the lasso to tag the lateral canal
+
+11
+00:01:45,196 --> 00:01:50,329
+The wrong active tag region was selected (Cochlea instead of lateral canal)
+
+12
+00:01:52,899 --> 00:01:55,965
+Let's reuse the lasso to tag the lateral canal
+
+13
+00:02:00,707 --> 00:02:05,707
+Pencil: press "T" + left click
+
+14
+00:02:18,902 --> 00:02:23,902
+Pencil size can be adjusted interactively by pressing "T" + roll mouse
+
+15
+00:02:32,826 --> 00:02:35,659
+Let's tag the anterior canal now
+
+16
+00:02:46,085 --> 00:02:47,352
+Let's use the lasso
+
+17
+00:03:01,896 --> 00:03:03,429
+Now the posterior canal
+
+18
+00:03:07,996 --> 00:03:09,663
+Let's use the lasso first
+
+19
+00:03:23,934 --> 00:03:24,934
+Again the lasso
+
+20
+00:03:29,931 --> 00:03:33,464
+Some regions of the lateral canal should be completed
+
+21
+00:03:34,164 --> 00:03:37,164
+Let's use again the pencil ("T" + left click)
+
+22
+00:04:13,297 --> 00:04:14,697
+Lateral canal ampulla
+
+23
+00:04:16,608 --> 00:04:20,274
+Tag region transparency can be also adjusted as desired
+
+24
+00:04:47,008 --> 00:04:48,675
+Let's tag the common crus
+
+25
+00:05:03,300 --> 00:05:05,300
+The wrong tag region is active
+
+26
+00:05:07,177 --> 00:05:12,577
+Instead of retagging the common crus, we can simply "Undo" last action (CTRL + Z)
+
+27
+00:06:02,381 --> 00:06:12,381
+Let's use the paint bucket tool with "tag propagation" option activated to tag the vestibulum
+
+28
+00:06:18,535 --> 00:06:26,535
+"T" + left click was pressed and unfortunately, all other regions were overriden (let's undo that!)
+=> Instead, we should press "T" + right click to avoid region override.
+
+29
+00:06:34,865 --> 00:06:37,865
+Let's use the pencil now to complete the task
+

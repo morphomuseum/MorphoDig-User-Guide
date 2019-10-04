@@ -1,0 +1,61 @@
+﻿1
+00:00:02,060 --> 00:00:06,460
+Open the surface file (drag and drop it inside the main 3D window)
+
+2
+00:00:10,360 --> 00:00:18,094
+In "edit selected objects mode", surfaces can be 1) translated (middle click + drag)
+2) rotated (left click + drag)
+
+3
+00:00:32,585 --> 00:00:34,452
+Let's create a new tag array
+
+4
+00:00:41,639 --> 00:00:42,906
+Open the Tag window
+
+5
+00:00:55,909 --> 00:01:01,242
+Let's use the paint bucket tool ("T" + left click) to paint the different bones.
+
+6
+00:01:08,262 --> 00:01:09,796
+Now the right maxillary
+
+7
+00:01:10,698 --> 00:01:11,698
+Left maxillary
+
+8
+00:01:17,600 --> 00:01:18,734
+The frontal bones
+
+9
+00:01:25,725 --> 00:01:26,925
+The parietal bones
+
+10
+00:01:33,041 --> 00:01:34,041
+Zygomatic bones
+
+11
+00:01:45,074 --> 00:01:48,541
+The different regions of the (future) occipital bone
+
+12
+00:02:09,824 --> 00:02:11,091
+Now the nasal bones
+
+13
+00:02:32,941 --> 00:02:34,541
+Temporo-squamosal region
+
+14
+00:03:16,179 --> 00:03:17,179
+Vomer region
+
+15
+00:03:24,563 --> 00:03:25,563
+Sphenoid region
+

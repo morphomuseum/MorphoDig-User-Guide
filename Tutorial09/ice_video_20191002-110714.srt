@@ -1,0 +1,36 @@
+﻿1
+00:00:02,685 --> 00:00:06,751
+Drag and drop the surface file (Enamel Dentine Junction file)
+
+2
+00:00:10,778 --> 00:00:12,111
+Let's hide the grid!
+
+3
+00:00:15,894 --> 00:00:20,427
+Compute mean surface curvature scalar.
+
+4
+00:00:23,766 --> 00:00:25,033
+Open scalars window
+
+5
+00:00:31,520 --> 00:00:33,920
+Accept suggested max and min values.
+
+6
+00:00:39,210 --> 00:00:44,144
+Select the surface and smooth the currently active scalar (Curvature_mean)
+
+7
+00:00:48,677 --> 00:00:54,944
+Choose the second option (smoothing based on vertices found within a sphere of a given radius)
+
+8
+00:01:03,963 --> 00:01:07,163
+Now accept suggested display min and max values.
+
+9
+00:01:17,469 --> 00:01:20,602
+Smooth_curvature_mean scalars can be normalized (if needed)
+

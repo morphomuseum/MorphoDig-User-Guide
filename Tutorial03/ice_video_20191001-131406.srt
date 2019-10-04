@@ -1,0 +1,104 @@
+﻿1
+00:00:03,203 --> 00:00:18,203
+Open "initial_position" project file (.NTW), this will open all the bones in their original orientation and position in space
+
+2
+00:00:24,969 --> 00:00:26,969
+All 3D surfaces are now opened
+
+3
+00:00:28,022 --> 00:00:31,155
+Mouse roll middle button to zoom-in or zoom-out
+
+4
+00:00:32,806 --> 00:00:34,873
+You may decide to hide the grid
+
+5
+00:00:34,923 --> 00:00:36,856
+Let's change lighting options
+
+6
+00:00:41,664 --> 00:00:44,664
+Open the "edit first selected surface" window
+
+7
+00:00:47,897 --> 00:00:51,764
+Click on the arrows to browse through all opened surfaces
+
+8
+00:00:54,518 --> 00:00:59,985
+Right click + drag mouse to select manually one or several surface objects at once
+
+9
+00:01:01,235 --> 00:01:05,635
+In "Move selected objects  mode", CTRL + mouse middle button drag translates the camera
+
+10
+00:01:05,766 --> 00:01:11,499
+Now in "Camera mode", CTRL + mouse middle button drage will translate selected objects
+
+11
+00:01:15,518 --> 00:01:19,918
+Use also the yellow sliders to rotate / translate selected objects
+
+12
+00:01:26,005 --> 00:01:28,005
+CTRL + middle click drag to translate the left mandible
+
+13
+00:01:28,582 --> 00:01:32,715
+Yellow slider to rotate left mandible along the z viewing axis
+
+14
+00:01:33,205 --> 00:01:37,338
+Yellow slider to rotate left mandible along the y viewing axis
+
+15
+00:01:41,789 --> 00:01:45,122
+CTRL + middle click drag to translate the mandible
+
+16
+00:02:02,016 --> 00:02:04,116
+Several vertebrae are now selected at once
+
+17
+00:02:04,188 --> 00:02:06,688
+CTRL + middle click drag to translate all selected vertebrae at once
+
+18
+00:02:07,226 --> 00:02:13,426
+Select the 2 remaining caudal vertebrae and translate them as well (CTRL + middle click drag)
+
+19
+00:02:26,072 --> 00:02:33,872
+In "Move selected objects" mode, no need to press "CTRL", Left mouse button drag is enough to rotate selected objects
+
+20
+00:02:41,126 --> 00:02:43,593
+Now let's select every objects (alternative: CTRL+A), and delete them (DEL button)
+
+21
+00:02:45,595 --> 00:02:49,128
+Now open the "anatomical_position" project (NTW file)
+
+22
+00:03:05,058 --> 00:03:10,058
+Now all bones are given a "biologically relevant" orientation and position.
+
+23
+00:03:14,886 --> 00:03:20,286
+Let's browse through the  vertebrae
+
+24
+00:03:43,548 --> 00:03:45,681
+Select the cranium and mandibles
+
+25
+00:03:45,729 --> 00:03:48,729
+Translate the cranium and mandibles ("Move selected obejcts" mode, then middle click drag)
+
+26
+00:03:50,141 --> 00:03:54,274
+This last action can be undone (click on undone or "CTRL + Z")
+
