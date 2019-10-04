@@ -1,0 +1,67 @@
+﻿1
+00:00:00,200 --> 00:00:04,400
+Drag and drop the "MHD" (Meta-Image) file inside the main 3D window
+
+2
+00:00:11,000 --> 00:00:19,167
+Lighting settings can be adjusted in order to see better the 3D structures
+
+3
+00:00:24,769 --> 00:00:29,436
+Most µCT data are not oriented in a "biologically relevant" manner.
+
+4
+00:00:29,792 --> 00:00:37,792
+In "Camera mode", selected volumes (drawn with a box outline) can be:
+1) rotated (CTRL + left mouse drag)
+2) translated (CTRL + middle mouse drag)
+
+5
+00:00:42,291 --> 00:00:47,358
+The yellow sliders can also be useful to translate / rotate selected volumes
+
+6
+00:00:48,530 --> 00:00:56,330
+The tutorial data folder also contains a "POS" (position) file which you can drag and drop inside the 3D main window.
+
+7
+00:00:56,802 --> 00:01:04,802
+Notice that the volume is now unselected (no bounding box outline drawn)
+(to select/unselect volumes:  right mouse drag)
+
+8
+00:01:09,693 --> 00:01:18,360
+Let's digitize a few landmarks ("L" + left mouse click)
+
+9
+00:01:44,128 --> 00:01:50,595
+Let's adjust slightly the display range (slider "shift" of the Edit first selected volume window)
+
+10
+00:02:00,091 --> 00:02:07,091
+Now let's digitize landmarks inside the mouse's cranium. To do so, we need to enable ROI, and display ROI
+
+11
+00:02:08,291 --> 00:02:16,091
+Move the spherical controls (left click + drag) to adjust the bounds of the ROI box
+
+12
+00:02:26,468 --> 00:02:30,268
+Now the "Edit first selected volume" window can be closed
+
+13
+00:02:30,708 --> 00:02:35,375
+Now simply digitize landmarks inside the cranium ("L" + left click).
+
+14
+00:02:35,799 --> 00:02:43,799
+Remember : landmark digitization actions can be undone (CTRL +Z) and redone (CTRL +Y). Also to change the position of a given landmark , select it and press "L" + right click
+
+15
+00:02:51,232 --> 00:02:55,166
+Now we can save all digitized landmarks inside a text file
+
+16
+00:03:15,586 --> 00:03:23,586
+The first 3 numbers are the x y z coordinates of each landmark, and the last 3 numbers contain the x y z orientation of the normale.
+

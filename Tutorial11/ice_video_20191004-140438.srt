@@ -1,0 +1,51 @@
+﻿1
+00:00:00,000 --> 00:00:03,600
+Drag and drop all TIFF files inside the main 3D window
+
+2
+00:00:10,503 --> 00:00:18,503
+Fill voxel size (here: 36µm = 0.036mm). And choose between "front to back" or "back to front" image order. 
+Here, image order is "back to front".
+
+3
+00:00:26,983 --> 00:00:29,050
+You may choose to hide the grid
+
+4
+00:00:31,719 --> 00:00:37,852
+Open the "edit first selected volume" window
+(selected volumes have a bounding box outline)
+
+5
+00:00:40,543 --> 00:00:47,476
+You may decide to hide the volume rendering representation
+and to display instead XY, XZ, or YZ slices.
+
+6
+00:00:53,250 --> 00:00:58,716
+Lighting options can be adjusted in order to enhance the visibility of structures.
+
+7
+00:01:09,632 --> 00:01:15,699
+Display range can be shifted in order to visualize dense inner structures such as the bones
+
+8
+00:01:27,313 --> 00:01:31,580
+Volume data can be exported in the MetaImage format (MHD or MHA)
+
+9
+00:01:33,112 --> 00:01:39,512
+When saved as MHD, two files will be created: a .mhd (header) file, and a .raw/.zraw (data) file
+
+10
+00:01:39,984 --> 00:01:41,450
+Data can be compressed
+
+11
+00:01:55,814 --> 00:02:04,714
+Header (.mhd) file contain relevant information such as data type, data dimension and voxel size
+
+12
+00:02:11,715 --> 00:02:17,715
+Metaimage files (MHD/MHA) can be read and written with Fiji, and with many other software.
+
