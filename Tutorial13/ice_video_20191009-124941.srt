@@ -1,0 +1,68 @@
+﻿1
+00:00:00,000 --> 00:00:01,000
+
+
+2
+00:00:01,439 --> 00:00:05,106
+Drag and drop project file (.NTW) inside main 3D window
+
+3
+00:00:10,218 --> 00:00:14,218
+When opening a NTW file, 3D volumes and 3D surfaces will be unselected by default.
+
+4
+00:00:14,895 --> 00:00:20,362
+To interact with the opened volume, it must be selected first (right click + drag). Selected volumes are drawn with a bounding box.
+
+5
+00:00:20,756 --> 00:00:30,689
+Use the yellow sliders to rotate/translate selected volumes
+
+6
+00:00:38,997 --> 00:00:42,264
+Activate "move selected objects" interaction mode
+
+7
+00:00:42,799 --> 00:00:49,399
+Now use "left click + drag" to rotate the volume, and "middle click + drag" to translate the volume
+
+8
+00:00:52,269 --> 00:00:53,936
+Active "move camera mode"
+
+9
+00:00:55,431 --> 00:00:58,364
+Open the "edit first selected volume" window
+
+10
+00:01:00,796 --> 00:01:03,129
+Click on "display Crop box" button.
+
+11
+00:01:03,971 --> 00:01:11,971
+Adjust the bounds of the crop box (left click + drag the spherical controls)
+
+12
+00:01:25,793 --> 00:01:33,793
+Now click on "crop". As the volume was rotated, a warning message shows up, indicating that the volume data will be resliced before being cropped
+
+13
+00:01:37,759 --> 00:01:45,759
+Thats it ! Notice that a post fix ( "_rsp_crp") is added to the name of the volume, to remind us that it was resliced and cropped.
+
+14
+00:01:48,814 --> 00:01:51,814
+Now browse through the re-oriented 2D slices.
+
+15
+00:01:55,571 --> 00:02:00,305
+Modified volume data can be saved inside a new MetaImage (MHD/MHA) file
+
+16
+00:02:15,828 --> 00:02:23,161
+The metaimage (MHD/MHA) format is convenient: it can be used in a wide range of other software, including FIJI
+
+17
+00:02:46,701 --> 00:02:53,434
+Here we compare with FIJI the initial metaimage volume, and the resliced + cropped final volume data.
+

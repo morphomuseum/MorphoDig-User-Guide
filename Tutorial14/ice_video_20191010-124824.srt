@@ -1,0 +1,137 @@
+﻿1
+00:00:00,916 --> 00:00:05,183
+Drag and drop the project (.NTW) file inside the main 3D window.
+
+2
+00:00:09,331 --> 00:00:14,131
+You may hide the grid. Then open the "edit first selected volume" window
+
+3
+00:00:14,593 --> 00:00:16,059
+Click on "Enable Mask"
+
+4
+00:00:19,856 --> 00:00:21,856
+Masking tools become available
+
+5
+00:00:22,182 --> 00:00:27,316
+Let's use the "Pencile sphere" tool, and set pencil radius to 100 (screen) px
+
+6
+00:00:28,804 --> 00:00:32,804
+"T" + left click => activates pencil tag tool.
+ "T" + mouse roll =>  increases /decreases pencil radius
+
+7
+00:00:33,301 --> 00:00:36,635
+Here we have used " pencil sphere" + "mask inside"
+
+8
+00:00:38,528 --> 00:00:40,195
+Click on "invert mask" .
+
+9
+00:00:41,914 --> 00:00:46,447
+Previously visible regions are now masked, and what was masked is now visible
+
+10
+00:00:48,961 --> 00:00:52,428
+Click on "Pencil tube". Then press "T" + left click.
+
+11
+00:00:55,936 --> 00:00:58,936
+The newly masked region has a cylindric shape
+
+12
+00:01:02,300 --> 00:01:04,633
+Let's use the "mask outside" option
+
+13
+00:01:06,461 --> 00:01:12,461
+"T" + left click (pencil tube + mask outside options) => what remains visible is  tubular.
+
+14
+00:01:13,670 --> 00:01:18,137
+Let's play with the "shift" slider to visualize all unmasked bones.
+
+15
+00:01:23,732 --> 00:01:25,532
+Masks can be reitinialized.
+
+16
+00:01:35,029 --> 00:01:43,029
+Now use the lasso to mask all bones except the cranium and the mandible.
+
+17
+00:02:00,791 --> 00:02:03,591
+Click on "Export mask" => then export the mask as a metaimage MHD/MHA file
+
+18
+00:02:28,820 --> 00:02:36,820
+Masks MHD/MHA can be read with Fiji. They are 8 bits volume. All masked regions are "black" (0) and all visible regions are "white" (255).
+
+19
+00:02:50,110 --> 00:02:53,976
+Let's use the "Mask using first selected surface" option.
+
+20
+00:02:55,461 --> 00:02:58,661
+Let's create an icosahedron with a 15 mm radius.
+
+21
+00:03:16,849 --> 00:03:21,316
+Move this sphere at the desired position (CTRL + middle click drag)
+
+22
+00:03:25,562 --> 00:03:31,029
+Click on "Mask using first selected surface" button (Mask Inside option activated)
+
+23
+00:03:36,028 --> 00:03:38,961
+All voxels inside the sphere are now hidden.
+
+24
+00:03:44,577 --> 00:03:45,977
+Mask reinitialization
+
+25
+00:03:48,187 --> 00:03:50,787
+Now activate the "Mask outside" option.
+
+26
+00:03:52,917 --> 00:03:56,783
+Click again on "Mask using first selected surface" button.
+
+27
+00:04:01,718 --> 00:04:05,384
+Only voxels situated within the sphere remain visible.
+
+28
+00:04:27,396 --> 00:04:28,396
+Previously exported masks can be reimported. Click on "import mask".
+
+29
+00:04:31,529 --> 00:04:33,862
+Choose the previously exported mask
+
+30
+00:04:37,579 --> 00:04:39,546
+Click on "harden mask"
+
+31
+00:04:47,742 --> 00:04:55,742
+This option will modify the original µCT data and will replace all masked voxels with "0". Note that volume name was postfixed with "_hrd"
+
+32
+00:04:57,859 --> 00:04:59,925
+Let's saved the modified volume
+
+33
+00:05:11,356 --> 00:05:15,222
+Open the newly created Metaimage (MHD/MHA) file with Fiji.
+
+34
+00:05:38,134 --> 00:05:44,134
+Note that all the postcranial bones that had been masked are now removed from theses data.
+
