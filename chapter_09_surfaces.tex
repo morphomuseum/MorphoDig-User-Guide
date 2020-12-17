@@ -16,7 +16,7 @@ This menu opens the "Edit first selected surface" window (see Fig. \ref{actor_ed
 \begin{figure}
   \centering
   \includegraphics[scale=1]{images/09/edit_surface/edit_surface2.png} 
-	\caption{Edit first selected surface window. \textbf{1-} Object name : edit the name of the surface.Next and preceding object buttons: saves current settings and fetches next/preceding surface. View/hide object button.	\textbf{2-} Object solid color : modifies the "solid color" property of this object. Object translucency : modifies the translucency this object. The number of points and triangles are available in this section. \textbf{3-} Object matrix : current position/rotation matrix of the object. Reinit matrix: set current matrix to identity. Refresh matrix: if edited outside this window, object's matrix is refreshed. Harden transform : apply current position matrix to all the vertices, and reset position matrix to identity. Apply matrix to all selected surfaces : set position/rotation matrix to all other selected surfaces. Apply matrix to all  surfaces : set position/rotation matrix to all other surfacesn even if they are not selected.\textbf{4-} Enable ROI: must be activated to enable custom clipping planes. Show/Hide ROI: show ROI to define interactively clipping planes. \textbf{5-} Existing arrays : list of all scalar/RGB color/tags arrays associated to the vertices of the surfaces. Edit array name : modifies the name of currently selected array. Duplicate array : duplicates currently selected array. Delete array : deletes currently selected array. Ok : save settings and closes window}
+	\caption{Edit first selected surface window. \textbf{1-} Object name : edit the name of the surface.Next and preceding object buttons: saves current settings and fetches next/preceding surface. View/hide object button.	\textbf{2-} Object solid color : modifies the "solid color" property of this object. Object translucency : modifies the translucency this object. The number of points and triangles are available in this section. \textbf{3-} Object matrix : current position/rotation matrix of the object. Reinit matrix: set current matrix to identity. Refresh matrix: if edited outside this window, object's matrix is refreshed. Harden transform : apply current position matrix to all the vertices, and reset position matrix to identity. Apply matrix to all selected surfaces : set position/rotation matrix to all other selected surfaces. Apply matrix to all  surfaces : set position/rotation matrix to all other surfaces even if they are not selected.\textbf{4-} Enable ROI: must be activated to enable custom clipping planes. Show/Hide ROI: show ROI to define interactively clipping planes. \textbf{5-} Existing arrays : list of all scalar/RGB color/tags arrays associated to the vertices of the surfaces. Edit array name : modifies the name of currently selected array. Duplicate array : duplicates currently selected array. Delete array : deletes currently selected array. Ok : save settings and closes window}
 \label{actor_edit}
  
 \end{figure}
@@ -341,7 +341,19 @@ Please choose a value between 0 and 100. 100 stands for ``opaque rendering". 0 s
 
 
 \subsection{Change object solid color}
-Selected objects' solid color can be changed using this option. A set of 13 predefined colors is available via this menu. Alternatively, you can edit object color manually using the ``Default solid color of surfaces" control of the ``Edit color options" window (menu ``Edit $\rightarrow$Edit color options").
+Selected objects' solid color can be changed using the options that can be found inside this submenu. The  "Custom color" option allows to define a color to apply to all selected objects (see Fig. \ref{edit_color_of_all_selected_surfaces} p.\pageref{edit_color_of_all_selected_surfaces}). Note that the transparency of all selected objects will remain unchanged.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.21]{images/09/rendering/color.png} 
+	\caption{ Edit color of all selected surfaces window. }
+ \label{edit_color_of_all_selected_surfaces}
+\end{figure}
+
+
+Furthermore, a set of 13 predefined colors is available via this menu. \\
+
+A last alternative is to edit all selected objects' colors and transparencies at once by using the ``Default solid color of surfaces" control of the ``Edit color options" window (menu ``Edit $\rightarrow$Edit color options"). 
 
 \section{Create 3D primitives}
 
@@ -409,3 +421,34 @@ Different options are available, and in particular, the icosahedrons / spheres c
 %\section{Delete small objects.}
 
 
+\section{Select small objects}
+
+This option permits to select all surface objects that contain less than a given number of triangles (see Fig. \ref{delete_small_objects} p.\pageref{delete_small_objects}). Selecting small objects can used subsequently to the surface decomposition tool, in order to remove small objects which are considered as not "relevant" or as "dirt" inside a complex 3D surface (see for instance Fig. \ref{cicada} p.\pageref{cicada}) and that would have been hard to remove otherwise.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.35]{images/09/remove_small_objects/triangles.png} 
+	\caption{Select objects having a small number of triangles window.
+	}
+ \label{delete_small_objects}
+\end{figure}
+
+\section{Select small volumes}
+This option is very similar to the one described just above, and permits to select all surface objects, the volume of which is less than a given value(see Fig. \ref{delete_small_volumes} p.\pageref{delete_small_volumes}). This way to select objects can used after the surface decomposition tool, in order to remove small objects which are considered as not "relevant" or as "dirt" inside a complex 3D surface (see for instance Fig. \ref{cicada} p.\pageref{cicada}) and that would have been hard to remove otherwise.
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.35]{images/09/remove_small_objects/volume.png} 
+	\caption{Select surfaces having a small volume window.
+	}
+ \label{delete_small_volumes}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.35]{images/09/remove_small_objects/cigale.png} 
+	\caption{\textbf{A:} A surface object (a cicada) is "dirty" and contains many non-relevant objects which are not connected to the insect. \textbf{B:} The surface was decomposed into independant non-connected objects. \textbf{C:} Surface objects containing less than 5000 triangles are selected and can then be removed by pressing "DEL". An alternative could have been to select all surface objects, the volume of which is less than a given value. \textbf{D:} All surface objects containing less than 5000 triangles were removed. \textbf{E:} Two other larger and "non-relevant" objects were manually selected and deleted to further clean the cicada.
+	}
+ \label{cicada}
+\end{figure}
