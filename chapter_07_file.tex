@@ -294,7 +294,11 @@ The ``Landmarks" chapter (chapter \ref{landmark_chapter} p.\pageref{landmark_cha
 
 \section{Curves}\label{file_curve_section}
 
-3D Curves (series of 3D cubic Bezier curves) are constructed in MorphoDig using 2 series of landmarks : a series of N ``curve node" landmarks, and a series of N ``curve handle".  Curve nodes and handles can be set on surfaces by pressing ``L" + left mouse click. In the ``curve nodes" landmark mode (button \includegraphics[scale=0.7]{images/04/curve_nodes.png} active), pressing ``L" + left mouse click results in the creation a ``curve node" landmark (a dark green for a curve starting node, and then light red ones). In the ``curve handles" landmark mode (button \includegraphics[scale=0.7]{images/04/curve_handles.png} active), pressing ``L" + left mouse click will create a ``target" landmark (a violet transparent one).
+3D Curves (series of 3D cubic Bezier curves) are constructed in MorphoDig using 2 series of landmarks : a series of N ``curve node" landmarks, and a series of N ``curve handle".  Curve nodes and handles can be set on surfaces by pressing ``L" + left mouse click.\\
+
+ In the ``curve nodes" landmark mode (button \includegraphics[scale=0.7]{images/04/curve_nodes.png} active), pressing ``L" + left mouse click results in the creation a ``curve node" landmark (a dark green for a curve starting node, and then light red ones). In this mode (``curve nodes" landmark mode = \includegraphics[scale=0.7]{images/04/curve_nodes.png} active), pressing ``Shift" + left mouse click results in the creation a new starting ``curve node" landmark; pressing ``J" + left mouse click results in the creation a new milestone ``curve node" landmark; pressing ``K" + left mouse click results in the creation a new ``curve node" landmark that will be connected to the preceding starting node to close the curve; \\
+
+ In the ``curve handles" landmark mode (button \includegraphics[scale=0.7]{images/04/curve_handles.png} active), pressing ``L" + left mouse click will create a ``target" landmark (a violet transparent one).
 
 Selected curve nodes/handles can be reordered using the following buttons. Pressing ``\includegraphics[scale=0.7]{images/06/objects/move_up.png}"
 will (try to) increase the number of all selected curve nodes/handles, while pressing ````\includegraphics[scale=0.7]{images/06/objects/move_down.png}""
@@ -371,7 +375,7 @@ Curve handle landmarks can be saved inside a LMK or VER file using this option. 
 
 
 \subsection{Export Curves as Landmark file}
-\begin{minipage}{0.55\textwidth}
+%\begin{minipage}{0.55\textwidth}
 
 Curves can be transformed in a series of equidistant landmarks using this option. The curve decimation window
 appears.
@@ -381,16 +385,23 @@ Be aware that there are two ways to define curve \textbf{segments} in MorphoDig 
 - by setting curve node "starting points" , in order to create \textbf{independent} curve segments (see section \ref{section_curve_segment1} p.\pageref{section_curve_segment1}, and a practical example Fig. \ref{starting_node} p. \pageref{starting_node})\\
 - by setting curve node "milestones", in order to create \textbf{contiguous} curve segments (see section \ref{section_curve_segment2} p.\pageref{section_curve_segment2}, and a practical example Fig. \ref{curve_milestone} p. \pageref{curve_milestone}).
 \\
- You may also decide to save normal and target landmarks information inside the VER or LMK output. This is useful when you need to use both type 1 landmarks (normal and target landmarks) and semi-landmards (3D curves) in Geometric Morphometric analyses. 
+ You may also decide to save normal and target landmarks information inside the  output. This is useful when you need to use both type 1 landmarks (normal and target landmarks) and semi-landmards (3D curves) in Geometric Morphometric analyses. 
 
-In the present example, each curve/
-curve segment is saved as 20 equidistant landmarks.
+In the example presented Fig. \ref{export_curves} p. \pageref{export_curves}, 5 segments have been digitized, and the default number of landmarks per segment is 60, but the user has chosen to export segments 2 and 4 using 20 equidistant landmarks instead.
 
-\end{minipage}  
- \begin{minipage}{0.45\textwidth}\centering
+%\end{minipage}  
+% \begin{minipage}{0.45\textwidth}\centering
+
+
+\begin{figure}
+  \centering  
   \includegraphics[scale=0.5]{images/07/curves/export.png}
- \captionof{figure}{Export curves as landmark file window}
- \end{minipage} 
+ \captionof{figure}{Export curves as landmark file window. Here, 5 curve segments have been digitized, and the default number of landmarks per segment is 60, but the user has chosen to export segments 2 and 4 using 20 equidistant landmarks instead.}
+ \label{export_curves}
+ \end{figure}
+
+
+% \end{minipage} 
 
 
 
