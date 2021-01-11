@@ -1,0 +1,244 @@
+﻿1
+00:00:01,151 --> 00:00:04,151
+open a web browser and go to https://doi.org/10.1111/pala.12429
+
+2
+00:00:04,530 --> 00:00:08,530
+The article "Apparatus architecture of the conodont Nicoraella kockeli (Gondolelloidea, Prioniodinina) constrains functional interpretations" contains supplementary data
+
+3
+00:00:09,402 --> 00:00:12,402
+Click on https://doi.org/10.5523/bris.p515kyhwv3ec29zo7an2psqju
+
+4
+00:00:12,654 --> 00:00:14,987
+This opens the 3D model supplementary data webpage
+
+5
+00:00:15,402 --> 00:00:17,469
+You can download the .PLY file an unzip it
+
+6
+00:00:34,402 --> 00:00:37,002
+Now open the .PLY file with MorphoDig
+
+7
+00:00:45,151 --> 00:00:48,818
+You can activate the "RGB" array to display the colors.
+
+8
+00:00:49,153 --> 00:00:52,753
+Many 3D software, and most 3D printer software expect surface models to be expressed in millimeters ("mm").
+
+9
+00:00:53,403 --> 00:01:01,403
+Default grid size in MorphoDig is set up so that 1 square is 1cm * 1cm long. Meanwhile this conodont 3D model is expected to be less than 1mm in its largest dimension.
+
+10
+00:01:02,153 --> 00:01:07,153
+We can deduce that this model is probably expressed in "nanometers" (because the original specimen was scanned at a nanometric resolution). We can select this model and reduce its size by a factor of 1000 to express it in "mm".
+
+11
+00:01:08,652 --> 00:01:16,652
+Do do so, replace the first three "1" of the diagonal of the position matrix by 0.001
+
+12
+00:01:19,401 --> 00:01:22,001
+Click on apply to all selected surfaces
+
+13
+00:01:30,152 --> 00:01:35,752
+We see here that the model is now much smaller, around  1 mm long, which is what we expect it to be.
+
+14
+00:01:44,153 --> 00:01:48,886
+We may rename this object to remind us that we rescaled it to mm units.
+
+15
+00:01:50,403 --> 00:01:55,270
+Now let's click on "harden transform" to apply this matrix to the model.
+
+16
+00:02:15,151 --> 00:02:19,818
+We can re-orient the 3D model to give it a more convenient orientation for the 3D printint process.
+
+17
+00:02:20,652 --> 00:02:24,985
+You can use the yellow sliders to change the 3D model orientation
+
+18
+00:02:25,520 --> 00:02:29,253
+Here "CTLR" + middle click is used to trnaslate the model.
+
+19
+00:02:30,653 --> 00:02:33,186
+Then again one ot the rotation sliders
+
+20
+00:02:34,902 --> 00:02:38,002
+Then again "CTRL" + middle click (translation) and then "CTRL" +  left click (rotation)
+
+21
+00:02:39,653 --> 00:02:41,520
+Rotation yellow slider again
+
+22
+00:02:44,651 --> 00:02:46,984
+"CTRL" + middle click (translation)
+
+23
+00:02:49,152 --> 00:02:52,385
+Now let's harden the position matrix.
+
+24
+00:03:00,902 --> 00:03:06,102
+We can change the name of the model to remind us that its position was changed
+
+25
+00:03:10,403 --> 00:03:18,403
+But we do not want (nor can) print a 1mm long object. We have to increase the size of the 3D model, and we now can choose a rescaling factor.
+
+26
+00:03:19,153 --> 00:03:26,086
+A multiplication factor of 200 seems quit good to produce a fairly big enough 3D model of this conodont.
+
+27
+00:03:33,402 --> 00:03:36,402
+Again, let's harden this transform
+
+28
+00:03:40,300 --> 00:03:46,567
+1 square of the grid is 1cm*1cm, so now, this 3D model is around 11 cm tall and slightly less than 20 cm long.
+
+29
+00:03:52,652 --> 00:04:00,652
+Again, we can modify the name of the 3D model to remind us that we will print a 3D model that has been increased 200 times (so not a "real size" conodont!).
+
+30
+00:04:02,403 --> 00:04:07,803
+Let's save the project (in order not to lose all the repositioning and rescaling)
+
+31
+00:04:11,152 --> 00:04:12,885
+we can create a new folder
+
+32
+00:04:21,402 --> 00:04:29,402
+If we print this 3D model directly, the different conodont ellements will fall apart, because they lack connectivity. And we will lose the orientation and position of all these elements.
+
+33
+00:04:31,152 --> 00:04:39,152
+In order keep all the conodont elements in their current orientations and positions, we need to produce so-called "connective struts". This can be achieved in MorphoDig inside the menue "Create 3D primitives".
+
+34
+00:04:42,151 --> 00:04:50,151
+Here for instance, we create a 13 cm long * 6 cm large * 6mm tall  rectangular shape that will be the "base" of our 3D print
+
+35
+00:04:53,402 --> 00:05:01,402
+Let's reposition this rectangular parallelepiped object
+
+36
+00:05:01,653 --> 00:05:04,186
+"CTRL" + middle click to translate it
+
+37
+00:05:12,402 --> 00:05:14,335
+Let's view it from front side
+
+38
+00:05:14,903 --> 00:05:16,703
+"CTRL" + middle click again
+
+39
+00:05:21,402 --> 00:05:26,402
+Now let us "glue together" a few conodont elements.
+
+40
+00:05:26,653 --> 00:05:31,020
+Let's create a few cylinders (10 for instance)
+
+41
+00:05:44,151 --> 00:05:52,151
+The most time consuming task is now to give a good position and orientation in space to each cylinder in order to "stick together" all conodont element.
+
+42
+00:05:52,904 --> 00:05:59,571
+"CTRL" + middle click to translate this cylinder. "CTRL" + left click to change its orientation....
+
+43
+00:06:05,040 --> 00:06:14,273
+2 elements are  becoming connected in 3D space.
+
+44
+00:06:20,152 --> 00:06:22,685
+Now let's start with a second cylinder
+
+45
+00:06:28,402 --> 00:06:32,869
+A long (long) time later : all conodont elements are now connected!
+
+46
+00:06:37,902 --> 00:06:40,502
+This 3D model is ready for 3D printing!
+
+47
+00:06:40,653 --> 00:06:44,986
+Select all 3D objects ("CTRL" + A), and save as a single STL file
+
+48
+00:06:45,903 --> 00:06:46,903
+Press "Save"
+
+49
+00:06:47,652 --> 00:06:53,785
+RGB information will be lost in this STL file. But this is ok to print a single color model.
+
+50
+00:07:01,653 --> 00:07:09,653
+Choose Position => modified. This is very important : the position matrix of each connective strut (cylinders and rectangular shapes) will be hardened transformed inside the 3D single STL file.
+
+51
+00:07:12,653 --> 00:07:18,653
+Now let's swich to the 3D printer software. In our case, we will print this model with a Prusa I3 MK3S, and use PrusaSlicer software
+
+52
+00:07:19,653 --> 00:07:22,520
+Import the previously created 3D STL file.
+
+53
+00:07:24,902 --> 00:07:28,102
+The 3D model fits nicely on the 3D printer bed.
+
+54
+00:07:29,655 --> 00:07:34,855
+The most important parameter here is that we need to build support everywhere.
+
+55
+00:07:35,652 --> 00:07:38,519
+Let's slice the 3D model
+
+56
+00:07:40,152 --> 00:07:47,552
+Here is how this model will look once 3D printer. All the 3D support material will have to be removed by hand.
+
+57
+00:07:52,402 --> 00:07:59,002
+Here we can monitor of the printed object will look once we will have removed all support material.
+
+58
+00:08:00,903 --> 00:08:03,370
+Let's export the G-code and print it!
+
+59
+00:08:14,154 --> 00:08:16,421
+The Prusa i3 MK3S has just started.
+
+60
+00:08:20,154 --> 00:08:21,287
+A few hours later
+
+61
+00:08:25,903 --> 00:08:32,503
+Once the 3D support material has been removed (by hand, mostly using pliers), it looks pretty good! A 3D conodont apparatus printed at a scale of 200.
+
