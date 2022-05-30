@@ -130,11 +130,19 @@ The default behavior when opening 3D volume data can be set in this section. You
 \end{figure}
 
 Transparency rendering of large surface and volumetric dataset is not something straightforward. VTK uses a method called "depth peeling", which uses 2 parameters which allows to adjust the trade-off between rendering quality and rendering fluidity. 
-In this window, (Fig. \ref{renderer_options} p.\pageref{renderer_options}), you may decide to adjust the maximum number of passes allowed by the depth peeling method algorithm and the occlusion ratio parameter. An example of the importance of these parameters is given Fig. \ref{occlusion_example} p.\pageref{occlusion_example}
+In this window, (Fig. \ref{renderer_options} p.\pageref{renderer_options}), you may decide to adjust the maximum number of passes allowed by the depth peeling method algorithm and the occlusion ratio parameter. An example of the importance of these parameters is given Fig. \ref{occlusion_example} p.\pageref{occlusion_example}. This windows also allows for the possibility to use  "Screen-Space ambiant occlusion" (SSAO) to better render 3D surfaces (but be aware that transparent screenshots do not work using SSAO rendering). An example of the rendering difference when SSAO is active and inacive is given Fig. \ref{ssao_example} p.\pageref{ssao_example}.
 
 \begin{figure}
   \centering  
  \includegraphics[scale=0.35]{images/08/occlusion_ratio.png}
  \captionof{figure}{Transparent rendering of a cranium of \textit{Choeropsis liberiensis} and internal structures using different occlusion ratio parameters (image credit: Maëva Orliac). \textbf{Top-} occlusion ratio was set to 0.2 \textbf{Bottom- } occlusion ratio was set to 0.}
 \label{occlusion_example}
+\end{figure}
+
+
+\begin{figure}
+  \centering  
+ \includegraphics[scale=0.35]{images/08/ssao.png}
+ \captionof{figure}{Surface rendering of a cranium of \textit{Homo sapiens}. \textbf{Left-} SSAO turned off \textbf{Right- } SSAO rendering activated. Keep in mind that transparent screenshots do not work using SSAO rendering.}
+\label{ssao_example}
 \end{figure}

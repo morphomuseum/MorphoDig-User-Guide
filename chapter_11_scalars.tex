@@ -274,6 +274,32 @@ Local complexity scalar computed in turbinate bones of \textit{Orycteropus afer}
 \label{complexityexample}
 \end{figure}
 
+\section{Compute volume or area for each selected surface}
+
+
+\noindent
+\begin{minipage}{0.5\textwidth}
+When many relatively similar surface objects are opened at once, or when a given surface objects contains many non-connected sub-objects, it can be useful to compute the volume or the area of each opened object or of each sub-object (see  dialog displayed in Fig. \ref{volume_area_dialog} and the foam bubble volume example displayed in Fig. \ref{foam_volume_example} p.\pageref{foam_volume_example}).
+
+\end{minipage}    
+\begin{minipage}{0.5\textwidth}\centering
+  \includegraphics[scale=0.5]{images/11/volume_area_dialog.png}
+ \captionof{figure}{Scalars: compute volume or area}
+\label{volume_area_dialog}
+ \end{minipage} 
+\noindent
+
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.38]{images/11/foam_volume.png} 
+	\caption{In this example, the volume of different foam bubbles are displayed using a color scale. This can be useful to know the distribution of foam bubble volumes within a sample.}
+\label{foam_volume_example}
+\end{figure}
+
+
+
 \section{Smooth active scalars for each selected surface}
 It may happen that scalar values contain a lot of noise (see for instance the noisy results of the curvature computation in Fig. \ref{curvature_example}). In order to reduce noise and retrieve more biologically relevant information, scalars can be ``smoothed" in different ways (see \ref{smoothing_scalars_dialog}). Be aware that the obtained results depend very much on the size of the investigated local area for each vertex (based on direct neighbor vertices or on a much larger area), and on whether the new scalar value is computed as the average or as the median of the scalar values found for neighbor vertices (see Fig. \ref{smoothing_scalars_example}).
 
